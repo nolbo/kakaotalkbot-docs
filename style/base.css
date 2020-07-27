@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+@font-face{
+    font-family: 'JetBrains Mono';
+    src:url(font/JetBrainsMono-Medium.woff) format('woff');
+}
+
+@font-face{
+    font-family: 'JetBrains Mono I';
+    src:url(font/JetBrainsMono-Medium-Italic.woff) format('woff');
+}
+
+@font-face{
+    font-family: 'D2Coding';
+    src:url(font/D2Coding.woff) format('woff');
+}
+
+#kkotb_rfnc:hover{
+    cursor: pointer;
+}
+
+#kkotb_rfnc:visited{
+    cursor: default;
+}
+
+p#a:hover{
+    cursor: pointer;
+}
+
+p#a:visited{
+    cursor: default;
+}
+
+*::-webkit-scrollbar {
+    width: 0.7em;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #4b4b4b33;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+*::-webkit-scrollbar-track {
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+div#sideBar::-webkit-scrollbar {
+    width: 0.7em;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+div#code::-webkit-scrollbar {
+    width: 0.1em;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+div#code::-webkit-scrollbar-thumb {
+    width: 0.1em;
+    background-color: #0f0f0f;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+div#code::-webkit-scrollbar-track {
+    width: 0.1em;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+i{
+    font-family: 'JetBrains Mono I';
+}
+
+li.sA:hover{
+    cursor: pointer;
+}
+
+li.sA:visited{
+    cursor: default;
+}
+
+html{
+    margin: -0.6em 5em 5em 3em;
+    font-family: 'Nanum Gothic';
+    color: #4b4b4b;
+    background-color: white;
+}
+
+header{
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    position: fixed;
+    display: block;
+    margin-bottom: 2em;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    left: 0%;
+    padding-left: 3em;
+}
+
+img#kkotb_rfnc{
+    width: 3em;
+    height: auto;
+}
+
+img#m_sideBar{
+    display: none;
+}
+
+p#a{
+    display: inline;
+    color: #4b4b4b;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 2em;
+    transition:color 1s ease; 
+}
+
+p#a:hover { color:#8400ff; }
+
+div.content{
+    margin-bottom: 3em;
+}
+
+dd{
+    font-size: 0.9em;
+    line-height: 2em;
+}
+
+dt{
+    font-size: 1em;
+    font-weight: 800;
+    line-height: 2em;
+}
+
+div#side{
+    position: fixed;
+    background-color: white;
+    width: 22%;
+    height: 100%;
+}
+
+div#blank{
+    position: fixed;
+    background-color: white;
+    width: 16%;
+    height: 100%;
+    padding-left: 3em;
+}
+
+div#sideBar{
+    display: block;
+    position: fixed;
+    width: 16%;
+    height: 75%;
+    overflow: auto;
+    background-color: white;
+    padding-left: 3em;
+}
+
+section{
+    display: block;
+    margin-left: 22%;
+
+}
+
+section#body{
+    position: absolute;
+    top: 8em;
+    margin-left: 0;
+    margin-right: 3%;
+}
+
+section#body section{
+    margin-bottom: 10em;
+    z-index: 99999;
+}
+
+div#side{
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    left: 0%;
+}
+
+p#title{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+p#stitle{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+p#description{
+    display: inline;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+p#code{
+    display: inline;
+    background-color: #f1f1f1;
+    margin: 0.5em 0.5em;
+    border-radius: 0.4em 0.4em;
+    font-family: 'JetBrains Mono', 'D2Coding';
+    font-size: 0.9em;
+    padding: 0.2em 0.2em;
+    line-height: 2em;
+}
+
+div#code, div#crf, div#pls{
+    margin-top: 1.3em;
+    margin-bottom: 2em;
+    border-radius: 0.4em 0.4em;
+    font-family: 'JetBrains Mono';
+    font-size: 0.9em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    white-space:nowrap;
+    overflow: auto;
+}
+
+div#code{ 
+    background-color: #4b4b4b;
+    color: white;
+    border-radius: 0.4em 0.4em;
+    box-shadow: 0em 0em 0.8em 0em #4b4b4b;
+}
+
+div#crf{
+    background-color: #ffffff;
+    border-left: 1em solid rgb(255, 0, 140);
+    color: rgb(255, 0, 140);
+    box-shadow: 0em 0em 0.4em 0em rgb(255, 0, 140);
+}
+
+p#crfBox{
+    display: inline;
+    line-height: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+div#pls{
+    background-color: #ffffff;
+    border-left: 1em solid #00ffaa;
+    color: #00ffaa;
+    box-shadow: 0em 0em 0.4em 0em #00ffaa;
+}
+
+p#plsBox{
+    display: inline;
+    line-height: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+code{
+    display: inline;
+    font-family: 'JetBrains Mono', 'D2Coding';
+    line-height: 2em;
+}
+
+div#code code{
+    text-shadow: 0em 0em 0.8em #ffffff;
+}
+
+p#keyword, p#ann, p#var, p#str, p#reg, p#num{
+    display: inline !important;
+    line-height: 2em;
+}
+
+p#keyword{
+    color: #ff0d86;
+    text-shadow: 0em 0em 0.8em #ff0d86;
+}
+
+p#ann{
+    color: #8b8b8b;
+    text-shadow: 0em 0em 0.8em #8b8b8b;
+}
+
+p#var{
+    color: #00ffaa;
+    text-shadow: 0em 0em 0.8em #00ffaa;
+}
+
+p#str{
+    color: #ffc400;
+    text-shadow: 0em 0em 0.8em #ffc400;
+}
+
+p#reg{
+    color: #00ffff;
+    text-shadow: 0em 0em 0.8em #00ffff;
+}
+
+p#num{
+    color: #b700ff;
+    text-shadow: 0em 0em 0.8em #b700ff;
+}
+
+div#table{
+    overflow: auto;
+}
+
+table{
+    width: 100%;
+    border-top: 0.3em solid #4b4b4b;
+    border-left: 0em solid white;
+    border-right: 0em solid white;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    font-size: 1em;
+}
+
+tr{
+    padding: 1em 1em 1em 1em;
+}
+
+th, td{
+    border-bottom: 0.016em solid #4b4b4b;
+    padding: 1em 1em 1em 1em;
+    text-align: left;
+}
+
+td{
+    line-height: 1.5em;
+}
+
+td#no{
+    font-weight: bold;
+    color: red;
+}
+
+div#sA{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+li.sA{
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #8400ff;
+}
+
+p#thank_you{
+    display: inline;
+    color: #4b4b4b;
+    line-height: 2em;
+    transition:color 1s ease; 
+}
+
+p#thank_you:hover { 
+    color:#f100b5;
+}
+
+@media screen and (max-width:800px){
+    div#sideBar::-webkit-scrollbar {
+        background-color: #4b4b4b00;
+        width: 0.7em;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    
+    div#sideBar::-webkit-scrollbar-thumb {
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    div#sideBar::-webkit-scrollbar-track {
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    
+    html{
+        margin: -2em 1.5em 0.5em 1.5em;
+    }
+
+    section#body{
+        top: 6em;
+        margin-left: 0em;
+        display: inline;
+        position: relative;
+    }
+
+    td{
+        line-height: 1em;
+    }
+
+    p#a{
+        font-size: 0.8em;
+        transition:color .2s ease;   
+    }
+
+    p#a:hover { color:#8400ff; }
+    
+    header{
+        padding-top: 3.5em;
+        padding-bottom: 1em;
+        margin-bottom: 0;
+        padding-left: 2em;
+    }
+
+    img#kkotb_rfnc{
+        width: 1.5em;
+        height: auto;
+    }
+
+    section{
+        margin-left: 40%;
+        margin-left: 0em;
+    }
+
+    p#title{
+        font-size: 1em;
+    }
+
+    p#description{
+        font-size: 0.8em;
+    }
+
+    p#thank_you{
+        font-size: 0.8em;
+    }
+
+    div#sideBar{
+        display: none;
+        border-radius: 0em 0.5em 0.5em 0.5em;
+        position: fixed !important;
+        left: 0%;
+        top: 0%;
+        overflow: auto;
+        width: 50% !important;
+        height: 87% !important;
+        margin: 0;
+        margin-top: 4.5em;
+    }
+
+    div#side{
+        display: none;
+        margin: 0;
+        margin-top: 6em;
+        padding-left: 2em;
+        padding-right: 2em;
+        width: 93%;
+        height: 95.6%;
+        background-color: rgba(0, 0, 0, 0.425);
+    }
+
+    p#code{
+        font-size: 0.7em;
+    }
+
+    section#body section{
+        margin-bottom: 5em;
+    }
+
+    div#code, div#crf, div#pls{
+        margin-top: 1.3em;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        white-space:nowrap;
+        overflow: auto;
+    }
+
+    div#code{
+        font-size: 1em;
+        padding: 0.2em 0.5em 0.2em 0.5em;
+    }
+
+    div#crf, div#pls{
+        font-size: 0.7em;
+        border-radius: 0.4em 0.4em;
+        /*box-shadow: -0.2em 0em 0.4em 0em #4b4b4b;*/
+    }
+    
+    p#crfBox{
+        display: inline;
+        line-height: 2em;
+        font-weight: bold;
+        font-style: italic;
+    }
+    
+    code{
+        display: inline;
+        font-family: 'JetBrains Mono', 'D2Coding';
+        line-height: 1em;
+        font-size: 0.8em;
+    }
+    
+    p#codeBox{
+        display: inline;
+        line-height: 1em;
+        font-size: 0.8em;
+    }
+    
+    tr{
+        padding: 1em 1em 1em 1em;
+        font-size: 0.7em;
+    }
+
+    div#table{
+        overflow: auto;
+    }
+
+    table{
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+        font-size: 0.9em;
+        margin-right: 3em;
+    }
+    
+    th, td{
+        border-bottom: 0.016em solid #4b4b4b;
+        padding: 0.8em 0.8em 0.8em 0.8em;
+    }
+
+    div#blank{
+        display: none;
+    }
+
+    div#sA{
+        margin-top: 0.7em;
+        margin-bottom: 1em;
+    }
+    
+    li.sA{
+        font-size: 0.8em;
+    }
+
+    p#stitle{
+        font-size: 0.9em;
+    }
+}
+
+@media(prefers-color-scheme: dark){
+    *::-webkit-scrollbar {
+        width: 0.7em;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    
+    *::-webkit-scrollbar-thumb {
+        background-color: #ffffff59;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    *::-webkit-scrollbar-track {
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    
+    div#sideBar::-webkit-scrollbar {
+        width: 0.7em;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    
+    div#code::-webkit-scrollbar {
+        width: 0.1em;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    
+    div#code::-webkit-scrollbar-thumb {
+        width: 0.1em;
+        background-color: #ffffff59;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+    
+    div#code::-webkit-scrollbar-track {
+        width: 0.1em;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+    }
+
+    td#no{
+        color: rgb(255, 0, 0) !important;
+    }
+    
+    html, header, div, section{
+        background-color: #333333 !important;
+    }
+
+    div#code{
+        background-color: rgb(31, 31, 31) !important;
+        box-shadow: 0em 0em 0.8em 0em rgb(24, 24, 24);
+    }
+
+    p#title, p#description, p#stitle, p#code, p#a, p#thank_you, th, td, dt, dd, a{
+        color: white !important;
+    }
+
+    p#code{
+        background-color: rgb(31, 31, 31) !important;
+    }
+
+    table{
+        border-top: 0.3em solid white !important;
+        border-left: 0em solid #333333 !important;
+        border-right: 0em solid #333333 !important;
+    }
+
+    th, td{
+        border-bottom: 0.016em solid white !important;
+    }
+
+    li.sA{
+        color: #ff0d86 !important;
+    }
+
+    div#side{
+        background-color: rgb(255, 255, 255);
+    }
+
+    p#keyword{
+        color: #ff0d86;
+        text-shadow: 0em 0em 0.8em #ff0d86;
+    }
+    
+    p#ann{
+        color: #8b8b8b;
+        text-shadow: 0em 0em 0.8em #8b8b8b;
+    }
+    
+    p#var{
+        color: #00ffaa;
+        text-shadow: 0em 0em 0.8em #00ffaa;
+    }
+    
+    p#str{
+        color: #ffc400;
+        text-shadow: 0em 0em 0.8em #ffc400;
+    }
+
+    p#reg{
+        color: #00ffff;
+        text-shadow: 0em 0em 0.8em #00ffff;
+    }
+
+    p#a:hover { color:#ff0d86; }
+}
