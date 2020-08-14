@@ -184,7 +184,7 @@ div#side{
 }
 
 p#title{
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: bold;
 }
 
@@ -266,7 +266,7 @@ div#code code{
     text-shadow: 0em 0em 0.8em #ffffff;
 }
 
-p#keyword, p#ann, p#var, p#str, p#reg, p#num{
+p#codeBox, p#keyword, p#ann, p#var, p#str, p#reg, p#num{
     display: inline !important;
     line-height: 2em;
 }
@@ -297,8 +297,8 @@ p#reg{
 }
 
 p#num{
-    color: #b700ff;
-    text-shadow: 0em 0em 0.8em #b700ff;
+    color: #d400ff;
+    text-shadow: 0em 0em 0.8em #d400ff;
 }
 
 div#table{
