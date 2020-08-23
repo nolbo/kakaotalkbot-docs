@@ -2877,6 +2877,7 @@
         </section>
     </section>
     <script>
+        setTimeout(function() {
         if(decodeURIComponent(location.href).startsWith("https://franknoh.github.io/kakaotalkbot-docs/?")){
          var url = decodeURIComponent(location.href).substring("https://franknoh.github.io/kakaotalkbot-docs/?".length);
             if(url.startsWith("search=")){
@@ -2884,6 +2885,7 @@
                 //초기화
                 document.getElementById('search').value=search_text;
                 //이동
+                var searched = false;
                 var searching = true;
                 for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
                     if(searching==true){
@@ -2892,15 +2894,18 @@
                             if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().indexOf(search_text.toLowerCase()) != -1) {
                                 $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].parentNode.id).offset().top - 155}, 1500, "swing");
                                 searching=false;
+                                searched = true;
                                 break;
                             }
                         }
                     }
                 }
+                if(searched==false)location.href="https://franknoh.github.io/kakaotalkbot-docs/search_not_found?="+encodeURIComponent(search_text);
             }else{
                 location.href = 'https://franknoh.github.io/kakaotalkbot-docs/404.html';
             }
         }
+        }, 1000);
     </script>
 </body>
 </html>
