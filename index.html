@@ -2889,23 +2889,12 @@
                 var searching = true;
                 for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
                     if(searching==true){
-                        var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
-                        for(var j = 0; j < document.getElementsByClassName("content")[i].getElementsByTagName("p").length; j++){
-                            if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().replace(" ","").trim().indexOf(search_text.toLowerCase().replace(" ","").trim()) != -1) {
-                                $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].parentNode.id).offset().top - 155}, 1500, "swing");
-                                searching=false;
-                                searched = true;
-                                break;
-                            }
-                        }
-                        for(var j = 0; j < document.getElementsByClassName("content")[i].getElementsByTagName("div").length; j++){
-                            if (document.getElementsByClassName("content")[i].getElementsByTagName("div")[j].getElementsByTagName("pre")[0].getElementsByTagName("code")[0].innerText.toLowerCase().replace(" ","").trim().indexOf(search_text.toLowerCase().replace(" ","").trim()) != -1) {
-                                $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].getElementsByTagName("div")[j].parentNode.id).offset().top - 155}, 1500, "swing");
-                                searching=false;
-                                searched = true;
-                                break;
-                            }
-                        }
+                    var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
+                    if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ","").trim().indexOf(search_text.toLowerCase().replace(" ","").trim()) != -1) {
+                        $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].id).offset().top - 155}, 1500, "swing");
+                        searching=false;
+                        searched = true;
+                        break;
                     }
                 }
                 if(searched==false)location.href="https://kkotbot-docs.kro.kr/search_not_found?="+encodeURIComponent(search_text);
