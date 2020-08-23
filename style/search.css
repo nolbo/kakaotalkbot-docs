@@ -1,4 +1,4 @@
-@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+@import url(https://kkotbot-docs.kro.kr/style/base.css);
 
 body {
 	background: #DDD;
@@ -18,7 +18,7 @@ input[type="text"] {
   height: 60px;
   font-size: 55px;
   display: inline-block;
-  font-family: "Lato";
+  font-family: 'JetBrains Mono';
   font-weight: 100;
   border: none;
   outline: none;
