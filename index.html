@@ -2889,12 +2889,12 @@
                 var searching = true;
                 for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
                     if(searching==true){
-                    var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
-                    if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ","").trim().indexOf(search_text.toLowerCase().replace(" ","").trim()) != -1) {
-                        $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].id).offset().top - 155}, 1500, "swing");
-                        searching=false;
-                        searched = true;
-                        break;
+                        if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ","").trim().indexOf(search_text.toLowerCase().replace(" ","").trim()) != -1) {
+                            $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].id).offset().top - 155}, 1500, "swing");
+                            searching=false;
+                            searched = true;
+                            break;
+                        }
                     }
                 }
                 if(searched==false)location.href="https://kkotbot-docs.kro.kr/search_not_found?="+encodeURIComponent(search_text);
