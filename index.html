@@ -2897,6 +2897,12 @@
                                 searched = true;
                                 break;
                             }
+                            if (document.getElementsByClassName("content")[i].getElementsByTagName("div")[j].getElementsByTagName("pre")[0].getElementsByTagName("code")[0].innerText.toLowerCase().replace(" ","").trim().indexOf(search_text.toLowerCase().replace(" ","").trim()) != -1) {
+                                $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].getElementsByTagName("div")[j].parentNode.id).offset().top - 155}, 1500, "swing");
+                                searching=false;
+                                searched = true;
+                                break;
+                            }
                         }
                     }
                 }
