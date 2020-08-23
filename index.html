@@ -45,11 +45,13 @@
                     var divs = document.getElementsByClassName("content");
                     for (var i = 0; i < divs.length; i++) {
                         var para = divs[i].getElementsByTagName("p");
-                        index = para[0].innerText.toLowerCase().indexOf(pattern);
-                        if (index != -1) {
-                            targetId = divs[i].parentNode.id;
-                            moveToP(targetId);
-                            break;
+                        for(var j = 0; j < para.length; j++){
+                            index = para[j].innerText.toLowerCase().indexOf(pattern);
+                            if (index != -1) {
+                                targetId = para[i].parentNode.id;
+                                moveToP(targetId);
+                                break;
+                            }
                         }
                     }
                     if(index=-1)location.href = 'https://franknoh.github.io/kakaotalkbot-docs/search_not_found?='+search_text;
