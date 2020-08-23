@@ -35,12 +35,9 @@
                 //초기화
                 document.getElementById('search').value=search_text;
                 //이동
-                function search() {
-                    var searching = true;
-                    var targetId = "";
-                    
-                    for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
-                        //if(searching==false)break;
+                var searching = true;
+                for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
+                    if(searching==true){
                         var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
                         for(var j = 0; j < document.getElementsByClassName("content")[i].getElementsByTagName("p").length; j++){
                             if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().indexOf(search_text.toLowerCase()) != -1) {
@@ -50,11 +47,7 @@
                             }
                         }
                     }
-                    if(searching==true){
-                        //location.href = 'https://franknoh.github.io/kakaotalkbot-docs/search_not_found?='+search_text;
-                    }
                 }
-                search();
             }else{
                 location.href = 'https://franknoh.github.io/kakaotalkbot-docs/404.html';
             }
