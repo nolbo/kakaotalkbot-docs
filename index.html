@@ -39,22 +39,25 @@
                 function search() {
                     
                     var index;
+                    var searching = true;
                     var pattern = search_text.toLowerCase();
                     var targetId = "";
                     
                     var divs = document.getElementsByClassName("content");
                     for (var i = 0; i < divs.length; i++) {
+                        if(searching==false)break;
                         var para = divs[i].getElementsByTagName("p");
                         for(var j = 0; j < para.length; j++){
                             index = para[j].innerText.toLowerCase().indexOf(pattern);
                             if (index != -1) {
-                                targetId = para[i].parentNode.id;
+                                targetId = para[j].parentNode.id;
                                 moveToP(targetId);
+                                searching=false;
                                 break;
                             }
                         }
                     }
-                    if(index=-1)location.href = 'https://franknoh.github.io/kakaotalkbot-docs/search_not_found?='+search_text;
+                    if(searching==true)location.href = 'https://franknoh.github.io/kakaotalkbot-docs/search_not_found?='+search_text;
                 }
                 search();
             }else{
