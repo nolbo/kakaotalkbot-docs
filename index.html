@@ -35,7 +35,7 @@
                 //초기화
                 document.getElementById('search').value=search_text;
                 //이동
-                function moveToP(location){$("html").animate({scrollTop : $("p#"+location).offset().top - 155}, 1500, "swing")}
+                function moveToDiv(location){$("html").animate({scrollTop : $("div#"+location).offset().top - 155}, 1500, "swing")}
                 function search() {
                     
                     var index;
@@ -51,7 +51,7 @@
                             index = para[j].innerText.toLowerCase().indexOf(pattern);
                             if (index != -1) {
                                 targetId = para[j].parentNode.id;
-                                moveToP(targetId);
+                                moveToDiv(targetId);
                                 searching=false;
                                 break;
                             }
