@@ -2891,7 +2891,7 @@
                     if(searching==true){
                         var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
                         for(var j = 0; j < document.getElementsByClassName("content")[i].getElementsByTagName("p").length; j++){
-                            if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().indexOf(search_text.toLowerCase()) != -1) {
+                            if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().replace(" ","").trim().indexOf(search_text.toLowerCase().replace(" ","").trim()) != -1) {
                                 $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].parentNode.id).offset().top - 155}, 1500, "swing");
                                 searching=false;
                                 searched = true;
