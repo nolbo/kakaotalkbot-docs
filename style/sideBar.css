@@ -1,52 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
-@font-face{
-    font-family: 'JetBrains Mono';
-    src:url(font/JetBrainsMono-Medium.woff) format('woff');
-}
+@font-face{ font-family: 'JetBrains Mono R'; src: url(font/JetBrainsMono-Regular.woff) format('woff'); }
 
-@font-face{
-    font-family: 'D2Coding';
-    src:url(font/D2Coding-Ver1.3.2-20180524-all.ttc) format('ttc');
-}
 
-dt:hover{
-    cursor: pointer;
-}
 
-dt:visited{
-    cursor: default;
-}
+dt:hover, dd:hover{     cursor: pointer; }
+dt:visited, dd:visited{ cursor: default; }
 
-dd:hover{
-    cursor: pointer;
-}
 
-dd:visited{
-    cursor: default;
-}
+div#side{ line-height: 1.3em; }
 
-aside{
-    line-height: 1.3em;
-}
 
-dd{
-    font-size: 0.9em;
-    font-weight: lighter;
-}
+dt, dd{ font-family: 'JetBrains Mono R', 'Nanum Gothic'; line-height: 2em; word-spacing: -0.09em; }
+dd{     font-size: 0.9em; font-weight: lighter; }
+dt{     font-size: 1em; font-weight: bold; }
 
-dt{
-    font-size: 1em;
-    font-weight: bold;
-}
-
-dd, dt{
-    font-family: 'JetBrains Mono', 'D2Coding';
-    line-height: 2em;
-}
 
 @media screen and (max-width: 800px){
+    aside{
+        width: 100%;
+    }
     dd{
         font-size: 0.7em;
         margin-left: 1em;
@@ -56,7 +30,5 @@ dd, dt{
         font-size: 0.8em;
     }
 
-    aside{
-        width: 100%;
-    }
+    
 }

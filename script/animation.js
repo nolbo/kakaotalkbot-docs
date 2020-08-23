@@ -76,8 +76,6 @@ $(function(){
     $(window).resize(function(){
         if(window.outerWidth > 800){
             location.reload();
-            //$("div#side").css("display", "none");
-            //$("div#sideBar").css("display", "block").css("visibility", "visible");
         }
     });
 
@@ -93,5 +91,8 @@ $(function(){
     $("p#thank_you").mouseout(function(){
         $("p."+$(this).attr("class")).css("color", "#4b4b4b");
     });
+
+    $("img#sttc").attr("title", "정적인 속성이나 메서드입니다.");
+    $("img#prttp").attr("title", "프로토타입 속성이거나 프로토타입 메서드입니다.");
 });
 
