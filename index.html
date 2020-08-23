@@ -31,11 +31,13 @@
         if(decodeURIComponent(location.href).startsWith("https://kkotbot-docs.kro.kr/?")){
          var url = decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/?".length);
             if(url.startsWith("search=")){
+                var search = url.substring("search=".length);
+                //초기화
+                document.getElementById('search').value=search;
                 //이동
                 function moveToDiv(location){$("html").animate({scrollTop : $("div#"+location).offset().top - 155}, 1500, "swing")}
-                var search = url.substring("search=".length);
-                if(){
-                
+                if(false){
+                    moveToDiv();
                 } else {
                    location.href = 'https://kkotbot-docs.kro.kr/search_not_found.html';
                 }
