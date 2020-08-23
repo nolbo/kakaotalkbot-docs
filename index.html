@@ -15,21 +15,26 @@
     <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/sideBar.css">
-    <link rel="stylesheet" href="style/search.css">
     <title>Kakaotalkbot Docs</title>
 </head>
 <body>
     <header>
         <img id="kkotb_rfnc" src="img/kkotalkbot_rfnc.png">
+        <div class="search-container">
+          <input Id='searchBox' type="text" placeholder="Search.." name="search">
+          <button type="submit" onClick="location.href='https://kkotbot-docs.kro.kr/?search='+encodeURIComponent(document.getElementById('searchBox').value)"><i class="fa fa-search"></i></button>
+        </div>
     </header>
     <script>
-    var url = decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/?".length);
-    if(url.startsWith("search=")){
-        //이동
-        var search=url.substring("search=".length);
-    }else if(url!=""){
-        //
-    }
+        if(decodeURIComponent(location.href).startsWith("https://kkotbot-docs.kro.kr/?")){
+         var url = decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/?".length);
+            if(url.startsWith("search=")){
+                //이동
+                var search=url.substring("search=".length);
+            }else if(url==""){
+                location.href = 'https://kkotbot-docs.kro.kr/404.html';
+            }
+        }
     </script>
     <section id="body">
         <div id="side">
