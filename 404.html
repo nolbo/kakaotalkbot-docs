@@ -15,13 +15,5 @@
         <p id="title">여기가 어딘가요?</p>
         <p id="sT">이곳은 존재하지 않은 공간입니다. 막다른 길로 오셨나 보군요.</p>
     </div>
-    <script>
-        var url = decodeURIComponent(location.href).substring("https://".length);
-        if(url.startsWith("search=")){
-           document.getElementById("NF").hidden = true;
-           document.getElementById("title").hidden = true;
-           document.getElementById("sT").hidden = true;
-        }
-    </script>
 </body>
 </html>
