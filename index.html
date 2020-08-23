@@ -35,29 +35,25 @@
                 //초기화
                 document.getElementById('search').value=search_text;
                 //이동
-                function moveToDiv(location){$("html").animate({scrollTop : $("div#"+location).offset().top - 155}, 1500, "swing")}
                 function search() {
-                    
-                    var index;
                     var searching = true;
-                    var pattern = search_text.toLowerCase();
                     var targetId = "";
                     
                     var divs = document.getElementsByClassName("content");
-                    for (var i = 0; i < divs.length; i++) {
+                    for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
                         if(searching==false)break;
-                        var para = divs[i].getElementsByTagName("p");
-                        for(var j = 0; j < para.length; j++){
-                            index = para[j].innerText.toLowerCase().indexOf(pattern);
-                            if (index != -1) {
-                                targetId = para[j].parentNode.id;
-                                moveToDiv(targetId);
+                        var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
+                        for(var j = 0; j < document.getElementsByClassName("content")[i].getElementsByTagName("p").length; j++){
+                            if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().indexOf(search_text.toLowerCase()) != -1) {
+                                $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].parentNode.id).offset().top - 155}, 1500, "swing");
                                 searching=false;
                                 break;
                             }
                         }
                     }
-                    if(searching==true)//location.href = 'https://franknoh.github.io/kakaotalkbot-docs/search_not_found?='+search_text;
+                    if(searching==true){
+                        //location.href = 'https://franknoh.github.io/kakaotalkbot-docs/search_not_found?='+search_text;
+                    }
                 }
                 search();
             }else{
