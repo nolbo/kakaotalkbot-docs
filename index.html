@@ -2878,8 +2878,8 @@
     </section>
     <script>
         setTimeout(function() {
-        if(decodeURIComponent(location.href).startsWith("https://franknoh.github.io/kakaotalkbot-docs/?")){
-         var url = decodeURIComponent(location.href).substring("https://franknoh.github.io/kakaotalkbot-docs/?".length);
+        if(decodeURIComponent(location.href).startsWith("https://kkotbot-docs.kro.kr/?")){
+         var url = decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/?".length);
             if(url.startsWith("search=")){
                 var search_text = url.substring("search=".length);
                 //초기화
@@ -2900,9 +2900,9 @@
                         }
                     }
                 }
-                if(searched==false)location.href="https://franknoh.github.io/kakaotalkbot-docs/search_not_found?="+encodeURIComponent(search_text);
+                if(searched==false)location.href="https://kkotbot-docs.kro.kr/search_not_found?="+encodeURIComponent(search_text);
             }else{
-                location.href = 'https://franknoh.github.io/kakaotalkbot-docs/404.html';
+                location.href = 'https://kkotbot-docs.kro.kr/404.html';
             }
         }
         }, 1000);
