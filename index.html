@@ -29,7 +29,7 @@
     <script>
         if(decodeURIComponent(location.href).startsWith("https://kkotbot-docs.kro.kr/?")){
          var url = decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/?".length);
-            if(url.startsWith("search=")){
+            if(url.startsWith("search="){
                 //이동
                 function moveToDiv(location){$("html").animate({scrollTop : $("div#"+location).offset().top - 155}, 1500, "swing")}
                 var search=url.substring("search=".length);
