@@ -39,9 +39,8 @@
                     var searching = true;
                     var targetId = "";
                     
-                    var divs = document.getElementsByClassName("content");
                     for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
-                        if(searching==false)break;
+                        //if(searching==false)break;
                         var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
                         for(var j = 0; j < document.getElementsByClassName("content")[i].getElementsByTagName("p").length; j++){
                             if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().indexOf(search_text.toLowerCase()) != -1) {
