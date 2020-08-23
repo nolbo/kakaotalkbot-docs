@@ -27,32 +27,6 @@
             </form>
         </div>
     </header>
-    <script>
-        if(decodeURIComponent(location.href).startsWith("https://franknoh.github.io/kakaotalkbot-docs/?")){
-         var url = decodeURIComponent(location.href).substring("https://franknoh.github.io/kakaotalkbot-docs/?".length);
-            if(url.startsWith("search=")){
-                var search_text = url.substring("search=".length);
-                //초기화
-                document.getElementById('search').value=search_text;
-                //이동
-                var searching = true;
-                for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
-                    if(searching==true){
-                        var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
-                        for(var j = 0; j < document.getElementsByClassName("content")[i].getElementsByTagName("p").length; j++){
-                            if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().indexOf(search_text.toLowerCase()) != -1) {
-                                $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].parentNode.id).offset().top - 155}, 1500, "swing");
-                                searching=false;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }else{
-                location.href = 'https://franknoh.github.io/kakaotalkbot-docs/404.html';
-            }
-        }
-    </script>
     <section id="body">
         <div id="side">
             <div id="sideBar">
@@ -2902,5 +2876,31 @@
             </div>
         </section>
     </section>
+    <script>
+        if(decodeURIComponent(location.href).startsWith("https://franknoh.github.io/kakaotalkbot-docs/?")){
+         var url = decodeURIComponent(location.href).substring("https://franknoh.github.io/kakaotalkbot-docs/?".length);
+            if(url.startsWith("search=")){
+                var search_text = url.substring("search=".length);
+                //초기화
+                document.getElementById('search').value=search_text;
+                //이동
+                var searching = true;
+                for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
+                    if(searching==true){
+                        var para = document.getElementsByClassName("content")[i].getElementsByTagName("p");
+                        for(var j = 0; j < document.getElementsByClassName("content")[i].getElementsByTagName("p").length; j++){
+                            if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].innerText.toLowerCase().indexOf(search_text.toLowerCase()) != -1) {
+                                $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].getElementsByTagName("p")[j].parentNode.id).offset().top - 155}, 1500, "swing");
+                                searching=false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }else{
+                location.href = 'https://franknoh.github.io/kakaotalkbot-docs/404.html';
+            }
+        }
+    </script>
 </body>
 </html>
