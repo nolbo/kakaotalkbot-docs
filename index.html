@@ -20,9 +20,10 @@
 <body>
     <header>
         <img id="kkotb_rfnc" src="img/kkotalkbot_rfnc.png">
-        <div class="search-container">
-          <input Id='searchBox' type="text" placeholder="Search.." name="search">
-          <button type="submit" onClick="location.href='https://kkotbot-docs.kro.kr/?search='+encodeURIComponent(document.getElementById('searchBox').value)"><img src="img/search_icon.jpg" width="50" height="50"></button>
+        <div id="wrap">
+            <form action="" autocomplete="on">
+            <input id="search" name="search" type="text" placeholder="Search ?="><input id="search_submit" value="Rechercher" type="submit">
+            </form>
         </div>
     </header>
     <script>
@@ -32,7 +33,12 @@
                 //이동
                 function moveToDiv(location){$("html").animate({scrollTop : $("div#"+location).offset().top - 155}, 1500, "swing")}
                 var search=url.substring("search=".length);
-            }else if(url==""){
+                if(){
+                
+                } else {
+                   location.href = 'https://kkotbot-docs.kro.kr/search_not_found.html';
+                }
+            }else{
                 location.href = 'https://kkotbot-docs.kro.kr/404.html';
             }
         }
