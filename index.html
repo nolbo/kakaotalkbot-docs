@@ -31,16 +31,30 @@
         if(decodeURIComponent(location.href).startsWith("https://kkotbot-docs.kro.kr/?")){
          var url = decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/?".length);
             if(url.startsWith("search=")){
-                var search = url.substring("search=".length);
+                var search_text = url.substring("search=".length);
                 //초기화
-                document.getElementById('search').value=search;
+                document.getElementById('search').value=search_text;
                 //이동
-                function moveToDiv(location){$("html").animate({scrollTop : $("div#"+location).offset().top - 155}, 1500, "swing")}
-                if(false){
-                    moveToDiv();
-                } else {
-                   location.href = 'https://kkotbot-docs.kro.kr/search_not_found.html';
+                function moveToP(location){$("html").animate({scrollTop : $("p#"+location).offset().top - 155}, 1500, "swing")}
+                function search() {
+                    
+                    var index;
+                    var pattern = search_text.toLowerCase();
+                    var targetId = "";
+                    
+                    var divs = document.getElementsByClassName("content");
+                    for (var i = 0; i < divs.length; i++) {
+                        var para = divs[i].getElementsByTagName("p");
+                        index = para[0].innerText.toLowerCase().indexOf(pattern);
+                        if (index != -1) {
+                            targetId = divs[i].parentNode.id;
+                            moveToP(targetId);
+                            break;
+                        }
+                    }
+                    if(index=-1)location.href = 'https://kkotbot-docs.kro.kr/search_not_found.html';
                 }
+                search();
             }else{
                 location.href = 'https://kkotbot-docs.kro.kr/404.html';
             }
