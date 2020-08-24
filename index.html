@@ -15,11 +15,17 @@
     <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/sideBar.css">
+    <link rel="stylesheet" href="style/search.css">
     <title>Kakaotalkbot Docs</title>
 </head>
 <body>
     <header>
         <img id="kkotb_rfnc" src="img/kkotalkbot_rfnc.png">
+        <div id="wrap">
+            <form action="" autocomplete="on">
+            <input id="search" name="search" type="text" placeholder="Search ?="><input id="search_submit" value="Rechercher" type="submit">
+            </form>
+        </div>
     </header>
     <section id="body">
         <div id="side">
@@ -2870,5 +2876,33 @@
             </div>
         </section>
     </section>
+    <script>
+        setTimeout(function() {
+        if(decodeURIComponent(location.href).startsWith("https://kkotbot-docs.kro.kr/?")){
+         var url = decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/?".length);
+            if(url.startsWith("search=")){
+                var search_text = url.substring("search=".length);
+                //초기화
+                document.getElementById('search').value=search_text;
+                //이동
+                var searched = false;
+                var searching = true;
+                for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
+                    if(searching==true){
+                        if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ","").trim().indexOf(search_text.toLowerCase().replace(" ","").trim()) != -1) {
+                            $("html").animate({scrollTop : $("div#"+document.getElementsByClassName("content")[i].id).offset().top - 155}, 1500, "swing");
+                            searching=false;
+                            searched = true;
+                            break;
+                        }
+                    }
+                }
+                if(searched==false)location.href="https://kkotbot-docs.kro.kr/search_not_found?="+encodeURIComponent(search_text);
+            }else{
+                location.href = 'https://kkotbot-docs.kro.kr/404.html';
+            }
+        }
+        }, 1000);
+    </script>
 </body>
 </html>
