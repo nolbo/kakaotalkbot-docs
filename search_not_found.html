@@ -13,10 +13,15 @@
     <div>
         <img id="NF" src="img/NotFound.png">
         <p id="title">검색결과가 없습니다</p>
-        <p id="sT"></p>
+        <p id="sT">''라는 검색결과가 없습니다</p>
     </div>
   <script>
-    document.getElementById('sT').innerHTML='\''+decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length)+'\'라는 검색결과가 없습니다'
+    var step;
+    for (step = 0; step < decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length).length; step++) {
+        setTimeout(function() {
+            document.getElementById('sT').innerHTML='\''+decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length).split("").reverse().join("").substring(decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length).length-step).split("").reverse().join("")+'\'라는 검색결과가 없습니다';
+        }, 100);
+    }
   </script>
 </body>
 </html>
