@@ -36,7 +36,7 @@ Toast.prototype._createElements = function() {
     var t = "";
     this.options.customButtons && (t = this.options.customButtons.map(function(t, e) {
         return '<button type="button" class="toastjs-btn toastjs-btn--custom">' + t.text + "</button>"
-    }), t = t.join("")), this.toastEl.innerHTML = "\n <pre><code><p>" + this.options.message.replace("<","\u200b<\u200b").replace(">","\u200b>\u200b").split('\n').join('</p>\n<p>') + '</p></code></pre>\n' + '<button type="button" class="toastjs-btn toastjs-btn--close">Close</button>\n ' + t + "\n ", this.focusedElBeforeOpen = document.activeElement, document.querySelector(".toastjs-btn--close").focus()
+    }), t = t.join("")), this.toastEl.innerHTML = "\n <p>" + this.options.message.replace(/</g,"\u200b<\u200b").replace(/>/g,"\u200b>\u200b").split('\n').join('</p>\n<p>') + '</p>\n' + '<button type="button" class="toastjs-btn toastjs-btn--close">Close</button>\n ' + t + "\n ", this.focusedElBeforeOpen = document.activeElement, document.querySelector(".toastjs-btn--close").focus()
 }, Toast.prototype._init = function() {
     var t = this;
     Promise.resolve().then(function() {
