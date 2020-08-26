@@ -1,12 +1,14 @@
 var base = "https://kkotbot-docs.kro.kr/"
 
-function glide(pos){ $("html").animate({ scrollTop: $(pos).offset().top - 155 }, 1500, "swing"); }
-
-$(document).ready(function(){
-    if (decodeURIComponent(location.href).startsWith(base + "?")){
-        var url = decodeURIComponent(location.href).substring(base.length + 1);
-
-        if (url.startsWith("search=")){
+function glide(pos) {
+    $("html").animate({
+        scrollTop: $(pos).offset().top - 155
+    }, 1500, "swing");
+}
+$(document).ready(function() {
+    if (decodeURIComponent(location.href).startsWith(base + "?")) {
+        var url = decodeURIComponent(location.href.replace('+', ' ')).substring(base.length + 1);
+        if (url.startsWith("search=")) {
             var search_text = url.substring("search=".length);
             //초기화
             document.getElementById('search').value = search_text;
@@ -15,7 +17,6 @@ $(document).ready(function(){
             var searching = true;
             var title = [];
             var contents = [];
-
             for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
                 if (searching == true) {
                     if (!!document.getElementsByClassName("content")[i].getElementsByClassName("content")) {
@@ -47,7 +48,6 @@ $(document).ready(function(){
                     var searching = true;
                     var title = [];
                     var contents = [];
-
                     for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
                         if (searching == true) {
                             if (!!document.getElementsByClassName("content")[i].getElementsByClassName("content")) {
@@ -72,7 +72,9 @@ $(document).ready(function(){
                             }
                         }
                     }
-                    new Toast({message: '한-영 오타 수정입니다.\n'+search_text+'->'+inko.ko2en(search_text)});
+                    new Toast({
+                        message: '한-영 오타 수정입니다.\n' + search_text + '->' + inko.ko2en(search_text)
+                    });
                     if (title[0]) {
                         glide(title[0]);
                     } else {
@@ -85,7 +87,6 @@ $(document).ready(function(){
                     var searching = true;
                     var title = [];
                     var contents = [];
-                    
                     for (var i = 0; i < document.getElementsByClassName("content").length; i++) {
                         if (searching == true) {
                             if (!!document.getElementsByClassName("content")[i].getElementsByClassName("content")) {
@@ -110,7 +111,9 @@ $(document).ready(function(){
                             }
                         }
                     }
-                    new Toast({message: '영-한 오타 수정입니다.\n'+search_text+'->'+inko.en2ko(search_text)});
+                    new Toast({
+                        message: '영-한 오타 수정입니다.\n' + search_text + '->' + inko.en2ko(search_text)
+                    });
                     if (title[0]) {
                         glide(title[0]);
                     } else {
@@ -119,7 +122,10 @@ $(document).ready(function(){
                     console.log(title.join("\n"));
                     console.log(contents.join("\n"));
                 } else {
-                    location.href = base + "search_not_found?=" + encodeURIComponent(search_text);
+                    new Toast({
+                        message: '\'' + search_text + '\'라는 검색결과가 없습니다.',
+                        type: 'danger'
+                    });
                 }
             } else if (searched == true) {
                 if (title[0]) {
