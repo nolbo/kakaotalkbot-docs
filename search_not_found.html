@@ -20,7 +20,7 @@
       var i = 0;
       var inner = '';
       var txt = decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length);
-      var speed = 50;;
+      var speed = 50;
       
       function typeWriter() {
         if (i < txt.length) {
@@ -32,7 +32,7 @@
       }
       setTimeout(function() {
         typeWriter();
-      }, delayInMilliseconds);
+      }, 500);
   </script>
 </body>
 </html>
