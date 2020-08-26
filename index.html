@@ -13,11 +13,13 @@
     <script type="text/javascript" src="script/animation.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
     <script type="text/javascript" src="script/toast.js"></script>
+    <script type="text/javascript" src="script/inco.js"></script>
     <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/icon.ico">
     <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/sideBar.css">
     <link rel="stylesheet" href="style/toast.css">
+    <link rel="stylesheet" href="style/search.css">
     <title>KakaotalkBot Docs</title>
 </head>
 <body>
@@ -3001,7 +3003,7 @@
                             console.log(title.join("\n"));
                             console.log(contents.join("\n"));
                         } else {
-                            location.href = base + "search_not_found?=" + encodeURIComponent(search_text);
+                            new Toast({message: '\''+search_text+'\'라는 검색결과가 없습니다.', type: 'danger'});
                         }
                     } else if (searched == true) {
                         if (title[0]) {
@@ -3013,7 +3015,6 @@
                         console.log(contents.join("\n"));
                     }
                 } else {
-                    console.log(url)
                     location.href = base + '404.html';
                 }
             }
