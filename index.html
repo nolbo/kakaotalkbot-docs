@@ -2997,8 +2997,7 @@ $(document).ready(function() {
                     console.log(title.join("\n"));
                     console.log(contents.join("\n"));
                 } else {
-                    //location.href = base + "search_not_found?=" + encodeURIComponent(search_text);
-                        new Toast({message: '에디터가 정상적으로 로드되었습니다!'})
+                        new Toast({message: '\''+search_text+'\'라는 검색결과가 없습니다.', type : 'danger'})
                 }
             } else if (searched == true) {
                 if (title[0]) {
@@ -3011,8 +3010,7 @@ $(document).ready(function() {
             }
         } else {
             console.log(url)
-            //location.href = base + '404.html';
-                        new Toast({message: '검색결과가 없습니다.'})
+            location.href = base + '404.html';
         }
     }
 });
