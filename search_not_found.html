@@ -14,6 +14,7 @@
         <img id="NF" src="img/NotFound.png">
         <p id="title">검색결과가 없습니다</p>
         <p id="sT">''라는 검색결과가 없습니다</p>
+        <button class = "asText" onClick = "window.history.back();" hidden = 'true'> 뒤로가기 </button>
     </div>
   <script>
       var i = 0;
@@ -29,7 +30,9 @@
           setTimeout(typeWriter, speed);
         }
       }
-      typeWriter()
+      setTimeout(function() {
+        typeWriter();
+      }, delayInMilliseconds);
   </script>
 </body>
 </html>
