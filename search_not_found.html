@@ -16,12 +16,18 @@
         <p id="sT">''라는 검색결과가 없습니다</p>
     </div>
   <script>
-    var step;
-    for (step = 0; step < decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length).length; step++) {
-        setTimeout(function() {
-            document.getElementById('sT').innerHTML='\''+decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length).split("").reverse().join("").substring(decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length).length-step).split("").reverse().join("")+'\'라는 검색결과가 없습니다';
-        }, 100);
-    }
+      var i = 0;
+      var inner
+      var txt = '\''+decodeURIComponent(location.href).substring("https://kkotbot-docs.kro.kr/search_not_found?=".length);
+      var speed = 50;;
+      
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("demo").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
   </script>
 </body>
 </html>
