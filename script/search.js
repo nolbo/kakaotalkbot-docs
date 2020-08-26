@@ -7,7 +7,7 @@ function glide(pos) {
 }
 $(document).ready(function() {
     if (decodeURIComponent(location.href).startsWith(base + "?")) {
-        var url = decodeURIComponent(location.href.replace('+', ' ')).substring(base.length + 1);
+        var url = decodeURIComponent(location.href.replace(/+/g, ' ')).substring(base.length + 1);
         if (url.startsWith("search=")) {
             var search_text = url.substring("search=".length);
             //초기화
