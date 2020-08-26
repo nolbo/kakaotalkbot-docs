@@ -2997,7 +2997,8 @@ $(document).ready(function() {
                     console.log(title.join("\n"));
                     console.log(contents.join("\n"));
                 } else {
-                    location.href = base + "search_not_found?=" + encodeURIComponent(search_text);
+                    //location.href = base + "search_not_found?=" + encodeURIComponent(search_text);
+                        new Toast({message: '에디터가 정상적으로 로드되었습니다!'})
                 }
             } else if (searched == true) {
                 if (title[0]) {
