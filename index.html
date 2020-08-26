@@ -3010,7 +3010,8 @@ $(document).ready(function() {
             }
         } else {
             console.log(url)
-            location.href = base + '404.html';
+            //location.href = base + '404.html';
+                        new Toast({message: '검색결과가 없습니다.'})
         }
     }
 });
