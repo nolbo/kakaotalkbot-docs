@@ -2,6 +2,14 @@ let isOpen = {"side" : false, "summary" : true, "api" : true, "basic" : true, "r
 
 $(function(){
     $("div#blank").appendTo("div#sideBar");
+    if($(window).width() > 800){
+        $("header").css("width", window.innerWidth);
+        $("section").css({"width" : window.innerWidth - $("div#side").width() - window.innerWidth / 22, "right" : "0"});
+    }else{
+        $("header").css("width", window.innerWidth);
+        $("section").css({"width" : window.innerWidth - 24});
+    }
+    
 
     $("dl span dt").click(function(event){
         let id = $(this).parent().attr('id');
@@ -95,4 +103,6 @@ $(function(){
     $("img#sttc").attr("title", "정적인 속성이나 메서드입니다.");
     $("img#prttp").attr("title", "프로토타입 속성이거나 프로토타입 메서드입니다.");
 });
+
+
 
