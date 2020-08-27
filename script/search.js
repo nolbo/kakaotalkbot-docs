@@ -150,7 +150,7 @@ $(document).ready(function() {
                 console.log(contents.join("\n"));
             }
         } else if(url.startsWith("error=")){
-            var error_name = url.substring("search=".length);
+            var error_name = url.substring("error=".length);
             if(!!error_codes[error_name]){
                glide(error_codes[error_name]);
             } else {
