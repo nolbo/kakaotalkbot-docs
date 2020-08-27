@@ -15,8 +15,8 @@
     font-size: 1.2em;
 }
 
-#BR{
-    width: 14.75rem;
+#NF{
+    width: 40rem;
     height: auto;
     margin-bottom: 1.5em;
 }
@@ -36,8 +36,8 @@ div{
         font-size: 0.8em;
     }
 
-    #BR{
-        width: 6.3em;
+    #NF{
+        width: 17rem;
         height: auto;
     }
 }
