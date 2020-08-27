@@ -1,4 +1,4 @@
-let isOpen = {"side" : false, "summary" : true, "api" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true};
+let isOpen = {"side" : false, "summary" : true, "api" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true, "warnings" : true, "errors" : true};
 
 $(function(){
     $("div#blank").appendTo("div#sideBar");
