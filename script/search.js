@@ -1,3 +1,11 @@
+/*
+2020 @franknoh search.js
+*/
+
+var error_codes = {
+    //'example_name' : 'div#1-1-1'
+};
+
 var base = location.origin+'/'
 
 function glide(pos) {
@@ -141,8 +149,17 @@ $(document).ready(function() {
                 console.log(title.join("\n"));
                 console.log(contents.join("\n"));
             }
+        } else if(url.startsWith("error=")){
+            var error_name = url.substring("search=".length);
+            if(!!error_codes[error_name]){
+               glide(error_codes[error_name]);
+            } else {
+                new Toast({
+                    message: '\'' + error_name + '\'라는 검색결과가 없습니다.',
+                    type: 'danger'
+                });
+            }
         } else {
-            console.log(url)
             location.href = base + '404.html';
         }
     }
