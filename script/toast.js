@@ -37,7 +37,7 @@ Toast.prototype._createElements = function() {
     this.options.customButtons && (t = this.options.customButtons.map(function(t, e) {
         return '<button type="button" class="toastjs-btn toastjs-btn--custom">' + t.text + "</button>"
     }), t = t.join("")), this.toastEl.innerHtml = '\n <p></p>\n' + '<button type="button" class="toastjs-btn toastjs-btn--close">Close</button>\n ' + t + "\n ", this.focusedElBeforeOpen = document.activeElement, document.querySelector(".toastjs-btn--close").focus();
-    document.getElementsByClassName('toastjs-container')[0].getElementsByClassName('toastjs danger')[0].innerText=this.options.message;
+    document.getElementsByClassName('toastjs-container')[0].getElementsByClassName('toastjs danger')[0].getElementsByTagName('p')[0].innerText=this.options.message;
 }, Toast.prototype._init = function() {
     var t = this;
     Promise.resolve().then(function() {
