@@ -28,7 +28,7 @@ Toast.prototype._createElements = function() {
     var t = this;
     return new Promise(function(e, o) {
         t.toastContainerEl.setAttribute("aria-hidden", !0), setTimeout(function() {
-            t.toastEl.innerText = "", t.toastEl.classList.remove("default", "success", "warning", "danger"), t.focusedElBeforeOpen && t.focusedElBeforeOpen.focus(), e()
+            t.toastEl.innerHTML = "", t.toastEl.classList.remove("default", "success", "warning", "danger"), t.focusedElBeforeOpen && t.focusedElBeforeOpen.focus(), e()
         }, 1e3)
     })
 }, Toast.prototype._open = function() {
@@ -36,7 +36,7 @@ Toast.prototype._createElements = function() {
     var t = "";
     this.options.customButtons && (t = this.options.customButtons.map(function(t, e) {
         return '<button type="button" class="toastjs-btn toastjs-btn--custom">' + t.text + "</button>"
-    }), t = t.join("")), this.toastEl.innerHtml = '\n <p></p>\n<button type="button" class="toastjs-btn toastjs-btn--close">Close</button>\n ' + t + "\n ", this.focusedElBeforeOpen = document.activeElement, document.querySelector(".toastjs-btn--close").focus();
+    }), t = t.join("")), this.toastEl.innerHTML = '\n <p></p>\n<button type="button" class="toastjs-btn toastjs-btn--close">Close</button>\n ' + t + "\n ", this.focusedElBeforeOpen = document.activeElement, document.querySelector(".toastjs-btn--close").focus();
     document.getElementsByClassName('toastjs-container')[0].getElementsByClassName('toastjs danger')[0].getElementsByTagName('p')[0].innerText=this.options.message;
 }, Toast.prototype._init = function() {
     var t = this;
