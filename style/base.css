@@ -111,10 +111,10 @@ i{        font-family: 'JetBrains Mono I'; }
     
 
     html{   margin: -2em 1.5em 0.5em 1.5em; }
-    header{ padding: 3.5em 0em 1em 2em; margin-bottom: 0; }
+    header{ padding: 3.5em 2em 1em 2em; margin-bottom: 0; }
 
     section{      margin-left: 0em; }
-    section#body{ margin-left: 0em; top: 6em; display: inline; position: relative; }
+    section#body{ margin: 0em 0em 0em 0em !important; top: 6em; display: inline; position: relative; }
     section#body section{ margin-bottom: 5em; }
 
     code{  display: inline; font-family: 'JetBrains Mono', 'D2Coding'; line-height: 1em; font-size: 0.8em; }
@@ -140,7 +140,7 @@ i{        font-family: 'JetBrains Mono I'; }
 
     div#table{ overflow: auto; }
     div#sA{    margin-top: 0.7em; margin-bottom: 1em; }
-    div#wrap{     margin: 0em 4.2em; }
+    div#wrap{  margin: 0em 0em }
     
     
     img#kkotb_rfnc{                      width: 1.5em; height: auto; }
@@ -148,7 +148,7 @@ i{        font-family: 'JetBrains Mono I'; }
 
 
     input[type="text"]{   height: 1.5rem; font-size: 0.65em; }
-    input[type="submit"]{ width: 2rem; height: 2rem; background-size: 1.5rem 1.5rem; }
+    input[type="submit"]{ width: 2rem; height: 2rem; background-size: 1.5rem 1.5rem; padding: 0em 0em 0em 0em !important; }
 
 
     tr{       padding: 1em 1em 1em 1em; font-size: 0.8em !important; line-height: 0.8em; }
