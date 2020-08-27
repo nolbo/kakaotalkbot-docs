@@ -1,4 +1,4 @@
-var base = "https://kkotbot-docs.kro.kr/"
+var base = location.origin+'/'
 
 function glide(pos) {
     $("html").animate({
