@@ -24,7 +24,7 @@ $(document).ready(function() {
                             if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(search_text.toLowerCase().replace(/ /g, "").trim()) != -1) {
                                 title.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                 searched = true;
-                            } else {
+                            } else if(document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(search_text.toLowerCase().replace(/ /g, "").trim()) != -1){
                                 contents.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                 searched = true;
                             }
@@ -34,7 +34,7 @@ $(document).ready(function() {
                         if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(search_text.toLowerCase().replace(/ /g, "").trim()) != -1) {
                             title.push("div#" + document.getElementsByClassName("content")[i].id);
                             searched = true;
-                        } else {
+                        } else if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(search_text.toLowerCase().replace(/ /g, "").trim()) != -1) {
                             contents.push("div#" + document.getElementsByClassName("content")[i].id);
                             searched = true;
                         }
@@ -55,7 +55,7 @@ $(document).ready(function() {
                                     if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                         title.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                         searched = true;
-                                    } else {
+                                    } else if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                         contents.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                         searched = true;
                                     }
@@ -65,7 +65,7 @@ $(document).ready(function() {
                                 if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                     title.push("div#" + document.getElementsByClassName("content")[i].id);
                                     searched = true;
-                                } else {
+                                } else if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                     contents.push("div#" + document.getElementsByClassName("content")[i].id);
                                     searched = true;
                                 }
@@ -94,7 +94,7 @@ $(document).ready(function() {
                                     if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                         title.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                         searched = true;
-                                    } else {
+                                    } else if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                         contents.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                         searched = true;
                                     }
@@ -104,7 +104,7 @@ $(document).ready(function() {
                                 if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                     title.push("div#" + document.getElementsByClassName("content")[i].id);
                                     searched = true;
-                                } else {
+                                } else if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                     contents.push("div#" + document.getElementsByClassName("content")[i].id);
                                     searched = true;
                                 }
@@ -116,8 +116,13 @@ $(document).ready(function() {
                     });
                     if (title[0]) {
                         glide(title[0]);
-                    } else {
+                    } else if (contents[0]){
                         glide(contents[0]);
+                    } else{
+                        new Toast({
+                            message: '알수없는 오류가 발생했습니다.',
+                            type: 'warning'
+                        });
                     }
                     console.log(title.join("\n"));
                     console.log(contents.join("\n"));
