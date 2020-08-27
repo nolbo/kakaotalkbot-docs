@@ -21,7 +21,7 @@ $(document).ready(function() {
                 if (searching == true) {
                     if (!!document.getElementsByClassName("content")[i].getElementsByClassName("content")) {
                         for (var j = 0; j < document.getElementsByClassName("content")[i].getElementsByClassName("content").length; j++) {
-                            if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(search_text.toLowerCase().replace(" ", "").trim()) != -1) {
+                            if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(search_text.toLowerCase().replace(/ /g, "").trim()) != -1) {
                                 title.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                 searched = true;
                             } else {
@@ -30,8 +30,8 @@ $(document).ready(function() {
                             }
                         }
                     } else
-                    if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ", "").trim().indexOf(search_text.toLowerCase().replace(" ", "").trim()) != -1) {
-                        if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(search_text.toLowerCase().replace(" ", "").trim()) != -1) {
+                    if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(search_text.toLowerCase().replace(/ /g, "").trim()) != -1) {
+                        if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(search_text.toLowerCase().replace(/ /g, "").trim()) != -1) {
                             title.push("div#" + document.getElementsByClassName("content")[i].id);
                             searched = true;
                         } else {
@@ -41,9 +41,9 @@ $(document).ready(function() {
                     }
                 }
             }
-            if (searched == false || document.getElementById("body").innerText.toLowerCase().replace(" ", "").trim().indexOf(search_text.toLowerCase().replace(" ", "").trim()) == -1) {
+            if (searched == false || document.getElementById("body").innerText.toLowerCase().replace(/ /g, "").trim().indexOf(search_text.toLowerCase().replace(/ /g, "").trim()) == -1) {
                 var inko = new Inko();
-                if (document.getElementById("body").innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
+                if (document.getElementById("body").innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                     var searched = false;
                     var searching = true;
                     var title = [];
@@ -52,7 +52,7 @@ $(document).ready(function() {
                         if (searching == true) {
                             if (!!document.getElementsByClassName("content")[i].getElementsByClassName("content")) {
                                 for (var j = 0; j < document.getElementsByClassName("content")[i].getElementsByClassName("content").length; j++) {
-                                    if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
+                                    if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                         title.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                         searched = true;
                                     } else {
@@ -61,8 +61,8 @@ $(document).ready(function() {
                                     }
                                 }
                             } else
-                            if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
-                                if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
+                            if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
+                                if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                     title.push("div#" + document.getElementsByClassName("content")[i].id);
                                     searched = true;
                                 } else {
@@ -82,7 +82,7 @@ $(document).ready(function() {
                     }
                     console.log(title.join("\n"));
                     console.log(contents.join("\n"));
-                } else if (document.getElementById("body").innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
+                } else if (document.getElementById("body").innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                     var searched = false;
                     var searching = true;
                     var title = [];
@@ -91,7 +91,7 @@ $(document).ready(function() {
                         if (searching == true) {
                             if (!!document.getElementsByClassName("content")[i].getElementsByClassName("content")) {
                                 for (var j = 0; j < document.getElementsByClassName("content")[i].getElementsByClassName("content").length; j++) {
-                                    if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
+                                    if (document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                         title.push("div#" + document.getElementsByClassName("content")[i].getElementsByClassName("content")[j].id);
                                         searched = true;
                                     } else {
@@ -100,8 +100,8 @@ $(document).ready(function() {
                                     }
                                 }
                             } else
-                            if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
-                                if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
+                            if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
+                                if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(/ /g, "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(/ /g, "").trim()) != -1) {
                                     title.push("div#" + document.getElementsByClassName("content")[i].id);
                                     searched = true;
                                 } else {
