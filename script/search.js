@@ -29,7 +29,7 @@ $(document).ready(function() {
                                 searched = true;
                             }
                         }
-                    } /*else*/
+                    } else
                     if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ", "").trim().indexOf(search_text.toLowerCase().replace(" ", "").trim()) != -1) {
                         if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(search_text.toLowerCase().replace(" ", "").trim()) != -1) {
                             title.push("div#" + document.getElementsByClassName("content")[i].id);
@@ -60,7 +60,7 @@ $(document).ready(function() {
                                         searched = true;
                                     }
                                 }
-                            } /*else*/
+                            } else
                             if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
                                 if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.ko2en(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
                                     title.push("div#" + document.getElementsByClassName("content")[i].id);
@@ -99,7 +99,7 @@ $(document).ready(function() {
                                         searched = true;
                                     }
                                 }
-                            } /*else*/
+                            } else
                             if (document.getElementsByClassName("content")[i].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
                                 if (document.getElementsByClassName("content")[i].getElementsByTagName("p")[0].innerText.toLowerCase().replace(" ", "").trim().indexOf(inko.en2ko(search_text).toLowerCase().replace(" ", "").trim()) != -1) {
                                     title.push("div#" + document.getElementsByClassName("content")[i].id);
