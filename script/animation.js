@@ -6,8 +6,10 @@ $(function(){
         $("header").css("width", window.innerWidth);
         $("section").css({"width" : window.innerWidth - $("div#side").width() - window.innerWidth / 22, "right" : "0"});
     }else{
-        $("header").css("width", window.innerWidth);
-        $("section").css({"width" : window.innerWidth - 24});
+        $("header").css({"width" : window.innerWidth - 52, "height" : "2em"});
+        $("section#summary").css("margin-top", "1em")
+        $("section#body").css("width", window.innerWidth);
+        $("div.content").css("width", window.innerWidth - 52);
     }
     
 
