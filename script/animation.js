@@ -1,7 +1,7 @@
 let isOpen = {"side" : false, "summary" : true, "api" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true};
 
 $(function(){
-    if($("section#body").offset().right > window.innerWidth / 1.5){
+    if($("section#body").width == 0){
         location.reload();
     }
 
