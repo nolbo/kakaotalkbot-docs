@@ -1,6 +1,10 @@
 let isOpen = {"side" : false, "summary" : true, "api" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true};
 
 $(function(){
+    if($("section#body").width > window.innerWidth / 80){
+        location.reload();
+    }
+
     $("div#blank").appendTo("div#sideBar");
     if($(window).width() > 800){
         $("header").css("width", window.innerWidth);
