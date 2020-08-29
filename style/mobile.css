@@ -1,0 +1,59 @@
+@media screen and (max-width:800px){
+    p#a:hover { color:#8400ff; }
+
+    input[type="text"]:focus{ width: 15.625em; z-index: 1; border-bottom: 1px solid #4b4b4b; cursor: text; }
+    input[type="text"]:visited{ border: none; }
+    input[type="text"]:hover{   border: none; }
+    input[type="text"]:active{  border: none; }
+
+    div#sideBar::-webkit-scrollbar {       border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #4b4b4b00; width: 0.2em; }
+    div#sideBar::-webkit-scrollbar-thumb { border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    div#sideBar::-webkit-scrollbar-track { border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    
+
+    html{   margin: -2em 1.5em 0.5em 1.5em; }
+    header{ padding: 3.5em 2em 1em 2em; margin-bottom: 0; }
+
+    section{      margin-left: 0em; }
+    section#body{ padding-left: 2rem; padding-right: 2rem; top: 6em; display: inline; position: absolute; right: 0 !important; margin: 0em !important; }
+    section#body section{ margin-bottom: 5em; }
+
+    code{  display: inline; font-family: 'JetBrains Mono', 'D2Coding'; line-height: 1em; font-size: 0.8em; }
+    table{ margin-top: 1.5em; margin-bottom: 1.5em; font-size: 0.9em; margin-right: 3em; }
+
+
+    p#title{  font-size: 1em; }
+    p#stitle{ font-size: 0.9em; }
+    p#description{ font-size: 0.8em; }
+
+    p#crfBox{  line-height: 2em; }
+
+    p#code{      font-size: 0.7em; }
+    p#a{         font-size: 0.8em; transition:color .2s ease; }
+    p#thank_you{ font-size: 0.8em; }
+
+
+    div#side{    display: none; margin: 0; margin-top: 6em; padding-left: 2em; padding-right: 2em; width: 93%; height: 95.6%; background-color: rgba(0, 0, 0, 0.425); }
+    div#blank{   display: none; }
+    div#sideBar{ display: none; border-radius: 0em 0.5em 0.5em 0.5em; position: fixed !important; left: 0%; top: 0%; overflow: auto; width: 50% !important; height: 87% !important; margin: 0; margin-top: 4.5em; }
+    
+    div#code, div#crf, div#pls{ font-size: 0.8em; margin-top: 1.3em; padding: 0.1em 0.5em 0.1em 0.5em; border-radius: 0.4em 0.4em; white-space:nowrap; overflow: auto; }
+
+    div#table{ overflow: auto; }
+    div#sA{    margin-top: 0.7em; margin-bottom: 1em; }
+    div#wrap{  margin: 0em 0em }
+    
+    
+    img#kkotb_rfnc{                      width: 1.5em; height: auto; }
+    img[id = "sttc"], img[id = "prttp"]{ width: 0.8em; height: auto; margin-right: 0.25em;  }
+
+
+    input[type="text"]{   height: 1.5rem; font-size: 0.65em; }
+    input[type="submit"]{ width: 2rem; height: 2rem; background-size: 1.5rem 1.5rem; padding: 0em 0em 0em 0em !important; }
+
+
+    tr{       padding: 1em 1em 1em 1em; font-size: 0.8em !important; line-height: 0.8em; }
+    th, td{   border-bottom: 0.016em solid #4b4b4b; padding: 0.8em 0.8em 0.8em 0.8em; }
+    sup, sub{ font-size: 5px; }
+    li.sA{    font-size: 0.8em; }
+}

@@ -7,8 +7,9 @@ $(function(){
         $("section").css({"width" : window.innerWidth - $("div#side").width() - window.innerWidth / 22, "right" : "0"});
     }else{
         $("header").css({"width" : window.innerWidth - 52, "height" : "2em"});
-        $("section#summary").css("margin-top", "1em")
-        $("section#body").css("width", window.innerWidth);
+        $("section#body section#summary").css("margin-top", "1em")
+        $("section#body").css({"width" : $("section#summary").width, "padding-left" : "10em"});
+        $("section#body > section").css({ "float" : "right" })
         $("div.content").css("width", window.innerWidth - 52);
     }
     
