@@ -1,9 +1,6 @@
 let isOpen = {"side" : false, "summary" : true, "api" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true};
 
 $(function(){
-    if($("section#body").width == 0){
-        location.reload();
-    }
 
     $("div#blank").appendTo("div#sideBar");
     if($(window).width() > 800){
