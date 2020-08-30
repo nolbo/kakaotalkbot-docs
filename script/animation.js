@@ -3,7 +3,8 @@ let isOpen = {"side" : false, "summary" : true, "api" : true, "basic" : true, "r
 $(function(){
 
     $("div#blank").appendTo("div#sideBar");
-    if($(window).width() > 800){
+
+    if($(window).width() > 1168){
         $("header").css("width", window.innerWidth);
         $("section").css({"width" : window.innerWidth - $("div#side").width() - window.innerWidth / 22, "right" : "0"});
     }else{

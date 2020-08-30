@@ -1,4 +1,4 @@
-@media screen and (max-width:800px){
+@media screen and (max-width:1168px){
     p#a:hover { color:#8400ff; }
 
     input[type="text"]:focus{ width: 15.625em; z-index: 1; border-bottom: 1px solid #4b4b4b; cursor: text; }

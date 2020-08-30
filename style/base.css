@@ -34,7 +34,7 @@ dd{ font-size: 0.9em; line-height: 2em; }
 dt{ font-size: 1em; line-height: 2em; font-weight: 800; }
 
 section{              display: block; margin-left: 22%; float: right !important; }
-section#body{         position: absolute; top: 8em; margin-left: 0; margin-right: 2% !important; }
+section#body{         position: absolute; top: 8em; margin-left: 0; margin-right: 3em !important; }
 section#body section{ margin-bottom: 5em !important; z-index: 99999; }
 
 code{          display: inline; font-family: 'JetBrains Mono', 'D2Coding'; line-height: 2em; }
