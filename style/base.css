@@ -34,7 +34,7 @@ dd{ font-size: 0.9em; line-height: 2em; }
 dt{ font-size: 1em; line-height: 2em; font-weight: 800; }
 
 section{              display: block; margin-left: 22%; float: right !important; }
-section#body{         position: absolute; top: 8em; margin-left: 0; margin-right: 3em !important; }
+section#body{         position: absolute; top: 8em; right: 0; margin-left: 0em !important; margin-right: 3em !important; }
 section#body section{ margin-bottom: 5em !important; z-index: 99999; }
 
 code{          display: inline; font-family: 'JetBrains Mono', 'D2Coding'; line-height: 2em; }
@@ -63,8 +63,8 @@ p#num{     color: #d400ff; text-shadow: 0em 0em 0.8em #d400ff; }
 
 
 div.content{ margin-bottom: 3em; }
-div#side{    position: fixed; background-color: white; width: 22%; height: 100%; }
-div#blank{   position: fixed; background-color: white; width: 16%; height: 100%; padding-left: 3em; }
+div#side{    position: fixed; background-color: white; width: 20%; height: 100%; }
+div#blank{   position: fixed; background-color: white; width: 16%; height: 100%; padding-left: 2em; }
 div#sideBar{ position: fixed; background-color: white; width: 16%; height: 75%; padding-left: 3em; display: block; overflow: auto; }
 div#side{    position: fixed; background-color: white; z-index: 2; left: 0%; }
 

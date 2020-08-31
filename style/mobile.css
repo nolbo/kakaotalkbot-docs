@@ -1,4 +1,4 @@
-@media screen and (max-width:1168px){
+@media screen and (max-width:800px){
     p#a:hover { color:#8400ff; }
 
     input[type="text"]:focus{ width: 15.625em; z-index: 1; border-bottom: 1px solid #4b4b4b; cursor: text; }
@@ -12,7 +12,7 @@
     
 
     html{   margin: -2em 1.5em 0.5em 1.5em; }
-    header{ padding: 3.5em 2em 1em 2em; margin-bottom: 0; }
+    header{ padding: 3.5em 2em 1em 2em; margin-bottom: 0; background-color: #ffffff; z-index: 10000; }
 
     section{      margin-left: 0em; }
     section#body{ padding-left: 2rem; padding-right: 2rem; top: 6em; display: inline; position: absolute; right: 0 !important; margin: 0em !important; }
@@ -33,9 +33,9 @@
     p#thank_you{ font-size: 0.8em; }
 
 
-    div#side{    display: none; margin: 0; margin-top: 6em; padding-left: 2em; padding-right: 2em; width: 93%; height: 95.6%; background-color: rgba(0, 0, 0, 0.425); }
+    div#side{    display: none; margin: -2em 0 0 0 !important; padding-left: 2em; padding-right: 2em; width: 93%; height: 100%; background-color: rgba(0, 0, 0, 0.425); }
     div#blank{   display: none; }
-    div#sideBar{ display: none; border-radius: 0em 0.5em 0.5em 0.5em; position: fixed !important; left: 0%; top: 0%; overflow: auto; width: 50% !important; height: 87% !important; margin: 0; margin-top: 4.5em; }
+    div#sideBar{ display: none; border-radius: 0em 0.5em 0.5em 0.5em; position: fixed !important; left: 0%; top: 0%; overflow: auto; width: 30% !important; height: 87% !important; margin: 0; margin-top: 4.5em; }
     
     div#code, div#crf, div#pls{ font-size: 0.8em; margin-top: 1.3em; padding: 0.1em 0.5em 0.1em 0.5em; border-radius: 0.4em 0.4em; white-space:nowrap; overflow: auto; }
 

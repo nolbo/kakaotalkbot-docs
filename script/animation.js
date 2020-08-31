@@ -4,9 +4,11 @@ $(function(){
 
     $("div#blank").appendTo("div#sideBar");
 
-    if($(window).width() > 1168){
-        $("header").css("width", window.innerWidth);
-        $("section").css({"width" : window.innerWidth - $("div#side").width() - window.innerWidth / 22, "right" : "0"});
+    if($(window).width() > 800){
+        $("header").css("width", $(window).width());
+        $("section#summary, section#basic, section#api, section#rhino, section#appendix").css({"width" : window.innerWidth - $("div#side").width() - 75, "right" : "0", "margin-left" : "3em"});
+        $("div#blank").css("width", $("div#sideBar").width());
+        $("section#body").css("width", $(window).width() - $("div#side").width() - 100);
     }else{
         $("header").css({"width" : window.innerWidth - 52, "height" : "2em"});
         $("section#body section#summary").css("margin-top", "1em")
@@ -38,13 +40,15 @@ $(function(){
     $("li.sA").click(function(event){
         let id = $(this).parent().attr("id");
         var offset = $("div#"+event.target.id.replace("d", "")).offset();
-	    $("html").animate({scrollTop : offset.top - 155}, 1500, "swing");
+        //$("html").animate({scrollTop : offset.top - 155}, 1500, "swing");
+        $("html").scrollTop(offset.top - 155);
     });
 
     $("dl span dd, li#sA").click(function(event){
         let id = $(this).parent().attr("id");
         var offset = $("div#"+event.target.id.replace("d", "")).offset();
-	    $("html").animate({scrollTop : offset.top - 155}, 1500, "swing");
+        //$("html").animate({scrollTop : offset.top - 155}, 1500, "swing");
+        $("html").scrollTop(offset.top - 155);
     });
 
     $("#kkotb_rfnc").click(function(){
@@ -71,7 +75,7 @@ $(function(){
 
     
     $(".sdb").on("click", function(){
-        if(window.outerWidth < 800){
+        if(window.innerWidth < 800){
             isOpen.side = false;
             $("div#sideBar").css("display", "none");
             $("div#side").css("display", "none");
@@ -79,7 +83,7 @@ $(function(){
     });
     
     $("div#side").click(function(){
-        if(window.outerWidth < 800){
+        if(window.innerWidth < 800){
             isOpen.side = false;
             $("div#sideBar").css("display", "none");
             $("div#side").css("display", "none");
@@ -87,7 +91,7 @@ $(function(){
     });
 
     $(window).resize(function(){
-        if(window.outerWidth > 800){
+        if(window.innerWidth > 800){
             location.reload();
         }
     });

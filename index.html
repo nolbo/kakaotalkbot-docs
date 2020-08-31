@@ -1866,7 +1866,7 @@
                         </tr>
                     </table>
                 </div>
-                <p id="description">정규식(RegExp객체)는 <p id="code">new</p>연산자 없이 생성자로 생성할 수 있습니다.</p>
+                <p id="description">정규식(RegExp객체)는 </p><p id="code">new</p><p id="description">연산자 없이 생성자로 생성할 수 있습니다.</p>
                 <div id="sA">
                     <li id="d3-8-1" class="sA">정규식 만들기</li><br>
                     <li id="d3-8-2" class="sA">정규식 패턴 작성하기</li><br>
@@ -2808,7 +2808,7 @@
                         </table>
                     </div>
                 </div>
-                <!--<div id="3-9-13" class="content">
+                <div id="3-9-13" class="content">
                     <p id="stitle">Date</p>
                     <p id="description">Date객체는 시간과 날짜에 관한 속성 및 메서드를 제공하는 내장 객체입니다. Date객체의 생성자는 이와 같습니다:</p>
                     <div id="code">
@@ -2860,7 +2860,66 @@
                             </tr>
                         </table>
                     </div>
-                </div>-->
+                    <p id="description">Date객체의 속성 및 메서드는 이와 같습니다:</p>
+                    <div id="table">
+                        <table>
+                            <th>이름</th>
+                            <th>뜻</th>
+                            <tr>
+                                <td><p id="code">prototype</p></td>
+                                <td>Date객체의 인스턴스에 속성을 추가할 수 있습니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">length</p></td>
+                                <td>생성자가 받을 수 있는 매개변수의 수입니다. 즉, 7을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">constructor</p><img id="prttp"" src="img/prototype.png"></td>
+                                <td>인스턴스 생성에 사용한 생성자를 반환합니다. 기본값은 <p id="code">Date</p>입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">now()</p><img id="sttc" src="img/static.png"></td>
+                                <td>1970년 1월 1일 00:00:00 UTC(유닉스 시간)로부터 현재까지 지난 시간을 밀리초 단위의 숫자 값으로 반환합니다. (다만, 윤초는 무시합니다.)</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">parse(dataString)</p><img id="sttc" src="img/static.png"></td>
+                                <td>날짜의 문자열 표현 값<p id="code">dataString</p>(RFC2822 또는 ISO 8601 날짜를 나타내는 문자열이며, 다른 형식도 사용할 수 있지만 불안정한 결과를 반환할 수도 있음)을 구문 분석하고 1970년 1월 1일 00:00:00 UTC(유닉스 시간) 이후의 밀리초를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">UTC(year, month, <i>day</i>, <i>hour</i>, <i>minute</i>, <i>second</i>, <i>millisecond</i>)</p><img id="sttc" src="img/static.png"></td>
+                                <td>1970년 1월 1일 00:00:00 UTC(유닉스 시간)로부터 매개변수가 나타내는 시간까지의 차이를 밀리초 단위의 숫자 값으로 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">getDate()</p><img id="prttp"" src="img/prototype.png"></td>
+                                <td>주어진 날짜의 일(1~31)을 현지시간에 맞춰 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">getDay()</p><img id="prttp"" src="img/prototype.png"></td>
+                                <td>주어진 날짜의 요일(0~6, 일요일부터)을 현지시간에 맞춰 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">getFullYear()</p><img id="prttp"" src="img/prototype.png"></td>
+                                <td>주어진 날짜의 연도(4자리 수)를 현지시간에 맞춰 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">getHours()</p><img id="prttp"" src="img/prototype.png"></td>
+                                <td>주어진 날짜의 시(0~23)를 현지시간에 맞춰 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">getMilliseconds()</p><img id="prttp"" src="img/prototype.png"></td>
+                                <td>주어진 날짜의 밀리초(0~999)를 현지시간에 맞춰 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">getMinutes()</p><img id="prttp"" src="img/prototype.png"></td>
+                                <td>주어진 날짜의 분(0~59)을 현지시간에 맞춰 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p id="code">getMonth()</p><img id="prttp"" src="img/prototype.png"></td>
+                                <td>주어진 날짜의 월(0~11)을 현지시간에 맞춰 반환합니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="appendix">

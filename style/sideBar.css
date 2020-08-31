@@ -22,12 +22,12 @@ dt{     font-size: 1em; font-weight: bold; }
         width: 100%;
     }
     dd{
-        font-size: 0.7em;
+        font-size: 0.7em !important;
         margin-left: 1em;
     }
 
     dt{
-        font-size: 0.8em;
+        font-size: 0.8em !important;
     }
 
     
