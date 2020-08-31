@@ -45,5 +45,6 @@ function copyToClipboard(elem) {
       // clear temporary content
       target.textContent = "";
   }
+  go(elem);
   return succeed;
 }
