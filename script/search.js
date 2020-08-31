@@ -87,9 +87,9 @@ $(document).ready(function() {
                       message: '한-영 오타 수정입니다.\n' + search_text + '->' + inko.ko2en(search_text)
                   });
                   if (title[0]) {
-                      go(title[0]);
+                      glide(title[0]);
                   } else {
-                      go(contents[0]);
+                      glide(contents[0]);
                   }
                   console.log(title.join("\n"));
                   console.log(contents.join("\n"));
@@ -126,9 +126,9 @@ $(document).ready(function() {
                       message: '영-한 오타 수정입니다.\n' + search_text + '->' + inko.en2ko(search_text)
                   });
                   if (title[0]) {
-                      go(title[0]);
+                      glide(title[0]);
                   } else if (contents[0]){
-                      go(contents[0]);
+                      glide(contents[0]);
                   } else{
                       new Toast({
                           message: '알수없는 오류가 발생했습니다.',
@@ -145,9 +145,9 @@ $(document).ready(function() {
               }
           } else if (searched == true) {
               if (title[0]) {
-                  go(title[0]);
+                  glide(title[0]);
               } else {
-                  go(contents[0]);
+                  glide(contents[0]);
               }
               console.log(title.join("\n"));
               console.log(contents.join("\n"));
