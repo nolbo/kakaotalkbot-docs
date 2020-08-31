@@ -19,7 +19,7 @@ function copyToClipboard(elem) {
           target.id = targetId;
           elem.appendChild(target);
       }
-      target.textContent = elem.textContent;
+      target.textContent = elem.innerText.replace(/\n/g,'').replace(/{/g,'{\n').replace(/}/g,'\n}');
   }
   // select the content
   var currentFocus = document.activeElement;
