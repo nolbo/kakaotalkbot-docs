@@ -17,7 +17,7 @@ function copyToClipboard(elem) {
           target.style.left = "-9999px";
           target.style.top = "0";
           target.id = targetId;
-          elem.appendChild(target);
+          elem.parentNode.appendChild(target);
       }
       target.textContent = elem.innerText.replace(/\n/g,'').replace(/{/g,'{\n').replace(/}/g,'\n}');
   }
