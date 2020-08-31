@@ -23,7 +23,7 @@ input[type="text"]:focus {       border-bottom: 1px solid #4b4b4b; width: 31.25e
 
 div#sideBar::-webkit-scrollbar{    width: 0.7em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
 div#code::-webkit-scrollbar{       width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-div#code::-webkit-scrollbar-thumb{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #0f0f0f;  }
+div#code::-webkit-scrollbar-thumb{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #414141;  }
 div#code::-webkit-scrollbar-track{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
 
 
