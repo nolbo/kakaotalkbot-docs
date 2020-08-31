@@ -46,5 +46,8 @@ function copyToClipboard(elem) {
       target.textContent = "";
   }
   go(elem);
+  new Toast({
+    message: '복사되었습니다'
+  });
   return succeed;
 }
