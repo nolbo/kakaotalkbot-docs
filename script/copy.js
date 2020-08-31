@@ -23,7 +23,7 @@ function copyToClipboard(elem) {
   }
   // select the content
   var currentFocus = document.activeElement;
-  target.focus();
+  target.select();
   target.setSelectionRange(0, target.value.length);
   
   // copy the selection
