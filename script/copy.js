@@ -51,8 +51,10 @@ function copyToClipboard(elem) {
   });
   return succeed;
 }
-for(i=0;i<document.getElementsByTagName('pre').length;i++){
-    $(document.getElementsByTagName('pre')[i]).dblclick(function(){
-        copyToClipboard(this);
-    });
-}
+$(document).ready(function() {
+    for(i=0;i<document.getElementsByTagName('pre').length;i++){
+        $(document.getElementsByTagName('pre')[i]).dblclick(function(){
+            copyToClipboard(this);
+        });
+    }
+});
