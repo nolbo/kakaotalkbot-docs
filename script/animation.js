@@ -12,7 +12,7 @@ $(function(){
     }else{
         $("header").css({"width" : window.innerWidth - 52, "height" : "2em"});
         $("section#body section#summary").css("margin-top", "1em")
-        $("section#body").css({"width" : $("section#summary").width, "padding-left" : "10em"});
+        $("section#body").css({"width" : $("section#summary").width + 16, "padding-left" : "10em"});
         $("section#body > section").css({ "float" : "right" });
         $("div.content").css("width", window.innerWidth - 68);
     }
