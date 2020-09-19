@@ -8,9 +8,9 @@
 
 @media(prefers-color-scheme: dark){
     
-    #kkotb_rfnc:hover, p#a:hover, li.sA:hover{       cursor: pointer; }
-    #kkotb_rfnc:visited, p#a:visited, li.sA:visited{ cursor: default; }
-    p#a:hover{                                       color:#ff0d86; }
+    #kkotb_rfnc:hover, p.a:hover, li.sA:hover{       cursor: pointer; }
+    #kkotb_rfnc:visited, p.a:visited, li.sA:visited{ cursor: default; }
+    p.a:hover{                                       color:#ff0d86; }
     p#thank_you:hover{                               color:#f100b5; }
 
     input[type="text"]:focus:hover { border-bottom: 1px solid #ffffff; }
@@ -23,9 +23,9 @@
 
 
     div#sideBar::-webkit-scrollbar{    width: 0.7em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-    div#code::-webkit-scrollbar{       width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-    div#code::-webkit-scrollbar-thumb{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #ffffff59;  }
-    div#code::-webkit-scrollbar-track{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    div.code::-webkit-scrollbar{       width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    div.code::-webkit-scrollbar-thumb{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #ffffff59;  }
+    div.code::-webkit-scrollbar-track{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
 
 
     html{   margin: -0.6em 5em 5em 3em; font-family: 'Nanum Gothic'; color: #ffffff; background-color: #333333; }
@@ -39,28 +39,28 @@
     section#body section{ margin-bottom: 5em !important; z-index: 99999; }
 
     code{          display: inline; font-family: 'JetBrains Mono', 'D2Coding'; line-height: 2em; }
-    div#code code{ text-shadow: 0em 0em 0.8em #ffffff; }
+    div.code code{ text-shadow: 0em 0em 0.8em #ffffff; }
     table{         width: 100%; border-top: 0.3em solid #ffffff; border-left: 0em solid transparent; border-right: 0em solid transparent; border-collapse: collapse; margin: auto; margin-top: 2.5em; margin-bottom: 2.5em; font-size: 1em; }
 
 
-    p#title, p#stitle, p#description, p#thank_you{ font-family: 'Nanum Gothic'; }
-    p#title{       font-size: 1.8em; font-weight: bold; }
-    p#stitle{      font-size: 1.5em; font-weight: bold; }
-    p#description{ font-size: 1em; display: inline; line-height: 2em; }
+    p.title, p.stitle, p.dscrpt, p#thank_you{ font-family: 'Nanum Gothic'; }
+    p.title{       font-size: 1.8em; font-weight: bold; }
+    p.stitle{      font-size: 1.5em; font-weight: bold; }
+    p.dscrpt{ font-size: 1em; display: inline; line-height: 2em; }
 
-    p#code{             display: inline; background-color: black; margin: 0.2em 0.2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono', 'D2Coding'; font-size: 0.9em; padding: 0.2em 0.2em; line-height: 2em; }
-    p#a{                display: inline; font-weight: bold; color: #ffffff; font-style: italic; font-family: 'Nanum Gothic'; line-height: 2em; transition:color 1s ease; }
-    p#crfBox, p#plsBox{ display: inline; font-weight: bold; line-height: 2em; font-family: 'JetBrains Mono'; }
+    p.code{             display: inline; background-color: black; margin: 0.2em 0.2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono', 'D2Coding'; font-size: 0.9em; padding: 0.2em 0.2em; line-height: 2em; }
+    p.a{                display: inline; font-weight: bold; color: #ffffff; font-style: italic; font-family: 'Nanum Gothic'; line-height: 2em; transition:color 1s ease; }
+    p.crfBox, p.plsBox{ display: inline; font-weight: bold; line-height: 2em; font-family: 'JetBrains Mono'; }
     p#thank_you{        display: inline; color: #ffffff; line-height: 2em; transition:color 1s ease; }
 
-    p#codeBox, p#keyword, p#ann, p#var, p#str, p#reg, p#num{ display: inline !important; line-height: 2em; }
+    p.codeBox, p.keyword, p.ann, p.var, p.str, p.reg, p.num{ display: inline !important; line-height: 2em; }
 
-    p#keyword{ color: #ff0d86; text-shadow: 0em 0em 0.8em #ff0d86 !important; }
-    p#ann{     color: #8b8b8b; text-shadow: 0em 0em 0.8em #8b8b8b !important; }
-    p#var{     color: #00ffaa; text-shadow: 0em 0em 0.8em #00ffaa !important; }
-    p#str{     color: #ffc400; text-shadow: 0em 0em 0.8em #ffc400 !important; }
-    p#reg{     color: #00ffff; text-shadow: 0em 0em 0.8em #00ffff !important; }
-    p#num{     color: #d400ff; text-shadow: 0em 0em 0.8em #d400ff !important; }
+    p.keyword{ color: #ff0d86; text-shadow: 0em 0em 0.8em #ff0d86 !important; }
+    p.ann{     color: #8b8b8b; text-shadow: 0em 0em 0.8em #8b8b8b !important; }
+    p.var{     color: #00ffaa; text-shadow: 0em 0em 0.8em #00ffaa !important; }
+    p.str{     color: #ffc400; text-shadow: 0em 0em 0.8em #ffc400 !important; }
+    p.reg{     color: #00ffff; text-shadow: 0em 0em 0.8em #00ffff !important; }
+    p.num{     color: #d400ff; text-shadow: 0em 0em 0.8em #d400ff !important; }
 
 
     div.content{ margin-bottom: 3em; }
@@ -69,13 +69,13 @@
     div#sideBar{ position: fixed; background-color: #333333; width: 16%; height: 75%; padding-left: 3em; display: block; overflow: auto; }
     div#side{    position: fixed; background-color: #333333; z-index: 2; left: 0%; }
 
-    div#code, div#crf, div#pls{ margin-top: 1.3em; margin-bottom: 2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono'; font-size: 0.9em; padding: 0.5em 0.5em 0.5em 0.5em; white-space:nowrap; overflow: auto; }
+    div.code, div.crf, div.pls{ margin-top: 1.3em; margin-bottom: 2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono'; font-size: 0.9em; padding: 0.5em 0.5em 0.5em 0.5em; white-space:nowrap; overflow: auto; }
 
-    div#code{ background-color: black; color: white; box-shadow: 0em 0em 0.8em 0em black; }
-    div#crf{  background-color: #333333; color: rgb(255, 0, 140); box-shadow: 0em 0em 0.4em 0em rgb(255, 0, 140); border-left: 1em solid rgb(255, 0, 140); }
-    div#pls{  background-color: #333333; color: #00ffaa; box-shadow: 0em 0em 0.4em 0em #00ffaa; border-left: 1em solid #00ffaa; }
+    div.code{ background-color: black; color: white; box-shadow: 0em 0em 0.8em 0em black; }
+    div.crf{  background-color: #333333; color: rgb(255, 0, 140); box-shadow: 0em 0em 0.4em 0em rgb(255, 0, 140); border-left: 1em solid rgb(255, 0, 140); }
+    div.pls{  background-color: #333333; color: #00ffaa; box-shadow: 0em 0em 0.4em 0em #00ffaa; border-left: 1em solid #00ffaa; }
 
-    div#table{ overflow: auto; font-family: 'Nanum Gothic'; }
+    div.table{ overflow: auto; font-family: 'Nanum Gothic'; }
     div#sA{ margin-top: 1.5em; margin-bottom: 1.5em; }
     div#wrap { margin: 0em 6.25rem; display: block; position: relative; height: 3.75em; float: right; }
 
@@ -103,7 +103,7 @@
 
 
 
-    /*p#a:hover { color:#ff0d86; }
+    /*p.a:hover { color:#ff0d86; }
 
     input[type="text"]:focus:hover { border-bottom: 1px solid #ffffff; }
     input[type="text"]:focus {       border-bottom: 1px solid #ffffff; width: 31.25em; z-index: 1; cursor: text; }
@@ -114,9 +114,9 @@
     *::-webkit-scrollbar-track{ border-radius: 0.5em 0.5em 0.5em 0.5em; }
     
     div#sideBar::-webkit-scrollbar{    width: 0.7em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-    div#code::-webkit-scrollbar{       width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-    div#code::-webkit-scrollbar-thumb{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #ffffff59; }
-    div#code::-webkit-scrollbar-track{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    div.code::-webkit-scrollbar{       width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    div.code::-webkit-scrollbar-thumb{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #ffffff59; }
+    div.code::-webkit-scrollbar-track{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
 
 
     html, header, div, section{ background-color: #333333 !important; }
@@ -125,14 +125,14 @@
     td#no{ color: rgb(255, 0, 0) !important; }
     
     
-    p#title, p#description, p#stitle, p#code, p#a, p#thank_you, th, td, dt, dd, a{ color: white !important; }
+    p.title, p.dscrpt, p.stitle, p.code, p.a, p#thank_you, th, td, dt, dd, a{ color: white !important; }
 
-    p#code{ background-color: black !important; }
+    p.code{ background-color: black !important; }
 
 
     div#side{ background-color: rgb(255, 255, 255); }
 
-    div#code{ background-color: black !important; box-shadow: 0em 0em 0.8em 0em rgb(31, 31, 31); }
+    div.code{ background-color: black !important; box-shadow: 0em 0em 0.8em 0em rgb(31, 31, 31); }
 
     div#wrap { margin: 0em 6.25rem; display: block; position: relative; height: 3.75em; float: right; }
 
@@ -168,14 +168,14 @@
     table{ margin-top: 1.5em; margin-bottom: 1.5em; font-size: 0.9em; margin-right: 3em; }
 
 
-    p#title{  font-size: 1em; }
-    p#stitle{ font-size: 0.9em; }
-    p#description{ font-size: 0.8em; }
+    p.title{  font-size: 1em; }
+    p.stitle{ font-size: 0.9em; }
+    p.dscrpt{ font-size: 0.8em; }
 
-    p#crfBox{  line-height: 2em; }
+    p.crfBox{  line-height: 2em; }
 
-    p#code{      font-size: 0.7em; }
-    p#a{         font-size: 0.8em; transition:color .2s ease; }
+    p.code{      font-size: 0.7em; }
+    p.a{         font-size: 0.8em; transition:color .2s ease; }
     p#thank_you{ font-size: 0.8em; }
 
 
@@ -183,9 +183,9 @@
     div#blank{   display: none; }
     div#sideBar{ display: none; border-radius: 0em 0.5em 0.5em 0.5em; position: fixed !important; left: 0%; top: 0%; overflow: auto; width: 50% !important; height: 87% !important; margin: 0; margin-top: 4.5em; }
     
-    div#code, div#crf, div#pls{ font-size: 0.8em; margin-top: 1.3em; padding: 0.1em 0.5em 0.1em 0.5em; border-radius: 0.4em 0.4em; white-space:nowrap; overflow: auto; }
+    div.code, div.crf, div.pls{ font-size: 0.8em; margin-top: 1.3em; padding: 0.1em 0.5em 0.1em 0.5em; border-radius: 0.4em 0.4em; white-space:nowrap; overflow: auto; }
 
-    div#table{ overflow: auto; }
+    div.table{ overflow: auto; }
     div#sA{    margin-top: 0.7em; margin-bottom: 1em; }
     div#wrap{  margin: 0em 0em }
     

@@ -1,4 +1,4 @@
-let isOpen = {"side" : false, "summary" : true, "api" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true};
+let isOpen = {"side" : false, "summary" : true, "api" : true, "api2" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true};
 
 $(function(){
 
@@ -13,10 +13,9 @@ $(function(){
         $("header").css({"width" : window.innerWidth - 52, "height" : "2em"});
         $("section#body section#summary").css("margin-top", "1em")
         $("section#body").css({"width" : $("section#summary").width, "padding-left" : "10em"});
-        $("section#body > section").css({ "float" : "right" })
-        $("div.content").css("width", window.innerWidth - 52);
+        $("section#body > section").css({ "float" : "right" });
+        $("div.content").css("width", window.innerWidth - 68);
     }
-    
 
     $("dl span dt").click(function(event){
         let id = $(this).parent().attr('id');
@@ -40,14 +39,12 @@ $(function(){
     $("li.sA").click(function(event){
         let id = $(this).parent().attr("id");
         var offset = $("div#"+event.target.id.replace("d", "")).offset();
-        //$("html").animate({scrollTop : offset.top - 155}, 1500, "swing");
         $("html").scrollTop(offset.top - 155);
     });
 
     $("dl span dd, li#sA").click(function(event){
         let id = $(this).parent().attr("id");
         var offset = $("div#"+event.target.id.replace("d", "")).offset();
-        //$("html").animate({scrollTop : offset.top - 155}, 1500, "swing");
         $("html").scrollTop(offset.top - 155);
     });
 
@@ -96,7 +93,7 @@ $(function(){
         }
     });
 
-    $("p#a").click(function(){
+    $("p.a").click(function(){
         window.open($(this).attr('class'));
     });
 
@@ -109,9 +106,6 @@ $(function(){
         $("p."+$(this).attr("class")).css("color", "#4b4b4b");
     });
 
-    $("img#sttc").attr("title", "정적인 속성이나 메서드입니다.");
-    $("img#prttp").attr("title", "프로토타입 속성이거나 프로토타입 메서드입니다.");
+    $("img.sttc").attr("title", "정적인 속성이나 메서드입니다.");
+    $("img.prttp").attr("title", "프로토타입 속성이거나 프로토타입 메서드입니다.");
 });
-
-
-

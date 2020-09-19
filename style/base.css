@@ -7,9 +7,9 @@
 
 
 
-#kkotb_rfnc:hover, p#a:hover, li.sA:hover{       cursor: pointer; }
-#kkotb_rfnc:visited, p#a:visited, li.sA:visited{ cursor: default; }
-p#a:hover{                                       color:#8400ff; }
+#kkotb_rfnc:hover, p.a:hover, li.sA:hover{       cursor: pointer; }
+#kkotb_rfnc:visited, p.a:visited, li.sA:visited{ cursor: default; }
+p.a:hover{                                       color:#8400ff; }
 p#thank_you:hover{                               color:#f100b5; }
 
 input[type="text"]:focus:hover { border-bottom: 1px solid #4b4b4b; }
@@ -17,14 +17,14 @@ input[type="text"]:focus {       border-bottom: 1px solid #4b4b4b; width: 31.25e
 
 
 *::-webkit-scrollbar{       width: 0.7em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-*::-webkit-scrollbar-thumb{ border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #4b4b4b33; }
+*::-webkit-scrollbar-thumb{ border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #4b4b4b30; }
 *::-webkit-scrollbar-track{ border-radius: 0.5em 0.5em 0.5em 0.5em; }
 
 
 div#sideBar::-webkit-scrollbar{    width: 0.7em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-div#code::-webkit-scrollbar{       width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-div#code::-webkit-scrollbar-thumb{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #414141;  }
-div#code::-webkit-scrollbar-track{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+div.code::-webkit-scrollbar{       width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+div.code::-webkit-scrollbar-thumb{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #414141;  }
+div.code::-webkit-scrollbar-track{ width: 0.1em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
 
 
 html{   margin: -0.6em 5em 5em 3em; font-family: 'Nanum Gothic'; color: #4b4b4b; background-color: white; }
@@ -38,28 +38,28 @@ section#body{         position: absolute; top: 8em; right: 0; margin-left: 0em !
 section#body section{ margin-bottom: 5em !important; z-index: 99999; }
 
 code{          display: inline; font-family: 'JetBrains Mono', 'D2Coding'; line-height: 2em; }
-div#code code{ text-shadow: 0em 0em 0.8em #ffffff; }
+div.code code{ text-shadow: 0em 0em 0.8em #ffffff; }
 table{         width: 100%; border-top: 0.3em solid #4b4b4b; border-left: 0em solid white; border-right: 0em solid white; border-collapse: collapse; margin: auto; margin-top: 2.5em; margin-bottom: 2.5em; font-size: 1em; }
 
 
-p#title, p#stitle, p#description, p#thank_you{ font-family: 'Nanum Gothic'; }
-p#title{       font-size: 1.8em; font-weight: bold; }
-p#stitle{      font-size: 1.5em; font-weight: bold; }
-p#description{ font-size: 1em; display: inline; line-height: 2em; }
+p.title, p.stitle, p.dscrpt, p#thank_you{ font-family: 'Nanum Gothic'; }
+p.title{       font-size: 1.8em; font-weight: bold; }
+p.stitle{      font-size: 1.5em; font-weight: bold; }
+p.dscrpt{ font-size: 1em; display: inline; line-height: 2em; }
 
-p#code{             display: inline; background-color: #f1f1f1; margin: 0.2em 0.2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono', 'D2Coding'; font-size: 0.9em; padding: 0.2em 0.2em; line-height: 2em; }
-p#a{                display: inline; font-weight: bold; color: #4b4b4b; font-style: italic; font-family: 'Nanum Gothic'; line-height: 2em; transition:color 1s ease; }
-p#crfBox, p#plsBox{ display: inline; font-weight: bold; line-height: 2em; font-family: 'JetBrains Mono'; }
+p.code{             display: inline; background-color: #f1f1f1; margin: 0.2em 0.2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono', 'D2Coding'; font-size: 0.9em; padding: 0.2em 0.2em; line-height: 2em; }
+p.a{                display: inline; font-weight: bold; color: #4b4b4b; font-style: italic; font-family: 'Nanum Gothic'; line-height: 2em; transition:color 1s ease; }
+p.crfBox, p.plsBox{ display: inline; font-weight: bold; line-height: 2em; font-family: 'JetBrains Mono'; }
 p#thank_you{        display: inline; color: #4b4b4b; line-height: 2em; transition:color 1s ease; }
 
-p#codeBox, p#keyword, p#ann, p#var, p#str, p#reg, p#num{ display: inline !important; line-height: 2em; }
+p.codeBox, p.keyword, p.ann, p.var, p.str, p.reg, p.num{ display: inline !important; line-height: 2em; }
 
-p#keyword{ color: #ff0d86; text-shadow: 0em 0em 0.8em #ff0d86; }
-p#ann{     color: #8b8b8b; text-shadow: 0em 0em 0.8em #8b8b8b; }
-p#var{     color: #00ffaa; text-shadow: 0em 0em 0.8em #00ffaa; }
-p#str{     color: #ffc400; text-shadow: 0em 0em 0.8em #ffc400; }
-p#reg{     color: #00ffff; text-shadow: 0em 0em 0.8em #00ffff; }
-p#num{     color: #d400ff; text-shadow: 0em 0em 0.8em #d400ff; }
+p.keyword{ color: #ff0d86; text-shadow: 0em 0em 0.8em #ff0d86; }
+p.ann{     color: #8b8b8b; text-shadow: 0em 0em 0.8em #8b8b8b; }
+p.var{     color: #00ffaa; text-shadow: 0em 0em 0.8em #00ffaa; }
+p.str{     color: #ffc400; text-shadow: 0em 0em 0.8em #ffc400; }
+p.reg{     color: #00ffff; text-shadow: 0em 0em 0.8em #00ffff; }
+p.num{     color: #d400ff; text-shadow: 0em 0em 0.8em #d400ff; }
 
 
 div.content{ margin-bottom: 3em; }
@@ -68,13 +68,13 @@ div#blank{   position: fixed; background-color: white; width: 16%; height: 100%;
 div#sideBar{ position: fixed; background-color: white; width: 16%; height: 75%; padding-left: 3em; display: block; overflow: auto; }
 div#side{    position: fixed; background-color: white; z-index: 2; left: 0%; }
 
-div#code, div#crf, div#pls{ margin-top: 1.3em; margin-bottom: 2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono'; font-size: 0.9em; padding: 0.5em 0.5em 0.5em 0.5em; white-space:nowrap; overflow: auto; }
+div.code, div.crf, div.pls{ margin-top: 1.3em; margin-bottom: 2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono'; font-size: 0.9em; padding: 0.5em 0.5em 0.5em 0.5em; white-space:nowrap; overflow: auto; }
 
-div#code{ background-color: #4b4b4b; color: white; box-shadow: 0em 0em 0.8em 0em #4b4b4b; }
-div#crf{  background-color: #ffffff; color: rgb(255, 0, 140); box-shadow: 0em 0em 0.4em 0em rgb(255, 0, 140); border-left: 1em solid rgb(255, 0, 140); }
-div#pls{  background-color: #ffffff; color: #00ffaa; box-shadow: 0em 0em 0.4em 0em #00ffaa; border-left: 1em solid #00ffaa; }
+div.code{ background-color: #4b4b4b; color: white; box-shadow: 0em 0em 0.8em 0em #4b4b4b; }
+div.crf{  background-color: #ffffff; color: rgb(255, 0, 140); box-shadow: 0em 0em 0.4em 0em rgb(255, 0, 140); border-left: 1em solid rgb(255, 0, 140); }
+div.pls{  background-color: #ffffff; color: #00ffaa; box-shadow: 0em 0em 0.4em 0em #00ffaa; border-left: 1em solid #00ffaa; }
 
-div#table{ overflow: auto; font-family: 'Nanum Gothic'; }
+div.table{ overflow: auto; font-family: 'Nanum Gothic'; }
 div#sA{ margin-top: 1.5em; margin-bottom: 1.5em; }
 div#wrap { margin: 0em 6.25rem; display: block; position: relative; height: 3.75em; float: right; }
 
