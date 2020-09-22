@@ -94,7 +94,7 @@ $(function(){
     });
 
     $("p.a").click(function(){
-        window.open($(this).attr('class'));
+        window.open($(this).attr('id'));
     });
 
     $("p#thank_you").mouseover(function(){

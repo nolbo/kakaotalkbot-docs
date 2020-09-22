@@ -45,7 +45,7 @@
     
     
     img#kkotb_rfnc{                      width: 1.5em; height: auto; }
-    img[id = "sttc"], img[id = "prttp"]{ width: 0.8em; height: auto; margin-right: 0.25em;  }
+    img[class = "sttc"], img[class = "prttp"]{ width: 0.8em; height: auto; margin-right: 0.25em;  }
 
 
     input[type="text"]{   height: 1.5rem; font-size: 0.65em; }
