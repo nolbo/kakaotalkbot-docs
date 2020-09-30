@@ -1,1 +1,75 @@
-
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kkotbot-docs.kro.kr">
+    <meta property="og:title" content="KakaotalkBot Docs">
+    <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
+    <meta property="og:image" content="https://kkotbot-docs.kro.kr/img/grp_img.jpg">
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script type="text/javascript" src="script/animation.js"></script>
+    <script type="text/javascript" src="script/dark.js"></script>
+    <script type="text/javascript" src="script/toast.js"></script>
+    <script type="text/javascript" src="script/inko.js"></script>
+    <script type="text/javascript" src="script/search.js"></script>
+    <script type="text/javascript" src="script/copy.js"></script>
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/icon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/sideBar.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/mobile.css">
+    <link rel="stylesheet" href="style/dark.css">
+    <link rel="stylesheet" href="style/toast.css">
+    <title>KakaotalkBot Docs</title>
+</head>
+<body>
+    <header>
+      <a href='index.html'><img id="kkotb_rfnc" src="img/docs.png"></a>
+        <div id="wrap">
+            <form action="" autocomplete="off">
+            <input id="search" data-bg="#ff0d86" name="search" type="text" placeholder="검색할 내용을 입력하세요."><!--<button type="submit"><img id="search" src="img/search.png"></button>--><input id="search_submit" value="Rechercher" type="submit">
+            </form>
+        </div>
+    </header>
+    <div class="toastjs-container" role="alert" aria-hidden="true"><div class="toastjs"></div></div>
+    <section id="body">
+        <section id="summary">
+          
+        </section>
+    </section>
+    <script type="text/javascript">
+        if($("section#body").width == 0){
+            location.reload();
+        }
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyC2uqV1aTqbeV8Ns10-9UeTBV5UWBlQ1AI",
+        authDomain: "kakaotalkbot-docs.firebaseapp.com",
+        databaseURL: "https://kakaotalkbot-docs.firebaseio.com",
+        projectId: "kakaotalkbot-docs",
+        storageBucket: "kakaotalkbot-docs.appspot.com",
+        messagingSenderId: "209657729121",
+        appId: "1:209657729121:web:94edd905e7135f9f315a20",
+        measurementId: "G-ET1Y9WY3Y8"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      var firestore = firebase.firestore();
+    </script>
+</body>
+</html>
