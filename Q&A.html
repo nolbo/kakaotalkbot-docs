@@ -52,6 +52,7 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
     
     <script>
       // Your web app's Firebase configuration
@@ -71,6 +72,19 @@
       firebase.analytics();
       var firestore = firebase.firestore();
       var postRef = firestore.collection('posts');
+      function comment(targetId, value){}
+      function post(title, value){
+          postRef.add({
+              title: title,
+              value: value,
+              by: firebase.auth().currentUser.uid,
+              ts: new Date
+          }).then(function(docRef) {
+              console.log("Document written with ID: ", docRef.id);
+          }).catch(function(error) {
+              console.error("Error adding document: ", error);
+          });
+      }
     </script>
 </body>
 </html>
