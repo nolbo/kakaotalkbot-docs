@@ -120,6 +120,9 @@
                 console.error("Error adding document: ", error);
             });
         }
+        
+        if(!firebase.auth().currentUser){
+        }
 
         if (location.href.startsWith('https://kkotbot-docs.kro.kr/Q&A?id=')) {
             postRef.doc(location.href.substring('https://kkotbot-docs.kro.kr/Q&A?id='.length)).get().then(function(doc) {
