@@ -30,10 +30,10 @@ $(function(){
                     $('#pswd').val('');
                 }else{
                     $.cookie("id", _id, {
-                        "domain" : "도메인",
+                        "domain" : "https://kkotbot-docs.kro.kr",
                         "path" : "/"
                    });
-                    location.href = 'community.html';
+                    location.href = '';
                 }
             }
         });
