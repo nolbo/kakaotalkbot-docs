@@ -138,14 +138,14 @@
                 querySnapshot.forEach(function(doc) {
                     // doc.data() is never undefined for query doc snapshots
                     console.log(doc.id, " => ", doc.data());
-                    items.push(doc.data().title);
+                    items.push({data: doc.data(), id: doc.id});
                 });
                 let ul = document.createElement('ul');
                 document.getElementById('summary').appendChild(ul);
                 items.slice(0, 20).forEach(function (item) {
                     let li = document.createElement('li');
                     ul.appendChild(li);
-                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+doc.id+'\">'+item+'</a>';
+                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\">'+item.data.title+'</a>';
                 });
             });
         }
