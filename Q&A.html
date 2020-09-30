@@ -120,6 +120,34 @@
                 console.error("Error adding document: ", error);
             });
         }
+
+        if (location.href.startsWith('https://kkotbot-docs.kro.kr/Q&A?id=')) {
+            postRef.doc(location.href.substring('https://kkotbot-docs.kro.kr/Q&A?id='.length)).get().then(function(doc) {
+                if (doc.exists) {
+                    console.log(doc.data());
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
+            });
+        } else {
+            postRef.get().then(function(querySnapshot) {
+                var items = [];
+                querySnapshot.forEach(function(doc) {
+                    // doc.data() is never undefined for query doc snapshots
+                    console.log(doc.id, " => ", doc.data());
+                    items.push(doc.data().title);
+                });
+                items.slice(0, 20).forEach(function (item) {
+                    let li = document.createElement('li');
+                    ul.appendChild(li);
+                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+doc.id+'\">'+item+'</a>';
+                });
+                document.getElementById('summary').appendChild(document.createElement('ul'));
+            });
+        }
     </script>
 </body>
 
