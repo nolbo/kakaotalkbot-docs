@@ -151,7 +151,7 @@
                     let li = document.createElement('li');
                     ul.appendChild(li);
                     li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\">'+item.data.title+'</a>';
-                    $('a[href = https://kkotbot-docs.kro.kr/Q&A?id='+item.id+']').css('float', 'left');
+                    $('ul').css('text-align', 'left');
                 });
             });
         }
