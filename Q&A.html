@@ -125,6 +125,11 @@
             postRef.doc(location.href.substring('https://kkotbot-docs.kro.kr/Q&A?id='.length)).get().then(function(doc) {
                 if (doc.exists) {
                     console.log(doc.data());
+                    //내용표시
+                    
+                    if(doc.data().by==firebase.auth().currentUser.uid){
+                       //수정, 삭제 등 표시
+                    }
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
