@@ -12,7 +12,7 @@ function writeUserData(id, pswd, email, db) {
         email: email,
         profile: $('img#profile').attr('src')
     });
-    location.href = 'index.html';
+    location.href = 'https://kkotbot-docs.kro.kr/login';
 }
 
 $(function(){
