@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/basic.css">
+    <link rel="stylesheet" href="style/login.css">
+    <script src="script/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <title>로그인</title>
+</head>
+<body>
+    <div id="content">
+        <section id="body">
+            <h1 class="ttl">Login</h1>
+            <form name="login" autocomplete="off">
+                <input type="text" id="id" placeholder="아이디"><br>
+                <input type="password" id="pswd" placeholder="비밀번호"><br>
+                <button id="complete" class="btn">로그인</button>
+            </form>
+            <p class="sml">계정이 없으신가요? <a href="sign_up.html">계정을 만들어보세요!</a></p>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+    <script src="script/DBLogin.js"></script>
+    <script src="script/Login.js"></script>
+</body>
+</html>
