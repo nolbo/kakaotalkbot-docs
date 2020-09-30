@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="style/mobile.css">
     <link rel="stylesheet" href="style/dark.css">
     <link rel="stylesheet" href="style/toast.css">
-    <title>KakaotalkBot Docs</title>
+    <title>Q&A</title>
 </head>
 
 <body>
@@ -150,7 +150,7 @@
                 items.slice(0, 20).forEach(function (item) {
                     let li = document.createElement('li');
                     ul.appendChild(li);
-                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\">'+item.data.title+'</a>';
+                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\">'+item.data.title+'['+item.data.comments.length+']</a>';
                     $('ul').css('text-align', 'left');
                 });
             });
