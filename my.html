@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="style/mobile.css">
     <link rel="stylesheet" href="style/dark.css">
     <link rel="stylesheet" href="style/toast.css">
-    <title>Q&A</title>
+    <title></title>
 </head>
 
 <body>
@@ -77,8 +77,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        var firestore = firebase.firestore();
-        var postRef = firestore.collection('posts');
+        document.title=$.cookie('id');
   </script>
 </body>
 
