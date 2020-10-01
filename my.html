@@ -78,8 +78,11 @@
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
         firebase.database().ref($.cookie('id')).once('value').then(function(snapshot) {
-            document.title=snapshot.val().nickname;
-            document.getElementById('summary').innerHTML+='<img style=\"border-radius: 50%;\" height=\"100px\" src=\"'+snapshot.val().profile+'\"/>'
+            if(location.href.startsWith('https://kkotbot-docs.kro.kr/my?search=')){
+            }else{
+                document.title=snapshot.val().nickname;
+                document.getElementById('summary').innerHTML+='<img style=\"border-radius: 50%;\" height=\"100px\" src=\"'+snapshot.val().profile+'\"/>'
+            }
         });
   </script>
 </body>
