@@ -17,7 +17,7 @@ $(function(){
         
 
 
-        DB.on("value", function(snapshot) {
+        DB.once("value").then(function(snapshot) {
             var user = snapshot.val();
 
             if(user == undefined){ //id가 없을때
