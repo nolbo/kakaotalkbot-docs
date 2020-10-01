@@ -88,7 +88,7 @@
                     comments.push({
                         base: base,
                         value: value,
-                        //by: firebase.auth().currentUser.uid,
+                        by: $.cookie('id'),
                         ts: new Date
                     });
                     postRef.doc(targetId).update({
@@ -113,7 +113,7 @@
             postRef.add({
                 title: title,
                 value: value,
-                //by: firebase.auth().currentUser.uid,
+                by: $.cookie('id'),
                 ts: new Date,
                 comments: []
             }).then(function(docRef) {
@@ -132,7 +132,7 @@
                     document.getElementById('content').style.display='block';
                     document.getElementById('comments').style.display='block';
                     
-                    /*if(doc.data().by==firebase.auth().currentUser.uid){
+                    if(doc.data().by==$.cookie('id')){
                        //수정, 삭제 등 표시
                     }*/
                 } else {
