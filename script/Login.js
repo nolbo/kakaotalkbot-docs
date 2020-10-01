@@ -33,8 +33,8 @@ $(function(){
                     $('#pswd').val('');
                 }else{
                     $.cookie("id", _id, {
-                        "domain" : "https://kkotbot-docs.kro.kr"/*, //유효하게 작동될 사이트 도메인
-                        "path" : "/"*/
+                        "domain" : "https://kkotbot-docs.kro.kr", //유효하게 작동될 사이트 도메인
+                        "path" : "/"
                    });
                     location.href = 'https://kkotbot-docs.kro.kr'; //로그인 후 이동
                 }
