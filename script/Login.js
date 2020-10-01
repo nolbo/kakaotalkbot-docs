@@ -6,6 +6,9 @@ function GenerateHMAC(key, payload) { //암호화 함수
 }
 
 $(function(){
+    if(!!$.cookie("id")){
+	location.href = 'https://kkotbot-docs.kro.kr';
+    }
     $('button#complete').click(function(event){
         event.preventDefault();
         var _id = GenerateHMAC('sha256', $('#id').val().replace(/ /g, ''));
@@ -30,8 +33,8 @@ $(function(){
                     $('#pswd').val('');
                 }else{
                     $.cookie("id", _id, {
-                        "domain" : "https://kkotbot-docs.kro.kr", //유효하게 작동될 사이트 도메인
-                        "path" : "/"
+                        "domain" : "https://kkotbot-docs.kro.kr"/*, //유효하게 작동될 사이트 도메인
+                        "path" : "/"*/
                    });
                     location.href = 'https://kkotbot-docs.kro.kr'; //로그인 후 이동
                 }
