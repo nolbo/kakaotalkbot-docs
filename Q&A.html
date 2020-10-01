@@ -156,7 +156,11 @@
                 items.slice(0, 20).forEach(function (item) {
                     let li = document.createElement('li');
                     ul.appendChild(li);
-                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\">'+item.data.title+'['+item.data.comments.length+']</a>';
+                    if(['Edp2SVLFrc8y4OQUF30xEjh3YrLMMfB|T2O+dRHQtE4=', 'JXwTavehlZKbeZOkogOdesRu0M4WHeRNuA|iCf6+tgM='].indexOf(item.data.by)!=-1&&item.data.title.startsWith('[공지]')){
+                       li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title.substring('공지',length)+'['+item.data.comments.length+']</a></div>';
+                    }else{
+                       li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title+'['+item.data.comments.length+']</a>';
+                    }
                     $('ul').css('text-align', 'left');
                 });
             });
