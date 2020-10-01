@@ -34,7 +34,7 @@
         <a href='https://kkotbot-docs.kro.kr/'><img id="kkotb_rfnc" src="img/docs.png"></a>
         <div id="wrap">
             <form action="" autocomplete="off">
-                <input id="search" data-bg="#ff0d86" name="search" type="text" placeholder="검색할 내용을 입력하세요.">
+                <input id="search" data-bg="#ff0d86" name="search" type="text" placeholder="계시글 검색">
                 <!--<button type="submit"><img id="search" src="img/search.png"></button>--><input id="search_submit" value="Rechercher" type="submit">
             </form>
         </div>
@@ -49,6 +49,7 @@
         </section>
     </section>
     <script type="text/javascript">
+        if(!$.cookie('id')) location.href='login';
         if ($("section#body").width == 0) {
             location.reload();
         }
