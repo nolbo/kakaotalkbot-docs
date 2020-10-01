@@ -32,9 +32,28 @@
 </head>
 
 <body>
-    <div id='editors'><div id='toolbar'></div><div id='editor'></div></div>
+    <div id='editors'>
+        <!-- Create toolbar container -->
+        <div id="toolbar">
+            <!-- Add font size dropdown -->
+            <select class="ql-size">
+                <option value="small"></option>
+                <!-- Note a missing, thus falsy value, is used to reset to default -->
+                <option selected></option>
+                <option value="large"></option>
+                <option value="huge"></option>
+            </select>
+            <!-- Add a bold button -->
+            <button class="ql-bold"></button>
+            <!-- Add subscript and superscript buttons -->
+            <button class="ql-script" value="sub"></button>
+            <button class="ql-script" value="super"></button>
+        </div>
+        <div id="editor"></div>
+
+    </div>
     <script type="text/javascript">
-        if(!$.cookie('id')) location.href='login';
+        if (!$.cookie('id')) location.href = 'login';
         if ($("section#body").width == 0) {
             location.reload();
         }
@@ -65,17 +84,13 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        var options = {
-          debug: 'info',
-          modules: {
-            toolbar: '#toolbar'
-          },
-          placeholder: '여기에 내용을 입력...',
-          readOnly: false,
-          theme: 'snow'
-        };
-        var editor = new Quill(document.getElementById('editor'), options);
-  </script>
+
+        var editor = new Quill('#editor', {
+            modules: {
+                toolbar: '#toolbar'
+            }
+        });
+    </script>
 </body>
 
 </html>
