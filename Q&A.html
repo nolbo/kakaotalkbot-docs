@@ -131,6 +131,7 @@
                     document.getElementById('content').style.display='block';
                     document.getElementById('content').innerHTML=marked(doc.data().content);
                     document.getElementById('comments').style.display='block';
+                    document.title=doc.data().title;
                     
                     if(doc.data().by==$.cookie('id')){
                        //수정, 삭제 등 표시
