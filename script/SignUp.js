@@ -5,9 +5,10 @@ function GenerateHMAC(key, payload) {
 	return hashInBase64;
 }
 
-function writeUserData(id, pswd, email, db) {
+function writeUserData(id, nickname, pswd, email, db) {
     db.set({
         id: id,
+	nickname: nickname,
         password: pswd,
         email: email,
         profile: $('img#profile').attr('src')
@@ -105,7 +106,7 @@ $(function(){
                     is = true;
                 }
                 if(is == false){
-                    writeUserData(_id, _pswd, _email, DB);
+                    writeUserData(_id, $('#id').val(), _pswd, _email, DB);
                 }else{
                     $('#id').val('');
                     $('#pswd').val('');
@@ -175,7 +176,7 @@ $(function(){
                     is = true;
                 }
                 if(is == false){
-                    writeUserData(_id, _pswd, _email, DB);
+                    writeUserData(_id, $('#id').val(), _pswd, _email, DB);
                 }else{
                     $('#id').val('');
                     $('#pswd').val('');
