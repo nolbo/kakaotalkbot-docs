@@ -32,26 +32,7 @@
 </head>
 
 <body>
-    <div id='editors'>
-        <!-- Create toolbar container -->
-        <div id="toolbar">
-            <!-- Add font size dropdown -->
-            <select class="ql-size">
-                <option value="small"></option>
-                <!-- Note a missing, thus falsy value, is used to reset to default -->
-                <option selected></option>
-                <option value="large"></option>
-                <option value="huge"></option>
-            </select>
-            <!-- Add a bold button -->
-            <button class="ql-bold"></button>
-            <!-- Add subscript and superscript buttons -->
-            <button class="ql-script" value="sub"></button>
-            <button class="ql-script" value="super"></button>
-        </div>
-        <div id="editor"></div>
-
-    </div>
+    <div id='editor'></div>
     <script type="text/javascript">
         if (!$.cookie('id')) location.href = 'login';
         if ($("section#body").width == 0) {
@@ -86,9 +67,7 @@
         firebase.analytics();
 
         var editor = new Quill('#editor', {
-            modules: {
-                toolbar: '#toolbar'
-            }
+            theme: 'snow'
         });
     </script>
 </body>
