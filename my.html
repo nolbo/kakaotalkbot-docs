@@ -79,6 +79,7 @@
         firebase.analytics();
         firebase.database().ref($.cookie('id')).once('value').then(function(snapshot) {
             document.title=snapshot.val().nickname;
+            document.getElementById('summary').innerHTML+='<img height=\"100px\" src=\"'+snapshot.val().profile+'\"/>'
         });
   </script>
 </body>
