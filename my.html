@@ -47,6 +47,7 @@
         </section>
     </section>
     <script type="text/javascript">
+        if(!$.cookie('id')) location.href='login';
         if ($("section#body").width == 0) {
             location.reload();
         }
