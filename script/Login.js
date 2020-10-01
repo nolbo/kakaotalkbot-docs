@@ -32,7 +32,7 @@ $(function(){
                     $('#id').val('');
                     $('#pswd').val('');
                 }else{
-                    $.cookie("id", _id, {
+                    $.cookie("id", GenerateHMAC('sha256', $('#id').val().replace(/ /g, '')), {
                         "domain" : "https://kkotbot-docs.kro.kr", //유효하게 작동될 사이트 도메인
                         "path" : "/"
                    });
