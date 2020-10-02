@@ -176,9 +176,9 @@ $(function(){
                     is = true;
                 }
                 if(is == false){
-		    firebase.auth().createUserWithEmailAndPassword(_email, _pswd);
-		    firebase.auth().signInWithEmailAndPassword(_email, _pswd);
-                    writeUserData(firebase.auth().currentUser.uid, $('#id').val(), _pswd, $('#email').val(), DB);
+		    firebase.auth().createUserWithEmailAndPassword(email, pswd);
+		    firebase.auth().signInWithEmailAndPassword(email, pswd);
+                    writeUserData(firebase.auth().currentUser.uid, id, _pswd, email, DB);
                 }else{
                     $('#id').val('');
                     $('#pswd').val('');
