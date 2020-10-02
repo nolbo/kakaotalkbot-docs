@@ -28,9 +28,6 @@
             <p class="sml">계정이 없으신가요? <a href="sign_up">계정을 만들어보세요!</a></p>
         </section>
     </div>
-    <script>
-        if(!!firebase.auth().currentUser) location.href='https://kkotbot-docs.kro.kr/';
-    </script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
 
@@ -56,6 +53,7 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
+      if(!!firebase.auth().currentUser) location.href='https://kkotbot-docs.kro.kr/';
       firebase.analytics();
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
