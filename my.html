@@ -78,7 +78,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        if (!firebase.auth().currentUser) location.href = 'login';
+        $(function(){if (!firebase.auth().currentUser) location.href = 'login';})
 
         firebase.database().ref(firebase.auth().currentUser.uid).once('value').then(function(snapshot) {
             if (location.href.startsWith('https://kkotbot-docs.kro.kr/my?search=')) {} else {
