@@ -92,7 +92,7 @@ $(function(){
                         isS = false;
                     }
                 }
-                if(isU == true && isL == true && isN == true && isS == true){
+                if((isU || isL) && isN && isS){
                     $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #b1b1b1');
                 }else{
                     $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
@@ -106,7 +106,9 @@ $(function(){
                     is = true;
                 }
                 if(is == false){
-                    writeUserData(_id, $('#id').val(), _pswd, _email, DB);
+		    firebase.auth().createUserWithEmailAndPassword(email, pswd);
+		    firebase.auth().signInWithEmailAndPassword(email, pswd);
+                    writeUserData(firebase.auth().currentUser.uid, id, _pswd, email, DB);
                 }else{
                     $('#id').val('');
                     $('#pswd').val('');
