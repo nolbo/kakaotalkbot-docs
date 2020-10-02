@@ -49,7 +49,7 @@
         </section>
     </section>
     <script type="text/javascript">
-        if(!$.cookie('id')) location.href='login';
+        if(!firebase.auth().currentUser) location.href='login';
         if ($("section#body").width == 0) {
             location.reload();
         }
@@ -62,6 +62,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
 
     <script>
         // Your web app's Firebase configuration
@@ -89,7 +90,7 @@
                     comments.push({
                         base: base,
                         value: value,
-                        by: $.cookie('id'),
+                        by: firebase.auth().currentUser.uid,
                         ts: new Date
                     });
                     postRef.doc(targetId).update({
@@ -114,7 +115,7 @@
             postRef.add({
                 title: title,
                 value: value,
-                by: $.cookie('id'),
+                by: firebase.auth().currentUser.uid,
                 ts: new Date,
                 comments: []
             }).then(function(docRef) {
@@ -134,7 +135,7 @@
                     document.getElementById('comments').style.display='block';
                     document.title=doc.data().title;
                     
-                    if(doc.data().by==$.cookie('id')){
+                    if(doc.data().by==firebase.auth().currentUser.uid){
                        //수정, 삭제 등 표시
                     }
                 } else {
