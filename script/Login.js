@@ -33,4 +33,16 @@ function login() {
         });
     });
 }
-$(function() {login();});
+$(function() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user) {
+            if (location.href.startsWith('https://kkotbot-docs.kro.kr/login?redirect=')) {
+                location.href = location.href.substring('https://kkotbot-docs.kro.kr/login?redirect='.length); //로그인 후 이동
+            } else {
+                location.href = 'https://kkotbot-docs.kro.kr/'; //로그인 후 이동
+            }
+        } else {
+            login();
+        }
+    });
+});
