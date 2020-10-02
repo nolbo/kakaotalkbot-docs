@@ -80,7 +80,7 @@
         firebase.analytics();
         firebase.auth().onAuthStateChanged(user => {
             if (!user) {
-                location.href = 'login'
+                location.href = 'login?redirect=my'
             }
         });
         $(function() {
