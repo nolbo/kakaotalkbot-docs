@@ -78,7 +78,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        firebase.database().ref(firebase.auth().currentUser).once('value').then(function(snapshot) {
+        firebase.database().ref(firebase.auth().currentUser.uid).once('value').then(function(snapshot) {
             if(location.href.startsWith('https://kkotbot-docs.kro.kr/my?search=')){
             }else{
                 document.title=snapshot.val().nickname;
