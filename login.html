@@ -28,6 +28,9 @@
             <p class="sml">계정이 없으신가요? <a href="sign_up">계정을 만들어보세요!</a></p>
         </section>
     </div>
+    <script>
+        if(!!firebase.auth().currentUser) location.href='login';
+    </script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
 
