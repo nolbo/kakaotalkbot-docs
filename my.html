@@ -47,7 +47,6 @@
         </section>
     </section>
     <script type="text/javascript">
-        if(!firebase.auth().currentUser) location.href='login';
         if ($("section#body").width == 0) {
             location.reload();
         }
@@ -78,6 +77,8 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
+        if (!firebase.auth().currentUser) location.href = 'login';
+        
         firebase.database().ref(firebase.auth().currentUser.uid).once('value').then(function(snapshot) {
             if(location.href.startsWith('https://kkotbot-docs.kro.kr/my?search=')){
             }else{
