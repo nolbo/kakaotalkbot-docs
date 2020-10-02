@@ -78,33 +78,33 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        $(function() {
-            if (/*!firebase.auth().currentUser*/false) {
-                location.href = 'login';
-            } else {
-
-                firebase.database().ref(firebase.auth().currentUser.uid).once('value').then(function(snapshot) {
-                    if (location.href.startsWith('https://kkotbot-docs.kro.kr/my?search=')) {} else {
-                        document.title = snapshot.val().nickname;
-                        document.getElementById('profile').innerHTML += '<img style=\"border-radius: 50%; box-shadow: 0rem 0rem 0.4rem 0rem #b1b1b1; border-radius: 3rem;\" height=\"100px\" src=\"' + snapshot.val().profile + '\"/>'
-                        /*
-                        var user = firebase.auth().currentUser;
-
-                        user.updateEmail("user@example.com").then(function() {
-                            // Update successful.
-                        }).catch(function(error) {
-                            // An error happened.
-                        });
-
-                        user.updatePassword(newPassword).then(function() {
-                            // Update successful.
-                        }).catch(function(error) {
-                            // An error happened.
-                        });
-                        */
-                    }
-                });
+        firebase.auth().onAuthStateChanged(user => {
+            if (!user) {
+                location.href = 'login'
             }
+        });
+        $(function() {
+            firebase.database().ref(firebase.auth().currentUser.uid).once('value').then(function(snapshot) {
+                if (location.href.startsWith('https://kkotbot-docs.kro.kr/my?search=')) {} else {
+                    document.title = snapshot.val().nickname;
+                    document.getElementById('profile').innerHTML += '<img style=\"border-radius: 50%; box-shadow: 0rem 0rem 0.4rem 0rem #b1b1b1; border-radius: 3rem;\" height=\"100px\" src=\"' + snapshot.val().profile + '\"/>'
+                    /*
+                    var user = firebase.auth().currentUser;
+
+                    user.updateEmail("user@example.com").then(function() {
+                        // Update successful.
+                    }).catch(function(error) {
+                        // An error happened.
+                    });
+
+                    user.updatePassword(newPassword).then(function() {
+                        // Update successful.
+                    }).catch(function(error) {
+                        // An error happened.
+                    });
+                    */
+                }
+            });
         });
     </script>
 </body>
