@@ -1,12 +1,10 @@
 $(function(){
-    if($.cookie('id') == undefined){
+    if(!firebase.auth().currentUser){
         location.href = 'index.html';
     }else{
-        var DB = firebase.database().ref($.cookie('id'));
-        alert('1');
-        DB.on("value", function(snapshot) {
-            var users = snapshot.val();
-            alert(JSON.stringify(users));
+        var DB = firebase.database().ref(firebase.auth().currentUser.uid);
+        DB.once("value").then(function(snapshot) {
+            var user = snapshot.val();
             $('img#profile').attr('src', users['profile']);
         });
     }
