@@ -79,7 +79,7 @@
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
         $(function() {
-            if (!firebase.auth().currentUser) {
+            if (/*!firebase.auth().currentUser*/false) {
                 location.href = 'login';
             } else {
 
