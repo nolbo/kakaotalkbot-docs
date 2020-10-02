@@ -131,7 +131,7 @@
                     //내용표시
                     
                     document.getElementById('content').style.display='block';
-                    document.getElementById('content').innerHTML=marked(doc.data().content);
+                    document.getElementById('content').innerHTML=doc.data().content;
                     document.getElementById('comments').style.display='block';
                     document.title=doc.data().title;
                     
@@ -150,7 +150,6 @@
                 var items = [];
                 querySnapshot.forEach(function(doc) {
                     // doc.data() is never undefined for query doc snapshots
-                    console.log(doc.id, " => ", doc.data());
                     items.push({data: doc.data(), id: doc.id});
                 });
                 let ul = document.createElement('ul');
@@ -159,13 +158,13 @@
                     let li = document.createElement('li');
                     ul.appendChild(li);
                     if(item.data.comments.length!=0){
-                    if(['Edp2SVLFrc8y4OQUF30xEjh3YrLMMfB|T2O+dRHQtE4=', 'JXwTavehlZKbeZOkogOdesRu0M4WHeRNuA|iCf6+tgM='].indexOf(item.data.by)!=-1&&item.data.title.startsWith('[공지]')){
+                    if(['MKNCtE68DyfpXBAkhBWMiN0CWLC2'].indexOf(item.data.by)!=-1&&item.data.title.startsWith('[공지]')){
                        li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title.substring('[공지]'.length)+'</a></div>';
                     }else{
                        li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title+'</a>';
                     }
                     }else{
-                    if(['Edp2SVLFrc8y4OQUF30xEjh3YrLMMfB|T2O+dRHQtE4=', 'JXwTavehlZKbeZOkogOdesRu0M4WHeRNuA|iCf6+tgM='].indexOf(item.data.by)!=-1&&item.data.title.startsWith('[공지]')){
+                    if(['MKNCtE68DyfpXBAkhBWMiN0CWLC2'].indexOf(item.data.by)!=-1&&item.data.title.startsWith('[공지]')){
                        li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title.substring('[공지]'.length)+'['+item.data.comments.length+']</a></div>';
                     }else{
                        li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title+'['+item.data.comments.length+']</a>';
