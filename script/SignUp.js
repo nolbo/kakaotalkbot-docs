@@ -179,7 +179,6 @@ $(function(){
                 }
                 if(is == false){
 		    firebase.auth().createUserWithEmailAndPassword(email, pswd);
-		    firebase.auth().signInWithEmailAndPassword(email, pswd);
                     writeUserData(firebase.auth().currentUser.uid, id, _pswd, email, DB);
                 }else{
                     $('#id').val('');
