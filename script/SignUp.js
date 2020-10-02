@@ -26,8 +26,12 @@ $(function() {
         var users;
 
         firebase.database().ref().once('value').then(function(snapshot) {
-            users = Object.values(snapshot.val());
-            if (users.length > 1) {
+            if(!snapshot.val()){
+                users = Object.values(snapshot.val());
+            }else{
+                users = [];
+            }
+            if (users.length > 0) {
                 // ID, 이메일 검사
                 for (let i = 1; i < users.length; i++) {
                     if (users[i]['id'] == _id || id.length == 0) {
@@ -42,7 +46,7 @@ $(function() {
                         break;
                     }
                 }
-            } else if (users.length == 1) {
+            } else if (users.length == 0) {
                 if (id.length == 0) {
                     $('#email').css('box-shadow', '0rem 0rem 0.9rem 0rem #b1b1b1');
                     $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
