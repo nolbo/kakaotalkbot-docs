@@ -40,7 +40,7 @@
 <body>
     <div id='editor'></div>
     <script type="text/javascript">
-        if (!$.cookie('id')) location.href = 'login';
+        if (!firebase.auth().currentUser) location.href = 'login';
         if ($("section#body").width == 0) {
             location.reload();
         }
@@ -53,6 +53,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
