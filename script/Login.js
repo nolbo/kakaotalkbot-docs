@@ -1,9 +1,3 @@
-function GenerateHMAC(key, payload) { //암호화 함수
-    var message = btoa(payload);
-    var hash = CryptoJS.HmacSHA256(message, key);
-    var hashInBase64 = CryptoJS.enc.Base64.stringify(hash).replace(/\//g, "|");
-    return hashInBase64;
-}
 if (!!firebase.auth().currentUser) {
     location.href = 'https://kkotbot-docs.kro.kr/';
 }
@@ -24,6 +18,7 @@ $(function() {
                 $('#id').val('');
                 $('#pswd').val('');
             } else {
+                console.log(_email)
                 firebase.auth().signInWithEmailAndPassword(_email, $('#pswd').val()).then(function() {
                     firebase.database().ref(firebase.auth().currentUser.uid).once("value").then(function(snapshot) {
                         var user = snapshot.val();
