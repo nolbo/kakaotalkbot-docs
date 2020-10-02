@@ -69,7 +69,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        if (!firebase.auth().currentUser) location.href = 'login';
+        //if (!firebase.auth().currentUser) location.href = 'login';
         
         var editor = new Quill('#editor', {
             modules: {
