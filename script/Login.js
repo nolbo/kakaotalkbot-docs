@@ -1,7 +1,7 @@
 if (!!firebase.auth().currentUser) {
     location.href = 'https://kkotbot-docs.kro.kr/';
 }
-$(function() {
+function login() {
     var _email;
     $('button#complete').click(function(event) {
         event.preventDefault();
@@ -40,4 +40,5 @@ $(function() {
             }
         });
     });
-});
+}
+$(function() {login();});
