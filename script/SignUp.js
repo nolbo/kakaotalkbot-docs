@@ -107,11 +107,13 @@ $(function() {
                 is = true;
             }
             if (is == false) {
-                firebase.auth().createUserWithEmailAndPassword(email, pswd);
-                firebase.database().ref(firebase.auth().currentUser.uid).set({
-                    nickname: id,
-                    email: email,
-                    profile: $('img#profile').attr('src')
+                firebase.auth().createUserWithEmailAndPassword(email, pswd).then(function(){
+                    firebase.auth().currentUser.sendEmailVerification();
+                    firebase.database().ref(firebase.auth().currentUser.uid).set({
+                        nickname: id,
+                        email: email,
+                        profile: $('img#profile').attr('src')
+                    });
                 });
                 location.href = 'https://kkotbot-docs.kro.kr/login';
             } else {
