@@ -40,7 +40,6 @@
 <body>
     <div id='editor'></div>
     <script type="text/javascript">
-        if (!firebase.auth().currentUser) location.href = 'login';
         if ($("section#body").width == 0) {
             location.reload();
         }
@@ -70,7 +69,8 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-
+        if (!firebase.auth().currentUser) location.href = 'login';
+        
         var editor = new Quill('#editor', {
             modules: {
                 toolbar: [
