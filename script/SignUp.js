@@ -125,7 +125,7 @@ $(function(){
                     is = true;
                 }
                  // 비밀번호 검사
-		 /*
+		 
                  for(index in Upper){
                     if(pswd.includes(Upper[index]) == true){
                         isU = true;
@@ -134,7 +134,7 @@ $(function(){
                         isU = false;
                     }
                 }
-		*/
+		
         
                 for(index in Lower){
                     if(pswd.includes(Lower[index]) == true){
@@ -162,7 +162,7 @@ $(function(){
                         isS = false;
                     }
                 }
-                if((isU == true || isL == true) && isN == true && isS == true){
+                if((isU || isL) && isN && isS){
                     $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #b1b1b1');
                 }else{
                     $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
