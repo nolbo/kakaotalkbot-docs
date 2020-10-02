@@ -162,7 +162,7 @@ $(function(){
                         isS = false;
                     }
                 }
-                if((isU == true || =isL == true) && isN == true && isS == true){
+                if((isU == true || isL == true) && isN == true && isS == true){
                     $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #b1b1b1');
                 }else{
                     $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
