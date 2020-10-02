@@ -79,7 +79,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        if(!firebase.auth().currentUser) location.href='login';
+        //if(!firebase.auth().currentUser) location.href='login';
         var firestore = firebase.firestore();
         var postRef = firestore.collection('posts');
 
