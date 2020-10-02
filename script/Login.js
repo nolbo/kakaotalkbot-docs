@@ -26,13 +26,9 @@ $(function() {
                     $('#pswd').val('');
                 } else {
                     firebase.auth().signInWithEmailAndPassword(_email, $('#pswd').val()).then(function() {
-                        var _id = GenerateHMAC('sha256', $('#id').val().replace(/ /g, ''));
-                        var _pswd = GenerateHMAC('sha256', $('#pswd').val().replace(/ /g, ''));
-
                         firebase.database().ref(firebase.auth().currentUser.uid).once("value").then(function(snapshot) {
                             var user = snapshot.val();
-
-                            if (user == undefined) { //id가 없을때
+                            if (!user) { //id가 없을때
                                 $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #d1d1d1');
                                 $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
                                 $('#id').val('');
