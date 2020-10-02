@@ -44,6 +44,7 @@
     </div>
     <section id="body">
         <section id="summary" style="text-decoration: none;color: black;">
+            <div id="profile"></div>
         </section>
     </section>
     <script type="text/javascript">
@@ -83,7 +84,7 @@
             if(location.href.startsWith('https://kkotbot-docs.kro.kr/my?search=')){
             }else{
                 document.title=snapshot.val().nickname;
-                document.getElementById('summary').innerHTML+='<img style=\"border-radius: 50%; box-shadow: 0rem 0rem 0.4rem 0rem #b1b1b1; border-radius: 3rem;\" height=\"100px\" src=\"'+snapshot.val().profile+'\"/>'
+                document.getElementById('profile').innerHTML+='<img style=\"border-radius: 50%; box-shadow: 0rem 0rem 0.4rem 0rem #b1b1b1; border-radius: 3rem;\" height=\"100px\" src=\"'+snapshot.val().profile+'\"/>'
             }
         });
   </script>
