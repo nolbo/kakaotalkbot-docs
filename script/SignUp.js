@@ -26,7 +26,7 @@ $(function() {
         var users;
 
         firebase.database().ref().once('value').then(function(snapshot) {
-            if(!snapshot.val()){
+            if(!!snapshot.val()){
                 users = Object.values(snapshot.val());
             }else{
                 users = [];
