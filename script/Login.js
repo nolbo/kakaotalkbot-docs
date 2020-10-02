@@ -28,5 +28,6 @@ function login() {
             }
         });
     });
+    if(!!firebase.auth().currentUser) location.href='https://kkotbot-docs.kro.kr/';
 }
 $(function() {login();});
