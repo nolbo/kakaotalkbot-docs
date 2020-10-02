@@ -69,21 +69,26 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        firebase.auth().onAuthStateChanged(user => {if(!user){location.href='login?redirect=new'}});
-        
-        var editor = new Quill('#editor', {
-            modules: {
-                toolbar: [
-                    [{
-                        header: [1, 2, false]
-                    }],
-                    ['bold', 'italic', 'underline'],
-                    ['image', 'code-block']
-                ],
-                syntax: true
-            },
-            placeholder: '여기 내용을 입력...',
-            theme: 'snow' // or 'bubble'
+        firebase.auth().onAuthStateChanged(user => {
+            if (!user) {
+                location.href = 'login?redirect=new'
+            } else {
+
+                var editor = new Quill('#editor', {
+                    modules: {
+                        toolbar: [
+                            [{
+                                header: [1, 2, false]
+                            }],
+                            ['bold', 'italic', 'underline'],
+                            ['image', 'code-block']
+                        ],
+                        syntax: true
+                    },
+                    placeholder: '여기 내용을 입력...',
+                    theme: 'snow' // or 'bubble'
+                });
+            }
         });
     </script>
 </body>
