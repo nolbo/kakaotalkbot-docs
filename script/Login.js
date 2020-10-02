@@ -18,39 +18,37 @@ $(function() {
                         _email = childSnapshot.val().email;
                     }
                 })
-            });
-            if (!_email || !email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
-                $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #d1d1d1');
-                $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
-                $('#id').val('');
-                $('#pswd').val('');
-            }else{
-            firebase.auth().signInWithEmailAndPassword(_email, $('#pswd').val()).then(function() {
-                var _id = GenerateHMAC('sha256', $('#id').val().replace(/ /g, ''));
-                var _pswd = GenerateHMAC('sha256', $('#pswd').val().replace(/ /g, ''));
-                var DB = firebase.database().ref(firebase.auth().currentUser.uid);
+            }).then(function() {
+                if (!_email) {
+                    $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
+                    $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
+                    $('#id').val('');
+                    $('#pswd').val('');
+                } else {
+                    firebase.auth().signInWithEmailAndPassword(_email, $('#pswd').val()).then(function() {
+                        var _id = GenerateHMAC('sha256', $('#id').val().replace(/ /g, ''));
+                        var _pswd = GenerateHMAC('sha256', $('#pswd').val().replace(/ /g, ''));
 
+                        firebase.database().ref(firebase.auth().currentUser.uid).once("value").then(function(snapshot) {
+                            var user = snapshot.val();
 
-
-                DB.once("value").then(function(snapshot) {
-                    var user = snapshot.val();
-
-                    if (user == undefined) { //id가 없을때
-                        $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #d1d1d1');
-                        $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
+                            if (user == undefined) { //id가 없을때
+                                $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #d1d1d1');
+                                $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
+                                $('#id').val('');
+                                $('#pswd').val('');
+                            } else {
+                                location.href = 'https://kkotbot-docs.kro.kr/'; //로그인 후 이동
+                            }
+                        });
+                    }).catch(function(error) {
+                        $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #d1d1d1');
+                        $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
                         $('#id').val('');
                         $('#pswd').val('');
-                    } else {
-                        location.href = 'https://kkotbot-docs.kro.kr/'; //로그인 후 이동
-                    }
-                });
-            }).catch(function(error) {
-                $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #d1d1d1');
-                $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
-                $('#id').val('');
-                $('#pswd').val('');
+                    });
+                }
             });
-            }
         });
     }
 });
