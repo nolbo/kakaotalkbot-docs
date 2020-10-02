@@ -79,102 +79,109 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        firebase.auth().onAuthStateChanged(user => {if(!user){location.href='login?redirect=Q&A'}});
-        if(!firebase.auth().currentUser) location.href='login';
-        var firestore = firebase.firestore();
-        var postRef = firestore.collection('posts');
+        firebase.auth().onAuthStateChanged(user => {
+            if (!user) {
+                location.href = 'login?redirect=Q&A'
+            } else {
+                var firestore = firebase.firestore();
+                var postRef = firestore.collection('posts');
 
-        function comment(targetId, value, base) {
-            postRef.doc(targetId).get().then(function(doc) {
-                if (doc.exists) {
-                    comments = doc.data().comments;
-                    comments.push({
-                        base: base,
+                function comment(targetId, value, base) {
+                    postRef.doc(targetId).get().then(function(doc) {
+                        if (doc.exists) {
+                            comments = doc.data().comments;
+                            comments.push({
+                                base: base,
+                                value: value,
+                                by: firebase.auth().currentUser.uid,
+                                ts: new Date
+                            });
+                            postRef.doc(targetId).update({
+                                    comments: comments
+                                }).then(function() {
+                                    console.log("Document successfully updated!");
+                                })
+                                .catch(function(error) {
+                                    // The document probably doesn't exist.
+                                    console.error("Error updating document: ", error);
+                                });
+                        } else {
+                            // doc.data() will be undefined in this case
+                            console.log("No such document!");
+                        }
+                    }).catch(function(error) {
+                        console.log("Error getting document:", error);
+                    });
+                }
+
+                function post(title, value) {
+                    postRef.add({
+                        title: title,
                         value: value,
                         by: firebase.auth().currentUser.uid,
-                        ts: new Date
+                        ts: new Date,
+                        comments: []
+                    }).then(function(docRef) {
+                        console.log("Document written with ID: ", docRef.id);
+                    }).catch(function(error) {
+                        console.error("Error adding document: ", error);
                     });
-                    postRef.doc(targetId).update({
-                            comments: comments
-                        }).then(function() {
-                            console.log("Document successfully updated!");
-                        })
-                        .catch(function(error) {
-                            // The document probably doesn't exist.
-                            console.error("Error updating document: ", error);
+                }
+
+                if (location.href.startsWith('https://kkotbot-docs.kro.kr/Q&A?id=')) {
+                    postRef.doc(location.href.substring('https://kkotbot-docs.kro.kr/Q&A?id='.length)).get().then(function(doc) {
+                        if (doc.exists) {
+                            //내용표시
+
+                            document.getElementById('content').style.display = 'block';
+                            document.getElementById('content').innerHTML = doc.data().content;
+                            document.getElementById('comments').style.display = 'block';
+                            document.title = doc.data().title;
+
+                            if (doc.data().by == firebase.auth().currentUser.uid) {
+                                //수정, 삭제 등 표시
+                            }
+                        } else {
+                            // doc.data() will be undefined in this case
+                            console.log("No such document!");
+                        }
+                    }).catch(function(error) {
+                        console.log("Error getting document:", error);
+                    });
+                } else {
+                    postRef.get().then(function(querySnapshot) {
+                        var items = [];
+                        querySnapshot.forEach(function(doc) {
+                            // doc.data() is never undefined for query doc snapshots
+                            items.push({
+                                data: doc.data(),
+                                id: doc.id
+                            });
                         });
-                } else {
-                    // doc.data() will be undefined in this case
-                    console.log("No such document!");
+                        let ul = document.createElement('ul');
+                        document.getElementById('summary').appendChild(ul);
+                        items.slice(0, 20).forEach(function(item) {
+                            let li = document.createElement('li');
+                            ul.appendChild(li);
+                            if (item.data.comments.length != 0) {
+                                if (['MKNCtE68DyfpXBAkhBWMiN0CWLC2'].indexOf(item.data.by) != -1 && item.data.title.startsWith('[공지]')) {
+                                    li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title.substring('[공지]'.length) + '</a></div>';
+                                } else {
+                                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title + '</a>';
+                                }
+                            } else {
+                                if (['MKNCtE68DyfpXBAkhBWMiN0CWLC2'].indexOf(item.data.by) != -1 && item.data.title.startsWith('[공지]')) {
+                                    li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title.substring('[공지]'.length) + '[' + item.data.comments.length + ']</a></div>';
+                                } else {
+                                    li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id=' + item.id + '\" style=\"color: black;\">' + item.data.title + '[' + item.data.comments.length + ']</a>';
+                                }
+                            }
+                            $('ul').css('text-align', 'left');
+                        });
+                    });
                 }
-            }).catch(function(error) {
-                console.log("Error getting document:", error);
-            });
-        }
-
-        function post(title, value) {
-            postRef.add({
-                title: title,
-                value: value,
-                by: firebase.auth().currentUser.uid,
-                ts: new Date,
-                comments: []
-            }).then(function(docRef) {
-                console.log("Document written with ID: ", docRef.id);
-            }).catch(function(error) {
-                console.error("Error adding document: ", error);
-            });
-        }
-
-        if (location.href.startsWith('https://kkotbot-docs.kro.kr/Q&A?id=')) {
-            postRef.doc(location.href.substring('https://kkotbot-docs.kro.kr/Q&A?id='.length)).get().then(function(doc) {
-                if (doc.exists) {
-                    //내용표시
-                    
-                    document.getElementById('content').style.display='block';
-                    document.getElementById('content').innerHTML=doc.data().content;
-                    document.getElementById('comments').style.display='block';
-                    document.title=doc.data().title;
-                    
-                    if(doc.data().by==firebase.auth().currentUser.uid){
-                       //수정, 삭제 등 표시
-                    }
-                } else {
-                    // doc.data() will be undefined in this case
-                    console.log("No such document!");
-                }
-            }).catch(function(error) {
-                console.log("Error getting document:", error);
-            });
-        } else {
-            postRef.get().then(function(querySnapshot) {
-                var items = [];
-                querySnapshot.forEach(function(doc) {
-                    // doc.data() is never undefined for query doc snapshots
-                    items.push({data: doc.data(), id: doc.id});
-                });
-                let ul = document.createElement('ul');
-                document.getElementById('summary').appendChild(ul);
-                items.slice(0, 20).forEach(function (item) {
-                    let li = document.createElement('li');
-                    ul.appendChild(li);
-                    if(item.data.comments.length!=0){
-                    if(['MKNCtE68DyfpXBAkhBWMiN0CWLC2'].indexOf(item.data.by)!=-1&&item.data.title.startsWith('[공지]')){
-                       li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title.substring('[공지]'.length)+'</a></div>';
-                    }else{
-                       li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title+'</a>';
-                    }
-                    }else{
-                    if(['MKNCtE68DyfpXBAkhBWMiN0CWLC2'].indexOf(item.data.by)!=-1&&item.data.title.startsWith('[공지]')){
-                       li.innerHTML += '<div style=\"color: red;\">[공지]<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title.substring('[공지]'.length)+'['+item.data.comments.length+']</a></div>';
-                    }else{
-                       li.innerHTML += '<a href=\"https://kkotbot-docs.kro.kr/Q&A?id='+item.id+'\" style=\"color: black;\">'+item.data.title+'['+item.data.comments.length+']</a>';
-                    }
-                    }
-                    $('ul').css('text-align', 'left');
-                });
-            });
-        }
+            }
+        });
     </script>
 </body>
 
