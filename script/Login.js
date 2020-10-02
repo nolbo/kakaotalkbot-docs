@@ -14,17 +14,17 @@ $(function() {
             event.preventDefault();
             firebase.database().ref().once("value").then(function(snapshot) {
                 snapshot.forEach(function(childSnapshot) {
-                    if (childSnapshot.val().nickname == $('#id').val()) {
+                    if (childSnapshot.val().nickname == $('#id').val().replace(/ /g, "")) {
                         _email = childSnapshot.val().email;
                     }
                 })
             });
-            if (!_email) {
+            if (!_email || !email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
                 $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #d1d1d1');
                 $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
                 $('#id').val('');
                 $('#pswd').val('');
-            }
+            }else{
             firebase.auth().signInWithEmailAndPassword(_email, $('#pswd').val()).then(function() {
                 var _id = GenerateHMAC('sha256', $('#id').val().replace(/ /g, ''));
                 var _pswd = GenerateHMAC('sha256', $('#pswd').val().replace(/ /g, ''));
@@ -50,6 +50,7 @@ $(function() {
                 $('#id').val('');
                 $('#pswd').val('');
             });
+            }
         });
     }
 });
