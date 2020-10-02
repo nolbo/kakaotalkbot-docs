@@ -17,7 +17,7 @@ $(function() {
                     _email == childSnapshot.val().email
                 }
             })
-        }
+        });
         if(!!_email){
             $('#id').css('box-shadow', '0rem 0rem 0.9rem 0rem #d1d1d1');
             $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
