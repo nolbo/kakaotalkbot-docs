@@ -26,9 +26,9 @@ $(function() {
         var users;
 
         firebase.database().ref().once('value').then(function(snapshot) {
-            if(!!snapshot.val()){
+            if (!!snapshot.val()) {
                 users = Object.values(snapshot.val());
-            }else{
+            } else {
                 users = [];
             }
             if (users.length > 0) {
@@ -107,15 +107,19 @@ $(function() {
                 is = true;
             }
             if (is == false) {
-                firebase.auth().createUserWithEmailAndPassword(email, pswd).then(function(){
-                    firebase.auth().currentUser.sendEmailVerification();
-                    firebase.database().ref(firebase.auth().currentUser.uid).set({
-                        nickname: id,
-                        email: email,
-                        profile: $('img#profile').attr('src')
+                firebase.auth().createUserWithEmailAndPassword(email, pswd).then(function() {
+                    firebase.auth().currentUser.sendEmailVerification().then(function() {
+                        firebase.database().ref(firebase.auth().currentUser.uid).set({
+                            nickname: id,
+                            email: email,
+                            profile: $('img#profile').attr('src')
+                        }).then(function() {
+                            firebase.auth().signOut().then(function() {
+                                location.href = 'https://kkotbot-docs.kro.kr/login';
+                            })
+                        });
                     });
                 });
-                location.href = 'https://kkotbot-docs.kro.kr/login';
             } else {
                 $('#id').val('');
                 $('#pswd').val('');
