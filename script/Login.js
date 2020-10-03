@@ -17,10 +17,15 @@ function login() {
             } else {
                 console.log(_email)
                 firebase.auth().signInWithEmailAndPassword(_email, $('#pswd').val()).then(function() {
-                    if (location.href.startsWith('https://kkotbot-docs.kro.kr/login?redirect=')) {
-                        location.href = location.href.substring('https://kkotbot-docs.kro.kr/login?redirect='.length); //로그인 후 이동
-                    } else {
-                        location.href = 'https://kkotbot-docs.kro.kr/'; //로그인 후 이동
+                    if(!firebase.auth().currentUser.emailVerified){
+                        alert('발송된 이메일을 인증해주세요');
+                        firebase.auth().singOut();
+                    }else{
+                        if (location.href.startsWith('https://kkotbot-docs.kro.kr/login?redirect=')) {
+                            location.href = location.href.substring('https://kkotbot-docs.kro.kr/login?redirect='.length); //로그인 후 이동
+                        } else {
+                            location.href = 'https://kkotbot-docs.kro.kr/'; //로그인 후 이동
+                        }
                     }
                 }).catch(function(error) {
                     console.log(error);
