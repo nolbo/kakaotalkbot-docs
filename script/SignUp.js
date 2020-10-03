@@ -119,6 +119,8 @@ $(function() {
                             })
                         });
                     });
+                }).catch(function(e){
+                    if(e.code=="auth/email-already-in-use"){$('#email').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');}
                 });
             } else {
                 $('#id').val('');
