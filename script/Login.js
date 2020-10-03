@@ -35,7 +35,7 @@ function login() {
 }
 $(function() {
     firebase.auth().onAuthStateChanged(user => {
-        if (!user) {
+        if (!!user) {
             if (location.href.startsWith('https://kkotbot-docs.kro.kr/login?redirect=')) {
                 location.href = location.href.substring('https://kkotbot-docs.kro.kr/login?redirect='.length); //로그인 후 이동
             } else {
