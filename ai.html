@@ -70,10 +70,6 @@ use.load().then(model => {
   });
 });
 /**/
-use.loadTokenizer().then(tokenizer => {
-  tokenizer.encode('Hello, how are you?'); // [341, 4125, 8, 140, 31, 19, 54]
-});
-/**/
 // Load the model.
 use.loadQnA().then(model => {
   // Embed a dictionary of a query and responses. The input to the embed method
