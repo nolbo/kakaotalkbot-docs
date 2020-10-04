@@ -62,7 +62,6 @@ use.load().then(model => {
                 model = await qna.load();
 
                 function QNA(question) {
-                    question = "What is Rhino?"
                     start = Date.now();
                     answers = await model.findAnswers(question, passage);
                     return answers;
