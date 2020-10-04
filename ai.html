@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kkotbot-docs.kro.kr">
+    <meta property="og:title" content="KakaotalkBot Docs">
+    <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
+    <meta property="og:image" content="https://kkotbot-docs.kro.kr/img/grp_img.jpg">
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/icon.ico">
+    <title></title>
+</head>
+
+<body>
+<script>
+// The minimum prediction confidence.
+const threshold = 0.9;
+
+// Load the model. Users optionally pass in a threshold and an array of
+// labels to include.
+toxicity.load(threshold).then(model => {
+  const sentences = ['you suck'];
+
+  model.classify(sentences).then(predictions => {
+    // `predictions` is an array of objects, one for each prediction head,
+    // that contains the raw probabilities for each input along with the
+    // final prediction in `match` (either `true` or `false`).
+    // If neither prediction exceeds the threshold, `match` is `null`.
+
+    console.log(predictions);
+    /*
+    prints:
+    {
+      "label": "identity_attack",
+      "results": [{
+        "probabilities": [0.9659664034843445, 0.03403361141681671],
+        "match": false
+      }]
+    },
+    {
+      "label": "insult",
+      "results": [{
+        "probabilities": [0.08124706149101257, 0.9187529683113098],
+        "match": true
+      }]
+    },
+    ...
+     */
+  });
+});
+/**/
+// Load the model.
+use.load().then(model => {
+  // Embed an array of sentences.
+  const sentences = [
+    'Hello.',
+    'How are you?'
+  ];
+  model.embed(sentences).then(embeddings => {
+    // `embeddings` is a 2D tensor consisting of the 512-dimensional embeddings for each sentence.
+    // So in this example `embeddings` has the shape [2, 512].
+    embeddings.print(true /* verbose */);
+  });
+});
+/**/
+use.loadTokenizer().then(tokenizer => {
+  tokenizer.encode('Hello, how are you?'); // [341, 4125, 8, 140, 31, 19, 54]
+});
+/**/
+// Load the model.
+use.loadQnA().then(model => {
+  // Embed a dictionary of a query and responses. The input to the embed method
+  // needs to be in following format:
+  // {
+  //   queries: string[];
+  //   responses: Response[];
+  // }
+  // queries is an array of question strings
+  // responses is an array of following structure:
+  // {
+  //   response: string;
+  //   context?: string;
+  // }
+  // context is optional, it provides the context string of the answer.
+
+  const input = {
+    queries: ['How are you feeling today?', 'What is captial of China?'],
+    responses: [
+      'I\'m not feeling very well.',
+      'Beijing is the capital of China.',
+      'You have five fingers on your hand.'
+    ]
+  };
+  var scores = [];
+  model.embed(input).then(embeddings => {
+    /*
+     * The output of the embed method is an object with two keys:
+     * {
+     *   queryEmbedding: tf.Tensor;
+     *   responseEmbedding: tf.Tensor;
+     * }
+     * queryEmbedding is a tensor containing embeddings for all queries.
+     * responseEmbedding is a tensor containing embeddings for all answers.
+     * You can call `arraySync()` to retrieve the values of the tensor.
+     * In this example, embed_query[0] is the embedding for the query
+     * 'How are you feeling today?'
+     * And embed_responses[0] is the embedding for the answer
+     * 'I\'m not feeling very well.'
+     */
+    const embed_query = embeddings['queryEmbedding'].arraySync();
+    const embed_responses = embeddings['responseEmbedding'].arraySync();
+    // compute the dotProduct of each query and response pair.
+    for (let i = 0; i < input['queries'].length; i++) {
+      for (let j = 0; j < input['responses'].length; j++) {
+        scores.push(dotProduct(embed_query[i], embed_responses[j]));
+      }
+    }
+  });
+});
+
+// Calculate the dot product of two vector arrays.
+const dotProduct = (xs, ys) => {
+  const sum = xs => xs ? xs.reduce((a, b) => a + b, 0) : undefined;
+
+  return xs.length === ys.length ?
+    sum(zipWith((a, b) => a * b, xs, ys))
+    : undefined;
+}
+
+// zipWith :: (a -> b -> c) -> [a] -> [b] -> [c]
+const zipWith =
+    (f, xs, ys) => {
+      const ny = ys.length;
+      return (xs.length <= ny ? xs : xs.slice(0, ny))
+          .map((x, i) => f(x, ys[i]));
+    }
+</script>
+</body>
+
+</html>
