@@ -65,13 +65,13 @@ question = "What is Rhino?"
 start = Date.now();
 answers = await model.findAnswers(question, passage);
 
-console.log(question+'\n'+answers[0].text+'=>'+answers[0].score+'\n'+(Date.now()-start)+'ms');
+console.log(question+'\n'+answers[0].text+'\nscore =>'+answers[0].score+'\n'+(Date.now()-start)+'ms');
 
 question = "What does replier.reply do?";
 start = Date.now();
 answers = await model.findAnswers(question, passage);
 
-console.log(question+'\n'+answers[0].text+'=>'+answers[0].score+'\n'+(Date.now()-start)+'ms');
+console.log(question+'\n'+answers[0].text+'\nscore =>'+answers[0].score+'\n'+(Date.now()-start)+'ms');
 })()
 </script>
 </body>
