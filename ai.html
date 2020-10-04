@@ -69,7 +69,8 @@ use.load().then(model => {
                     return answers;
                 }
                 
-                function logQNA(answers){
+                function logQNA(question){
+                    answers=QNA(question);
                     if(answers==[]){
                         console.log('no answers found');
                     }else{
