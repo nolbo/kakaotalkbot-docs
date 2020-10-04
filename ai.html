@@ -71,7 +71,7 @@ use.load().then(model => {
                 
                 function logQNA(question){
                     answers=QNA(question);
-                    if(answers==[]){
+                    if(!answers[0]){
                         console.log('no answers found');
                     }else{
                         console.log(question + '\n' + answers[0].text + '\nscore =>' + answers[0].score + '\n' + (Date.now() - start) + 'ms');
