@@ -41,9 +41,10 @@
                     return question + '\n' + answers[0].text + '\nscore =>' + answers[0].score + '\n' + (Date.now() - start) + 'ms';
                 }
             };
-            QNA("What does replier.reply do?");
+            QNA("What does replier.reply do?").then(function(){
+                console.log('try QNA(\'what is rhino?\') in console');
+            });
         });
-        console.log('try QNA(\'what is rhino?\') in console')
     </script>
 </body>
 
