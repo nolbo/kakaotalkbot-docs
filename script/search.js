@@ -14,10 +14,19 @@ var error_codes = {
         scrollTop: $(pos).offset().top - 155
     }, 1500, "swing");
     */
-   $("html").scrollTop($(pos).offset().top - 155);
+   $('section#body > section').animate({opacity: "0"}, 700);
+    setTimeout(function(){
+        $("html").scrollTop($(pos).offset().top - 155);
+        $('section#body > section').animate({opacity: "1"}, 700);
+    }, 700); 
   }
   function go(pos){
     $("html").scrollTop($(pos).offset().top - 155);
+    $('section#body > section').animate({opacity: "0"}, 700);
+    setTimeout(function(){
+        $("html").scrollTop($(pos).offset().top - 155);
+        $('section#body > section').animate({opacity: "1"}, 700);
+    }, 700); 
   }
   $(document).ready(function() {
     if (decodeURIComponent(location.href).startsWith(base + "?")) {

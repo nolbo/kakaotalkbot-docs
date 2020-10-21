@@ -1,6 +1,6 @@
 $.getChangeDarkMode = function(){
     $("p#thank_you").css("color", "white");
-    $("img#kkotb_rfnc").attr("src", "img/docs_dark.png");
+    $("img#kkotb_rfnc").attr("src", "../../img/docs_dark.png");
     $("img.sttc").attr("src", "../../img/static_dark.png");
     $("img.prttp").attr("src", "../../img/prototype_dark.png");
     $("link#favicon").attr("href", "../../img/icon_dark.ico");
@@ -32,7 +32,7 @@ $.getChangeWhiteMode = function(){
     $("img#kkotb_rfnc").attr("src", "img/docs.png");
     $("img.sttc").attr("src", "../../img/static.png");
     $("img.prttp").attr("src", "../../img/prototype.png");
-    $("link#favicon").attr("href", "../../img/icon_dark.ico");
+    $("link#favicon").attr("href", "../../img/icon.ico");
 
     $("p.a").mouseout(function(){
         $("p."+$(this).attr("class")).css("color", "#4b4b4b");

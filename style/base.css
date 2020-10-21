@@ -16,7 +16,7 @@ input[type="text"]:focus:hover { border-bottom: 1px solid #4b4b4b; }
 input[type="text"]:focus {       border-bottom: 1px solid #4b4b4b; width: 31.25em; z-index: 1; cursor: text; }
 
 
-*::-webkit-scrollbar{       width: 0.7em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+*::-webkit-scrollbar{       width: 0.7em; height: 0.7em; border-radius: 0.5em 0.5em 0.5em 0.5em; }
 *::-webkit-scrollbar-thumb{ border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #4b4b4b30; }
 *::-webkit-scrollbar-track{ border-radius: 0.5em 0.5em 0.5em 0.5em; }
 
@@ -79,7 +79,8 @@ div#sA{ margin-top: 1.5em; margin-bottom: 1.5em; }
 div#wrap { margin: 0em 6.25rem; display: block; position: relative; height: 3.75em; float: right; }
 
 
-img#kkotb_rfnc{                      width: 3em; height: auto; }
+img#kkotb_rfnc, img#nolbo{ width: 3em; height: auto; }
+
 img[class = "sttc"], img[class = "prttp"]{ width: 1.1em; margin-right: 0.5em; height: auto; }
 
 

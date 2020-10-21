@@ -6,7 +6,7 @@ $(function(){
 
     if($(window).width() > 800){
         $("header").css("width", $(window).width());
-        $("section#summary, section#basic, section#api, section#rhino, section#appendix").css({"width" : window.innerWidth - $("div#side").width() - 75, "right" : "0", "margin-left" : "3em"});
+        $("section#summary, section#basic, section#api, section#api2, section#rhino, section#appendix").css({"width" : window.innerWidth - $("div#side").width() - 75, "right" : "0", "margin-left" : "3em"});
         $("div#blank").css("width", $("div#sideBar").width());
         $("section#body").css("width", $(window).width() - $("div#side").width() - 100);
     }else{
@@ -36,16 +36,14 @@ $(function(){
         event.stopPropagation();
     });
 
-    $("li.sA").click(function(event){
+    $("dl span dd, li.sA").click(function(event){
         let id = $(this).parent().attr("id");
         var offset = $("div#"+event.target.id.replace("d", "")).offset();
-        $("html").scrollTop(offset.top - 155);
-    });
-
-    $("dl span dd, li#sA").click(function(event){
-        let id = $(this).parent().attr("id");
-        var offset = $("div#"+event.target.id.replace("d", "")).offset();
-        $("html").scrollTop(offset.top - 155);
+        $('section#body > section').animate({opacity: "0"}, 700);
+        setTimeout(function(){
+            $("html").scrollTop(offset.top - 155);
+            $('section#body > section').animate({opacity: "1"}, 700);
+        }, 700); 
     });
 
     $("#kkotb_rfnc").click(function(){
