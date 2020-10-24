@@ -15,6 +15,11 @@
     <meta property="og:image" content="img/grp.jpg">
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script>
+        if(new Date().getMonth == 9){
+            $('meta[property = og:image]').attr('content', 'img/korea.jpg');
+        }
+    </script>
     <script type="text/javascript" src="script/animation.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
     <script type="text/javascript" src="script/toast.js"></script>
