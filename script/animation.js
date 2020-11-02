@@ -3,7 +3,7 @@ let isOpen = {"side" : false, "summary" : true, "api" : true, "api2" : true, "ba
 $(function(){
 
     $("div#blank").appendTo("div#sideBar");
-
+    
     if($(window).width() > 800){
         $("header").css("width", $(window).width());
         $("section#summary, section#basic, section#api, section#api2, section#rhino, section#appendix").css({"width" : window.innerWidth - $("div#side").width() - 75, "right" : "0", "margin-left" : "3em"});
@@ -91,7 +91,7 @@ $(function(){
         }
     });
 
-    $("p.a").click(function(){
+    $("li.a").click(function(){
         window.open($(this).attr('id'));
     });
 

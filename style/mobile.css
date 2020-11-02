@@ -29,7 +29,6 @@
     p.crfBox{  line-height: 2em; }
 
     p.code{      font-size: 0.7em; }
-    p.a{         font-size: 0.8em; transition:color .2s ease; }
     p#thank_you{ font-size: 0.8em; }
 
 
@@ -42,9 +41,13 @@
     div.table{ overflow: auto; }
     div#sA{    margin-top: 0.7em; margin-bottom: 1em; }
     div#wrap{  margin: 0em 0em }
+    div.thanks_box{ margin-right: 2em; margin-bottom: 2em !important; }
     
     
-    img#kkotb_rfnc{                      width: 1.5em; height: auto; }
+    img#kkotb_rfnc{ width: 1.5em; height: auto; }
+    img.moreImg {   height: 3em; width: auto; margin: 3em 0em 0em 0em; }
+    img.thank { width: 2.5em; height: auto; }
+
     img[class = "sttc"], img[class = "prttp"]{ width: 0.8em; height: auto; margin-right: 0.25em;  }
 
 
@@ -55,5 +58,10 @@
     tr{       padding: 1em 1em 1em 1em; font-size: 0.8em !important; line-height: 0.8em; }
     th, td{   border-bottom: 0.016em solid #4b4b4b; padding: 0.8em 0.8em 0.8em 0.8em; }
     sup, sub{ font-size: 5px; }
-    li.sA{    font-size: 0.8em; }
+    li{ font-family: 'Nanum Gothic'; }
+    li.dscrpt{ font-size: 0.8em; line-height: 2em; display: inline; }
+    li.sA{     font-size: 0.8em; }
+    li.a{      font-size: 0.8em; transition:color .2s ease; }
+
+    .hljs{ line-height: 3em; }
 }
