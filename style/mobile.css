@@ -26,7 +26,7 @@
     p.stitle{ font-size: 0.9em; }
     p.dscrpt{ font-size: 0.8em; }
 
-    p.crfBox{  line-height: 2em; }
+    p.crfBox, p.plsBox{  line-height: 2em; }
 
     p.code{      font-size: 0.7em; }
     p#thank_you{ font-size: 0.8em; }

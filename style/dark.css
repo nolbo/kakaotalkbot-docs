@@ -52,7 +52,7 @@
     p.dscrpt{ font-size: 1em; display: inline; line-height: 2em; }
 
     p.code{             display: inline; background-color: black; margin: 0.2em 0.2em; border-radius: 0.4em 0.4em; font-family: 'JetBrains Mono', 'D2Coding'; font-size: 0.9em; padding: 0.2em 0.2em; line-height: 2em; }
-    p.crfBox, p.plsBox{ display: inline; line-height: 2em; font-family: 'JetBrains Mono'; }
+    p.crfBox, p.plsBox{ display: inline; line-height: 2em; font-family: 'JetBrains Mono'; font-weight: bold; }
     p#thank_you{        display: inline; color: #ffffff; line-height: 2em; transition:color 1s ease; }
 
 
