@@ -46,13 +46,14 @@ function copyToClipboard(elem) {
       target.textContent = "";
   }
   go(elem);
-  new Toast({
-    message: '복사되었습니다'
-  });
+//   new Toast({
+//     message: '복사되었습니다'
+//   });
+  setToast('success', '복사되었습니다.');
   return succeed;
 }
-$(document).ready(function() {
-    for(i=0;i<document.getElementsByTagName('pre').length;i++){
+$('*').dblclick(function() {
+    for(i = 0; i < document.getElementsByTagName('pre').length; i++){
         $(document.getElementsByTagName('pre')[i]).dblclick(function(){
             copyToClipboard(this);
         });
