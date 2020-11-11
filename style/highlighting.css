@@ -12,7 +12,7 @@
 .hljs-selector-class{ color: #2d70ff; text-shadow: 0em 0em 1em #2d70ff; }
 .hljs-section,.hljs-title, .hljs-attr{ color:#00ffc8; text-shadow: 0em 0em 1em #00ffc8; }
 .hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{ color:#00f7ff; text-shadow: 0em 0em 0.8em #00f7ff; }
-.hljs-literal{ color:#ffa600; font-family: 'JetBrains Mono I'; }
+.hljs-literal{ color:#ffa600; text-shadow: 0em 0em 1em #ffa600; font-family: 'JetBrains Mono I'; }
 .hljs-addition,.hljs-bullet,.hljs-code{ color:#ff00aa; text-shadow: 0em 0em 1em #ff00aa; }
 .hljs-built_in{ color:#9670ff; text-shadow: 0em 0em 1em #9670ff; }
 .hljs-meta{ color:#1f7199; }

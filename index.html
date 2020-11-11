@@ -18,6 +18,7 @@
     <script type="text/javascript" src="script/animation.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
     <script type="text/javascript" src="script/toast.js"></script>
+    <script type="text/javascript" src="script/newToast.js"></script>
     <script type="text/javascript" src="script/inko.js"></script>
     <script type="text/javascript" src="script/search.js"></script>
     <script type="text/javascript" src="script/copy.js"></script>
@@ -35,10 +36,12 @@
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/mobile.css">
     <link rel="stylesheet" href="style/dark.css">
-    <link rel="stylesheet" href="style/toast.css">
+    <link rel="stylesheet" href="style/newToast.css">
     <title>Kakaotalk Bot Docs | 카카오톡 봇 문서</title>
 </head>
 <body>
+    <!-- <div class="toastjs-container" role="alert" aria-hidden="true"><div class="toastjs"></div></div> -->
+    <div id="toast_con" class="default" role="alert"><p id="toast_txt">테스트 입니다.</p></div>
     <header>
         <img id="kkotb_rfnc" src="img/docs.png">
         <div id="wrap">
@@ -47,7 +50,6 @@
             </form>
         </div>
     </header>
-    <div class="toastjs-container" role="alert" aria-hidden="true"><div class="toastjs"></div></div>
     <section id="body">
         <div id="side">
             <div id="sideBar">
@@ -3945,6 +3947,125 @@
                         </table>
                     </div>
                 </div>
+                <div id="4-9-15" class="content">
+                    <p class="stitle">Map</p>
+                    <p class="dscrpt">Map객체는 <p class="code">["키", "값"]</p> 쌍을 저장하며 이의 삽입 순서 또한 기억하는 콜렉션입니다.</p><br><br>
+                    <p class="dscrpt">Map객체의 생성자는 이와 같습니다:</p>
+                    <div class="code">
+                        <pre><code class="javascript">Map(<i>iterable</i>);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>매개변수</th>
+                            <tr>
+                                <td><p class="code"><i>iterable</i></p></td>
+                                <td><p class="code">["키", "값"]</p> 쌍인 배열 또는 다른 순회 가능한 객체입니다. 각 <p class="code">["키", "값"]</p> 쌍은 새로운 Map에 포함됩니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="dscrpt">아래는 Map객체를 생성하는 예제입니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">new Map([<br>    [1, 'JS'],<br>    [2, 'Java'],<br>    [3, 'C#'],<br>    [4, 'C++']<br>]);</code></pre>
+                    </div>
+                    <p class="dscrpt">겉으로 보았을 땐, 생성 방식만 다를 뿐, Object객체와 차이점이 없어보입니다. 하지만 Map객체와 Object객체에는 분명한 차이점이 있습니다.</p>
+                    <div class="table">
+                        <table>
+                            <th>-</th>
+                            <th><p class="code">Map</p></th>
+                            <th><p class="code">Object</p></th>
+                            <tr>
+                                <td>기본 키(<p class="code">key</p>)</td>
+                                <td>명시적으로 제공한 키만을 가집니다.</td>
+                                <td>프로토타입에 의해 기본 키를 가지고 있을 수 있습니다.</td>
+                            </tr>
+                            <tr>
+                                <td>키(<p class="code">key</p>)의 자료형</td>
+                                <td>함수, 객체, 숫자 등 모든 자료형이 가능합니다.</td>
+                                <td>무조건 문자열 또는 심볼(<p class="code">Symbol</p>)값이어야 합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>키(<p class="code">key</p>) 순서</td>
+                                <td>키가 정렬되므로 순회가 삽입순으로 이루어집니다.</td>
+                                <td>키가 정렬되지 않습니다.</td>
+                            </tr>
+                            <tr>
+                                <td>항목 수</td>
+                                <td><p class="code">size</p>속성을 이용하여 알 수 있습니다.</td>
+                                <td>직접 알아내야만 합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>순회</td>
+                                <td>키와 값의 쌍이 배열 형태로 저장되므로 바로 순회할 수 있습니다.</td>
+                                <td>바로 순회할 수 없습니다. 일반적으로 <p class="code">keys()</p>메서드를 사용한 다음 순회합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>성능</td>
+                                <td>키와 값의 쌍 추가/제거의 빈도가 높을 때 효율적입니다.</td>
+                                <td>키와 값의 쌍 추가/제거의 빈도가 높을 때를 위한 최적화가 없습니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="dscrpt">다음은 Map객체의 속성 및 메서드입니다:</p>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">length</p></td>
+                                <td>값이 <p class="code">0</p>인 속성입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">prototype</p></td>
+                                <td>Map객체의 인스턴스에 속성을 추가할 수 있습니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">constructor</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>인스턴스 생성에 사용한 생성자를 반환합니다. 기본값은 Map입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">size</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>Map객체에 들어있는 키와 값 쌍의 수를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">clear()</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Map객체의 모든 키와 값 쌍을 제거합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">delete(key)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td><p class="code">key</p>의 키를 가진 요소(키와 값 쌍)를 제거합니다. 제거를 했을 경우 <p class="code">true</p>, 존재하지 않아 제거하지 못했을 경우 <p class="code">false</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">entries()</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메서드를 가지고 있습니다.)</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">forEach(callback, <i>thisArg</i>)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Map객체의 요소에 대해 함수<p class="code">callback</p>을 실행합니다. <p class="code"><i>thisArg</i></p>는 함수<p class="code">callback</p>에서 <p class="code">this</p>로 사용할 값입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">get(key)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Map객체에서 인자로 주어진 키<p class="code">key</p>를 가진 요소의 값을 반환합니다. 주어진 키<p class="code">key</p>를 가지는 요소의 값이 존재하지 않을 경우 <p class="code">undefined</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">has(key)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Map객체에서 인자로 주어진 키<p class="code">key</p>를 가진 요소가 존재하면 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">keys()</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메서드를 가지고 있습니다.)</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">set(key, value)</p></td>
+                                <td>해당 Map객체에서 인자로 주어진 키<p class="code">key</p>를 가진 요소를 추가하거나 지정하고, 인자로 주어진 값<p class="code">value</p>을 생성되거나 지정된 요소에 추가 또는 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">values()</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메서드를 가지고 있습니다.)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="appendix">
@@ -3984,11 +4105,6 @@
                         <p id="thank_you" class="franknoh님"><strong>franknoh</strong> 님</p>
                     </div>
                 </div>
-                <!-- <p id="thank_you" class="주현명님"><strong>주현명</strong> 님</p><br>
-                <p id="thank_you" class="Violet_XF님"><strong>Violet XF</strong> 님</p><br>
-                <p id="thank_you" class="도미님"><strong>도미</strong> 님</p><br>
-                <p id="thank_you" class="JusticeHui님"><strong>JusticeHui</strong> 님</p><br>
-                <p id="thank_you" class="franknoh님"><strong>franknoh</strong> 님 <strong>★★</strong></p> -->
             </div>
             <div id="99-3" class="content">
                 <p class="title">문의하기</p>
@@ -3998,5 +4114,6 @@
         </section>
     </section>
     <script type="text/javascript">if($("section#body").width == 0){ location.reload(); }</script>
+    <!-- <script type="text/javascript" src="script/require.js"></script> -->
 </body>
 </html>

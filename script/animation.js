@@ -1,7 +1,7 @@
 let isOpen = {"side" : false, "summary" : true, "api" : true, "api2" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true};
 
 $(function(){
-
+    $("#toast_con").css("left", `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
     $("div#blank").appendTo("div#sideBar");
     
     if($(window).width() > 800){
