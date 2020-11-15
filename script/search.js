@@ -95,9 +95,7 @@ var error_codes = {
                             }
                         }
                     }
-                    new Toast({
-                        message: '한-영 오타 수정입니다.\n' + search_text + '->' + inko.ko2en(search_text)
-                    });
+                    setToast(`한-영 오타 수정: ${search_text} → ${inko.ko2en(search_text)}`);
                     if (title[0]) {
                         glide(title[0]);
                     } else {
@@ -134,26 +132,18 @@ var error_codes = {
                             }
                         }
                     }
-                    new Toast({
-                        message: '영-한 오타 수정입니다.\n' + search_text + '->' + inko.en2ko(search_text)
-                    });
+                    setToast(`영-한 오타 수정: ${search_text} → ${inko.en2ko(search_text)}`);
                     if (title[0]) {
                         glide(title[0]);
                     } else if (contents[0]){
                         glide(contents[0]);
                     } else{
-                        new Toast({
-                            message: '알수없는 오류가 발생했습니다.',
-                            type: 'warning'
-                        });
+                        setToast('danger', '알 수 없는 오류가 발생했습니다.');
                     }
                     console.log(title.join("\n"));
                     console.log(contents.join("\n"));
                 } else {
-                    new Toast({
-                        message: '\'' + search_text + '\'라는 검색결과가 없습니다.',
-                        type: 'danger'
-                    });
+                    setToast('warning', `'${search_text}'라는 검색결과가 없습니다.`);
                 }
             } else if (searched == true) {
                 if (title[0]) {
@@ -169,10 +159,7 @@ var error_codes = {
             if(!!error_codes[error_name]){
                glide(error_codes[error_name]);
             } else {
-                new Toast({
-                    message: '\'' + error_name + '\'라는 검색결과가 없습니다.',
-                    type: 'danger'
-                });
+                setToast('warning', `'${search_text}'라는 검색결과가 없습니다.`);
             }
         } else {
             location.href = base + '404.html';

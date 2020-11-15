@@ -16,6 +16,7 @@ li.a::before{ content: ''; background: url('../img/link.png') no-repeat; backgro
 
 input[type="text"]:focus:hover { border-bottom: 1px solid #4b4b4b; }
 input[type="text"]:focus {       border-bottom: 1px solid #4b4b4b; width: 31.25em; z-index: 1; cursor: text; }
+div.code:hover { cursor: pointer; }
 
 
 *::-webkit-scrollbar{       width: 0.6em; height: 0.6em; border-radius: 0.5em 0.5em 0.5em 0.5em; }

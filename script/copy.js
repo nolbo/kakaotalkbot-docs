@@ -45,11 +45,8 @@ function copyToClipboard(elem) {
       // clear temporary content
       target.textContent = "";
   }
-  go(elem);
-//   new Toast({
-//     message: '복사되었습니다'
-//   });
   setToast('success', '복사되었습니다.');
+  
   return succeed;
 }
 $('*').dblclick(function() {

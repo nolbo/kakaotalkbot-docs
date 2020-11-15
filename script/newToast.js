@@ -19,8 +19,9 @@ function setToast() {
         $('div#toast_con').attr('class', type);
         $('p#toast_txt').text(content);
     });
+    $('div#toast_con').animate({opacity: "1"}, 500);
     setTimeout(function(){
-        $('div#toast_con').animate({opacity: "1"}, 700);
-    }, 700);
+        $('div#toast_con').animate({opacity: "0"}, 500);
+    }, 3000);
     
 }

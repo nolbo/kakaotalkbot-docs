@@ -59,7 +59,7 @@
     th, td{   border-bottom: 0.016em solid #4b4b4b; padding: 0.8em 0.8em 0.8em 0.8em; }
     sup, sub{ font-size: 5px; }
     li{ font-family: 'Nanum Gothic'; }
-    li.dscrpt{ font-size: 0.8em; line-height: 2em; display: inline; }
+    li.dscrpt{ font-size: 0.8em; line-height: 2em; }
     li.sA{     font-size: 0.8em; }
     li.a{      font-size: 0.8em; transition:color .2s ease; }
 

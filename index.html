@@ -17,7 +17,6 @@
     <script type="text/javascript" src="script/jquery-ui.js"></script>
     <script type="text/javascript" src="script/animation.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
-    <script type="text/javascript" src="script/toast.js"></script>
     <script type="text/javascript" src="script/newToast.js"></script>
     <script type="text/javascript" src="script/inko.js"></script>
     <script type="text/javascript" src="script/search.js"></script>
@@ -26,7 +25,7 @@
     <script>
         hljs.initHighlightingOnLoad();
         
-        hljs.configure({useBR: true}); $('div.code pre code').each(function(i, block) { hljs.highlightBlock(block); });
+        hljs.configure({ useBR : true}); $('div.code pre code').each(function(i, block) { hljs.highlightBlock(block); });
     </script>
     <link rel="stylesheet" href="style/highlighting.css">
     <link rel="canonical" href="https://kkotbot-docs.kro.kr">
@@ -40,8 +39,7 @@
     <title>Kakaotalk Bot Docs | 카카오톡 봇 문서</title>
 </head>
 <body>
-    <!-- <div class="toastjs-container" role="alert" aria-hidden="true"><div class="toastjs"></div></div> -->
-    <div id="toast_con" class="default" role="alert"><p id="toast_txt">테스트 입니다.</p></div>
+    <div id="toast_con" class="default" role="alert"><p id="toast_txt"></p></div>
     <header>
         <img id="kkotb_rfnc" src="img/docs.png">
         <div id="wrap">
