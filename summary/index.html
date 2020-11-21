@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="naver-site-verification" content="db79b112896337a515066363085c4f9ad5d27310" />
+    <meta name="title" content="Kakaotalk Bot Docs | 카카오톡 봇 문서">
+    <meta name="keywords" content="카카오톡봇 문서, kakaotalk bot docs, 카카오톡 봇, 카카오봇, 자동응답 봇, 메신저봇, 메신저봇R">
+    <meta name="description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
+    <meta name="author" content="nolbo">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kkotbot-docs.kro.kr">
+    <meta property="og:title" content="KBot Docs | 개요">
+    <meta property="og:image" content="../img/grp.jpg">
+    <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
+    <script type="text/javascript" src="../script/jquery.js"></script>
+    <script type="text/javascript" src="../script/jquery-ui.js"></script>
+    <script type="text/javascript" src="../script/animation.js"></script>
+    <script type="text/javascript" src="../script/dark.js"></script>
+    <script type="text/javascript" src="../script/newToast.js"></script>
+    <script type="text/javascript" src="../script/inko.js"></script>
+    <script type="text/javascript" src="../script/search.js"></script>
+    <script type="text/javascript" src="../script/copy.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js"></script>
+    <script type="text/javascript" src="../script/hl.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="../style/highlighting.css">
+    <link rel="canonical" href="https://kkotbot-docs.kro.kr">
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="../img/docs_black.png">
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/mobile.css">
+    <link rel="stylesheet" href="../style/dark.css">
+    <link rel="stylesheet" href="../style/newToast.css">
+    <title>KBot Docs | 개요</title>
+</head>
+<body>
+    <div id="toast_con" class="default" role="alert"><p id="toast_txt"></p></div>
+    <!-- <header>
+        <img id="kkotb_rfnc" src="img/docs.png">
+        <div id="wrap">
+            <form action="" autocomplete="off">
+                <input id="search" data-bg="#ff0d86" name="search" type="text" placeholder="검색할 내용을 입력하세요."><input id="search_submit" value="Rechercher" type="submit">
+            </form>
+        </div>
+    </header> -->
+    <aside>
+        <div id="docs_space"><img id="docs" src="../img/docs.png"></div>
+        <dl>
+            <dt><img class="side_icon" id="this" src="../img/summary.png"></dt>
+            <dt><img class="side_icon" src="../img/api.png"></dt>
+            <dt><img class="side_icon" src="../img/api2.png"></dt>
+            <dt><img class="side_icon" src="../img/rhino.png"></dt>
+            <dt><img class="side_icon" src="../img/deepening.png"></dt>          
+            <dt><img class="side_icon" src="../img/appendix.png"></dt>
+            <span id="list">
+                <h1 id="ttl">개요</h1>
+                <dd id="d1-1" class="sdb">알아두기</dd><br>
+                <dd id="d1-2" class="sdb">카카오톡 봇</dd><br>
+                <dd id="d1-3" class="sdb">작동 원리</dd><br>
+                <dd id="d1-4" class="sdb">개발 준비</dd><br>
+                <dd id="d1-5" class="sdb">response 함수</dd><br>
+                <dd id="d1-6" class="sdb">수신하기</dd><br>
+                <dd id="d1-7" class="sdb">웹 파싱</dd>
+            </span>
+        </dl>
+    </aside>
+    <article>
+        <section id="summary">
+            <div id="1-1" class="content">
+                <p class="title">알아두기</p>
+                <p class="dscrpt">카카오톡 봇을 개발하기 전 이를 꼭 알아두세요.</p><br><br>
+                <li class="dscrpt">Java와 JavaScript는 서로 다른 언어입니다. 고로, JavaScript를 Java라고 줄여서 사용하지 않습니다.</li>
+                <li class="dscrpt">카카오톡 봇에서 사용하는 JavaScript는 순수 자바스크립트가 아닌 Rhino라는 Java로 작성된 JavaScript 엔진입니다. 그러므로 카카오톡 봇에서는 <p class="code">alert()</p>와 같은 기능을 제공하지 않습니다.</li>
+                <li class="dscrpt">안드로이드 버전 5.0(롤리팝) 미만이나 iOS는 카카오톡 봇을 구동할 수 없는 환경입니다.</li>
+            </div>
+            <div id="1-2" class="content">
+                <p class="title">카카오톡 봇</p>
+                <p class="dscrpt">카카오톡 봇은 카카오톡에서 자동으로 응답하는 자동응답 봇입니다. 카카오톡 개발에는 메신저봇R, 채팅 자동응답 봇 등이 쓰입니다. 이 페이지에서는 메신저봇R을 기준으로 합니다.</p>
+            </div>
+            <div id="1-3" class="content">
+                <p class="title">작동 원리</p>
+                <p class="dscrpt">메신저봇은 </p><p class="code">NotificationListenerService</p><p class="dscrpt">를 통해 알림을 파싱한 후, Rhino JavaScript Engine을 사용하여 사용자가 작성한 자바스크립트로 알림 정보를 전달하여 처리할 수 있도록 합니다. 답장은 최종적으로 </p><p class="code">WearableExtender</p><p class="dscrpt">를 활용해 하게 됩니다.</p>
+            </div>
+            <div id="1-4" class="content">
+                <p class="title">개발 준비</p>
+                <div id="sA">
+                    <li id="d1-4-1" class="sA">앱 설치</li>
+                    <li id="d1-4-2" class="sA">부계정을 사용할 경우</li>
+                </div>
+                <div id="1-4-1" class="content">
+                    <p class="stitle">앱 설치</p>
+                    <p class="dscrpt">카카오톡 봇 개발을 위해서는 카카오톡 봇을 제작하고 구동할 수 있는 환경이 조성되어야 합니다.</p><br><br>
+                    <li class="dscrpt">우선, <strong>Google Play</strong>에서 카카오톡 봇 제작과 구동을 돕는 앱 중 하나인 <strong>메신저봇R</strong>을 설치해야 합니다.</li>
+                    <div class="crf">
+                        <pre><code class="nohighlight"><p class="crfBox">안드로이드 버전이 7.0(누가) 미만일 경우 'Wear OS by Google(이전의 Android Wear) 스마트시계' 앱을 추가로 설치해야 합니다.</p></code></pre>
+                    </div>
+                    <li class="dscrpt">메신저봇R 앱을 처음 실행하면 <strong>알림 읽기 권한이 없습니다.</strong> 창이 나옵니다. 메신저봇R의 알림 읽기 권한을 허용하지 않으면 카카오톡의 알림을 읽기 못해 카카오톡 봇을 구동할 수 없으므로 <strong>확인</strong>을 눌러 알림 읽기 권한을 허용해줍니다.</li>
+                    <li class="dscrpt">앱으로 다시 돌아오면 <strong>데이터 폴더</strong> 창이 나옵니다. 창의 설명에 나온 경로에 자신의 카카오톡 봇 스크립트를 저장하려는 경우 <strong>확인</strong>을, 다른 경로에 저장하려는 경우 <strong>변경</strong>을 선택해 저장할 경로를 지정합니다.</li>
+                    <li class="dscrpt">이제 메신저봇R의 메인 화면이 나옵니다. 우측 하단의 스크립트 추가 버튼을 클릭합니다.</li>
+                    <li class="dscrpt"><strong>새 봇</strong> 창에 자신이 만들 카카오톡 봇의 스크립트 이름을 입력하고 <strong>확인을 누릅니다.</strong></li>
+                    <li class="dscrpt">이제 자신의 카카오톡 봇 스크립트가 추가되었습니다. 생성된 자신의 스크립트를 클릭한 다음 연필 버튼을 클릭하여 카카오톡 봇의 소스코드를 작성하면 됩니다.</li>
+                </div>
+                <div id="1-4-2" class="content">
+                    <p class="stitle">부계정을 사용할 경우</p>
+                    <p class="dscrpt">카카오톡 봇을 위한 부계정을 사용할 경우, 올바른 추가 설정을 하지 않으면 본계정과 부계정 모두 카카오톡 봇의 답장을 보내는 등의 일이 일어날 수 있습니다. 이러한 경우에 대한 대처법은 아래와 같습니다.</p><br><br>
+                    <li class="dscrpt">삼성 듀얼 메신저 기능을 사용할 경우에는 카카오톡 봇 계정을 제외한 모든 계정의 전체 알림을 꺼야 합니다.</li>
+                    <li class="dscrpt">복제 앱을 사용할 경우 메신저봇R 내에 있는 <strong>공용 설정</strong> &gt; <strong>알림을 읽을 패키지명</strong>에서 복제된 앱의 패키지명을 입력하거나 아래의 소스를 사용하면 올바르게 작동합니다.</li>
+                    <div class="code">
+                        <pre><code class="javascript">if(packageName != '복제된 앱의 패키지명') return;<br><br>// TODO</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="1-5" class="content">
+                <p class="title">response 함수</p>
+                <p class="dscrpt">앱이 사용자가 지정한 카카오톡의 알림을 성공적으로 파싱했을 경우 호출되는 기본적인 이벤트 리스너 입니다.</p>
+                <div id="sA">
+                    <li id="d1-5-1" class="sA">기본</li>
+                    <li id="d1-5-2" class="sA">통합된 매개변수</li>
+                </div>
+                <div id="1-5-1" class="content">
+                    <p class="stitle">기본</p>
+                    <p class="dscrpt">기본적인 response함수는 여러 개의 매개변수가 존재하는 형식입니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">function response (room, msg, sender, isGroupChat, replier, imageDB, packageName) {<br>    // TODO<br>}</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수 이름</th>
+                            <th>형식</th>
+                            <th>기능</th>
+                            <tr>
+                                <td><p class="code">room</p></td>
+                                <td><p class="code">String</p></td>
+                                <td>해당 룸의 이름을 문자열 형식으로 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">msg</p></td>
+                                <td><p class="code">String</p></td>
+                                <td>메시지내용을 문자열 형식으로 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">sender</p></td>
+                                <td><p class="code">String</p></td>
+                                <td>메시지 전송자의 이름을 문자열 형식으로 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">isGroupChat</p></td>
+                                <td><p class="code">Boolean</p></td>
+                                <td>해당룸의 그룹채팅 여부를 불린 형식으로 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">replier</p></td>
+                                <td><p class="code">void</p></td>
+                                <td>해당룸의 세션을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">imageDB</p></td>
+                                <td><p class="code">-</p></td>
+                                <td>이미지DB를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">packageName</p></td>
+                                <td><p class="code">String</p></td>
+                                <td>메시지 나타난 앱의 패키지명을 반환합니다. (카카오톡의 경우 <p class="code">com.kakao.talk</p>입니다.)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="crf">
+                        <pre><code class="nohighlight"><p class="crfBox">위 매개변수를 사용하기 위해서는 반드시 소스코드를 response함수 내부에 작성해야 합니다. (그렇지 않을 경우 referenceError 즉, 참조에러가 발생합니다.)</p></code></pre>
+                    </div>
+                </div>
+                <div id="1-5-2" class="content">
+                    <p class="stitle">통합된 매개변수</p>
+                    <p class="dscrpt">response함수는 통합된 매개변수의 형식을 지원합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">function response (params) {<br>    // TODO<br>}</code></pre>
+                    </div>
+                    <p class="dscrpt">이 소스에서 </p><p class="code">params</p><p class="dscrpt">는 기본적인 response함수의 매개변수를 속성이나 메서드로 가지고 있는 객체입니다. 예를 들면, 기본적인 response함수에서 </p><p class="code">msg</p><p class="dscrpt">로 사용하는 것을 통합된 매개변수에서는 </p><p class="code">params.msg</p><p class="dscrpt">와 같이 사용합니다.</p>
+                    <div class="crf">
+                        <pre><code class="nohighlight"><p class="crfBox">통합된 매개변수를 사용하기 위해서는 스크립트를 생성할 때 '통합된 매개변수를 사용합니다. JavaScript 초심자에게는 권장하지 않습니다' 항목을 선택하거나 스크립트 설정에서 '통합된 매개변수' 항목을 선택해야 합니다.</p></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="1-6" class="content">
+                <p class="title">수신하기</p>
+                <p class="dscrpt">수신기능은 카카오톡 봇의 기본이자 핵심기능 입니다. 수신기능을 가지고 있는 코드는 이와 같습니다.</p>
+                <div class="code">
+                    <pre><code class="javascript">replier.reply("메시지"); //'메시지'를 전송<br>replier.reply("방", "메시지", false); //'방'에 '메시지'를 전송. 전송 성공 시 true, 실패 시 false를 반환.<br>Api.replyRoom('방', '메시지', false); //'방'에 '메시지'를 전송. 전송 성공 시 true, 실패 시 false를 반환.</code></pre>
+                </div>
+            </div>
+            <div id="1-7" class="content">
+                <p class="title">웹 파싱</p>
+                <p class="dscrpt">날씨같은 정보를 웹 파싱을 통해 전할 수 있습니다. 하지만 웹 파싱을 할 시 보안에 주의하세요.</p>
+                <div class="code">
+                    <pre><code class="javascript">Utils.getWebText(url: String); //url주소 홈페이지의 HTML을 로드하여 문자열로 반환<br>Utils.parse(url: String); //url주소 홈페이지의 HTML을 get하여 org.jsoup.nodes.Document로 반환</code></pre>
+                </div>
+                <p class="dscrpt">웹 파싱 후 자신이 필요한 정보만 가져올 수 있도록 작업이 필요합니다. 이를 더 편리하게 할 수 있는 것이 Jsoup입니다. 이는 <strong>심화 > Jsoup</strong> 편에 자세히 다룹니다.</p>
+            </div>
+        </section>
+    </article>
+    <script type="text/javascript">if($("section#body").width == 0){ location.reload(); }</script>
+    <!-- <script type="text/javascript" src="script/require.js"></script> -->
+</body>
+</html>
