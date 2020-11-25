@@ -38,7 +38,7 @@
     }
     
     aside:hover {
-        width: 35rem;
+        width: 18rem;
         transition-delay: 0s;
     }
     
@@ -46,22 +46,16 @@
         background-color: #515151;
     }
     
-    
     * {
         margin: 0;
         padding: 0;
         font-family: 'Noto Sans', 'Noto Sans KR';
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     
     html, body {
         width: 100%;
         height: 100%;
-    }
-    
-    body {
-        white-space: nowrap;
-        overflow: visible;
     }
     
     aside, article#body * {
@@ -74,18 +68,22 @@
         color: white;
         width: 4rem;
         height: 100%;
-        padding: 3rem 1rem;
+        padding: 2rem 0.5rem;
         text-align: center;
         z-index: 99999;
     
         transition-property: width;
-        transition-duration: 0.55s;
+        transition-duration: 0.4s;
+    }
+
+    aside, aside * {
+        overflow: hidden;
     }
     
     aside dl {
         position: relative;
-        top: 10rem;
-        width: 8rem;
+        top: 5rem;
+        width: 4rem;
     }
     
     aside dt {
@@ -99,8 +97,6 @@
         transition-property: background;
         transition-duration: 0.4s;
     }
-
-    
     
     aside span#list {
         display: none;
@@ -113,17 +109,17 @@
     }
     
     span#list h1 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: bold;
         position: absolute;
-        top: -13.2rem;
+        top: -7.6rem;
     }
     
     span#list dd {
-        font-size: 1.1rem;
+        font-size: 1rem;
         display: inline-block;
         font-weight: 500;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
     }
     
     div#docs_space {
@@ -138,7 +134,7 @@
     }
     
     img.side_icon {
-        width: 1.7rem;
+        width: 1.5rem;
         height: auto;
         filter: invert(50%);
     }
@@ -148,15 +144,15 @@
     }
     
     article {
-        padding: 5rem 4rem;
-        width: calc(100% - 18rem);
+        padding: 2.5rem 2rem;
+        width: calc(100% - 9rem);
         float: right;
         overflow: visible;
     }
     
     div.content {
-        margin-top: 4rem;
-        margin-bottom: 4rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
         width: 100%;
     }
     
@@ -166,26 +162,31 @@
     
     p.title {
         display: block;
-        font-size: 1.9rem;
+        font-size: 1.5rem;
         font-weight: 550;
         margin-bottom: 2.3rem;
     }
     
     p.stitle {
         display: block;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 550;
         margin-bottom: 2.3rem;
     }
     
     p.dscrpt, p.code {
-        line-height: 2rem;
+        line-height: 1.8rem;
         white-space: pre-line;
+    }
+
+    p.dscrpt {
+        font-size: 0.8rem;
     }
     
     p.code {
+        all: initial;
+        font-size: 0.7rem;
         font-family: 'JetBrains Mono', 'D2Coding';
-        font-size: 0.9rem;
         background-color: #ebebeb;
         padding: 0.1rem 0.2rem;
         border-radius: 0.3rem;
@@ -203,7 +204,7 @@
     }
     
     li.dscrpt {
-        line-height: 2rem;
+        line-height: 1.8rem;
         white-space: pre-line;
     }
     
@@ -213,25 +214,23 @@
     }
     
     div.code, div.crf, div.pls {
-        padding: 1.5rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        border-radius: 1rem;
+        padding: 1.2rem;
+        margin-top: 1.7rem;
+        margin-bottom: 1.7rem;
+        border-radius: 0.7rem;
         white-space: nowrap;
         overflow: auto;
     }
     
     div.code {
         background: #f7f7f7;
-        box-shadow: 0rem 0rem 1rem 0rem #dddddd;
-        overflow: auto;
-        white-space: nowrap;
+        box-shadow: 0rem 0rem 0.8rem 0rem #dddddd;
     }
     
     div.code code {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-family: 'JetBrains Mono', 'D2Coding';
-        line-height: 2rem;
+        line-height: 1.7rem;
     }
     
     div.pls {
@@ -241,7 +240,7 @@
     
     div.pls p.plsBox {
         font-size: 0.9rem;
-        line-height: 2rem;
+        line-height: 1.8rem;
         font-weight: bold;
         color: #00ffc8;
     }
@@ -252,8 +251,8 @@
     }
     
     div.crf p.crfBox {
-        font-size: 0.9rem;
-        line-height: 2rem;
+        font-size: 0.8rem;
+        line-height: 1.8rem;
         font-weight: bold;
         color: #ff00aa;
         overflow: auto;
@@ -261,8 +260,10 @@
     }
     
     div.table {
-        margin: 2rem 0;
+        margin: 1.7rem 0;
         width: 100%;
+        white-space: pre-wrap;
+        overflow: auto;
     }
     
     table {
@@ -271,19 +272,22 @@
         border-collapse: collapse;
         width: 100%;
         border-top: 0.5rem solid black;
+        white-space: pre-line;
     }
     
     th {
-        padding: 2rem 0;
+        padding: 1.7rem 0;
     }
     
     tr {
-        line-height: 2rem;
+        line-height: 1.8rem;
+        overflow: auto;
     }
     
     th, td {
         border-bottom: 0.1em solid #4b4b4b;
-        padding: 1.2rem;
+        padding: 1rem;
+        overflow: auto;
     }
     
     img.sttc, img.prttp {

@@ -7,5 +7,54 @@
 
 
 @media(prefers-color-scheme: dark){
-    
+    div.table, div.code::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: white;  }
+
+    body {
+        background: #3a3a3a;
+    }
+
+    li.a::before, li.sA::before {
+        filter: invert(0%);
+    }
+
+    article {
+        background: #3a3a3a;
+        color: white;
+    }
+
+    article img {
+        filter: invert(0%);
+    }
+
+    p.code {
+        background: black;
+        box-shadow: 0rem 0rem 0.5rem 0rem #cfcfcf;
+    }
+
+    div.crf, div.pls {
+        background: #3a3a3a;
+    }
+
+    div.code {
+        background: black;
+        box-shadow: 0rem 0rem 1rem 0rem #161616;
+    }
+
+    table {
+        border-left: 0em solid transparent;
+        border-right: 0em solid transparent;
+        border-top: 0.5rem solid white;
+    }
+
+    th, td {
+        border-bottom: 0.1em solid white;
+    }
+
+    img.thank {
+        filter: invert(0%);
+    }
+
+    img.sttc, img.prttp {
+        filter: invert(0%);
+    }
 }

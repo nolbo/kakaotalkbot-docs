@@ -54,7 +54,7 @@
             <dt><img class="side_icon" src="../img/rhino.png"></dt>
             <dt><img class="side_icon" src="../img/deepening.png"></dt>          
             <dt><img class="side_icon" src="../img/appendix.png"></dt>
-            <span id="list">
+            <span id="list" data-isVisible="true">
                 <h1 id="ttl">개요</h1>
                 <dd id="d1-1" class="sdb">알아두기</dd><br>
                 <dd id="d1-2" class="sdb">카카오톡 봇</dd><br>
@@ -72,7 +72,7 @@
                 <p class="title">알아두기</p>
                 <p class="dscrpt">카카오톡 봇을 개발하기 전 이를 꼭 알아두세요.</p><br><br>
                 <li class="dscrpt">Java와 JavaScript는 서로 다른 언어입니다. 고로, JavaScript를 Java라고 줄여서 사용하지 않습니다.</li>
-                <li class="dscrpt">카카오톡 봇에서 사용하는 JavaScript는 순수 자바스크립트가 아닌 Rhino라는 Java로 작성된 JavaScript 엔진입니다. 그러므로 카카오톡 봇에서는 <p class="code">alert()</p>와 같은 기능을 제공하지 않습니다.</li>
+                <li class="dscrpt">카카오톡 봇에서 사용하는 JavaScript는 순수 자바스크립트가 아닌 Rhino라는 Java로 작성된 JavaScript 엔진입니다. 그러므로 카카오톡 봇에서는 <p class="code" id="p">alert()</p>와 같은 기능을 제공하지 않습니다.</li>
                 <li class="dscrpt">안드로이드 버전 5.0(롤리팝) 미만이나 iOS는 카카오톡 봇을 구동할 수 없는 환경입니다.</li>
             </div>
             <div id="1-2" class="content">
@@ -81,7 +81,7 @@
             </div>
             <div id="1-3" class="content">
                 <p class="title">작동 원리</p>
-                <p class="dscrpt">메신저봇은 </p><p class="code">NotificationListenerService</p><p class="dscrpt">를 통해 알림을 파싱한 후, Rhino JavaScript Engine을 사용하여 사용자가 작성한 자바스크립트로 알림 정보를 전달하여 처리할 수 있도록 합니다. 답장은 최종적으로 </p><p class="code">WearableExtender</p><p class="dscrpt">를 활용해 하게 됩니다.</p>
+                <p class="dscrpt">메신저봇은 </p><p class="code" id="p">NotificationListenerService</p><p class="dscrpt">를 통해 알림을 파싱한 후, Rhino JavaScript Engine을 사용하여 사용자가 작성한 자바스크립트로 알림 정보를 전달하여 처리할 수 있도록 합니다. 답장은 최종적으로 </p><p class="code" id="p">WearableExtender</p><p class="dscrpt">를 활용해 하게 됩니다.</p>
             </div>
             <div id="1-4" class="content">
                 <p class="title">개발 준비</p>
@@ -131,39 +131,39 @@
                             <th>형식</th>
                             <th>기능</th>
                             <tr>
-                                <td><p class="code">room</p></td>
-                                <td><p class="code">String</p></td>
+                                <td><p class="code" id="p">room</p></td>
+                                <td><p class="code" id="p">String</p></td>
                                 <td>해당 룸의 이름을 문자열 형식으로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code">msg</p></td>
-                                <td><p class="code">String</p></td>
+                                <td><p class="code" id="p">msg</p></td>
+                                <td><p class="code" id="p">String</p></td>
                                 <td>메시지내용을 문자열 형식으로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code">sender</p></td>
-                                <td><p class="code">String</p></td>
+                                <td><p class="code" id="p">sender</p></td>
+                                <td><p class="code" id="p">String</p></td>
                                 <td>메시지 전송자의 이름을 문자열 형식으로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code">isGroupChat</p></td>
-                                <td><p class="code">Boolean</p></td>
+                                <td><p class="code" id="p">isGroupChat</p></td>
+                                <td><p class="code" id="p">Boolean</p></td>
                                 <td>해당룸의 그룹채팅 여부를 불린 형식으로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code">replier</p></td>
-                                <td><p class="code">void</p></td>
+                                <td><p class="code" id="p">replier</p></td>
+                                <td><p class="code" id="p">void</p></td>
                                 <td>해당룸의 세션을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code">imageDB</p></td>
-                                <td><p class="code">-</p></td>
+                                <td><p class="code" id="p">imageDB</p></td>
+                                <td><p class="code" id="p">-</p></td>
                                 <td>이미지DB를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code">packageName</p></td>
-                                <td><p class="code">String</p></td>
-                                <td>메시지 나타난 앱의 패키지명을 반환합니다. (카카오톡의 경우 <p class="code">com.kakao.talk</p>입니다.)</td>
+                                <td><p class="code" id="p">packageName</p></td>
+                                <td><p class="code" id="p">String</p></td>
+                                <td>메시지 나타난 앱의 패키지명을 반환합니다. (카카오톡의 경우 <p class="code" id="p">com.kakao.talk</p>입니다.)</td>
                             </tr>
                         </table>
                     </div>
@@ -177,7 +177,7 @@
                     <div class="code">
                         <pre><code class="javascript">function response (params) {<br>    // TODO<br>}</code></pre>
                     </div>
-                    <p class="dscrpt">이 소스에서 </p><p class="code">params</p><p class="dscrpt">는 기본적인 response함수의 매개변수를 속성이나 메서드로 가지고 있는 객체입니다. 예를 들면, 기본적인 response함수에서 </p><p class="code">msg</p><p class="dscrpt">로 사용하는 것을 통합된 매개변수에서는 </p><p class="code">params.msg</p><p class="dscrpt">와 같이 사용합니다.</p>
+                    <p class="dscrpt">이 소스에서 </p><p class="code" id="p">params</p><p class="dscrpt">는 기본적인 response함수의 매개변수를 속성이나 메서드로 가지고 있는 객체입니다. 예를 들면, 기본적인 response함수에서 </p><p class="code" id="p">msg</p><p class="dscrpt">로 사용하는 것을 통합된 매개변수에서는 </p><p class="code" id="p">params.msg</p><p class="dscrpt">와 같이 사용합니다.</p>
                     <div class="crf">
                         <pre><code class="nohighlight"><p class="crfBox">통합된 매개변수를 사용하기 위해서는 스크립트를 생성할 때 '통합된 매개변수를 사용합니다. JavaScript 초심자에게는 권장하지 않습니다' 항목을 선택하거나 스크립트 설정에서 '통합된 매개변수' 항목을 선택해야 합니다.</p></code></pre>
                     </div>

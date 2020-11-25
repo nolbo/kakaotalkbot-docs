@@ -20,11 +20,17 @@
 .hljs-meta-string{ color:#4d99bf; }
 .hljs-emphasis{ font-family: 'JetBrains Mono I'; }
 
+@media screen and (max-width:800px){
+    .hljs * {
+        font-size: 0.8rem;
+    }
+}
+
 
 @media(prefers-color-scheme: dark){
     .hljs{ display: block; background:transparent; font-family: 'JetBrains Mono', 'D2Coding'; color:white; text-shadow: 0em 0em 0.5em white; }
-    .hljs * { font-size: 1rem; font-family: 'JetBrains Mono', 'D2Coding'; color:#414141; text-shadow: 0em 0em 0.5em #4141419c; }
-    .hljs,.hljs-subst{ color:#414141; text-shadow: 0em 0em 0.5em #4141419c; }
+    .hljs * { font-size: 1rem; font-family: 'JetBrains Mono', 'D2Coding'; color:white; text-shadow: 0em 0em 0.5em white; }
+    .hljs,.hljs-subst{ color:white; text-shadow: 0em 0em 0.5em white; }
     .hljs-comment{ color:#888; text-shadow: 0em 0em 0.5em #888888bd; font-family: 'JetBrains Mono I', 'D2Coding'; }
     /* .hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta-keyword,.hljs-name,.hljs-selector-tag{ font-weight:600; } */
     .hljs-keyword{ color: #ff00aa; font-family: 'JetBrains Mono I'; text-shadow: 0em 0em 0.5em #ff00aac2; }
