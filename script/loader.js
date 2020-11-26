@@ -15,6 +15,7 @@ if ([].indexOf(date) != -1) {
 $(function () {
     setTimeout(function () {
         $('#loader').animate({ opacity: "0" }, 700);
+        $('#loader').css({ 'display': 'none' });
         setTimeout(function () {
             $('#main').animate({ opacity: "1" }, 700);
         }, 700);

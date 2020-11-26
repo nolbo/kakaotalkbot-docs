@@ -217,6 +217,8 @@
         border-radius: 1rem;
         white-space: nowrap;
         overflow: auto;
+        width: auto;
+        height: auto;
     }
 
     div.code {
