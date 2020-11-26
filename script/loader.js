@@ -12,12 +12,13 @@ if ([].indexOf(date) != -1) {
 } else {
     $('#loader_img').attr('src', location.origin + '/img/grp.jpg');
 }
+$('#loader_text').animate({ opacity: "1" }, 200);
 $(function () {
     setTimeout(function () {
         $('#loader').animate({ opacity: "0" }, 700);
-        $('#loader').css({ 'display': 'none' });
         setTimeout(function () {
             $('#main').animate({ opacity: "1" }, 700);
+            $('#loader').css({ 'display': 'none' });
         }, 700);
     }, 2000);
 })
