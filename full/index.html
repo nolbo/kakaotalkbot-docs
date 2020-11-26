@@ -14,6 +14,7 @@
     <meta property="og:image" content="../img/grp.jpg">
     <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
     <script type="text/javascript" src="../script/jquery.js"></script>
+    <script type="text/javascript" src="../script/loader.js"></script>
     <script type="text/javascript" src="../script/jquery-ui.js"></script>
     <script type="text/javascript" src="../script/animation.js"></script>
     <script type="text/javascript" src="../script/sidebar_full.js"></script>
@@ -38,6 +39,10 @@
 </head>
 <body>
     <div id="toast_con" class="default" role="alert"><p id="toast_txt"></p></div>
+    <div id="loader" style="opacity: 1;">
+        <img id="loader_img" src="../img/grp.jpg" style="top:0;left:0; position:fixed; min-width:100%;">
+    </div>
+    <div id="main" style="opacity: 0;">
     <!-- <header>
         <img id="kkotb_rfnc" src="img/docs.png">
         <div id="wrap">
@@ -4105,5 +4110,6 @@
     </article>
     <script type="text/javascript">if($("section#body").width == 0){ location.reload(); }</script>
     <!-- <script type="text/javascript" src="script/require.js"></script> -->
+    </div>
 </body>
 </html>
