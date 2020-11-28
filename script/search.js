@@ -2,7 +2,6 @@
 2020 @franknoh search.js
 */
 
-// 'https://open-korean-text-api.herokuapp.com/extractPhrases?text='
 
 var search = [
     {
@@ -16,4 +15,14 @@ function get_key(txt) {
         .done(function (data) {
             return data.phrases[0];
         });
-} 
+}
+
+function get_pos(str) {
+    var obj = get_key(str);
+    search.forEach((e) => {
+        if (e.keys.indexOf(obj) != -1) {
+            return e.location;
+        }
+    });
+    return false;
+}
