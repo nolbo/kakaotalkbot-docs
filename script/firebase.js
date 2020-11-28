@@ -18,6 +18,7 @@ $(function () {
                     // Initialize Firebase
                     firebase.initializeApp(firebaseConfig);
                     firebase.analytics();
+                    // for auth
                     var authConfig = {
                         apiKey: "AIzaSyAXnru9ZZfqXSz50zAZJIo6n2UnWph3FYk",
                         authDomain: "kbot-auth.firebaseapp.com",
