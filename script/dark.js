@@ -7,7 +7,7 @@ $.getChangeDarkMode = function(){
 }
 
 $.getChangeWhiteMode = function(){
-    $("link#favicon").attr("href", "../../img/docs_dark.png");
+    $("link#favicon").attr("href", "../../img/docs_black.png");
 
     $("#NF").attr("src", "../../img/NotFound.png");
     $("#FBD").attr("src", "../../img/Forbidden.png");

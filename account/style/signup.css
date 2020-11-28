@@ -1,0 +1,111 @@
+*::-webkit-scrollbar{
+    width: 0rem; 
+    height: 0rem; 
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Noto Sans', 'Noto Sans KR';
+}
+
+img#bg {
+    position: fixed;
+    left: -20rem;
+    top: -20rem;
+    width: 50rem;
+    height: 200%;
+    transform: perspective(70rem) rotateZ(10deg);
+}
+
+header {
+    background: black;
+    color: white;
+    width: inherit;
+    height: 30rem;
+    display: table-cell;
+    vertical-align: middle;
+    table-layout: auto;
+}
+
+header div {
+    display: inline;
+    vertical-align: middle;
+}
+
+img#docs {
+    filter: invert(0%);
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 3rem;
+}
+
+article {
+    margin-top: 7rem;
+}
+
+form * {
+    margin-bottom: 4rem;
+}
+
+input[type = 'text'], input[type = 'password'], input[type = 'email'] {
+    width: 34rem;
+    height: 3rem;
+    font-family: 'Noto Sans', 'Noto Sans KR';
+    font-size: 1.1rem;
+    outline: none;
+    border-radius: 2rem;
+    border: 0.3rem solid white;
+    box-shadow: 0rem 0rem 0.8rem 0rem #dddddd;
+    padding: 0rem 2rem;
+
+    transition-property: box-shadow;
+    transition-duration: 0.3s;
+}
+
+img#profile{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 7rem 7rem 7rem 7rem;
+    box-shadow: 0rem 0rem 0.8rem 0rem #b1b1b1;
+    border: none;
+    cursor: pointer;
+    padding: 0rem;
+}
+
+input[type = file]{
+    display: none;
+}
+
+button {
+    background: black;
+    color: white;
+    font-family: 'Noto Sans', 'Noto Sans KR';
+    font-size: 1.15rem;
+    font-weight: bold;
+    outline: none;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 2.5rem;
+    border: black;
+
+    transition-property: color, background, border, box-shadow;
+    transition-duration: 0.42s;
+}
+
+input[type = 'text']:focus, input[type = 'password']:focus, input[type = 'email']:focus {
+    box-shadow: 0rem 0rem 1rem 0rem #00ffc8;
+}
+
+button:hover {
+    cursor: pointer;
+    color: black;
+    background: white;
+    border: white;
+    box-shadow: 0rem 0rem 1.5rem 0rem #dddddd;
+}
