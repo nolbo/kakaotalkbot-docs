@@ -25,7 +25,7 @@ $(function () {
         var isS = false;
         var users;
 
-        firebase.firestore().collection('users').get().then(function (snapshot) {
+        auth.firestore().collection('users').get().then(function (snapshot) {
             if (snapshot.size > 0) {
                 var users;
                 snapshot.forEach(function (doc) { users.push(doc.data()); });
@@ -94,6 +94,7 @@ $(function () {
                     isS = false;
                 }
             }
+
             if ((isU || isL) && isN && isS) {
                 $('#pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #b1b1b1');
             } else {
@@ -107,15 +108,15 @@ $(function () {
                 $('#re_pswd').css('box-shadow', '0rem 0rem 0.9rem 0rem #ff0088');
                 is = true;
             }
-            if (is == false) {
-                firebase.auth().createUserWithEmailAndPassword(email, pswd).then(function () {
-                    firebase.auth().currentUser.sendEmailVerification().then(function () {
-                        firebase.firestore().collection('users').doc(firebase.auth().currentUser.uid).set({
-                            nickname: id,
-                            email: email,
-                            profile: $('img#profile').attr('src')
+            if (!is) {
+                auth.auth().createUserWithEmailAndPassword(email, pswd).then(function () {
+                    auth.auth().currentUser.sendEmailVerification().then(function () {
+                        auth.firestore().collection('users').doc(auth.auth().currentUser.uid).set({
+                            'id': id,
+                            'email': email,
+                            'profile': $('img#profile').attr('src')
                         }).then(function () {
-                            firebase.auth().signOut().then(function () {
+                            auth.auth().signOut().then(function () {
                                 location.href = 'https://kkotbot-docs.kro.kr/login';
                             })
                         });
