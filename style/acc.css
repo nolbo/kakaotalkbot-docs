@@ -113,7 +113,7 @@ input[type = 'checkbox'] {
     display: none;
 }
 
-label[for = 'tos'] img {
+label[for] img {
     display: inline;
     background: url('../img/uncheck.png') no-repeat;
     background-size: 1rem 1rem;
@@ -127,7 +127,7 @@ label[for = 'tos'] img {
     transition-duration: 0.3s;
 }
 
-input#tos:checked + div#dscrpt label[for = 'tos'] img {
+input[type = 'checkbox']:checked + div.dscrpt label[for] img {
     display: inline;
     background: url('../img/check.png') no-repeat;
     background-size: 1rem 1rem;
@@ -173,7 +173,7 @@ button:hover {
     box-shadow: 0rem 0rem 1.5rem 0rem #dddddd;
 }
 
-label[for = 'tos'] img:hover {
+label[for] img:hover {
     cursor: pointer;
 }
 
