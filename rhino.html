@@ -10,40 +10,33 @@
     <meta name="author" content="nolbo">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kkotbot-docs.kro.kr">
-    <meta property="og:title" content="KBot Docs | 전체">
-    <meta property="og:image" content="../img/grp.jpg">
+    <meta property="og:title" content="KBot Docs | 라이노 엔진">
+    <meta property="og:image" content="img/grp.jpg">
     <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
-    <script type="text/javascript" src="../script/jquery.js"></script>
-    <script type="text/javascript" src="../script/loader.js"></script>
-    <script type="text/javascript" src="../script/jquery-ui.js"></script>
-    <script type="text/javascript" src="../script/animation.js"></script>
-    <script type="text/javascript" src="../script/sidebar_full.js"></script>
-    <script type="text/javascript" src="../script/dark.js"></script>
-    <script type="text/javascript" src="../script/newToast.js"></script>
-    <script type="text/javascript" src="../script/inko.js"></script>
-    <script type="text/javascript" src="../script/search.js"></script>
-    <script type="text/javascript" src="../script/copy.js"></script>
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script type="text/javascript" src="script/animation.js"></script>
+    <script type="text/javascript" src="script/dark.js"></script>
+    <script type="text/javascript" src="script/newToast.js"></script>
+    <script type="text/javascript" src="script/inko.js"></script>
+    <script type="text/javascript" src="script/search.js"></script>
+    <script type="text/javascript" src="script/copy.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js"></script>
-    <script type="text/javascript" src="../script/hl.js"></script>
+    <script type="text/javascript" src="script/hl.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-    <link rel="stylesheet" href="../style/highlighting.css">
+    <link rel="stylesheet" href="style/highlighting.css">
     <link rel="canonical" href="https://kkotbot-docs.kro.kr">
-    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="../img/docs_black.png">
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/docs_black.png">
     <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/base.css">
-    <link rel="stylesheet" href="../style/mobile.css">
-    <link rel="stylesheet" href="../style/dark.css">
-    <link rel="stylesheet" href="../style/newToast.css">
-    <title>KBot Docs | 전체</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/mobile.css">
+    <link rel="stylesheet" href="style/dark.css">
+    <link rel="stylesheet" href="style/newToast.css">
+    <title>KBot Docs | 라이노 엔진</title>
 </head>
 <body>
     <div id="toast_con" class="default" role="alert"><p id="toast_txt"></p></div>
-    <div id="loader" style="opacity: 1;">
-        <img id="loader_img" src="../img/grp.jpg" style="top:0;left:0; position:fixed; min-width:100%;">
-        <div id="text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);opacity: 0;">Docs</div>
-    </div>
-    <div id="main" style="opacity: 0;">
     <!-- <header>
         <img id="kkotb_rfnc" src="img/docs.png">
         <div id="wrap">
@@ -53,50 +46,15 @@
         </div>
     </header> -->
     <aside>
-        <div id="docs_space"><img id="docs" src="../img/docs.png"></div>
+        <div id="docs_space"><img id="docs" src="img/docs.png"></div>
         <dl>
-            <dt id="summary"><img class="side_icon" id="this" src="../img/summary.png"></dt>
-            <dt id="api"><img class="side_icon" src="../img/api.png"></dt>
-            <dt id="api2"><img class="side_icon" src="../img/api2.png"></dt>
-            <dt id="rhino"><img class="side_icon" src="../img/rhino.png"></dt>
-            <dt id="deepening"><img class="side_icon" src="../img/deepening.png"></dt>          
-            <dt id="appendix"><img class="side_icon" src="../img/appendix.png"></dt>
-            <span id="list" class="summary" data-isVisible="true">
-                <h1 id="ttl">개요</h1>
-                <dd id="d1-1" class="sdb">알아두기</dd><br>
-                <dd id="d1-2" class="sdb">카카오톡 봇</dd><br>
-                <dd id="d1-3" class="sdb">작동 원리</dd><br>
-                <dd id="d1-4" class="sdb">개발 준비</dd><br>
-                <dd id="d1-5" class="sdb">response 함수</dd><br>
-                <dd id="d1-6" class="sdb">수신하기</dd><br>
-                <dd id="d1-7" class="sdb">웹 파싱</dd>
-            </span>
-            <span id="list" class="api" data-isVisible="false">
-                <h1 id="ttl">레거시 API</h1>
-                <dd id="d2-1" class="sdb">Api</dd><br>
-                <dd id="d2-2" class="sdb">Utils</dd><br>
-                <dd id="d2-3" class="sdb">FileStream</dd><br>
-                <dd id="d2-4" class="sdb">DataBase</dd><br>
-                <dd id="d2-5" class="sdb">Log</dd><br>
-                <dd id="d2-6" class="sdb">Device</dd><br>
-                <dd id="d2-7" class="sdb">Bridge</dd><br>
-                <dd id="d2-8" class="sdb">AppData</dd><br>
-                <dd id="d2-9" class="sdb">replier</dd><br>
-                <dd id="d2-10" class="sdb">imageDB</dd>
-            </span>
-            <span id="list" class="api2" data-isVisible="false">
-                <h1 id="ttl">API 2</h1>
-                <dd id="d3-1" class="sdb">App</dd><br>
-                <dd id="d3-2" class="sdb">Bot</dd><br>
-                <dd id="d3-3" class="sdb">BotManager</dd><br>
-                <dd id="d3-4" class="sdb">BroadCast</dd><br>
-                <dd id="d3-5" class="sdb">Database</dd><br>
-                <dd id="d3-6" class="sdb">Event</dd><br>
-                <dd id="d3-7" class="sdb">Http</dd><br>
-                <dd id="d3-8" class="sdb">SessionManager</dd><br>
-                <dd id="d3-9" class="sdb">Security</dd>
-            </span>
-            <span id="list" class="rhino" data-isVisible="false">
+            <dt><img class="side_icon" src="img/summary.png"></dt>
+            <dt><img class="side_icon" src="img/api.png"></dt>
+            <dt><img class="side_icon" src="img/api2.png"></dt>
+            <dt><img class="side_icon" id="this" src="img/rhino.png"></dt>
+            <dt><img class="side_icon" src="img/deepening.png"></dt>          
+            <dt><img class="side_icon" src="img/appendix.png"></dt>
+            <span id="list" data-isVisible="true">
                 <h1 id="ttl">라이노 엔진</h1>
                 <dd id="d4-1" class="sdb">기초</dd><br>
                 <dd id="d4-2" class="sdb">자료형</dd><br>
@@ -111,1173 +69,9 @@
                 <dd id="d4-11" class="sdb">람다식</dd><br>
                 <dd id="d4-12" class="sdb">함수</dd>
             </span>
-            <span id="list" class="deepening" data-isVisible="false">
-                <h1 id="ttl">심화</h1>
-                <dd id="d5-1" class="sdb">이벤트 리스너</dd><br>
-                <dd id="d5-2" class="sdb">외부 패키지/클래스</dd><br>
-                <dd id="d5-3" class="sdb">액티비티</dd><br>
-                <dd id="d5-4" class="sdb">ADB/Broadcast</dd><br>
-                <dd id="d5-5" class="sdb">소켓 통신</dd>
-            </span>
-            <span id="list" class="appendix" data-isVisible="false">
-                <h1 id="ttl">부록</h1>
-                <dd id="d99-1" class="sdb">참고자료</dd><br>
-                <dd id="d99-2" class="sdb">도움주신 분들</dd><br>
-                <dd id="d99-3" class="sdb">문의하기</dd>
-            </span>
         </dl>
     </aside>
     <article>
-        <section id="summary">
-            <div id="1-1" class="content">
-                <p class="title">알아두기</p>
-                <p class="dscrpt">카카오톡 봇을 개발하기 전 이를 꼭 알아두세요.</p><br><br>
-                <li class="dscrpt">Java와 JavaScript는 서로 다른 언어입니다. 고로, JavaScript를 Java라고 줄여서 사용하지 않습니다.</li>
-                <li class="dscrpt">카카오톡 봇에서 사용하는 JavaScript는 순수 자바스크립트가 아닌 Rhino라는 Java로 작성된 JavaScript 엔진입니다. 그러므로 카카오톡 봇에서는 <p class="code" id="p">alert()</p>와 같은 기능을 제공하지 않습니다.</li>
-                <li class="dscrpt">안드로이드 버전 5.0(롤리팝) 미만이나 iOS는 카카오톡 봇을 구동할 수 없는 환경입니다.</li>
-            </div>
-            <div id="1-2" class="content">
-                <p class="title">카카오톡 봇</p>
-                <p class="dscrpt">카카오톡 봇은 카카오톡에서 자동으로 응답하는 자동응답 봇입니다. 카카오톡 개발에는 메신저봇R, 채팅 자동응답 봇 등이 쓰입니다. 이 페이지에서는 메신저봇R을 기준으로 합니다.</p>
-            </div>
-            <div id="1-3" class="content">
-                <p class="title">작동 원리</p>
-                <p class="dscrpt">메신저봇은 </p><p class="code" id="p">NotificationListenerService</p><p class="dscrpt">를 통해 알림을 파싱한 후, Rhino JavaScript Engine을 사용하여 사용자가 작성한 자바스크립트로 알림 정보를 전달하여 처리할 수 있도록 합니다. 답장은 최종적으로 </p><p class="code" id="p">WearableExtender</p><p class="dscrpt">를 활용해 하게 됩니다.</p>
-            </div>
-            <div id="1-4" class="content">
-                <p class="title">개발 준비</p>
-                <div id="sA">
-                    <li id="d1-4-1" class="sA">앱 설치</li>
-                    <li id="d1-4-2" class="sA">부계정을 사용할 경우</li>
-                </div>
-                <div id="1-4-1" class="content">
-                    <p class="stitle">앱 설치</p>
-                    <p class="dscrpt">카카오톡 봇 개발을 위해서는 카카오톡 봇을 제작하고 구동할 수 있는 환경이 조성되어야 합니다.</p><br><br>
-                    <li class="dscrpt">우선, <strong>Google Play</strong>에서 카카오톡 봇 제작과 구동을 돕는 앱 중 하나인 <strong>메신저봇R</strong>을 설치해야 합니다.</li>
-                    <div class="crf">
-                        <pre><code class="nohighlight"><p class="crfBox">안드로이드 버전이 7.0(누가) 미만일 경우 'Wear OS by Google(이전의 Android Wear) 스마트시계' 앱을 추가로 설치해야 합니다.</p></code></pre>
-                    </div>
-                    <li class="dscrpt">메신저봇R 앱을 처음 실행하면 <strong>알림 읽기 권한이 없습니다.</strong> 창이 나옵니다. 메신저봇R의 알림 읽기 권한을 허용하지 않으면 카카오톡의 알림을 읽기 못해 카카오톡 봇을 구동할 수 없으므로 <strong>확인</strong>을 눌러 알림 읽기 권한을 허용해줍니다.</li>
-                    <li class="dscrpt">앱으로 다시 돌아오면 <strong>데이터 폴더</strong> 창이 나옵니다. 창의 설명에 나온 경로에 자신의 카카오톡 봇 스크립트를 저장하려는 경우 <strong>확인</strong>을, 다른 경로에 저장하려는 경우 <strong>변경</strong>을 선택해 저장할 경로를 지정합니다.</li>
-                    <li class="dscrpt">이제 메신저봇R의 메인 화면이 나옵니다. 우측 하단의 스크립트 추가 버튼을 클릭합니다.</li>
-                    <li class="dscrpt"><strong>새 봇</strong> 창에 자신이 만들 카카오톡 봇의 스크립트 이름을 입력하고 <strong>확인을 누릅니다.</strong></li>
-                    <li class="dscrpt">이제 자신의 카카오톡 봇 스크립트가 추가되었습니다. 생성된 자신의 스크립트를 클릭한 다음 연필 버튼을 클릭하여 카카오톡 봇의 소스코드를 작성하면 됩니다.</li>
-                </div>
-                <div id="1-4-2" class="content">
-                    <p class="stitle">부계정을 사용할 경우</p>
-                    <p class="dscrpt">카카오톡 봇을 위한 부계정을 사용할 경우, 올바른 추가 설정을 하지 않으면 본계정과 부계정 모두 카카오톡 봇의 답장을 보내는 등의 일이 일어날 수 있습니다. 이러한 경우에 대한 대처법은 아래와 같습니다.</p><br><br>
-                    <li class="dscrpt">삼성 듀얼 메신저 기능을 사용할 경우에는 카카오톡 봇 계정을 제외한 모든 계정의 전체 알림을 꺼야 합니다.</li>
-                    <li class="dscrpt">복제 앱을 사용할 경우 메신저봇R 내에 있는 <strong>공용 설정</strong> &gt; <strong>알림을 읽을 패키지명</strong>에서 복제된 앱의 패키지명을 입력하거나 아래의 소스를 사용하면 올바르게 작동합니다.</li>
-                    <div class="code">
-                        <pre><code class="javascript">if(packageName != '복제된 앱의 패키지명') return;<br><br>// TODO</code></pre>
-                    </div>
-                </div>
-            </div>
-            <div id="1-5" class="content">
-                <p class="title">response 함수</p>
-                <p class="dscrpt">앱이 사용자가 지정한 카카오톡의 알림을 성공적으로 파싱했을 경우 호출되는 기본적인 이벤트 리스너 입니다.</p>
-                <div id="sA">
-                    <li id="d1-5-1" class="sA">기본</li>
-                    <li id="d1-5-2" class="sA">통합된 매개변수</li>
-                </div>
-                <div id="1-5-1" class="content">
-                    <p class="stitle">기본</p>
-                    <p class="dscrpt">기본적인 response함수는 여러 개의 매개변수가 존재하는 형식입니다.</p>
-                    <div class="code">
-                        <pre><code class="javascript">function response (room, msg, sender, isGroupChat, replier, imageDB, packageName) {<br>    // TODO<br>}</code></pre>
-                    </div>
-                    <div class="table">
-                        <table>
-                            <th>매개변수 이름</th>
-                            <th>형식</th>
-                            <th>기능</th>
-                            <tr>
-                                <td><p class="code" id="p">room</p></td>
-                                <td><p class="code" id="p">String</p></td>
-                                <td>해당 룸의 이름을 문자열 형식으로 반환합니다.</td>
-                            </tr>
-                            <tr>
-                                <td><p class="code" id="p">msg</p></td>
-                                <td><p class="code" id="p">String</p></td>
-                                <td>메시지내용을 문자열 형식으로 반환합니다.</td>
-                            </tr>
-                            <tr>
-                                <td><p class="code" id="p">sender</p></td>
-                                <td><p class="code" id="p">String</p></td>
-                                <td>메시지 전송자의 이름을 문자열 형식으로 반환합니다.</td>
-                            </tr>
-                            <tr>
-                                <td><p class="code" id="p">isGroupChat</p></td>
-                                <td><p class="code" id="p">Boolean</p></td>
-                                <td>해당룸의 그룹채팅 여부를 불린 형식으로 반환합니다.</td>
-                            </tr>
-                            <tr>
-                                <td><p class="code" id="p">replier</p></td>
-                                <td><p class="code" id="p">void</p></td>
-                                <td>해당룸의 세션을 반환합니다.</td>
-                            </tr>
-                            <tr>
-                                <td><p class="code" id="p">imageDB</p></td>
-                                <td><p class="code" id="p">-</p></td>
-                                <td>이미지DB를 반환합니다.</td>
-                            </tr>
-                            <tr>
-                                <td><p class="code" id="p">packageName</p></td>
-                                <td><p class="code" id="p">String</p></td>
-                                <td>메시지 나타난 앱의 패키지명을 반환합니다. (카카오톡의 경우 <p class="code" id="p">com.kakao.talk</p>입니다.)</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="crf">
-                        <pre><code class="nohighlight"><p class="crfBox">위 매개변수를 사용하기 위해서는 반드시 소스코드를 response함수 내부에 작성해야 합니다. (그렇지 않을 경우 referenceError 즉, 참조에러가 발생합니다.)</p></code></pre>
-                    </div>
-                </div>
-                <div id="1-5-2" class="content">
-                    <p class="stitle">통합된 매개변수</p>
-                    <p class="dscrpt">response함수는 통합된 매개변수의 형식을 지원합니다.</p>
-                    <div class="code">
-                        <pre><code class="javascript">function response (params) {<br>    // TODO<br>}</code></pre>
-                    </div>
-                    <p class="dscrpt">이 소스에서 </p><p class="code" id="p">params</p><p class="dscrpt">는 기본적인 response함수의 매개변수를 속성이나 메서드로 가지고 있는 객체입니다. 예를 들면, 기본적인 response함수에서 </p><p class="code" id="p">msg</p><p class="dscrpt">로 사용하는 것을 통합된 매개변수에서는 </p><p class="code" id="p">params.msg</p><p class="dscrpt">와 같이 사용합니다.</p>
-                    <div class="crf">
-                        <pre><code class="nohighlight"><p class="crfBox">통합된 매개변수를 사용하기 위해서는 스크립트를 생성할 때 '통합된 매개변수를 사용합니다. JavaScript 초심자에게는 권장하지 않습니다' 항목을 선택하거나 스크립트 설정에서 '통합된 매개변수' 항목을 선택해야 합니다.</p></code></pre>
-                    </div>
-                </div>
-            </div>
-            <div id="1-6" class="content">
-                <p class="title">수신하기</p>
-                <p class="dscrpt">수신기능은 카카오톡 봇의 기본이자 핵심기능 입니다. 수신기능을 가지고 있는 코드는 이와 같습니다.</p>
-                <div class="code">
-                    <pre><code class="javascript">replier.reply("메시지"); //'메시지'를 전송<br>replier.reply("방", "메시지", false); //'방'에 '메시지'를 전송. 전송 성공 시 true, 실패 시 false를 반환.<br>Api.replyRoom('방', '메시지', false); //'방'에 '메시지'를 전송. 전송 성공 시 true, 실패 시 false를 반환.</code></pre>
-                </div>
-            </div>
-            <div id="1-7" class="content">
-                <p class="title">웹 파싱</p>
-                <p class="dscrpt">날씨같은 정보를 웹 파싱을 통해 전할 수 있습니다. 하지만 웹 파싱을 할 시 보안에 주의하세요.</p>
-                <div class="code">
-                    <pre><code class="javascript">Utils.getWebText(url: String); //url주소 홈페이지의 HTML을 로드하여 문자열로 반환<br>Utils.parse(url: String); //url주소 홈페이지의 HTML을 get하여 org.jsoup.nodes.Document로 반환</code></pre>
-                </div>
-                <p class="dscrpt">웹 파싱 후 자신이 필요한 정보만 가져올 수 있도록 작업이 필요합니다. 이를 더 편리하게 할 수 있는 것이 Jsoup입니다. 이는 <strong>심화 > Jsoup</strong> 편에 자세히 다룹니다.</p>
-            </div>
-        </section>
-        <section id="api">
-            <div id="2-1" class="content">
-                <p class="title" id="first">Api</p>
-                <p class="dscrpt">레거시 Api 중 <strong>Api</strong>는 봇의 기본적인 기능을 담고 있습니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">getContext()</p></td>
-                            <td><p class="code" id="p">android.content.Context</p></td>
-                            <td>앱의 컨텍스트를 가져옵니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">reload()</p><br><p class="code" id="p">compile()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>모든 스크립트를 재컴파일합니다. 반환값은 항상 <p class="code" id="p">true</p>입니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">reload(scriptName: String, throwOnError: Boolean = false)</p><br><p class="code" id="p">compile(String scriptName, Boolean throwOnError = false)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>특정 스크립트를 재컴파일합니다.<br><p class="code" id="p">throwOnError</p>가 <p class="code" id="p">true</p>라면, 컴파일 에러시 예외를 throw합니다.<br>에러 발생시, 또는 스크립트가 존재하지 않을 시 <p class="code" id="p">false</p>를 반환하고, 컴파일 성공시 <p class="code" id="p">true</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">prepare(scriptName: String)</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>해당 스크립트가 한번도 컴파일 된 적이 없을 경우에만 컴파일합니다.<br>컴파일 실패시 에러를 throw하고, 스크립트가 존재하지 않을 시 <p class="code" id="p">0</p>, 컴파일 성공시 <p class="code" id="p">1</p>, 한번이라도 컴파일 된 적이 있을 시 <p class="code" id="p">2</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">unload(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 스크립트를 컴파일되지 않은 상태로 전환합니다.<br>원래부터 컴파일되지 않은 상태였거나, 스크립트가 존재하지 않을 시 <p class="code" id="p">false</p>를 반환하며, 그렇지 않은 경우에는 <p class="code" id="p">true</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">off()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>모든 스크립트의 전원을 끕니다. 반환값은 항상 <p class="code" id="p">true</p>입니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">off(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 스크립트의 전원을 끕니다.<br>스크립트가 존재하지 않거나, 스크립트의 설정에서 <p class="code" id="p">Api.off()</p>를 무시하도록 설정했을 경우 <p class="code" id="p">false</p>를 반환하고, 그렇지 않은 경우에는 <p class="code" id="p">true</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">on()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>모든 스크립트의 전원을 켭니다. 반환값은 항상 <p class="code" id="p">true</p>입니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">on(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 스크립트의 전원을 켭니다.<br>스크립트가 존재하지 않을 시 <p class="code" id="p">false</p>, 존재할 시 <p class="code" id="p">true</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">isOn(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 스크립트의 전원 상태를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">isCompiled(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 스크립트의 컴파일 완료 여부를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">isCompiling(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 스크립트가 컴파일 진행 중 인지 여부를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getScriptNames()</p></td>
-                            <td><p class="code" id="p">String[]</p></td>
-                            <td>모든 스크립트의 이름을 배열로 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">replyRoom(room: String, message: String)</p><br><p class="code" id="p">replyRoom(String room, String message, Boolean hideToast = false)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 룸에 메시지를 보냅니다. <p class="code" id="p">hideToast</p>가 <p class="code" id="p">true</p>일 경우 방 세션이 없어도 토스트를 띄우지 않습니다.<br>방 세션이 있을 시 <p class="code" id="p">true</p>, 없을 시 <p class="code" id="p">false</p>를 반환합니다. (이는 일반적인 상황에서 전송 성공 여부를 나타냅니다.)</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">canReply(room: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 룸으로의 메시지 전송 가능 여부를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">showToast(content: String, length: int)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>토스트 메시지를 발생시킵니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">makeNoti(title: String, content: String, id: int)</p></td>
-                            <td><p class="code" id="p">String[]</p></td>
-                            <td>알림을 띄웁니다. <p class="code" id="p">id</p>는 알림의 고유 아이디로,<br>같은 아이디로 <p class="code" id="p">Api.makeNoti</p>를 다시 한번 호출하면 알림이 새로 뜨지 않고 내용이 수정됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">papagoTranslate(sourceLanguage: String, targetLanguage: String, content: String)</p><br><p class="code" id="p">papagoTranslate(String sourceLanguage, String targetLanguage, String content, Boolean errorToString = false)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>번역 결과를 제공합니다.<br><p class="code" id="p">errorToString</p>이 <p class="code" id="p">true</p>일 경우 에러를 throw하지 않고 <p class="code" id="p">String</p>으로 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">gc()</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>가비지 컬렉팅을 강제로 시작합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">UIThread(func: Function, onComplete: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>UI 쓰레드에서 <p class="code" id="p">func</p>함수를 실행합니다.<br><p class="code" id="p">onComplete</p>함수는 <p class="code" id="p">error</p>, <p class="code" id="p">result</p>의 인자를 가지며, <p class="code" id="p">func</p>함수 실행 후 에러 발생시 <p class="code" id="p">error</p>에 에러객체가 전달되고,<br>성공적으로 실행됐을 시 반환값을 <p class="code" id="p">result</p>에 전달합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getActiveThreadsCound(scriptName: String)</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>해당 스크립트의 활성 쓰레드 수를 반환합니다. <p class="code" id="p">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">interruptThreads(scriptName: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>해당 스크립트의 쓰레드들에 interrupt요청을 보냅니다. <p class="code" id="p">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">isTerminated(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">Api.interruptThreads</p> 이후, 모든 쓰레드들이 interrupt되었는지를 확인합니다. <p class="code" id="p">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
-                    </table>
-                </div>
-            </div>
-            <div id="2-2" class="content">
-                <p class="title">Utils</p>
-                <p class="dscrpt">래거시 Api 중 <strong>Utils</strong>는 봇 기능제작을 위한 기본적이고 유용한 기능들을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">getWebText(url: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>웹사이트의 HTML을 로드하여 문자열로 반환합니다. (동기적)</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">parse(url: String)</p></td>
-                            <td><p class="code" id="p">org.jsoup.nodes</p></td>
-                            <td>웹사이트의 HTML을 get하여 <p class="code" id="p">org.jsoup.nodes.Document</p>로 반환합니다. (동기적)</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getAndroidVersionCode()</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>앱 구동 환경의 안드로이드 버전 코드를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getAndroidVersionName()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>앱 구동 환경의 안드로이드 버전 이름을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getPhoneBrand()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>앱 구동 환경의 휴대폰 브랜드명을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getPhoneModel()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>앱 구동 환경의 휴대폰 모델명을 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="2-3" class="content">
-                <p class="title">FileStream</p>
-                <p class="dscrpt">레거시 Api 중 <strong>FileStream</strong>은 기기 내부저장소에 대한 기능을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">read(path: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>path경로(파일 이름까지 포함)에 있는 파일 내용을 읽어 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">write(path: String, data: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>path경로(파일 이름까지 포함)에 <p class="code" id="p">data</p>를 덮어씁니다. 반환값은 최종 파일 내용입니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">append(path: String, data: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>path경로(파일 이름까지 포함)에 <p class="code" id="p">data</p>를 이어씁니다. 반환값은 최종 파일 내용입니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">remove(path: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>path경로(파일 이름까지 포함)을 삭제합니다.<br>반환값은 <p class="code" id="p">java.io.File.delete()</p>의 결과값이며 삭제중 예외가 발생할 경우 <p class="code" id="p">false</p>를 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="2-4" class="content">
-                <p class="title">DataBase</p>
-                <p class="dscrpt">레거시 Api 중 <strong>DataBase</strong>는 앱 데이터 폴더 내에 있는 'Database' 폴더에 대한 기능을 제공합니다. 제한범위와 자동 확장자 명시기능 여부에 차이가 있을 뿐, FileStream에서 제공하는 기능과 동일합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">getDataBase(fileName: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">앱_데이터_폴더/Database/fileName</p>파일을 읽어 내용을 문자열로 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">setDataBase(fileName: String, data: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">앱_데이터_폴더/Database</p>폴더 내에 <p class="code" id="p">fileName</p>이라는 파일을 만들고, <p class="code" id="p">data</p>를 덮어씁니다.<br><p class="code" id="p">fileName</p>에 확장자가 명시되지 않은 경우 확장자는 자동으로 <p class="code" id="p">.txt</p>가 됩니다. 최종 파일 내용을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">appendDataBase(fileName: String, data: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">앱_데이터_폴더/Database/fileName</p>파일에 <p class="code" id="p">data</p>를 이어씁니다. 최종 파일 내용을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">removeDataBase(fileName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">앱_데이터_폴더/Database/fileName</p>파일을 삭제합니다.<br>앱 옵션에서 삭제시 백업기능을 켜두었을 경우, <p class="code" id="p">fileName.bak</p>으로 내용이 백업됩니다. <p class="code" id="p">java.io.File.delete()</p>의 결과를 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="2-5" class="content">
-                <p class="title">Log</p>
-                <p class="dscrpt">레거시 Api 중 <strong>Log</strong>는 메신저봇R 내에 있는 로그화면에 로그를 작성하는 기능을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">d(data: String)</p><br><p class="code" id="p">debug(String data)</p><br><p class="code" id="p">d(String data, Boolean showToast = false)</p><br><p class="code" id="p">debug(String data, Boolean showToast = false)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>디버그 로그를 작성합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">e(data: String)</p><br><p class="code" id="p">error(String data)</p><br><p class="code" id="p">e(String data, Boolean showToast = false)</p><br><p class="code" id="p">error(String data, Boolean showToast = false)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>에러 로그를 작성합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">i(data: String)</p><br><p class="code" id="p">info(String data)</p><br><p class="code" id="p">i(String data, Boolean showToast = false)</p><br><p class="code" id="p">info(String data, Boolean showToast = false)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>정보 로그를 작성합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">clear()</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>로그를 모두 삭제합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="2-6" class="content">
-                <p class="title">Device</p>
-                <p class="dscrpt">레거시 Api 중 <strong>Device</strong>는 구동 기기에 대한 하드웨어/운영체제 정보를 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">getBuild()</p></td>
-                            <td><p class="code" id="p">android.os.Build</p></td>
-                            <td><p class="code" id="p">android.os.Build()</p>값을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getAndroidVersionCode()</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>앱 구동 환경의 안드로이드 버전 코드를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getAndroidVersionName()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>앱 구동 환경의 안드로이드 버전 이름을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getPhoneBrand()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>앱 구동 환경의 휴대폰 브랜드명을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getPhoneModel()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>앱 구동 환경의 휴대폰 모델명을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">isCharging()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>앱 구동 환경 휴대폰이 충전중 여부를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getPlugType()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>충전기의 타입을 반환합니다. (ac/wireless/usb/unknown)</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBatteryLevel()</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>배터리 잔량(%)를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBatteryHealth()</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>배터리 건강 상태에 대한 상수를 반환합니다. 반환하는 상수는 다음과 같습니다:<br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_COLD</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_DEAD</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_GOOD</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE</p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBatteryTemperature()</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>현재 배터리 온도의 10배 값을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBatteryVoltage()</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>현재 배터리 전압(mV)을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBatteryStatus()</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td><p>배터리 상태에 대한 상수를 반환합니다. 반환하는 상수는 다음과 같습니다:<br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_CHARGING</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_DISCHARGING</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_FULL</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_UNKNOWN</p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBatteryIntent()</p></td>
-                            <td><p class="code" id="p">android.content.Intent</p></td>
-                            <td><p class="code" id="p">context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))</p> 값을 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="2-7" class="content">
-                <p class="title">Bridge</p>
-                <p class="dscrpt">레거시 Api 중 <strong>Bridge</strong>는 다른 스크립트와의 접근을 지원합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">getScopeOf(scriptName: String)</p></td>
-                            <td><p class="code" id="p">org.mozilla.javascript.ScriptableObject</p></td>
-                            <td><p class="code" id="p">scriptName</p>스크립트의 전역 스코프를 반환합니다.<br>만약 대상 스크립트가 컴파일 또는 인터프리트되지 않았거나, 설정에서 Bridge를 통한 접근을 허용하지 않은 경우 <p class="code" id="p">null</p>을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">isAllowed(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">scriptName</p>스크립트의 Bridge를 통한 접근 허용 여부를 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="2-8" class="content">
-                <p class="title">AppData</p>
-                <p class="dscrpt">레거시 Api 중 <strong>AppData</strong>는 앱 데이터에 대한 기능을 지원합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">putBoolean(key: String, boolean: Boolean)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>앱 데이터에 불린값<p class="code" id="p">boolean</p>을 씁니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBoolean(key: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>앱 데이터에서 boolean값을 불러옵니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">putInt(key: String, integer: int)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>앱 데이터에 정수<p class="code" id="p">integer</p>를 씁니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getInt(key: String)</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>앱 데이터에서 정수값을 불러옵니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">putString(key: String, string: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>앱 데이터에 문자열<p class="code" id="p">string</p>을 씁니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getString(key: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>앱 데이터에서 문자열값을 불러옵니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">remove(key: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>AppData를 통해 저장한 앱 데이터 중 키값에 해당하는 앱 데이터를 지웁니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">clear()</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>AppData를 통해 저장한 모든 앱 데이터를 지웁니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="2-9" class="content">
-                <p class="title">replier</p>
-                <p class="dscrpt">레거시 Api 중 <strong>replier</strong>는 메시지 수신에 대한 기능을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">reply(msg: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>replier객체가 현재 저장하고 있는 방에 <p class="code" id="p">msg</p>이라는 내용을 전송합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">reply(room: String, msg: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">room</p>이라는 방에 <p class="code" id="p">msg</p>라는 내용을 전송합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">reply(room: String, msg: String, hideToast: Boolean = false)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">room</p>이라는 방에 <p class="code" id="p">msg</p>라는 내용을 전송합니다.<br>메신저봇R의 작동방식상 메신저봇R이 구동된 이후에 알림을 단 한번도 받지 못한 채팅방으로는 답장이 불가능한데, 이를 시도할 경우 화면 하단에 Toast알림을 표시하게 됩니다. (<p class="code" id="p">hideToast = false</p>인 경우.)<br>반환값은 메신저봇이 해당 방의 답장 세션을 가지고 있는지에 대한 여부입니다. 이는 일반적으로 메시지 전송요청의 성공 여부를 나타냅니다.<br>(단, 통신 문제등으로 전송이 실패하는 경우는 고려하지 않습니다.)</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="2-10" class="content">
-                <p class="title">imageDB</p>
-                <p class="dscrpt">레거시 Api 중 <strong>imageDB</strong>는 이미지에 대한 기능을 제공합니다. (단, 이미지를 전송하는 기능은 포함되어 있지 않습니다.)</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">getProfileBase64()</p><br><p class="code" id="p">getProfileImage()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>프로필 이미지를 Base64의 형태로 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getProfileBitmap()</p></td>
-                            <td><p class="code" id="p">android.graphics.Bitmap</p></td>
-                            <td>프로필 이미지를 Bitmap으로 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td id="no"><p class="code" id="p">getImage()</p></td>
-                            <td id="no"><p class="code" id="p">null</p></td>
-                            <td id="no">호환성을 위해 존재하기 때문에 기능이 없는 메서드입니다. 이는 항상 <p class="code" id="p">null</p>을 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <section id="api2">
-            <div id="3-1" class="content">
-                <p class="title">App</p>
-                <p class="dscrpt">Api2 중 <strong>App</strong>은 카카오톡 구동 앱에 관한 기능을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">getContext()</p></td>
-                            <td><p class="code" id="p">android.content.Context</p></td>
-                            <td>어플리케이션의 Context를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">runOnUiThread(task: Function, onComplete: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>함수<p class="code" id="p">task</p>를 UIThread에서 호출합니다. 함수<p class="code" id="p">task</p>의 작동이 끝나면 함수<p class="code" id="p">onComplete</p>를 호출합니다.<br><p class="code" id="p">onComplete</p>에는 <p class="code" id="p">error: Throwable</p>과 <p class="code" id="p">task</p>의 반환값이 인자로 주어집니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="3-2" class="content">
-                <p class="title">Bot</p>
-                <p class="dscrpt">Api2 중 <strong>Bot</strong>은 카카오톡 봇 개발 및 작동을 위한 기본적인 기능을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">setCommandPrefix(prefix: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>카카오톡 봇 명령어의 접두어를 설정합니다. <p class="code" id="p">prefix</p>로 시작하는 메시지를 감지하면 <p class="code" id="p">Event.COMMAND</p>이벤트가 발생합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">send(room: String, msg: String, packageName: String = null)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">room</p>방에 <p class="code" id="p">msg</p>이란 메시지를 <p class="code" id="p">packageName</p>라는 패키지명을 가진 앱에 수신합니다. <p class="code" id="p">packageName</p>이 지정되지 않았거나 <p class="code" id="p">null</p>값을 가질 경우 패키지명을 구분하지 않습니다.<br><p class="code" id="p">room</p>방의 세션이 존재할 경우 <p class="code" id="p">true</p>를 반환하고 그렇지 않으면 <p class="code" id="p">false</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">canReply(room: String, packageName: String = null)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">packageName</p>패키지명의 앱의 <p class="code" id="p">room</p>방의 세션을 가지고 있을 경우<p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다. <p class="code" id="p">packageName</p>이 지정되지 않았거나 <p class="code" id="p">null</p>값을 가질 경우 패키지명을 구분하지 않습니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getName()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>카카오톡 봇의 이름을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">setPower(power: Boolean)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>스크립트의 전원(작동여부)를 설정합니다. <p class="code" id="p">power</p>의 값이 <p class="code" id="p">true</p>일 경우 전원을 켜고, <p class="code" id="p">false</p>일 경우 전원을 끕니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getPower()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>스크립트의 전원이 켜져 있을 경우 <p class="code" id="p">true</p>를, 꺼져 있을 경우 <p class="code" id="p">false</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">compile()</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>현재 스크립트를 컴파일합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">unload()</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>현재 스크립트를 언로드합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">on(eventName: String, listener: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>이벤트 리스너를 등록합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">addListener(eventName: String, listener: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td><p class="code" id="p">Bot.on()</p>과 같습니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">off(eventName: String, <i>listener: Function</i>)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>마지막에 등록된 이벤트 리스너를 해제합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">removeListener(eventName: String, <i>listener: Function</i>)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td><p class="code" id="p">Bot.off()</p>와 같습니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">removeAllListeners(eventName: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>모든 이벤트 리스너를 해제합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">prependListener(eventName: String, listener: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>이벤트 리스너를 리스너 리스트의 앞에 추가합니다. (<p class="code" id="p">Bot.on()</p>/<p class="code" id="p">Bot.addListener()</p>는 리스너 리스트의 뒤에 추가합니다.)</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">listeners(eventName: String)</p></td>
-                            <td><p class="code" id="p">Array&lt;Function&gt;</p></td>
-                            <td>등록된 이벤트 리스너들을 배열형태로 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="3-3" class="content">
-                <p class="title">BotManager</p>
-                <p class="dscrpt">Api2 중 <strong>BotManager</strong>는 Api2 중 Bot의 기능을 확장하는 역할을 합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">getCurrentBot()</p></td>
-                            <td><p class="code" id="p">Bot</p></td>
-                            <td>현재 스크립트에 할당된 <p class="code" id="p">Bot</p>을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBot(botName: String)</p></td>
-                            <td><p class="code" id="p">Bot</p></td>
-                            <td><p class="code" id="p">botName</p>이란 이름을 가진 <p class="code" id="p">Bot</p>을 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getRooms(packageName: String = null)</p></td>
-                            <td><p class="code" id="p">Array&lt;String&gt;</p></td>
-                            <td><p class="code" id="p">packageName</p>패키지명의 앱에서 받은 메시지들의 방 이름을 배열로 반환합니다.<br><p class="code" id="p">packageName</p>의 값이 지정되지 않았거나 <p class="code" id="p">null</p>값을 가질 경우, 모든 앱에서 받은 메시지들의 방 이름을 배열로 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getBotList()</p></td>
-                            <td><p class="code" id="p">Array&lt;Bot&gt;</p></td>
-                            <td>모든 <p class="code" id="p">Bot</p>인스턴스를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">getPower(botName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p"><p class="code" id="p">botName</p>봇이 활성화 중일 경우 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">setPower(botName: String, power: Boolean)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td><p class="code" id="p">power</p>의 값이 <p class="code" id="p">true</p>일 경우 <p class="code" id="p">botName</p>봇을 활성화하고, <p class="code" id="p">power</p>값이 <p class="code" id="p">false</p>인 경우 비활성화합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">compile(botName: String, throwOnError: Boolean = false)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">botName</p>봇을 컴파일합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">compileAll()</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>모든 카카오톡 봇을 컴파일합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">prepare(botName: String, throwOnError: Boolean)</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td><p class="code" id="p">botName</p>봇을 한 번도 컴파일한 적이 없을 경우 컴파일합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">prepareAll(throwOnError: Boolean = false)</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td><p class="code" id="p">BotManager.prepare()</p>를 모든 봇에 대하여 실행합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">isCompiled(botName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">botName</p>봇이 컴파일한 상태일 경우 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">unload(botName: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td><p class="code" id="p">botName</p>봇을 언로드합니다. 이를 실행한 후 <p class="code" id="p">BotManager.isCompiled()</p>를 실행하면 <p class="code" id="p">false</p>를 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="3-4" class="content">
-                <p class="title">Broadcast</p>
-                <p class="dscrpt">Api2 중 <strong>Broadcast</strong>는 사용자 지정 브로드캐스트를 지원합니다. (이는 안드로이드의 Broadcast와는 관련이 없습니다.)</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">send(broadcastName: String, value: Any)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>모든 스크립트를 대상으로 <p class="code" id="p">broadcastName</p>을 방송합니다. <p class="code" id="p">value</p>는 <p class="code" id="p">task</p>의 인자로 주어집니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">register(broadcastName: String, task: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td><p class="code" id="p">broadcastName</p>브로드캐스트에 리스너<p class="code" id="p">task</p>를 등록합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">unregister(broadcastName: String, task: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td><p class="code" id="p">broadcastName</p>브로드캐스트에 등록된 리스너<p class="code" id="p">task</p>를 해제합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">unregisterAll()</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>브로드캐스트에 등록된 모든 리스너를 해제합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="3-5" class="content">
-                <p class="title">Database</p>
-                <p class="dscrpt">Api2 중 <strong>Database</strong>는 스크립트의 로컬 폴더 내의 </p><p class="code" id="p">/Database</p><p class="dscrpt">폴더 내 데이터의 쓰기/읽기 등의 기능을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">exists(fileName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>스크립트 로컬 폴더 내 <p class="code" id="p">Database</p>폴더에 파일<p class="code" id="p">fileName</p>이 존재할 경우 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">readObject(fileName: String)</p></td>
-                            <td><p class="code" id="p">Object</p></td>
-                            <td>스크립트 로컬 폴더 내 <p class="code" id="p">Database</p>폴더에 있는 파일<p class="code" id="p">fileName</p>을 읽어 객체로 반환합니다. (<p class="code" id="p">fileName</p>파일이 <p class="code" id="p">json</p>일 경우에만 가능합니다.)</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">readString(fileName: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 로컬 폴더 내 <p class="code" id="p">Database</p>폴더에 있는 파일<p class="code" id="p">fileName</p>의 내용을 문자열로 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">writeObject(fileName: String, obj: Object)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>객체<p class="code" id="p">obj</p>를 <p class="code" id="p">JSON Strirng</p>으로 변환하여 스크립트 로컬 폴더 내 <p class="code" id="p">Database</p>폴더에 있는 파일<p class="code" id="p">fileName</p>에 저장합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">writeString(fileName: String, str: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>문자열<p class="code" id="p">str</p>을 스크립트 폴더 내 <p class="code" id="p">Database</p>폴더에 있는 파일 <p class="code" id="p">fileName</p>에 저장합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="3-6" class="content">
-                <p class="title">Event</p>
-                <p class="dscrpt">Api2 중 <strong>Event</strong>는 Api2 중 Bot이 받을 수 있는 이벤트들의 <p class="code" id="p">eventName</p>상수값들을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">Activity.BACK_PROSSED = "activityBackProssed"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onBackProssed</p>가 호출되면 발생합니다.<br><p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">Activity.CREATE = "activityCreate"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onCreate</p>가 호출되면 발생합니다.<br><p class="code" id="p">savedInstanceState</p>, <p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">Activity.DESTROY = "activityDestroy"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onDestroy</p>가 호출되면 발생합니다.<br><p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">Activity.PAUSE = "activityPause"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onPause</p>가 호출되면 발생합니다.<br><p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">Activity.RESTART = "activityRestart"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onRestart</p>가 호출되면 발생합니다.<br><p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">Activity.RESUME = "activityResume"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onResume</p>가 호출되면 발생합니다.<br><p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">Activity.START = "activityStart"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onStart</p>가 호출되면 발생합니다.<br><p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">Activity.STOP = "activityStop"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onStop</p>가 호출되면 발생합니다.<br><p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">NOTIFICATION_POSTED = "notificationPosted"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>기기에 새로운 알림이 왔을 때 발생하는 이벤트입니다.<br><p class="code" id="p">statusBarNotification</p>, <p class="code" id="p">sessionManager</p>가 인자로 전달됩니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">START_COMPILE = "startCompile"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>컴파일 요청이 왔을 때 컴파일 시작 전 발생하는 이벤트입니다.<br>전달되는 인자는 없습니다.</td>
-                        </tr>
-                        <tr>
-                            <td id="no"><p class="code" id="p">TICK = "tick"</p></td>
-                            <td id="no"><p class="code" id="p">String</p></td>
-                            <td id="no">매 틱마다 발생하는 이벤트이지만, 아직 구현되지 않았습니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">COMMAND = "command"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>수신된 메시지가 명령어 형식일 때 발생하는 이벤트입니다. (자세한 내용은 <p class="code" id="p">Bot.setCommandPrefix</p>를 참고하세요.)<br>전달되는 인자의 정보는 이와 같습니다:
-                                <div class="code">
-                                    <pre><code class="javascript">{<br>    "command" : "수신된 command 이름",<br>    "args" : [수신된 command의 인자 배열],<br>    "room" : "채팅방 이름",<br>    "content" : "수신된 메시지 내용",<br>    "isGroupChat" : boolean, // 2인 이상의 채팅방일 경우 true, 아니면 false<br>    "isDebugRoom" : boolean, // 디버깅룸에서 전송된 메시지일 경우 true, 아니면 false<br>    "author" : {<br>        "name" : "전송자 이름",<br>        "avatar" : {<br>            "getBase64" : function () { /*프로필 이미지의 Base64값 반환*/ },<br>            "getBitmap" : function () { /*프로필 이미지의 android.graphics.Bitmap객체 반횐*/ }<br>        }<br>    },<br>    "reply" : function(content) { /*content라는 내용의 메시지 전송*/ },<br>    "packageName" : "수신된 메시지의 앱 패키지명"<br>}</code></pre>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">MESSAGE = "message"</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>메시가 수신되었을 때 발생하는 이벤트입니다.<br>전달되는 인자의 정보는 이와 같습니다:
-                                <div class="code">
-                                    <pre><code class="javascript">{<br>    "room" : "채팅방 이름",<br>    "content" : "수신된 메시지 내용",<br>    "isGroupChat" : boolean, // 2인 이상의 채팅방일 경우 true, 아니면 false<br>    "isDebugRoom" : boolean, // 디버깅룸에서 전송된 메시지일 경우 true, 아니면 false<br>    "author" : {<br>        "name" : "전송자 이름",<br>        "avatar" : {<br>            "getBase64" : function () { /*프로필 이미지의 Base64값 반환*/ },<br>            "getBitmap" : function () { /*프로필 이미지의 android.graphics.Bitmap객체 반횐*/ }<br>        }<br>    },<br>    "reply" : function(content) { /*content라는 내용의 메시지 전송*/ },<br>    "packageName" : "수신된 메시지의 앱 패키지명"<br>}</code></pre>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="3-7" class="content">
-                <p class="title">Http</p>
-                <p class="dscrpt">Api2 중 <strong>Http</strong>는 웹페이지에 request를 보내기 위한 기능을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">request(url: String, callBack: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td><p class="code" id="p">Jsoup</p>을 이용해 비동기적으로 <p class="code" id="p">url</p>에 request를 보냅니다.<br><p class="code" id="p">callBack</p>인자 정보는 아래를 참고하세요.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">request(options: Object, callBack: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td><p class="code" id="p">Jsoup</p>을 이용해 비동기적으로 request를 보냅니다.<br><p class="code" id="p">options</p>구조와 <p class="code" id="p">callBack</p>인자 정보는 아래를 참고하세요.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">requestSync(url: String)</p></td>
-                            <td><p class="code" id="p">org.jsoup.nodes.Document</p></td>
-                            <td><p class="code" id="p">동기적으로 request를 수행합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">requestSync(options: Object)</p></td>
-                            <td><p class="code" id="p">org.jsoup.nodes.Document</p></td>
-                            <td><p class="code" id="p">동기적으로 request를 수행합니다.<br><p class="code" id="p">options</p>구조와 <p class="code" id="p">callBack</p>인자 정보는 아래를 참고하세요.</td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="sA">
-                    <li id="d3-7-1" class="sA">CallBack</li>
-                    <li id="d3-7-2" class="sA">Options</li>
-                </div>
-                <div id="3-7-1" class="content">
-                    <p class="stitle">CallBack</p>
-                    <p class="dscrpt"><p class="code" id="p">callBack</p>에는 아래와 같은 인자들이 전달됩니다:</p>
-                    <div class="code">
-                        <pre><code class="nohighlight">error : java.lang.Exception<br>response : org.jsoup.Connaction.Response<br>doc : org.jsoup.nodes.Document</code></pre>
-                    </div>
-                </div>
-                <div id="3-7-2" class="content">
-                    <p class="stitle">Options</p>
-                    <p class="dscrpt"><p class="code" id="p">options</p>의 구조는 아래와 같습니다:</p>
-                    <div class="code">
-                        <pre><code class="javascript">{<br>    "url" : "https://www.google.com", //  request를 보낼 URL<br>    "timeout" : 3000, // request timeout(ms), 기본값 3000<br>    "method" : "GET", // request 메서드, 기본값 "GET"<br>    "headers" : { // request header, 기본값 null<br>        // headers<br>    }<br>}</code></pre>
-                    </div>
-                </div>
-            </div>
-            <div id="3-8" class="content">
-                <p class="title">SessionManager</p>
-                <p class="dscrpt">Api2 중 <strong>SessionManager</strong>는 </p><p class="code" id="p">Event.NOTIFICATION_POSTED</p><p class="dscrpt">의 리스너에 전달되는 인자로, 채팅방 세션을 메신저봇 앱에 수동으로 등록할 수 있게 해줍니다. 즉, 메신저봇이 공식적으로 지원하지 않는 앱에 자동응답 봇을 탑재하고자 할 때 사용할 수 있습니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">bindSession(<i>packageName: String</i>, room: String, action: Notification.Action = null)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">packageName</p>이라는 패키지명의 앱의 <p class="code" id="p">room</p>방에 대해 메시지 전송 액션인 <p class="code" id="p">action</p>을 할당합니다.<br><p class="code" id="p">action</p>이 <p class="code" id="p">null</p>값을 가질 경우, 메신저봇이 자동 분석한 답장 액션을 사용합니다.<br><p class="code" id="p">action</p>이 <p class="code" id="p">null</p>값을 가지고, 메신저봇이 자동 분석한 답장 액션이 <p class="code" id="p">null</p>일 경우, <p class="code" id="p">false</p>를 반환하고, 그 외에는 <p class="code" id="p">true</p>를 반환합니다.<br><br><p class="code" id="p">packageName</p>이 값을 가지지 않을 경우, 메신저봇이 <p class="code" id="p">packageName</p>을 자동 분석합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="3-9" class="content">
-                <p class="title">Security</p>
-                <p class="dscrpt">Api2 중 <strong>Security</strong>는 각종 암호화와 복호화에 대한 기능들을 제공합니다.</p>
-                <div class="table">
-                    <table>
-                        <th>이름</th>
-                        <th>형식</th>
-                        <th>설명</th>
-                        <tr>
-                            <td><p class="code" id="p">aesDecode(key: String, initVector: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 AES 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">aesEncode(key: String, initVector: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 AES 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">ariaDecode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 ARIA 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">ariaEncode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 ARIA 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">base32Decode(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 Base32 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">base32Encode(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 Base32 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">base64Decode(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 Base64 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">base64Encode(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 Base64 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">desDecode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 DES 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">desEncode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 DES 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">desKey()</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>DES 보조키를 생성하여 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">des3Decode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 des3 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">des3Encode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 des3 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">eccDecode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 ECC 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">eccEncode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 ECC 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">hashCode(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 해시코드를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">md2(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 MD2 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">md5(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 MD5 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">rc4Decode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 RC4 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">rc4Encode(key: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 RC4 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">seedDecode(seed: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SEED 복호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">seedEncode(seed: String, value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SEED 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">sha(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SHA 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">sha256(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SHA256 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">sha384(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SHA384 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">sha512(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SHA512 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">sha3_224(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SHA3-224 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">sha3_256(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SHA3-256 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">sha3_384(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SHA3-384 암호화 결과를 반환합니다.</td>
-                        </tr>
-                        <tr>
-                            <td><p class="code" id="p">sha3_512(value: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">value</p>의 SHA3-512 암호화 결과를 반환합니다.</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
         <section id="rhino">
             <div id="4-1" class="content">
                 <p class="title">기초</p>
@@ -1944,131 +738,131 @@
                                 <td>배열의 항목 수를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">from(arr)</p><br><p class="code" id="p">from(String str)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">from(arr)</p><br><p class="code" id="p">from(String str)</p><img class="sttc" src="img/static.png"></td>
                                 <td>유사 배열 또는 반복 가능한 객체를 얕게 복사합니다. from에 문자열이 들어갔을 경우, 한 글자 단위로 나누어 배열로 저장합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">isArray(data)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">isArray(data)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">data</p>가 배열일 경우 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">of(element1, <i>element2</i>, ... <i>elementN</i>)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">of(element1, <i>element2</i>, ... <i>elementN</i>)</p><img class="sttc" src="img/static.png"></td>
                                 <td>인자의 수나 유형에 관계없이 가변 인자를 갖는 새 배열을 생성합니다. 여기서 <p class="code" id="p"><i>elementN</i></p>은 배열을 생성할 때 사용할 요소입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">copyWithin(target)</p><br><p class="code" id="p">copyWithin(Number target, Number start)</p><br><p class="code" id="p">copyWithin(Number target, Number start, Number end)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">copyWithin(target)</p><br><p class="code" id="p">copyWithin(Number target, Number start)</p><br><p class="code" id="p">copyWithin(Number target, Number start, Number end)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 일부를 얕게 복사한 뒤, 동일한 배열의 다른 위치에 덮어쓰고 그 배열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">filter(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">filter(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열 요소 중 조건<p class="code" id="p">fnc</p>를 만족하는 요소를 모아 새로운 배열을 생성합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">includes(data)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">includes(data)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열 요소에 <p class="code" id="p">data</p>가 있으면 <p class="code" id="p">true</p>, 없으면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">indexOf(data)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">indexOf(data)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td><p class="code" id="p">data</p>와 일치하는 맨 앞의 배열 요소의 인덱스를 반환합니다. 없으면 -1을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">lastIndexOf(data)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">lastIndexOf(data)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td><p class="code" id="p">data</p>와 일치하는 맨 뒤의 배열 요소의 인덱스를 반환합니다. 없으면 -1을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toSource()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toSource()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>지정한 배열을 나타내는 배열 리터럴을 반환합니다. 새로운 배열을 만들기 위해 이 값을 사용할 수 있습니다. (<p class="code" id="p">Object.prototype.toSource()</p>를 재정의 합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열과 그 요소를 나타내는 문자열을 반환합니다. (<p class="code" id="p">Object.prototype.toString</p>을 재정의 합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toLocaleString(locales, options)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toLocaleString(locales, options)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열과 그 요소를 나타내는 지역화된 문자열을 반환합니다. (<p class="code" id="p">Object.prototype.toLocaleString()</p>를 재정의 합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">join(str)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">join(str)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 모든 항목들을 <p class="code" id="p">str</p>을 이용해 하나의 문자형 데이터로 변환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">reverse()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">reverse()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열 항목의 순서를 거꾸로 바꿉니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">sort()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">sort()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열 항목을 오름차순으로 정렬합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">slice(index1, index2)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">slice(index1, index2)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열 항목 중 <p class="code" id="p">index1</p>부터 <p class="code" id="p">index2</p>까지 잘라 배열로 가져옵니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">splice(index1, index2)</p><br><p class="code" id="p">splice(Number index1, Number index2, String str1, String str2, ...String strN)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">splice(index1, index2)</p><br><p class="code" id="p">splice(Number index1, Number index2, String str1, String str2, ...String strN)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 <p class="code" id="p">index1</p>번 인덱스에서 <p class="code" id="p">index2</p>개를 삭제합니다.<br><p class="code" id="p">index1</p>번 인덱스에서 <p class="code" id="p">index2</p>개를 삭제하고 <p class="code" id="p">str1</p>~<p class="code" id="p">strN</p>를 <p class="code" id="p">index1</p>에 추가합니다.<br></td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">concat(array2)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">concat(array2)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열에 <p class="code" id="p">array2</p>를 합칩니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">pop()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">pop()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 마지막 항목을 삭제합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">push(data)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">push(data)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 마지막 항목에 <p class="code" id="p">data</p>를 추가합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">shift()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">shift()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 첫 번째 항목을 삭제합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">unshift(data)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">unshift(data)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 첫 번째 항목에 <p class="code" id="p">data</p>를 추가합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">entries()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">entries()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 각 인덱스에 대한 키/값 쌍을 가지는 새로운 배열 반복자 객체를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">every(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">every(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 모든 요소가 조건<p class="code" id="p">fnc</p>를 만족하면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다. (빈 배열일 시 무조건 <p class="code" id="p">true</p>를 반환합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">find(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">find(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>조건<p class="code" id="p">fnc</p>를 만족하는 첫 번째 요소의 값을 반환합니다. 만족하는 요소가 없을 시 <p class="code" id="p">undefined</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">findIndex(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">findIndex(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>조건<p class="code" id="p">fnc</p>를 만족하는 첫 번째 요소의 인덱스를 반환합니다. 만족하는 요소가 없을 시 -1을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">forEach(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">forEach(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 각 요소마다 <p class="code" id="p">fnc</p>를 실행합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">keys()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">keys()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 각 인덱스를 키 값으로 가지는 새로운 배열 반복자 객체를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">map(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">map(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 각 요소마다 <p class="code" id="p">fnc</p>를 실행한 결과를 모아 새로운 배열을 생성합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">reduce(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">reduce(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 각 요소마다 리듀서 함수<p class="code" id="p">fnc</p>를 실행하고, 하나의 결과값을 반환합니다.<br>리듀서 함수는 누산기(acc), 현재 값(cur), 현재 인덱스(idx), 원본 배열(src)를 인자로 가집니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">reduceRight(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">reduceRight(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>누적기에 대해 함수를 적용하고 배열의 각 값(오른쪽에서 왼쪽으로)은 값을 단일 값으로 줄입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">some(fnc)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">some(fnc)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열 요소 중 하나라도 조건<p class="code" id="p">fnc</p>를 만족하면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다. (빈 배열일 시 무조건 <p class="code" id="p">false</p>를 반환합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">values()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">values()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>배열의 각 인덱스에 대한 값을 가지는 새로운 배열 반복자 객체를 반환합니다.</td>
                             </tr>
                         </table>
@@ -2126,7 +920,7 @@
                         <th>이름</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">length</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">length</p><img class="sttc" src="img/static.png"></td>
                             <td>1의 값을 가집니다.</td>
                         </tr>
                         <tr>
@@ -2134,119 +928,119 @@
                             <td><p class="code" id="p">Object</p>형의 모든 객체에 속성을 추가할 수 있습니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">constructor</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">constructor</p><img class="prttp" src="img/prototype.png"></td>
                             <td>객체의 프로토타입을 생성하는 함수를 지정합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">_proto_</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">_proto_</p><img class="prttp" src="img/prototype.png"></td>
                             <td>객체가 초기화될 때 프로토타입으로 사용된 객체를 가리킵니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">assign(Object target, Object source1, Object source2, ... Object source<i>N</i>)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">assign(Object target, Object source1, Object source2, ... Object source<i>N</i>)</p><img class="sttc" src="img/static.png"></td>
                             <td>하나 이상의 <p class="code" id="p">source<i>N</i></p>객체로부터 <p class="code" id="p">target</p>객체로 속성을 복사합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">create(photo)</p><br><p class="code" id="p">create(photo, propertiesObject)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">create(photo)</p><br><p class="code" id="p">create(photo, propertiesObject)</p><img class="sttc" src="img/static.png"></td>
                             <td>지정된 프로토타입 객체 및 속성을 갖는 새 객체를 만듭니다.<br><p class="code" id="p">photo</p>는 새로 만든 객체의 프로토타입이어야 할 객체입니다. 그리고 <p class="code" id="p">propertiesObject</p>는 <p class="code" id="p">undefined</p>가 아니면, 자신의 속성(자체에 정의되어 그 프로토타입 체인에서 열거가능하지 않은 속성)이 열거가능한 객체는 해당 속성명으로 새로 만든 객체에 추가될 속성 설명자를 지정합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">defineProperty(obj, prop, descriptor)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">defineProperty(obj, prop, descriptor)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>에 직접 새로운 속성<p class="code" id="p">prop</p>을 <p class="code" id="p">descriptor</p>로 정의하거나 이미 존재하는 속성<p class="code" id="p">prop</p>을 <p class="code" id="p">descriptor</p>로 수정한 후 그 객체를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">defineProperties(obj, props)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">defineProperties(obj, props)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>의 속성을 정의하거나 수정할 속성과 내용을 담은 객체<p class="code" id="p">props</p>의 내용으로 정의하거나 수정합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">freeze()</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">freeze()</p><img class="sttc" src="img/static.png"></td>
                             <td>객체를 프리징합니다. 즉, 다른 곳의 코드에서 객체의 속성을 지우거나 바꿀 수 없습니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">preventExtensions(obj)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">preventExtensions(obj)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>이 확장되지 못하도록 합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">seal(obj)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">seal(obj)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>의 속성이 다른 코드에 의해 삭제되지 않도록 합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getOwnPropertyDescriptor(obj, prop)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">getOwnPropertyDescriptor(obj, prop)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>에 있는 속성<p class="code" id="p">prop</p>에 대한 속성 설명자를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getPrototype(obj)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">getPrototype(obj)</p><img class="sttc" src="img/static.png"></td>
                             <td>자신의 프로토타입이 반환되는 객체<p class="code" id="p">obj</p>의 프로토타입을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">is(value1, value2)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">is(value1, value2)</p><img class="sttc" src="img/static.png"></td>
                             <td><p class="code" id="p">value1</p>과 <p class="code" id="p">value2</p>가 같은 값이면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isExtensible(obj)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">isExtensible(obj)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>이 확장 가능하면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isFrozen(obj)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">isFrozen(obj)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>이 프리징되었으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isSeal(obj)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">isSeal(obj)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>이 봉인(실링, seal)되었으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">keys(obj)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">keys(obj)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>의 속성명의 배열을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">setPrototypeOf(obj, prototype)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">setPrototypeOf(obj, prototype)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>의 프로토타입을 <p class="code" id="p">prototype</p>으로 설정합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">values(obj)</p><img class="sttc" src="../img/static.png"></td>
+                            <td><p class="code" id="p">values(obj)</p><img class="sttc" src="img/static.png"></td>
                             <td>객체<p class="code" id="p">obj</p>의 속성값의 배열을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">_defineGetter_(prop, func)</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">_defineGetter_(prop, func)</p><img class="prttp" src="img/prototype.png"></td>
                             <td>객체의 속성<p class="code" id="p">prop</p>과 함수<p class="code" id="p">func</p>을 바인드(연결)합니다. 속성의 값이 조회될 때 바인드된 함수가 호출됩니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">_defineSetter_(prop, func)</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">_defineSetter_(prop, func)</p><img class="prttp" src="img/prototype.png"></td>
                             <td>속성<p class="code" id="p">prop</p>을 설정하려고 할 때 호출할 함수<p class="code" id="p">func</p>에 개체의 속성을 바인딩합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">_lookupGetter_(sprop)</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">_lookupGetter_(sprop)</p><img class="prttp" src="img/prototype.png"></td>
                             <td><p class="code" id="p">_defineGetter_()</p>로 바인딩된 함수를 속성<p class="code" id="p">sprop</p>으로 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">_lookupGetter_(sprop)</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">_lookupGetter_(sprop)</p><img class="prttp" src="img/prototype.png"></td>
                             <td><p class="code" id="p">_defineSetter_()</p>로 바인딩된 함수를 속성<p class="code" id="p">sprop</p>으로 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">hasOwnProperty(prop)</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">hasOwnProperty(prop)</p><img class="prttp" src="img/prototype.png"></td>
                             <td>객체가 속성<p class="code" id="p">prop</p>을 가지고 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isPrototypeOf(obj)</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">isPrototypeOf(obj)</p><img class="prttp" src="img/prototype.png"></td>
                             <td>객체<p class="code" id="p">obj</p>가 다른 객체의 프로토타입 체인에 속한 객체이면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">propertyIsEnumerable(prop)</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">propertyIsEnumerable(prop)</p><img class="prttp" src="img/prototype.png"></td>
                             <td>속성<p class="code" id="p">prop</p>이 열거가능하면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">toSource()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">toSource()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                             <td>객체의 소스코드를 나타내는 문자열을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">toLocaleString()</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">toLocaleString()</p><img class="prttp" src="img/prototype.png"></td>
                             <td>지역별로 다른 객체로 재정의한 문자열을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">toString()</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">toString()</p><img class="prttp" src="img/prototype.png"></td>
                             <td>객체를 문자열로 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">valueOf()</p><img class="prttp" src="../img/prototype.png"></td>
+                            <td><p class="code" id="p">valueOf()</p><img class="prttp" src="img/prototype.png"></td>
                             <td>객체의 원시 값을 반환합니다.</td>
                         </tr>
                     </table>
@@ -2691,47 +1485,47 @@
                             <th>이름</th>
                             <th>설명</th>
                             <tr>
-                                <td><p class="code" id="p">lastIndex</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">lastIndex</p><img class="sttc" src="img/static.png"></td>
                                 <td>정규식의 검색을 시작할 인덱스를 반환하거나 지정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">flags</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">flags</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>정규식의 플래그를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">global</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">global</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>정규식에 <p class="code" id="p">g</p>플래그가 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">ignoreCase</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">ignoreCase</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>정규식에 <p class="code" id="p">i</p>플래그가 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">multiline</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">multiline</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>정규식에 <p class="code" id="p">m</p>플래그가 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">sticky</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">sticky</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>정규식에 <p class="code" id="p">y</p>플래그가 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">unicode</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">unicode</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>정규식에 <p class="code" id="p">u</p>플래그가 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">compile(pattern, flags)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">compile(pattern, flags)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>스크립트 실행 중 정규식을 (다시) 컴파일합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">exec(String str)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">exec(String str)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>문자열<p class="code" id="p">str</p>중 대응되는 문자열에 대한 정보를 가지는 배열을 반환합니다. 대응되는 문자열이 없을 시, null을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">test(String str)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">test(String str)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>문자열<p class="code" id="p">str</p>에 대응되는 문자열이 있는지 검사합니다. 있을 시 <p class="code" id="p">true</p>, 없을 시 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>정규식을 문자열로 반환합니다.</td>
                             </tr>
                         </table>
@@ -2833,27 +1627,27 @@
                                 <td>함수의 함수명을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">constructor</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">constructor</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>객체의 프로토타입을 만드는 함수를 지정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">apply(thisArg, argsArray)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">apply(thisArg, argsArray)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>함수를 호출하고 <p class="code" id="p">this</p>를 제공된 값으로 설정합니다. 매개변수는 배열로 전달될 수 있습니다.<br><p class="code" id="p">thisArg</p>은 함수 객체를 호출하는데 제공될 <p class="code" id="p">this</p>의 값이고, <p class="code" id="p">argsArray</p>는 함수 객체가 호출되어야 하는 인수를 지정하는 유사 배열 객체입니다. (함수에 제공된 매개변수가 없을 경우 <p class="code" id="p">null</p> 또는 <p class="code" id="p">undefined</p>)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">bind(thisArg)<br>bind(thisArg, arg1, arg2, ... arg<i>N</i>)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">bind(thisArg)<br>bind(thisArg, arg1, arg2, ... arg<i>N</i>)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>호출될 때 <p class="code" id="p">this</p>를 제공된 값으로 설정하는 새로운 함수를 만듭니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">call(thisArg, arg1, arg2, ... arg<i>N</i>)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">call(thisArg, arg1, arg2, ... arg<i>N</i>)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 <p class="code" id="p">this</p>값 및 각각 전달된 매개변수와 함께 함수를 호출합니다.<br><p class="code" id="p">thisArg</p>은 함수 객체 호출에 제공되는 <p class="code" id="p">this</p>의 값이고, <p class="code" id="p">arg<i>N</i></p>은 객체를 위한 매개변수입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toSource()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toSource()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>함수의 소스코드를 문자열로 반환합니다. (<p class="code" id="p">Object.prototype.toSource</p>를 재정의합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>함수의 소스 코드를 나타내는 문자열을 반환합니다.</td>
                             </tr>
                         </table>
@@ -2889,11 +1683,11 @@
                             <th>이름</th>
                             <th>설명</th>
                             <tr>
-                                <td><p class="code" id="p">toString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>객체의 값에 따라 문자열 <p class="code" id="p">"true"</p> 또는 <p class="code" id="p">"false"</p>를 반환합니다. (<p class="code" id="p">Object.prototype.toString()</p> 메서드를 재정의합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">valueOf()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">valueOf()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>Boolean객체의 원시 값을 반환합니다. (<p class="code" id="p">Object.prototype.valueOf()</p>메서드를 재정의합니다.)</td>
                             </tr>
                         </table>
@@ -2940,19 +1734,19 @@
                                 <td>Symbol객체의 인스턴스에 속성을 추가할 수 있습니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">for(key)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">for(key)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">key</p>로 현재 존재하는 심볼을 검색하고 찾으면 그것을 반환합니다. 존재하지 않으면 <p class="code" id="p">key</p>로 전역 심볼 레지스트리에 새로운 심볼을 생성하고 그 심볼을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">keyFor(sym)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">keyFor(sym)</p><img class="sttc" src="img/static.png"></td>
                                 <td>전역 심볼 레지스트리로부터 <p class="code" id="p">sym</p>에 대한 공유 심볼 키(shared symbol key)를 추출합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Symbol객체를 나타내는 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">valueOf()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">valueOf()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>Symbol객체의 원시 값을 반환합니다.</td>
                             </tr>
                         </table>
@@ -3178,35 +1972,35 @@
                             <th>이름</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code" class="sttc">EPSILON</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" class="sttc">EPSILON</p><img class="sttc" src="img/static.png"></td>
                                 <td>Number형으로 표현될 수 있는 1과 1보다 큰 값 중에서 가장 작은 값의 차입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">MAX_SAFE_INTEGER</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">MAX_SAFE_INTEGER</p><img class="sttc" src="img/static.png"></td>
                                 <td>JavaScript에서 안전한 최대 정수값(<p class="code" id="p">2<sup>53</sup> - 1</p>)입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">MAX_VALUE</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">MAX_VALUE</p><img class="sttc" src="img/static.png"></td>
                                 <td>표현 가능한 가장 큰 양수값입니다. (정적 속성입니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">MIN_SAFE_INTEGER</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">MIN_SAFE_INTEGER</p><img class="sttc" src="img/static.png"></td>
                                 <td>JavaScript에서 안전한 최소 정수값(<p class="code" id="p">-(2<sup>53</sup> - 1)</p>)입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">MIN_VALUE</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">MIN_VALUE</p><img class="sttc" src="img/static.png"></td>
                                 <td>표현 가능한 가장 작은 양수값(0에 가장 가까운 양수)입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">NaN</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">NaN</p><img class="sttc" src="img/static.png"></td>
                                 <td>NaN(Not-A-Number, 즉, 숫자가 아님)를 나타냅니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">NEGATIVE_INFINITY</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">NEGATIVE_INFINITY</p><img class="sttc" src="img/static.png"></td>
                                 <td>음의 무한대를 나타내는 특수한 값이며, 오버플로우 시 반환됩니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">POSITIVE_INFINITY</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">POSITIVE_INFINITY</p><img class="sttc" src="img/static.png"></td>
                                 <td>양의 무한대를 나타내는 특수한 값이며, 오버플로우 시 반환됩니다.</td>
                             </tr>
                             <tr>
@@ -3218,27 +2012,27 @@
                                 <td>해당 객체의 인스턴스를 생성한 함수를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">isNaN(value)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">isNaN(value)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">value</p>이 Number형이고 값이 <p class="code" id="p">NaN</p>이면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">isFinite(value)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">isFinite(value)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">value</p>이 유한수이면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">isInteger(value)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">isInteger(value)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">value</p>이 정수이면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">isSafeInteger(value)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">isSafeInteger(value)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">value</p>이 JavaScript에서 안전한 정수값 내(<p class="code" id="p">-(2<sup>53</sup> - 1)</p> ~ <p class="code" id="p">2<sup>53</sup> - 1</p>)에 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">parseFloat(value)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">parseFloat(value)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">value</p>을 분석해 부동소수점 실수로 변환 및 반환합니다. (분석할 수 없을 경우 <p class="code" id="p">NaN</p>를 반환합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">parseInt(value, <i>radix</i>)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">parseInt(value, <i>radix</i>)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">value</p>을 분석해 특정 <p class="code" id="p"><i>radix</i></p>진수를 사용한 정수로 변환 및 반환합니다. (<p class="code" id="p"><i>radix</i></p>는 2와 36 사이의 진수이며 선택적입니다. <p class="code" id="p">value</p>을 분석할 수 없을 경우 <p class="code" id="p">NaN</p>를 반환합니다.)</td>
                             </tr>
                             <tr>
@@ -3277,179 +2071,179 @@
                             <th>이름</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code" id="p">E</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">E</p><img class="sttc" src="img/static.png"></td>
                                 <td>오일러의 상수이며 자연로그의 밑입니다. (약 <p class="code" id="p">2.718</p>을 나타냅니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">LN2</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">LN2</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">2</p>의 자연로그입니다. (약 <p class="code" id="p">0.693</p>을 나타냅니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">LN10</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">LN10</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">10</p>의 자연로그입니다. (약 <p class="code" id="p">2.303</p>을 나타냅니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">LOG2E</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">LOG2E</p><img class="sttc" src="img/static.png"></td>
                                 <td>밑이 <p class="code" id="p">2</p>인 로그E입니다. (약 <p class="code" id="p">1.443</p>을 나타냅니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">LOG10E</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">LOG10E</p><img class="sttc" src="img/static.png"></td>
                                 <td>밑이 <p class="code" id="p">10</p>인 로그E입니다. (약 <p class="code" id="p">0.434</p>을 나타냅니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">PI</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">PI</p><img class="sttc" src="img/static.png"></td>
                                 <td>원주율입니다. (약 <p class="code" id="p">3.14159</p>를 나타냅니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">SQRT1_2</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">SQRT1_2</p><img class="sttc" src="img/static.png"></td>
                                 <td>½의 제곱근입니다. (약 <p class="code" id="p">0.707</p>을 나타냅니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">SQRT2</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">SQRT2</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">2</p>의 제곱근입니다. (약 <p class="code" id="p">1.414</p>를 나타냅니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">abs(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">abs(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 절댓값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">acos(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">acos(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 아크코사인 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">acosh(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">acosh(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 쌍곡아크코사인 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">asin(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">asin(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 아크사인을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">asinh(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">asinh(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 쌍곡아크사인 을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">atan(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">atan(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 아크탄젠트 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">atanh(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">atanh(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 쌍곡아크탄젠트 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">atan2(y, x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">atan2(y, x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>인수 몫의 아크탄젠트 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">cbrt(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">cbrt(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 세제곱근을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">ceil(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">ceil(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 소수자리를 올림한 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">clz32(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">clz32(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 32비트 이진 표현에서의 선행0의 개수를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">cos(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">cos(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 코사인 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">cosh(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">cosh(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 쌍곡코사인 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">exp(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">exp(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">E<sup>x</sup></p>을 반환합니다. (<p class="code" id="p">x</p>는 인수, E는 오일러 상수 또는 자연로그의 밑입니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">expm1(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">expm1(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>에서 1을 뺀 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">floor(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">floor(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 소수자리를 내림한 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">fround(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">fround(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 가장 가까운 단일 정밀도 표현을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">hypot(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">hypot(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p"><i>x</i>, <i>y</i>, ...</p>의 제곱합의 제곱근을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">imul(x, y)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">imul(x, y)</p><img class="sttc" src="img/static.png"></td>
                                 <td>32비트 정수인 <p class="code" id="p">x</p>와 <p class="code" id="p">y</p>의 곱을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">log(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">log(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 자연로그(log<sub>e</sub>또는 ln) 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">log1p(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">log1p(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">1 + x</p>의 자연로그(log<sub>e</sub>또는 ln) 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">log10(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">log10(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 밑이 10인 로그를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">log2(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">log2(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 밑이 2인 로그를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">max(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">max(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p"><i>x</i>, <i>y</i>, ...</p> 중 가장 큰 수를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">min(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">min(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p"><i>x</i>, <i>y</i>, ...</p> 중 가장 작은 수를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">pow(x, y)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">pow(x, y)</p><img class="sttc" src="img/static.png"></td>
                                 <td><p class="code" id="p">x<sup>y</sup></p>의 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">random()</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">random()</p><img class="sttc" src="img/static.png"></td>
                                 <td>0과 1 사이에 있는 수들 중 하나를 무작위로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">round(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">round(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>에서 가장 가까운 정수를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">sign(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">sign(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>가 양수인지 음수인지를 나타내는 부호를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">sin(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">sin(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 사인 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">sinh(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">sinh(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 쌍곡사인 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">sqrt(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">sqrt(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 제곱근을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">tan(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">tan(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 탄젠트 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">tanh(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">tanh(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 쌍곡탄젠트 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toSource()</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">toSource()</p><img class="sttc" src="img/static.png"></td>
                                 <td>문자열<p class="code" id="p">"Math"</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">trunc(x)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">trunc(x)</p><img class="sttc" src="img/static.png"></td>
                                 <td>숫자<p class="code" id="p">x</p>의 정수 부분을 반환합니다.</td>
                             </tr>
                         </table>
@@ -3521,210 +2315,210 @@
                                 <td>생성자가 받을 수 있는 매개변수의 수입니다. 즉, 7을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">constructor</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">constructor</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>인스턴스 생성에 사용한 생성자를 반환합니다. 기본값은 <p class="code" id="p">Date</p>입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">now()</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">now()</p><img class="sttc" src="img/static.png"></td>
                                 <td>1970년 1월 1일 00:00:00 UTC(유닉스 시간)로부터 현재까지 지난 시간을 밀리초 단위의 숫자 값으로 반환합니다. (다만, 윤초는 무시합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">parse(dataString)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">parse(dataString)</p><img class="sttc" src="img/static.png"></td>
                                 <td>날짜의 문자열 표현 값<p class="code" id="p">dataString</p>(RFC2822 또는 ISO 8601 날짜를 나타내는 문자열이며, 다른 형식도 사용할 수 있지만 불안정한 결과를 반환할 수도 있음)을 구문 분석하고 1970년 1월 1일 00:00:00 UTC(유닉스 시간) 이후의 밀리초를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">UTC(year, month, <i>day</i>, <i>hour</i>, <i>minute</i>, <i>second</i>, <i>millisecond</i>)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">UTC(year, month, <i>day</i>, <i>hour</i>, <i>minute</i>, <i>second</i>, <i>millisecond</i>)</p><img class="sttc" src="img/static.png"></td>
                                 <td>1970년 1월 1일 00:00:00 UTC(유닉스 시간)로부터 매개변수가 나타내는 시간까지의 차이를 밀리초 단위의 숫자 값으로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getDate()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getDate()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 일(1~31)을 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getDay()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getDay()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 요일(0~6, 일요일부터)을 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getFullYear()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getFullYear()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 연도(4자리 수)를 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getHours()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getHours()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 시(0~23)를 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getMilliseconds()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getMilliseconds()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 밀리초(0~999)를 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getMinutes()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getMinutes()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 분(0~59)을 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getMonth()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getMonth()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 월(0~11, 1월부터)을 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getSeconds()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getSeconds()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 초(0~59)를 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getTime()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getTime()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜와 1970년 1월 1일 00:00:00 UTC(유닉스 시간)의 차이를 밀리초로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getTimezoneOffset()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getTimezoneOffset()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>현재 로케일의 시간대 차이를 분으로 계산해 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getUTCDate()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getUTCDate()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 일(1~31)을 UTC에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getUTCDay()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getUTCDay()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 요일(0~6, 일요일부터)을 UTC에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getUTCFullYear()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getUTCFullYear()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 연도(4자리 수)를 UTC에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getUTCHours()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getUTCHours()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 시(0~23)를 UTC에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getUTCMilliseconds()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getUTCMilliseconds()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 밀리초(0~999)를 UTC에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getUTCMinutes()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getUTCMinutes()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 분(0~59)을 UTC에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getUTCMonth()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getUTCMonth()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 월(0~11, 1월부터)을 UTC에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getUTCSeconds()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getUTCSeconds()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 초(0~59)를 현지시간에 맞춰 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">getYear()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">getYear()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 연도(2~3자리 수)를 현지시간에 맞춰 반환합니다.</td>
                             </tr><tr>
-                                <td><p class="code" id="p">setDate()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setDate()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 일(1~31)을 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setFullYear()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setFullYear()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 연도(4자리 수)를 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setHours()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setHours()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 시(0~23)를 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setMilliseconds()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setMilliseconds()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 밀리초(0~999)를 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setMinutes()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setMinutes()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 분(0~59)을 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setMonth()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setMonth()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 월(0~11, 1월부터)을 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setSeconds()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setSeconds()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 초(0~59)를 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setTime()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setTime()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>Date객체를 1970년 1월 1일 00:00:00 UTC(유닉스 시간)부터 밀리초 단위로 나타내는 시간으로 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setUTCDate()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setUTCDate()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 일(1~31)을 UTC에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setUTCDay()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setUTCDay()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 요일(0~6, 일요일부터)을 UTC에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setUTCFullYear()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setUTCFullYear()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 연도(4자리 수)를 UTC에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setUTCHours()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setUTCHours()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 시(0~23)를 UTC에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setUTCMilliseconds()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setUTCMilliseconds()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 밀리초(0~999)를 UTC에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setUTCMinutes()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setUTCMinutes()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 분(0~59)을 UTC에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setUTCMonth()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setUTCMonth()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 월(0~11, 1월부터)을 UTC에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setUTCSeconds()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setUTCSeconds()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 초(0~59)를 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">setYear()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">setYear()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 날짜의 연도(2~3자리 수)를 현지시간에 맞춰 설정합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toDateString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toDateString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>Date객체의 날짜부분을 영어(미국)형태로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toISOString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toISOString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>단순화한 확장 ISO형식(ISO 8601)의 문자열을 반환합니다. 반환값은<br>24글자(<p class="code" id="p">YYYY-MM-DDTHH:mm:ss:sssZ</p>)<br>또는<br>27글자(<p class="code" id="p">±YYYYYY-MM-DDTHH:mm:ss:sssZ</p>)<br>입니다. 시간대는 언제나 UTC이며 접미어 "<p class="code" id="p">Z</p>"로 표현합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toJSON()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toJSON()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td><p class="code" id="p">toISOString()</p>메서드를 사용하여 날짜를 나타내는 문자열을 반환합니다. (<p class="code" id="p">JSON.stringify()</p>메서드에서 사용할수 있습니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toGMTString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toGMTString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>GMT(인터넷 그리니치 표준시) 규칙을 따른 날짜의 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toLocaleDateString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toLocaleDateString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>시스템 설정에 따라 이 날짜의 날짜 부분을 지역별로 구분하여 나타내는 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toLocaleString(<i>locales</i>, <i>options</i>)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toLocaleString(<i>locales</i>, <i>options</i>)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>날짜를 <p class="code" id="p"><i>locales</i></p>언어(문자형)와 <p class="code" id="p"><i>option</i></p>추가옵션(객체형)에 맞춘 형식의 문자열로 반환합니다. (<p class="code" id="p">Object.prototype.toLocaleString()</p>를 재정의합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toLocaleTimeString(<i>locales</i>, <i>options</i>)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toLocaleTimeString(<i>locales</i>, <i>options</i>)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>날짜의 시간부분을 <p class="code" id="p"><i>locales</i></p>언어(문자형)와 <p class="code" id="p"><i>option</i></p>추가옵션(객체형)에 맞춘 형식의 문자열로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toSource()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toSource()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Date객체의 소스코드를 나타내는 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 날짜를 문자열로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toTimeString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toTimeString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>날짜의 시간부분을 영어(미국)형식으로 나타내는 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toUTCString()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toUTCString()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>UTC 표준 시간대를 사용하여 날짜를 문자열로 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">valueOf()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">valueOf()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>Date객체의 원시 값을 반환합니다.</td>
                             </tr>
                         </table>
@@ -3829,115 +2623,115 @@
                                 <td>String객체의 인스턴스에 속성을 추가할 수 있습니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">fromCharCode(num1, ... num<i>N</i>)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">fromCharCode(num1, ... num<i>N</i>)</p><img class="sttc" src="img/static.png"></td>
                                 <td>UTF-16 코드 유닛의 시퀀스를 문자열로 변환 및 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">fromCodePoint(num1, ... num<i>N</i>)</p><img class="sttc" src="../img/static.png"></td>
+                                <td><p class="code" id="p">fromCodePoint(num1, ... num<i>N</i>)</p><img class="sttc" src="img/static.png"></td>
                                 <td>코드포인트 시퀀스를 문자열로 변환 및 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">length</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">length</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>UTF-16 코드 유닛을 기준으로 문자열의 길이를 나타냅니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">charAt(index)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">charAt(index)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>문자열에서 <p class="code" id="p">index</p> 인덱스에 위치하는 유니코드 단일문자를 반환합니다. 인덱스가 문자열 길이보다 클 경우 빈 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">charCodeAt(pos)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">charCodeAt(pos)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>문자열의 <p class="code" id="p">pos</p>번째 글자의 코드 포인트를 반환합니다. <p class="code" id="p">pos</p>번째 글자가 없을 경우, <p class="code" id="p">undefined</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">concat(string2, <i>string3</i>, ... <i>stringN</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">concat(string2, <i>string3</i>, ... <i>stringN</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열과 문자열<p class="code" id="p">string2 ... stringN</p>을 합친 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">includes(searchString, <i>position</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">includes(searchString, <i>position</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열에 <p class="code" id="p">searchString</p>이 포함되어 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><i>position</i></p>은 <p class="code" id="p">searchString</p>을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">endsWith(searchString, <i>length</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">endsWith(searchString, <i>length</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열의 끝이 <p class="code" id="p">searchString</p>으로 끝나면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><i>length</i></p>는 찾고자 하는 문자열의 길이이며, 기본값은 문자열의 전체 길이입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">indexOf(searchString, <i>fromIndex</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">indexOf(searchString, <i>fromIndex</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열에서 <p class="code" id="p">searchString</p>이 처음 나타나는 곳의 인덱스를 반환합니다. <p class="code" id="p">searchString</p>을 찾을 수 없을 경우, <p class="code" id="p">-1</p>을 반환합니다.<br><p class="code" id="p"><i>fromIndex</i></p>는 문자열을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">lastIndexOf(searchValue, <i>fromIndex</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">lastIndexOf(searchValue, <i>fromIndex</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열에서 <p class="code" id="p">searchValue</p>이 마지막으로 나타나는 곳의 인덱스를 반환합니다. <p class="code" id="p">searchValue</p>을 찾을 수 없을 경우, <p class="code" id="p">-1</p>을 반환합니다.<br><p class="code" id="p"><i>fromIndex</i></p>는 문자열을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">+Infinity</p>입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">localeCompare(compareString, <i>locales</i>, <i>options</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">localeCompare(compareString, <i>locales</i>, <i>options</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td><p class="code" id="p">compareString</p>이 정렬(가나다 정렬, 알파벳 순 정렬 등과 같은 정렬) 상 주어진 문자열의 전에 오면 <p class="code" id="p">1</p>,<br>주어진 문자열과 같은 위치이면 <p class="code" id="p">0</p>,<br>주어진 문자열의 뒤에 오면 <p class="code" id="p">-1</p>을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">match(regexp)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">match(regexp)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열에 정규식<p class="code" id="p">regexp</p>과 대응되는 문자열들을 배열로 저장해 반환합니다. 정규식에 <p class="code" id="p">g</p>플래그가 포함되지 않을 경우 이 메서드는 <p class="code" id="p">Regexp.exec()</p>와 같은 결과를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">normalize(<i>form</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">normalize(<i>form</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>문자열<p class="code" id="p"><i>form</i></p>으로 지정된 유니코드 정규화 방식에 따라 정규화된 문자열을 반환합니다.<br><p class="code" id="p">NFC</p>: 정규형 정준 결합<br><p class="code" id="p">NFD</p>: 정규형 정준 분해<br><p class="code" id="p">NFKC</p>: 정규형 호환성 결합<br><p class="code" id="p">NFKD</p>: 정규형 호환성 분해<br><p class="code" id="p"><i>form</i></p>의 기본값은 <p class="code" id="p">NFC</p>입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">repeat(count)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">repeat(count)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열을 <p class="code" id="p">count</p>번 반복하여 작성한 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">replace(regexp|substr, newSubstr|function)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">replace(regexp|substr, newSubstr|function)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열에 포함된 정규식<p class="code" id="p">regexp</p> 또는 문자열<p class="code" id="p">substr</p>을 문자열<p class="code" id="p">newSubstr</p>으로 변환하고 교체된 새 문자열을 반환하거나<br>변환할 때 사용할 함수<p class="code" id="p">function</p>을 이용해 변환하고 교체된 새 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">search(regexp)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">search(regexp)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>정규식<p class="code" id="p">regexp</p>와 대응되는 주어진 문자열의 일부의 인덱스를 반환합니다. 대응되는 문자열을 찾지 못할 경우, <p class="code" id="p">-1</p>을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">slice(beginIndex, <i>endIndex</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">slice(beginIndex, <i>endIndex</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>인덱스<p class="code" id="p">beginIndex</p>부터의 문자열 또는 인덱스<p class="code" id="p">beginIndex</p>부터 인덱스<p class="code" id="p"><i>endIndex</i></p>까지의 문자열을 추출하여 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">split(<i>separator</i>, <i>limit</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">split(<i>separator</i>, <i>limit</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열을 문자열<p class="code" id="p"><i>separator</i></p>를 기준으로 나누어 저장한 배열을 반환합니다. <p class="code" id="p"><i>limit</i></p>는 반환될 배열의 최대 인덱스입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">startsWith(searchString, <i>position</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">startsWith(searchString, <i>position</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열이 <p class="code" id="p">searchString</p>으로 시작되면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><i>postion</i></p>은 <p class="code" id="p">searchString</p>을 탐색하기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">substring(indexStart, <i>indexEnd</i>)</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">substring(indexStart, <i>indexEnd</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>인덱스<p class="code" id="p">indexStart</p>부터의 부분 또는 <p class="code" id="p">indexStart</p>부터 <p class="code" id="p"><i>indexEnd</i></p>까지의 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toLowerCase()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toLowerCase()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열에 포함된 대문자를 소문자로 변환 및 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toSource()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toSource()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열 객체의 소스코드를 나타내는 문자열을 반환합니다.<br>(<p class="code" id="p">Object.prototype.toSource()</p>를 재정의 합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toString()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toString()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열 객체의 문자열 값을 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">toUpperCase()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">toUpperCase()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열에 포함된 소문자를 대문자로 변환 및 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">trim()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">trim()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>문자열의 양 끝의 공백(space, tab, NBSP 등과 같은 공백문자와 LF, CR 등과 같은 개행문자)을 제거합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">trimLeft()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">trimLeft()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>문자열의 시작부분의 공백(space, tab, NBSP 등과 같은 공백문자와 LF, CR 등과 같은 개행문자)을 제거합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">trimRight()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">trimRight()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>문자열의 끝부분의 공백(space, tab, NBSP 등과 같은 공백문자와 LF, CR 등과 같은 개행문자)을 제거합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">valueOf()</p><img class="sttc" src="../img/static.png"><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">valueOf()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
                                 <td>주어진 문자열 객체의 원시 값을 나타내는 문자열을 반환합니다.<br>(<p class="code" id="p">Object.prototype.valueOf()</p>를 재정의 합니다.)</td>
                             </tr>
                         </table>
@@ -4016,39 +2810,39 @@
                                 <td>Map객체의 인스턴스에 속성을 추가할 수 있습니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">constructor</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">constructor</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>인스턴스 생성에 사용한 생성자를 반환합니다. 기본값은 Map입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">size</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">size</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>Map객체에 들어있는 키와 값 쌍의 수를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">clear()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">clear()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Map객체의 모든 키와 값 쌍을 제거합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">delete(key)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">delete(key)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td><p class="code" id="p">key</p>의 키를 가진 요소(키와 값 쌍)를 제거합니다. 제거를 했을 경우 <p class="code" id="p">true</p>, 존재하지 않아 제거하지 못했을 경우 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">entries()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">entries()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code" id="p">next()</p>메서드를 가지고 있습니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">forEach(callback, <i>thisArg</i>)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">forEach(callback, <i>thisArg</i>)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Map객체의 요소에 대해 함수<p class="code" id="p">callback</p>을 실행합니다. <p class="code" id="p"><i>thisArg</i></p>는 함수<p class="code" id="p">callback</p>에서 <p class="code" id="p">this</p>로 사용할 값입니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">get(key)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">get(key)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Map객체에서 인자로 주어진 키<p class="code" id="p">key</p>를 가진 요소의 값을 반환합니다. 주어진 키<p class="code" id="p">key</p>를 가지는 요소의 값이 존재하지 않을 경우 <p class="code" id="p">undefined</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">has(key)</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">has(key)</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Map객체에서 인자로 주어진 키<p class="code" id="p">key</p>를 가진 요소가 존재하면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">keys()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">keys()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code" id="p">next()</p>메서드를 가지고 있습니다.)</td>
                             </tr>
                             <tr>
@@ -4056,7 +2850,7 @@
                                 <td>해당 Map객체에서 인자로 주어진 키<p class="code" id="p">key</p>를 가진 요소를 추가하거나 지정하고, 인자로 주어진 값<p class="code" id="p">value</p>을 생성되거나 지정된 요소에 추가 또는 변경합니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code" id="p">values()</p><img class="prttp" src="../img/prototype.png"></td>
+                                <td><p class="code" id="p">values()</p><img class="prttp" src="img/prototype.png"></td>
                                 <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code" id="p">next()</p>메서드를 가지고 있습니다.)</td>
                             </tr>
                         </table>
@@ -4064,53 +2858,8 @@
                 </div>
             </div>
         </section>
-        <section id="appendix">
-            <div id="99-1" class="content">
-                <p class="title">참고자료</p>
-                <li class="a" id="https://deviolet.tistory.com/entry/%EB%A9%94%EC%8B%A0%EC%A0%80%EB%B4%87-%EA%B0%80%EC%9D%B4%EB%93%9C">메신저봇 가이드</li><br>
-                <li class="a" id="https://violetxf.gitbook.io/messengerbot/">Overview - MessengerBot</li><br>
-                <li class="a" id="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators">표현식과 연산자 - JavaScript | MDN</li><br>
-                <li class="a" id="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Values,_variables,_and_literals">문법과 자료형 - JavaScript | MDN</li><br>
-                <li class="a" id="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Loops_and_iteration">루프와 반복 - JavaScript | MDN</li><br>
-                <li class="a" id="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/%EC%A0%95%EA%B7%9C%EC%8B%9D">정규 표현식 - JavaScript | MDN</li><br>
-                <li class="a" id="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects">표준 내장 객체 - JavaScript | MDN</li><br>
-                <li class="a" id="https://m.blog.naver.com/hadaboni80/221711302790">[JS] 자바스크립트 스위치문 - Switch, case, default, break</li><br>
-                <li class="a" id="https://beomy.tistory.com/21">[자바스크립트] 정규식(Regular Expressions)</li>
-            </div>
-            <div id="99-2" class="content">
-                <p class="title">도움주신 분들</p>
-                <div id="imgBox">
-                    <div class="thanks_box" id="주현명님">
-                        <img class="thank" src="../img/default.png">
-                        <p id="thank_you" class="주현명님"><strong>주현명</strong> 님</p>
-                    </div>
-                    <div class="thanks_box" id="Violet_XF님">
-                        <img class="thank" src="../img/default.png">
-                        <p id="thank_you" class="Violet_XF님"><strong>Violet XF</strong> 님</p>
-                    </div>
-                    <div class="thanks_box" id="Doami님">
-                        <img class="thank" src="../img/default.png">
-                        <p id="thank_you" class="Doami님"><strong>Doami</strong> 님</p>
-                    </div>
-                    <div class="thanks_box" id="JusticeHui님">
-                        <img class="thank" src="../img/default.png">
-                        <p id="thank_you" class="JusticeHui님"><strong>JusticeHui</strong> 님</p>
-                    </div>
-                    <div class="thanks_box" id="franknoh님">
-                        <img class="thank" src="../img/dfranknoh님.png">
-                        <p id="thank_you" class="franknoh님"><strong>franknoh</strong> 님</p>
-                    </div>
-                </div>
-            </div>
-            <div id="99-3" class="content">
-                <p class="title">문의하기</p>
-                <p class="dscrpt">카카오톡 봇 문서에 대한 아이디어, 보완점, 내용에 대한 오류가 있을 때 문의해주세요!</p>
-                <li class="a" id="https://open.kakao.com/me/nolbo">문의하기 (nolbo)</li>
-            </div>
-        </section>
     </article>
     <script type="text/javascript">if($("section#body").width == 0){ location.reload(); }</script>
     <!-- <script type="text/javascript" src="script/require.js"></script> -->
-    </div>
 </body>
 </html>

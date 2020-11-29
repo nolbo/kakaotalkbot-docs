@@ -5,25 +5,25 @@ $(function(){
         if($(document).scrollTop() == 0 || ($(document).scrollTop() + 400 >= $('section#summary').offset().top)){
             $('dt img').removeAttr('id');
             $('span#list').attr('data-isVisible', 'false');
-            $('dt img[src = "../img/summary.png"]').attr('id', 'this');
+            $('dt img[src = "img/summary.png"]').attr('id', 'this');
             $('span.summary').attr('data-isVisible', 'true');
         }
         if($(document).scrollTop() + 400 >= $('section#api').offset().top){
             $('dt img').removeAttr('id');
             $('span#list').attr('data-isVisible', 'false');
-            $('dt img[src = "../img/api.png"]').attr('id', 'this');
+            $('dt img[src = "img/api.png"]').attr('id', 'this');
             $('span.api').attr('data-isVisible', 'true');
         }
         if($(document).scrollTop() + 400 >= $('section#api2').offset().top){
             $('dt img').removeAttr('id');
             $('span#list').attr('data-isVisible', 'false');
-            $('dt img[src = "../img/api2.png"]').attr('id', 'this');
+            $('dt img[src = "img/api2.png"]').attr('id', 'this');
             $('span.api2').attr('data-isVisible', 'true');
         }
         if($(document).scrollTop() + 400 >= $('section#rhino').offset().top){
             $('dt img').removeAttr('id');
             $('span#list').attr('data-isVisible', 'false');
-            $('dt img[src = "../img/rhino.png"]').attr('id', 'this');
+            $('dt img[src = "img/rhino.png"]').attr('id', 'this');
             $('span.api2').attr('data-isVisible', 'true');
         }
         // if($(document).scrollTop() >= $('section#deepening').offset().top){
@@ -33,7 +33,7 @@ $(function(){
         if($(document).scrollTop() + 400 >= $('section#appendix').offset().top){
             $('dt img').removeAttr('id');
             $('span#list').attr('data-isVisible', 'false');
-            $('dt img[src = "../img/appendix.png"]').attr('id', 'this');
+            $('dt img[src = "img/appendix.png"]').attr('id', 'this');
             $('span.appendix').attr('data-isVisible', 'true');
         }
     }

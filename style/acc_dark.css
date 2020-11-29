@@ -18,6 +18,14 @@
         box-shadow: 0rem 0rem 2rem 0rem #161616;
     }
 
+    p.dscrpt, a {
+        color: white;
+    }
+
+    p.ttl, p.txt, p.sttl, li.txt {
+        color: white;
+    }
+
     button:hover {
         color: white;
         background: #3a3a3a;

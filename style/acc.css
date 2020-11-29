@@ -14,23 +14,19 @@ html, body {
     font-family: 'Noto Sans', 'Noto Sans KR';
 }
 
-img#bg {
-    position: fixed;
-    left: -20rem;
-    top: -20rem;
-    width: 50rem;
-    height: 200%;
-    transform: perspective(70rem) rotateZ(10deg);
+html.non-center, body.non-center {
+    text-align: left;
 }
 
 header {
     background: black;
     color: white;
-    width: inherit;
+    width: 100000000000000000000000000000000rem;
     height: 30rem;
     display: table-cell;
     vertical-align: middle;
     table-layout: auto;
+    text-align: center;
 }
 
 header div {
@@ -47,6 +43,8 @@ img#docs {
 
 article {
     margin-top: 7rem;
+    margin-bottom: 7rem;
+    padding: 0 5rem;
 }
 
 form * {
@@ -72,7 +70,7 @@ img#profile{
     width: 10rem;
     height: 10rem;
     border-radius: 7rem 7rem 7rem 7rem;
-    box-shadow: 0rem 0rem 0.8rem 0rem #b1b1b1;
+    box-shadow: 0rem 0rem 0.8rem 0rem #dddddd;
     border: none;
     cursor: pointer;
     padding: 0rem;
@@ -98,6 +96,71 @@ button {
     transition-duration: 0.42s;
 }
 
+p.dscrpt {
+    display: inline;
+}
+
+a {
+    font-weight: bold;
+    color: black;
+}
+
+label {
+    display: inline;
+}
+
+input[type = 'checkbox'] {
+    display: none;
+}
+
+label[for = 'tos'] img {
+    display: inline;
+    background: url('../img/uncheck.png') no-repeat;
+    background-size: 1rem 1rem;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    margin: 0;
+    margin-right: 0.5rem;
+
+    transition-property: background;
+    transition-duration: 0.3s;
+}
+
+input#tos:checked + div#dscrpt label[for = 'tos'] img {
+    display: inline;
+    background: url('../img/check.png') no-repeat;
+    background-size: 1rem 1rem;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    margin: 0;
+    margin-right: 0.5rem;
+}
+
+p.ttl, p.txt, p.sttl, li.txt {
+    line-height: 3rem !important;
+}
+
+p.ttl {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+p.sttl {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p.txt, li.txt {
+    font-size: 1.1rem;
+}
+
+#btm {
+    padding-bottom: 4rem !important;
+}
+
 input[type = 'text']:focus, input[type = 'password']:focus, input[type = 'email']:focus {
     box-shadow: 0rem 0rem 1rem 0rem #00ffc8;
 }
@@ -109,3 +172,8 @@ button:hover {
     border: white;
     box-shadow: 0rem 0rem 1.5rem 0rem #dddddd;
 }
+
+label[for = 'tos'] img:hover {
+    cursor: pointer;
+}
+

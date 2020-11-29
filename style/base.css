@@ -11,9 +11,9 @@
         height: 0rem; 
     }
 
-    div.table, div.code, div#imgBox::-webkit-scrollbar{       width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-    div.table, div.code, div#imgBox::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: black;  }
-    div.table, div.code, div#imgBox::-webkit-scrollbar-track{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar{       width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: black;  }
+    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar-track{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; }
     div.crf::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #ff00aa;  }
     div.pls::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #00ffc8;  }
 
