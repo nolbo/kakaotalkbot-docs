@@ -33,7 +33,7 @@ $(function () {
                     auth = firebase.initializeApp(authConfig, "other");
                     auth.auth().onAuthStateChanged(function(user) {
                         if (user) {
-                            //if(location.href) location.href = "https://kkotbot-docs.kro.kr";
+                            //if(["/signup", "/signin", "/signup.html", "/signin.html"].indexOf(location.href.substring(location.origin.length))!=-1) location.href = "https://kkotbot-docs.kro.kr";
                         }
                     });
                 });
