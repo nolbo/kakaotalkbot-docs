@@ -31,6 +31,11 @@ $(function () {
                         measurementId: "G-37EGKPJBSX"
                     };
                     auth = firebase.initializeApp(authConfig, "other");
+                    auth.auth().onAuthStateChanged(function(user) {
+                        if (user) {
+                            //if(location.href) location.href = "https://kkotbot-docs.kro.kr";
+                        }
+                    });
                 });
             });
         });
