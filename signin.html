@@ -12,6 +12,9 @@
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
     <script type="text/javascript" src="script/upload.js"></script>
+    <script type="text/javascript" src="script/firebase.js"></script>
+    <script type="text/javascript" src="script/signIn.js"></script>
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
     <title>KBot Docs | 로그인</title>
 </head>
 <body>
@@ -25,8 +28,13 @@
         <form autocomplete="off">
             <input id="id" type="text" placeholder="아이디"><br>
             <input id="password" type="password" placeholder="비밀번호"><br>
-            <button id="complete" type="button">로그인</button>
+            <button id="complete" type="button" class="g-recaptcha" data-sitekey="6LccHfIZAAAAANffs67hBZHRfjDc_s-8cKtWgNNX" data-callback='onSubmit' data-action='submit'>로그인</button>
         </form>
     </article>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("#complete").submit();
+        }
+    </script>
 </body>
 </html>

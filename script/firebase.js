@@ -1,3 +1,4 @@
+var auth;
 $(function () {
     $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js', function () {
         $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js', function () {
@@ -29,7 +30,7 @@ $(function () {
                         appId: "1:766140475780:web:05f3af8ee9f77d403e15d1",
                         measurementId: "G-37EGKPJBSX"
                     };
-                    var auth = firebase.initializeApp(authConfig, "other");
+                    auth = firebase.initializeApp(authConfig, "other");
                 });
             });
         });
