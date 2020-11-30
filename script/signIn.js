@@ -1,10 +1,4 @@
 $(function() {
-    auth.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            location.href = "https://kkotbot-docs.kro.kr";
-        }
-    });
-
     function login() {
         var id = $('#id').val().replace(/ /g, '');
         var pswd = $('#password').val().replace(/ /g, '');
