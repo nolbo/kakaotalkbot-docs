@@ -143,6 +143,10 @@
     p.txt, li.txt {
         font-size: 0.95rem;
     }
+
+    p.sml, p.sml a {
+        font-size: 0.8rem;
+    }
     
     #btm {
         padding-bottom: 3rem !important;

@@ -1,0 +1,22 @@
+@media(prefers-color-scheme: dark){
+    html, body {
+        background: #3a3a3a;
+    }
+
+    img#docs, img.icon {
+        filter: invert(0%);
+    }
+
+    img#login {
+        transition-property: filter;
+        transition-duration: 0.4s;
+    }
+
+    img#login:hover {
+        filter: invert(30%);
+    }
+
+    img.icon:hover {
+        box-shadow: 0rem 0rem 1rem 0rem #161616;
+    }
+}

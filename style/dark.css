@@ -7,7 +7,7 @@
 
 
 @media(prefers-color-scheme: dark){
-    div.table, div.code::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: white;  }
+    div.table::-webkit-scrollbar-thumb, div.code::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: white;  }
 
     body {
         background: #3a3a3a;

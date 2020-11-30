@@ -63,18 +63,8 @@ $(function(){
         }
     });
 
-
     $("li.a").click(function(){
         window.open($(this).attr('id'));
-    });
-
-    $("p#thank_you").mouseover(function(){
-        let rdcl = ["#00f1a9", "#a500f1", "#f100b5"];
-        $("p."+$(this).attr("class")).css("color", rdcl[Math.floor(Math.random() * 3)]);
-    });
-
-    $("p#thank_you").mouseout(function(){
-        $("p."+$(this).attr("class")).css("color", "#4b4b4b");
     });
 
     $("img.sttc").attr("title", "정적인 속성이나 메서드입니다.");

@@ -11,8 +11,8 @@
     <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/docs_black.png">
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
-    <script type="text/javascript" src="script/upload.js"></script>
     <script type="text/javascript" src="script/firebase.js"></script>
+    <script type="text/javascript" src="script/upload.js"></script>
     <script type="text/javascript" src="script/signUp.js"></script>
     <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
     <title>KBot Docs | 회원가입</title>
@@ -41,6 +41,7 @@
             </div>
             <button id="complete" type="button" class="g-recaptcha" data-sitekey="6LccHfIZAAAAANffs67hBZHRfjDc_s-8cKtWgNNX" data-callback='onSubmit' data-action='submit'>회원가입</button>
         </form>
+        <p class="sml" id="btm">이미 계정이 있으신가요? <a href="signin.html">그럼 얼른 로그인하러 가요!</a></p>
     </article>
     <script>
         function onSubmit(token) {

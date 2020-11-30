@@ -105,6 +105,10 @@ a {
     color: black;
 }
 
+p.sml, p.sml a {
+    font-size: 0.9rem;
+}
+
 label {
     display: inline;
 }
