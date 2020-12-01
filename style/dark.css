@@ -17,6 +17,10 @@
         filter: invert(0%);
     }
 
+    div#auto td:hover {
+        background: black;
+    }
+
     article {
         background: #3a3a3a;
         color: white !important;
@@ -61,5 +65,30 @@
 
     img.sttc, img.prttp {
         filter: invert(0%);
+    }
+
+    section#tool {
+        background: #3a3a3a;
+    }
+
+    input#search_txt {
+        color: white;
+        border-bottom: 0.3rem solid white;
+        background: transparent;
+    }
+
+    button#search_btn img {
+        filter: invert(0%);
+    }
+
+    div#auto table {
+        border: none;
+        margin-top: -0.7rem;
+        margin-left: 0.1rem;
+        z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    }
+
+    div#auto tr {
+        background: #303030;
     }
 }

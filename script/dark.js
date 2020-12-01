@@ -1,4 +1,4 @@
-$.getChangeDarkMode = function(){
+function getChangeDarkMode(){
     $("link#favicon").attr("href", "../../img/docs.png");
 
     $("#NF").attr("src", "../../img/NotFound_dark.png");
@@ -6,7 +6,7 @@ $.getChangeDarkMode = function(){
     $("#BR").attr("src", "../../img/BadRequest_dark.png");
 }
 
-$.getChangeWhiteMode = function(){
+function getChangeWhiteMode(){
     $("link#favicon").attr("href", "../../img/docs_black.png");
 
     $("#NF").attr("src", "../../img/NotFound.png");
@@ -27,15 +27,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
     else{
         $.getChangeWhiteMode();
     }
-
-    $("p#thank_you").mouseover(function(){
-        let rdcl = ["#00f1a9", "#a500f1", "#f100b5"];
-        $("p."+$(this).attr("class")).css("color", rdcl[Math.floor(Math.random() * 3)]);
-    });
-
-    $("p#thank_you").mouseout(function(){
-        $("p."+$(this).attr("class")).css("color", "#4b4b4b");
-    });
 });
 
 

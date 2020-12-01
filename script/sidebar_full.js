@@ -1,4 +1,4 @@
-const LIST_ARRAY = ['summary', 'api', 'api2', 'rhino', 'deepening', 'appendix'];
+const LIST_ARRAY = ['summary', 'legacyAPI', 'API2', 'rhino', 'deepening', 'appendix'];
 
 $(function(){
     function sideBar(){
@@ -8,23 +8,23 @@ $(function(){
             $('dt img[src = "img/summary.png"]').attr('id', 'this');
             $('span.summary').attr('data-isVisible', 'true');
         }
-        if($(document).scrollTop() + 400 >= $('section#api').offset().top){
+        if($(document).scrollTop() + 400 >= $('section#legacyAPI').offset().top){
             $('dt img').removeAttr('id');
             $('span#list').attr('data-isVisible', 'false');
             $('dt img[src = "img/api.png"]').attr('id', 'this');
-            $('span.api').attr('data-isVisible', 'true');
+            $('span.legacyAPI').attr('data-isVisible', 'true');
         }
-        if($(document).scrollTop() + 400 >= $('section#api2').offset().top){
+        if($(document).scrollTop() + 400 >= $('section#API2').offset().top){
             $('dt img').removeAttr('id');
             $('span#list').attr('data-isVisible', 'false');
             $('dt img[src = "img/api2.png"]').attr('id', 'this');
-            $('span.api2').attr('data-isVisible', 'true');
+            $('span.API2').attr('data-isVisible', 'true');
         }
         if($(document).scrollTop() + 400 >= $('section#rhino').offset().top){
             $('dt img').removeAttr('id');
             $('span#list').attr('data-isVisible', 'false');
             $('dt img[src = "img/rhino.png"]').attr('id', 'this');
-            $('span.api2').attr('data-isVisible', 'true');
+            $('span.rhino').attr('data-isVisible', 'true');
         }
         // if($(document).scrollTop() >= $('section#deepening').offset().top){
         //     $('dt img[src = "../img/deepening.png"]').attr('id', 'this');
@@ -44,18 +44,23 @@ $(function(){
         sideBar();
     });
 
-    $('aside dt').click(function(){
-        let ele = `span.${$(this).attr('id')}`;
-        for(txt of LIST_ARRAY){
-            if($(`span.${txt}`).css('opacity') == '1'){
-                $(`span.${txt}`).animate({'opacity' : '0'}, 300);
-                setTimeout(function(){
-                    $(`span.${txt}`).css('display', 'none');
-                }, 300);
-                break;
+    $('aside dt').click(function(event){
+        if(isTool == false) {
+            let ele = `span.${$(this).attr('id')}`;
+
+            for(txt of LIST_ARRAY){
+                if($(`span.${txt}`).css('opacity') == '1'){
+                    $(`span.${txt}`).animate({'opacity' : '0'}, 300);
+                    setTimeout(function(){
+                        $(`span.${txt}`).css('display', 'none');
+                    }, 300);
+                    break;
+                }
             }
+            $(ele).animate({'opacity' : '1'}, 300);
+            $(ele).css({'display' : 'block', 'visibility' : 'visible'});
+        }else{
+            event.preventDefault();
         }
-        $(ele).animate({'opacity' : '1'}, 300);
-        $(ele).css({'display' : 'block', 'visibility' : 'visible'});
     });
 });

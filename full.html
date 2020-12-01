@@ -15,6 +15,7 @@
     <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://github.com/pisi/Longclick/raw/master/jquery.longclick-min.js"></script>
     <script type="text/javascript" src="script/animation.js"></script>
     <script type="text/javascript" src="script/sidebar_full.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
@@ -33,7 +34,7 @@
     <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/mobile.css">
-    <link rel="stylesheet" href="style/dark.css">
+    <link id="dark" rel="stylesheet" href="style/dark.css">
     <link rel="stylesheet" href="style/newToast.css">
     <title>KBot Docs | 전체</title>
 </head>
@@ -71,7 +72,7 @@
                 <dd id="d1-6" class="sdb">수신하기</dd><br>
                 <dd id="d1-7" class="sdb">웹 파싱</dd>
             </span>
-            <span id="list" class="api" data-isVisible="false">
+            <span id="list" class="legacyAPI" data-isVisible="false">
                 <h1 id="ttl">레거시 API</h1>
                 <dd id="d2-1" class="sdb">Api</dd><br>
                 <dd id="d2-2" class="sdb">Utils</dd><br>
@@ -84,7 +85,7 @@
                 <dd id="d2-9" class="sdb">replier</dd><br>
                 <dd id="d2-10" class="sdb">imageDB</dd>
             </span>
-            <span id="list" class="api2" data-isVisible="false">
+            <span id="list" class="API2" data-isVisible="false">
                 <h1 id="ttl">API 2</h1>
                 <dd id="d3-1" class="sdb">App</dd><br>
                 <dd id="d3-2" class="sdb">Bot</dd><br>
@@ -126,22 +127,10 @@
                 <dd id="d99-3" class="sdb">문의하기</dd>
             </span>
         </dl>
-        <div id="docs_fun">
-            <img id="search" src="img/search.png">
-            <div id="autocomplete">
-                <li class="auto">로렘입숨</li>
-                <li class="auto">로오렘입숨</li>
-                <li class="auto">로오오렘입숨</li>
-                <li class="auto">로오오오렘입숨</li>
-                <li class="auto">로오오오오렘입숨</li>
-            </div>
-            <form autocomplete="off">
-                <input id="search" type="text" placeholder="검색...">
-            </form>
-        </div>
+        
     </aside>
     <article>
-        <section id="summary">
+        <section class="docs_con" id="summary">
             <div id="1-1" class="content">
                 <p class="title">알아두기</p>
                 <p class="dscrpt">카카오톡 봇을 개발하기 전 이를 꼭 알아두세요.</p><br><br>
@@ -273,7 +262,7 @@
                 <p class="dscrpt">웹 파싱 후 자신이 필요한 정보만 가져올 수 있도록 작업이 필요합니다. 이를 더 편리하게 할 수 있는 것이 Jsoup입니다. 이는 <strong>심화 > Jsoup</strong> 편에 자세히 다룹니다.</p>
             </div>
         </section>
-        <section id="api">
+        <section class="docs_con" id="legacyAPI">
             <div id="2-1" class="content">
                 <p class="title" id="first">Api</p>
                 <p class="dscrpt">레거시 Api 중 <strong>Api</strong>는 봇의 기본적인 기능을 담고 있습니다.</p>
@@ -399,7 +388,7 @@
                     </table>
                 </div>
             </div>
-            <div id="2-2" class="content">
+            <div class="docs_con" id="2-2" class="content">
                 <p class="title">Utils</p>
                 <p class="dscrpt">래거시 Api 중 <strong>Utils</strong>는 봇 기능제작을 위한 기본적이고 유용한 기능들을 제공합니다.</p>
                 <div class="table">
@@ -734,7 +723,7 @@
                 </div>
             </div>
         </section>
-        <section id="api2">
+        <section class="docs_con" id="API2">
             <div id="3-1" class="content">
                 <p class="title">App</p>
                 <p class="dscrpt">Api2 중 <strong>App</strong>은 카카오톡 구동 앱에 관한 기능을 제공합니다.</p>
@@ -1291,7 +1280,7 @@
                 </div>
             </div>
         </section>
-        <section id="rhino">
+        <section class="docs_con" id="rhino">
             <div id="4-1" class="content">
                 <p class="title">기초</p>
                 <p class="dscrpt">JavaScript에 첫 발을 내딛기 위해서는 가장 기초적인 것들을 알아야 합니다. 이 장에서는 JavaScript의 기초문법과 주석, 선언, 변수 및 상수를 다룹니다.</p>
@@ -4077,7 +4066,7 @@
                 </div>
             </div>
         </section>
-        <section id="appendix">
+        <section class="docs_con" id="appendix">
             <div id="99-1" class="content">
                 <p class="title">참고자료</p>
                 <li class="a" id="https://deviolet.tistory.com/entry/%EB%A9%94%EC%8B%A0%EC%A0%80%EB%B4%87-%EA%B0%80%EC%9D%B4%EB%93%9C">메신저봇 가이드</li><br>
@@ -4120,6 +4109,21 @@
                 <p class="dscrpt">카카오톡 봇 문서에 대한 아이디어, 보완점, 내용에 대한 오류가 있을 때 문의해주세요!</p>
                 <li class="a" id="https://open.kakao.com/me/nolbo">문의하기 (nolbo)</li>
             </div>
+        </section>
+        <section id="tool">
+            <form autocomplete="off">
+                <input id="search_txt" type="text" placeholder="검색할 내용을 입력하세요!">
+                <button id="search_btn" type="button"><img src="img/search.png"></button>
+                <div id="auto">
+                    <table>
+                        <tr id="one"><td>로렘 입숨</td></tr>
+                        <tr id="two"><td>로렘 입숨</td></tr>
+                        <tr id="thr"><td>로렘 입숨</td></tr>
+                        <tr id="fou"><td>로렘 입숨</td></tr>
+                        <tr id="fiv"><td>로렘 입숨</td></tr>
+                    </table>
+                </div>
+            </form>
         </section>
     </article>
     <script type="text/javascript">if($("section#body").width == 0){ location.reload(); }</script>

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+@font-face{ font-family: 'JetBrains Mono'; src:url(font/JetBrainsMono-Medium.woff) format('woff'); }
+@font-face{ font-family: 'JetBrains Mono I'; src:url(font/JetBrainsMono-Medium-Italic.woff) format('woff'); }
+@font-face{ font-family: 'D2Coding'; src:url(font/D2Coding.woff) format('woff'); }
+
+
+@media(prefers-color-scheme: dark){
+    div.table::-webkit-scrollbar-thumb, div.code::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: white;  }
+
+    body {
+        background: #3a3a3a;
+    }
+
+    li.a::before, li.sA::before {
+        filter: invert(0%);
+    }
+
+    div#auto td:hover {
+        background: black;
+    }
+
+    article {
+        background: #3a3a3a;
+        color: white !important;
+    }
+
+    article img {
+        filter: invert(0%);
+    }
+
+    span#list dd {
+        color: white;
+    }
+
+    p.code {
+        color: white;
+        background: black;
+        box-shadow: 0rem 0rem 0.5rem 0rem #cfcfcf;
+    }
+
+    div.crf, div.pls {
+        background: #3a3a3a;
+    }
+
+    div.code {
+        background: black;
+        box-shadow: 0rem 0rem 1rem 0rem #161616;
+    }
+
+    table {
+        border-left: 0em solid transparent;
+        border-right: 0em solid transparent;
+        border-top: 0.5rem solid white;
+    }
+
+    th, td {
+        border-bottom: 0.1em solid white;
+    }
+
+    img.thank {
+        filter: invert(0%);
+    }
+
+    img.sttc, img.prttp {
+        filter: invert(0%);
+    }
+
+    section#tool {
+        background: #3a3a3a;
+    }
+
+    input#search_txt {
+        color: white;
+        border-bottom: 0.3rem solid white;
+        background: transparent;
+    }
+
+    button#search_btn img {
+        filter: invert(0%);
+    }
+
+    div#auto table {
+        border: none;
+        margin-top: -0.7rem;
+        margin-left: 0.1rem;
+        z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    }
+
+    div#auto tr {
+        background: #303030;
+    }
+}
