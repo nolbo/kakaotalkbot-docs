@@ -1,13 +1,13 @@
-$(function() {
+$(function () {
     function login() {
         var id = $('#id').val().replace(/ /g, '');
-        var pswd = $('#password').val().replace(/ /g, '');
-        auth.firestore().collection('users').get().then(function(snapshot) {
+        var password = $('#password').val().replace(/ /g, '');
+        auth.firestore().collection('users').get().then(function (snapshot) {
             var email = false;
             if (snapshot.size > 0) {
                 console.log(snapshot);
                 var users = [];
-                snapshot.forEach(function(doc) {
+                snapshot.forEach(function (doc) {
                     users.push(doc.data());
                 });
             } else {
@@ -28,18 +28,18 @@ $(function() {
                         if (user.emailVerified) {
                             location.href = "https://kkotbot-docs.kro.kr";
                         } else {
-                            auth.auth().signOut().then(function() {
+                            auth.auth().signOut().then(function () {
                                 alert('발송된 링크로 이메일 주소를 인증해주세요.')
                             });
                         }
                     })
                     .catch((error) => {
                         var errorCode = error.code;
-                        if(errorCode=="auth/wrong-password"){
+                        if (errorCode == "auth/wrong-password") {
                             $('#password').css('box-shadow', '0rem 0rem 0.8rem 0rem #ff0088');
                             $('#password').attr('placeholder', '비밀번호가 일치하지 않습니다.');
                             $('#password').val('');
-                        }else{
+                        } else {
                             $('#password').removeAttr('style');
                             $('#password').attr('placeholder', '비밀번호');
                         }
@@ -51,7 +51,7 @@ $(function() {
             }
         });
     }
-    $('#complete').click(function(event) {
+    $('#complete').click(function (event) {
         event.preventDefault();
         login();
     });
