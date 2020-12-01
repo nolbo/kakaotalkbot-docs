@@ -1,9 +1,4 @@
 $(function() {
-    auth.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            location.href = "https://kkotbot-docs.kro.kr";
-        }
-    });
     function signup() {
         con = (arr, str) => {
             var a = false;
