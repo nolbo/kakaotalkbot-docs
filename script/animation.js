@@ -4,44 +4,67 @@ const SPAN_LIST = 'span[data-isVisible = "true"]';
 $(function(){
     $("#toast_con").css("left", `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
     $('span#list').dequeue();
+    if($(window).width() < 801){
+        $('div#docs_fun').offset({
+            top: $(window).height() - 36
+        });
+        $('div#autocomplete').offset({
+            top: $(window).height() - 36
+        });
+    }
+    $(window).resize(function(){
+        if($(window).width() < 801){
+            $('div#docs_fun').offset({
+                top: $(window).height() - 36
+            });
+            $('div#autocomplete').offset({
+                top: $(window).height() - 36
+            });
+        }else{
+            $('div#docs_fun').removeAttr('style');
+        }
+    });
+    
+    
     
     $('aside, aside *, span#list').mouseenter(function(){
         if(Math.floor(Number($(SPAN_LIST).css('left').replace('px', ''))) <= '30' && $(SPAN_LIST).css('opacity') == '0' && $(SPAN_LIST).css('display') == 'none'){
-            $('span#list').dequeue();
+            $('span#list, form').dequeue();
             $('body').css('overflow', 'hidden');
             $('body').css('touch-action', 'none');
-            $(SPAN_LIST).css({'left' : '0', 'opacity' : '0', 'display' : 'none'});
-            $(SPAN_LIST).css({'display' : 'block', 'visibility' : 'visible'});
+            $('div#autocomplete').css({'display' : 'block', 'visibility' : 'visible', 'opacity' : '0'});
+            $(SPAN_LIST + ', form').css({'left' : '0', 'opacity' : '0', 'display' : 'none'});
+            $(SPAN_LIST + ', form').css({'display' : 'block', 'visibility' : 'visible'});
             if(window.innerWidth > 800) {
-                $('span#list').animate({'left' : '10rem'}, 300);
+                $('span#list, form').animate({'left' : '10rem'}, 300);
             }else{
-                $('span#list').animate({'left' : '5rem'}, 300);
+                $('span#list, form').animate({'left' : '5rem'}, 300);
             }
             setTimeout(function(){
-                $(SPAN_LIST).animate({'opacity' : '1'}, 300);
+                $(SPAN_LIST + ', form, div#autocomplete').animate({'opacity' : '1'}, 300);
             }, 570);
         }
     });
             
     $('aside').mouseleave(function(){
-        $('span#list').dequeue();
+        $('span#list, input').dequeue();
         $('body').css('overflow', 'visible');
         $('aside, aside *').css('overflow', '');
         $('body').css('touch-action', 'auto');
         if(window.innerWidth > 800){
-            $('span#list').css({'left' : '10rem'});
+            $('span#list, form').css({'left' : '10rem'});
         }else{
-            $('span#list').css({'left' : '5rem'});
+            $('span#list, form').css({'left' : '5rem'});
         }
-        $('span#list').animate({'opacity' : '0'}, 300);
-        $('span#list').animate({'left' : '0'}, 300);
+        $('span#list, form, div#autocomplete').animate({'opacity' : '0'}, 300);
+        $('span#list, form').animate({'left' : '0'}, 300);
         setTimeout(function(){
-            $('span#list').css({'display' : 'none'});
+            $('span#list, form, div#autocomplete').css({'display' : 'none'});
         }, 600);
     });
 
     $("dl span dd, li.sA").click(function(event){
-        $(SPAN_LIST).dequeue();
+        $(SPAN_LIST + ', form').dequeue();
         var offset = $("div#" + event.target.id.replace("d", "")).offset();
         $('article').animate({opacity: "0"}, 700);
         setTimeout(function(){

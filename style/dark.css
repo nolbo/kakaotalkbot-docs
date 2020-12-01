@@ -19,14 +19,19 @@
 
     article {
         background: #3a3a3a;
-        color: white;
+        color: white !important;
     }
 
     article img {
         filter: invert(0%);
     }
 
+    span#list dd {
+        color: white;
+    }
+
     p.code {
+        color: white;
         background: black;
         box-shadow: 0rem 0rem 0.5rem 0rem #cfcfcf;
     }

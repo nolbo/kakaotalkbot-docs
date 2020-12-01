@@ -75,10 +75,6 @@
         transition-property: width;
         transition-duration: 0.4s;
     }
-
-    aside, aside * {
-        overflow: hidden;
-    }
     
     aside dl {
         position: relative;
@@ -109,7 +105,7 @@
     }
     
     span#list h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: bold;
         position: absolute;
         top: -7.6rem;
@@ -122,7 +118,7 @@
         margin-bottom: 1.2rem;
     }
     
-    div#docs_space {
+    div#docs_space, div#docs_fun {
         position: relative;
         left: 0;
         width: 4rem;
@@ -131,6 +127,49 @@
     img#docs {
         width: 2rem;
         height: 2rem;
+    }
+
+    img#search {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    div#docs_fun form {
+        position: absolute;
+        top: -1rem;
+        left: 0rem;
+        width: 10rem;
+        display: none;
+    }
+
+    div#autocomplete {
+        width: 6rem;
+        text-align: left;
+        position: absolute;
+        left: 10rem;
+        bottom: 4rem;
+    }
+
+    li.auto {
+        display: inline;
+        background: #505050;
+        padding: 0.2rem 1rem;
+        border-radius: 10rem;
+        line-height: 3rem;
+        margin-right: 1rem;
+
+        transition-property: background;
+        transition-duration: 0.5s;
+    }
+
+    input#search {
+        width: 100%;
+        height: 2rem;
+        background-color: transparent;
+        border: none;
+        border-bottom: 0.2rem solid white;
+        color: white;
+        outline: none;
     }
     
     img.side_icon {
