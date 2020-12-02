@@ -8,7 +8,7 @@ $(function () {
     $('span#list').dequeue();
 
     $('aside, aside *, span#list').not('#docs').hover(function (event) {
-        if(isTool == false){
+        if (isTool == false) {
             if (Math.floor(Number($(SPAN_LIST).css('left').replace('px', ''))) <= '30' && $(SPAN_LIST).css('opacity') == '0' && $(SPAN_LIST).css('display') == 'none') {
                 $('span#list').dequeue();
                 $('body').css('overflow', 'hidden');
@@ -24,7 +24,7 @@ $(function () {
                     $(SPAN_LIST).animate({ 'opacity': '1' }, 300);
                 }, 570);
             }
-        }else{
+        } else {
             $('aside').css('width', $('aside').width());
             event.preventDefault();
         }
@@ -57,7 +57,7 @@ $(function () {
         }, 700);
     });
 
-    $("#docs").click(function() {
+    $("#docs").click(function () {
         location.reload();
     });
 
@@ -84,18 +84,18 @@ $(function () {
 
     function toolbar() {
         $('section#tool').dequeue();
-        if(isTool == false) {
+        if (isTool == false) {
             $('span#list, input').dequeue();
-            $('section#tool').css({'display' : 'block', 'visibilty' : 'visible', 'opacity' : '0'});
-            $('section#tool').animate({'opacity' : '1'}, 300);
+            $('section#tool').css({ 'display': 'block', 'visibilty': 'visible', 'opacity': '0' });
+            $('section#tool').animate({ 'opacity': '1' }, 300);
             isTool = true;
             $('body').css('overflow', 'hidden');
             $('body').css('touch-action', 'none');
-        }else{
-            $('section#tool').css({'visibilty' : 'visible', 'opacity' : '1'});
-            $('section#tool').animate({'opacity' : '0'}, 300);
-            setTimeout(function(){
-                $('section#tool').css({'display' : 'none'});
+        } else {
+            $('section#tool').css({ 'visibilty': 'visible', 'opacity': '1' });
+            $('section#tool').animate({ 'opacity': '0' }, 300);
+            setTimeout(function () {
+                $('section#tool').css({ 'display': 'none' });
             }, 300);
             isTool = false;
             $('aside').removeAttr('style');
