@@ -7,18 +7,23 @@ limit = 5;
 // https://www.w3schools.com/code/tryit.asp?filename=GKXQ2E5A8VDG
 
 Array.prototype.in = function (arg) {
+  var t = false;
   this.forEach((e) => {
-    if (e.indexOf(arg) != -1) {
-      return true;
+    if (e.toUpperCase().indexOf(arg.toUpperCase()) != -1) {
+      t = e;
     }
-  });
-  return false;
+  })
+  return t;
 };
 
 var search = [
   {
     'keys': ['2', 'asdf'],
     'location': '000'
+  },
+  {
+    'keys': ['300', 'aser'],
+    'location': '0001'
   }
 ];
 
@@ -48,8 +53,9 @@ $(() => {
   //the text field element and an array of possible autocompleted values:
   var currentFocus;
   //execute a function when someone writes in the text field:
+  var a, b, c, d, e;
   inp.addEventListener("input", function (e) {
-    var a, b, c, d, e, i, val = this.value;
+    var val = this.value;
     //close any already open lists of autocompleted values
     closeAllLists();
     if (!val) { return false; }
@@ -58,6 +64,7 @@ $(() => {
       //create a DIV element that will contain the items (values):
       a = document.createElement("DIV");
       a.setAttribute("id", "auto");
+      a.className = 'auto-items';
       //append the DIV element as a child of the autocomplete container:
       this.parentNode.appendChild(a);
       c = document.createElement("TABLE");
@@ -68,19 +75,29 @@ $(() => {
     //for each item in the array...
     search_res = [];
     search.forEach((e) => {
-      if (e.keys.in(val)) {
-        search_res.push(e)
+      if (!!e.keys.in(val)) {
+        search_res.push([e, e.keys.in(val)])
       }
     });
+    function strong(s, l) {
+      return l.split('').reverse().join('').substr(l.substr(l.toUpperCase().indexOf(s.toUpperCase())).length).split('').reverse().join('') + '<strong>' + s + '</strong>' + l.substr(l.indexOf(s)).substr(s.length)
+    }
     search_res.forEach((f) => {
       if (limit > 0) {
         b = document.createElement("TR");
         b.className = 'mid'
         e = document.createElement("TD");
-        e.innerHTML = 'asdf'
+        var l = f[1];
+        e.innerHTML = strong(val, l) + "<input type='hidden' value='" + l + "'>";;
         b.appendChild(e);
+        d.appendChild(b);
       }
     });
+    var s = Array.from(document.getElementsByClassName('mid')).reverse()[0];
+    if (!!s) {
+      s.classList.remove("mid");
+      s.id = 'last';
+    }
     /*
     for (i = 0; i < arr.length; i++) {
       //check if the item starts with the same letters as the text field value:
@@ -148,7 +165,7 @@ $(() => {
   function closeAllLists(elmnt) {
     //close all autocomplete lists in the document,
     //except the one passed as an argument:
-    var x = document.getElementsByClassName("autocomplete-items");
+    var x = document.getElementsByClassName("auto-items");
     for (var i = 0; i < x.length; i++) {
       if (elmnt != x[i] && elmnt != inp) {
         x[i].parentNode.removeChild(x[i]);
