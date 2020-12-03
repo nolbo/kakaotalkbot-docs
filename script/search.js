@@ -4,7 +4,34 @@
 
 limit = 5;
 
-// https://www.w3schools.com/code/tryit.asp?filename=GKXQ2E5A8VDG
+var search = [
+  {
+    'keys': ['2', 'asdf'],
+    'location': '000'
+  },
+  {
+    'keys': ['1300', 'asser'],
+    'location': '0001'
+  },
+  {
+    'keys': ['3001', 'asder'],
+    'location': '00101'
+  },
+  {
+    'keys': ['3100', 'asedr'],
+    'location': '01001'
+  },
+  {
+    'keys': ['3010', 'asefr'],
+    'location': '10001'
+  },
+  {
+    'keys': ['300v', 'asvr'],
+    'location': '000v1'
+  }
+];
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Array.prototype.in = function (arg) {
   var t = false;
@@ -15,19 +42,8 @@ Array.prototype.in = function (arg) {
   })
   return t;
 };
-
-var search = [
-  {
-    'keys': ['2', 'asdf'],
-    'location': '000'
-  },
-  {
-    'keys': ['300', 'aser'],
-    'location': '0001'
-  }
-];
-
 var search_res;
+var x;
 
 function get_key(txt) {
   var result = null;
@@ -44,8 +60,6 @@ function get_key(txt) {
     return result.phrases[0].split('(')[0];
   }
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////
 
 $(() => {
   var inp = document.getElementById("search_txt")
@@ -82,15 +96,24 @@ $(() => {
     function strong(s, l) {
       return l.split('').reverse().join('').substr(l.substr(l.toUpperCase().indexOf(s.toUpperCase())).length).split('').reverse().join('') + '<strong>' + s + '</strong>' + l.substr(l.indexOf(s)).substr(s.length)
     }
+    var nLim = limit;
     search_res.forEach((f) => {
-      if (limit > 0) {
+      if (nLim > 0) {
         b = document.createElement("TR");
         b.className = 'mid'
         e = document.createElement("TD");
         var l = f[1];
-        e.innerHTML = strong(val, l) + "<input type='hidden' value='" + l + "'>";;
+        e.innerHTML = strong(val, l) + "<input type='hidden' value='" + l + "'>";
+        e.addEventListener("click", function (g) {
+          //insert the value for the autocomplete text field:
+          inp.value = this.getElementsByTagName("input")[0].value;
+          //close the list of autocompleted values,
+          //(or any other open lists of autocompleted values:
+          closeAllLists();
+        });
         b.appendChild(e);
         d.appendChild(b);
+        nLim--;
       }
     });
     var s = Array.from(document.getElementsByClassName('mid')).reverse()[0];
@@ -98,51 +121,31 @@ $(() => {
       s.classList.remove("mid");
       s.id = 'last';
     }
-    /*
-    for (i = 0; i < arr.length; i++) {
-      //check if the item starts with the same letters as the text field value:
-      if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-        //create a DIV element for each matching element:
-        b = document.createElement("DIV");
-        //make the matching letters bold:
-        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-        b.innerHTML += arr[i].substr(val.length);
-        //insert a input field that will hold the current array item's value:
-        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-        //execute a function when someone clicks on the item value (DIV element):
-        b.addEventListener("click", function (e) {
-          //insert the value for the autocomplete text field:
-          inp.value = this.getElementsByTagName("input")[0].value;
-          //close the list of autocompleted values,
-          //(or any other open lists of autocompleted values:
-          closeAllLists();
-        });
-        a.appendChild(b);
-      }
-    }//*/
   });
   //execute a function presses a key on the keyboard:
   inp.addEventListener("keydown", function (e) {
-    var x = document.getElementById(this.id + "autocomplete-list");
-    if (x) x = x.getElementsByTagName("div");
-    if (e.keyCode == 40) {
+    x = document.getElementById("auto");
+    if (x) x = x.getElementsByTagName("tr");
+    if (e.key == "ArrowDown") {
+
       //if the arrow DOWN key is pressed,
       //increase the currentFocus variable:
       currentFocus++;
       //and and make the current item more visible:
       addActive(x);
-    } else if (e.keyCode == 38) { //up
+    } else if (e.key == "ArrowUp") { //up
       //If the arrow UP key is pressed,
       //decrease the currentFocus variable:
       currentFocus--;
       //and and make the current item more visible:
       addActive(x);
-    } else if (e.keyCode == 13) {
+    } else if (e.key == "Enter") {
       //If the ENTER key is pressed, prevent the form from being submitted,
       e.preventDefault();
       if (currentFocus > -1) {
+        inp.value = x[currentFocus].innerText;
         //and simulate a click on the "active" item:
-        if (x) x[currentFocus].click();
+        x[currentFocus].click();
       }
     }
   });
