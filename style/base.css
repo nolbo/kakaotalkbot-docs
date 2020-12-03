@@ -48,6 +48,10 @@
         transition-delay: 0s;
     }
 
+    aside:hover #docs_space, aside:hover dl {
+        width: 23%;
+    }
+
     aside dt:hover {
         background-color: #515151;
     }
@@ -73,7 +77,7 @@
         position: fixed;
         background: black;
         color: white;
-        width: 8rem;
+        width: 7%;
         height: 100%;
         padding: 3rem 1rem;
         text-align: center;
@@ -85,8 +89,9 @@
 
     aside dl {
         position: relative;
-        top: 10rem;
-        width: 8rem;
+        top: 15%;
+        width: 100%;
+        transition-duration: 0s;
     }
 
     aside dt {
@@ -103,7 +108,8 @@
 
     aside span#list {
         display: none;
-        width: 15rem;
+        width: 22rem;
+        height: 100%;
         opacity: 0;
         text-align: left;
         position: absolute;
@@ -112,10 +118,9 @@
     }
 
     span#list h1 {
-        font-size: 1.7rem;
+        font-size: 3rem !important;
         font-weight: bold;
-        position: absolute;
-        top: -13.2rem;
+        display: inline;
     }
 
     span#list dd {
@@ -125,9 +130,24 @@
         margin-bottom: 1.5rem;
     }
 
+    div#docs_space {
+        position: relative;
+        left: 0;
+        width: 100%;
+        transition-duration: 0s;
+    }
+
+    span#txt {
+        width: 22rem;
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+    }
+
     img#docs {
         width: 3rem;
         height: 3rem;
+        display: inline;
     }
 
     img.side_icon {
@@ -136,13 +156,21 @@
         filter: invert(50%);
     }
 
+    img#tool_btn {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+
     img#this {
         filter: invert(0%);
     }
 
     article {
         padding: 5rem 4rem;
-        width: calc(100% - 18rem);
+        width: calc(100% - (7% + 10rem));
         float: right;
         overflow: visible;
     }
@@ -354,7 +382,7 @@
         margin: 0 auto;
     }
 
-    input {
+    input, button {
         outline: none;
     }
 
@@ -401,7 +429,12 @@
         transition-duration: 0.5s;
     }
 
-    tr#fiv td {
+    tr.last td {
         border-radius: 0rem 0rem 1.5rem 1.5rem;
+    }
+
+    div.tool_sec {
+        text-align: left;
+        margin-top: 4rem;
     }
 }

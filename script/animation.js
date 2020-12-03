@@ -7,26 +7,21 @@ $(function () {
     $("#toast_con").css("left", `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
     $('span#list').dequeue();
 
-    $('aside, aside *, span#list').not('#docs').hover(function (event) {
-        if(isTool == false){
-            if (Math.floor(Number($(SPAN_LIST).css('left').replace('px', ''))) <= '30' && $(SPAN_LIST).css('opacity') == '0' && $(SPAN_LIST).css('display') == 'none') {
-                $('span#list').dequeue();
-                $('body').css('overflow', 'hidden');
-                $('body').css('touch-action', 'none');
-                $(SPAN_LIST).css({ 'left': '0', 'opacity': '0', 'display': 'none' });
-                $(SPAN_LIST).css({ 'display': 'block', 'visibility': 'visible' });
-                if (window.innerWidth > 800) {
-                    $('span#list').animate({ 'left': '10rem' }, 300);
-                } else {
-                    $('span#list').animate({ 'left': '5rem' }, 300);
-                }
-                setTimeout(function () {
-                    $(SPAN_LIST).animate({ 'opacity': '1' }, 300);
-                }, 570);
+    $('aside, aside *, span#list').hover(function (event) {
+        if (Math.floor(Number($(SPAN_LIST).css('left').replace('px', ''))) <= '30' && $(SPAN_LIST).css('opacity') == '0' && $(SPAN_LIST).css('display') == 'none') {
+            $('span#list').dequeue();
+            $('body').css('overflow', 'hidden');
+            $('body').css('touch-action', 'none');
+            $(SPAN_LIST).css({ 'left': '0', 'opacity': '0', 'display': 'none' });
+            $(SPAN_LIST).css({ 'display': 'block', 'visibility': 'visible' });
+            if (window.innerWidth > 800) {
+                $('span#list').animate({ 'left': '10rem' }, 300);
+            } else {
+                $('span#list').animate({ 'left': '5rem' }, 300);
             }
-        }else{
-            $('aside').css('width', $('aside').width());
-            event.preventDefault();
+            setTimeout(function () {
+                $(SPAN_LIST).animate({ 'opacity': '1' }, 300);
+            }, 570);
         }
     });
 
@@ -47,25 +42,32 @@ $(function () {
         }, 600);
     });
 
+    $('#tool_btn').click(function(){
+        toolbar();
+        
+    });
+
+    $('span#list h1').offset({
+        top : $('#docs').offset().top
+    });
+
     $("dl span dd, li.sA").click(function (event) {
-        $(SPAN_LIST + ', form').dequeue();
-        var offset = $("div#" + event.target.id.replace("d", "")).offset();
-        $('article').animate({ opacity: "0" }, 700);
-        setTimeout(function () {
-            $("html").scrollTop(offset.top - '115');
-            $('article').animate({ opacity: "1" }, 700);
-        }, 700);
+        if(isTool == false){
+            $(SPAN_LIST + ', form').dequeue();
+            var offset = $("div#" + event.target.id.replace("d", "")).offset();
+            $('article').animate({ opacity: "0" }, 700);
+            setTimeout(function () {
+                $("html").scrollTop(offset.top - '115');
+                $('article').animate({ opacity: "1" }, 700);
+            }, 700);
+        }else{
+            return false;
+        }
     });
 
     $("#docs").click(function() {
-        location.reload();
-    });
-
-    $(".sdb").on("click", function () {
-        if (window.innerWidth < 800) {
-            isOpen.side = false;
-            $("div#sideBar").css("display", "none");
-            $("div#side").css("display", "none");
+        if($(window).width() > 800) {
+            location.reload();
         }
     });
 

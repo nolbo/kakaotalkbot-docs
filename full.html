@@ -54,7 +54,7 @@
         </div>
     </header> -->
     <aside>
-        <div id="docs_space"><img id="docs" src="img/docs.png"></div>
+        <div id="docs_space"><img id="docs" src="img/docs.png"><span id="txt"><h1 id="ttl">개요</h1><img id="tool_btn" src="img/tool.png"></span></div>
         <dl>
             <dt id="summary"><img class="side_icon" id="this" src="img/summary.png"></dt>
             <dt id="legacyAPI"><img class="side_icon" src="img/api.png"></dt>
@@ -63,7 +63,6 @@
             <dt id="deepening"><img class="side_icon" src="img/deepening.png"></dt>          
             <dt id="appendix"><img class="side_icon" src="img/appendix.png"></dt>
             <span id="list" class="summary" data-isVisible="true">
-                <h1 id="ttl">개요</h1>
                 <dd id="d1-1" class="sdb">알아두기</dd><br>
                 <dd id="d1-2" class="sdb">카카오톡 봇</dd><br>
                 <dd id="d1-3" class="sdb">작동 원리</dd><br>
@@ -73,7 +72,6 @@
                 <dd id="d1-7" class="sdb">웹 파싱</dd>
             </span>
             <span id="list" class="legacyAPI" data-isVisible="false">
-                <h1 id="ttl">레거시 API</h1>
                 <dd id="d2-1" class="sdb">Api</dd><br>
                 <dd id="d2-2" class="sdb">Utils</dd><br>
                 <dd id="d2-3" class="sdb">FileStream</dd><br>
@@ -86,7 +84,6 @@
                 <dd id="d2-10" class="sdb">imageDB</dd>
             </span>
             <span id="list" class="API2" data-isVisible="false">
-                <h1 id="ttl">API 2</h1>
                 <dd id="d3-1" class="sdb">App</dd><br>
                 <dd id="d3-2" class="sdb">Bot</dd><br>
                 <dd id="d3-3" class="sdb">BotManager</dd><br>
@@ -98,7 +95,6 @@
                 <dd id="d3-9" class="sdb">Security</dd>
             </span>
             <span id="list" class="rhino" data-isVisible="false">
-                <h1 id="ttl">라이노 엔진</h1>
                 <dd id="d4-1" class="sdb">기초</dd><br>
                 <dd id="d4-2" class="sdb">자료형</dd><br>
                 <dd id="d4-3" class="sdb">연산자</dd><br>
@@ -113,7 +109,6 @@
                 <dd id="d4-12" class="sdb">함수</dd>
             </span>
             <span id="list" class="deepening" data-isVisible="false">
-                <h1 id="ttl">심화</h1>
                 <dd id="d5-1" class="sdb">이벤트 리스너</dd><br>
                 <dd id="d5-2" class="sdb">외부 패키지/클래스</dd><br>
                 <dd id="d5-3" class="sdb">액티비티</dd><br>
@@ -121,7 +116,6 @@
                 <dd id="d5-5" class="sdb">소켓 통신</dd>
             </span>
             <span id="list" class="appendix" data-isVisible="false">
-                <h1 id="ttl">부록</h1>
                 <dd id="d99-1" class="sdb">참고자료</dd><br>
                 <dd id="d99-2" class="sdb">도움주신 분들</dd><br>
                 <dd id="d99-3" class="sdb">문의하기</dd>
@@ -4116,14 +4110,26 @@
                 <button id="search_btn" type="button"><img src="img/search.png"></button>
                 <div id="auto">
                     <table>
-                        <tr id="one"><td>로렘 입숨</td></tr>
-                        <tr id="two"><td>로렘 입숨</td></tr>
-                        <tr id="thr"><td>로렘 입숨</td></tr>
-                        <tr id="fou"><td>로렘 입숨</td></tr>
-                        <tr id="fiv"><td>로렘 입숨</td></tr>
+                        <tr class="mid"><td>로렘 입숨</td></tr>
+                        <tr class="mid"><td>로렘 입숨</td></tr>
+                        <tr class="mid"><td>로렘 입숨</td></tr>
+                        <tr class="mid"><td>로렘 입숨</td></tr>
+                        <tr class="last"><td>로렘 입숨</td></tr>
                     </table>
                 </div>
             </form>
+            <div class="tool_sec" id="theme">
+                <p class="stitle">테마</p>
+                <p class="dscrpt">문서의 테마를 설정합니다.</p>
+            </div>
+            <div class="tool_sec" id="font_docs">
+                <p class="stitle">텍스트 글꼴</p>
+                <p class="dscrpt">문서 내의 텍스트 글꼴을 설정합니다.</p>
+            </div>
+            <div class="tool_sec" id="font_code">
+                <p class="stitle">코드 글꼴</p>
+                <p class="dscrpt">문서 내의 코드블럭과 코드박스 글꼴을 설정합니다.</p>
+            </div>
         </section>
     </article>
     <script type="text/javascript">if($("section#body").width == 0){ location.reload(); }</script>

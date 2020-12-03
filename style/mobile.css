@@ -100,7 +100,8 @@
     
     aside span#list {
         display: none;
-        width: 15rem;
+        width: 11.5rem;
+        height: 100%;
         opacity: 0;
         text-align: left;
         position: absolute;
@@ -180,6 +181,14 @@
         width: 1.5rem;
         height: auto;
         filter: invert(50%);
+    }
+
+    img#tool_btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        top: -7.4rem;
+        right: 0;
     }
     
     img#this {
@@ -358,33 +367,33 @@
         position: fixed;
         top: 0;
         right: 0;
-        padding: 5rem 4rem;
-        width: calc(100% - 18rem);
+        padding: 2.5rem 2rem;
+        width: calc(100% - 9rem);
         height: 100%;
         overflow: visible;
-        padding-top: 9rem;
+        padding-top: 4.5rem;
         text-align: center;
         background: white;
         display: none;
     }
 
     section#tool form {
-        width: 38rem;
+        width: 100%;
         margin: 0 auto;
     }
 
-    input {
+    input, button {
         outline: none;
     }
 
     input#search_txt {
         position: relative;
         top: -0.7rem;
-        height: 2.5rem;
-        width: 35rem;
+        height: 2rem;
+        width: 90%;
         border: none;
         border-bottom: 0.3rem solid black;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     button#search_btn {
@@ -394,12 +403,12 @@
 
     button#search_btn img {
         filter: invert(100%);
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2rem;
+        height: 2rem;
     }
 
     div#auto {
-        width: 35rem;
+        width: 90%;
         text-align: left;
     }
 
@@ -415,12 +424,13 @@
     }
 
     div#auto td {
+        padding: 0.8rem;
         border: none;
         transition-property: background;
         transition-duration: 0.5s;
     }
 
-    tr#fiv td {
-        border-radius: 0rem 0rem 1.5rem 1.5rem;
+    tr.last td {
+        border-radius: 0rem 0rem 1.2rem 1.2rem;
     }
 }
