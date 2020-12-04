@@ -40,7 +40,7 @@
 <body>
     <div id="toast_con" class="default" role="alert"><p id="toast_txt"></p></div>
     <aside>
-        <div id="docs_space"><img id="docs" src="img/docs.png"><span id="txt"><h1 id="ttl">개요</h1><img id="tool_btn" src="img/tool.png"></span></div>
+        <div id="docs_space"><img id="docs" src="img/docs.png"></div>
         <dl>
             <dt id="summary"><img class="side_icon" id="this" src="img/summary.png"></dt>
             <dt id="legacyAPI"><img class="side_icon" src="img/api.png"></dt>
@@ -48,7 +48,10 @@
             <dt id="rhino"><img class="side_icon" src="img/rhino.png"></dt>
             <dt id="deepening"><img class="side_icon" src="img/deepening.png"></dt>          
             <dt id="appendix"><img class="side_icon" src="img/appendix.png"></dt>
-            <span id="list" class="summary" data-isVisible="true">
+        </dl>
+        <span id="list" class="summary" data-isVisible="true">
+            <div class="ttl"><h1 id="ttl">개요</h1><img id="tool_btn" src="img/tool.png"></div>
+            <span class="sideList" id="deepening">
                 <dd id="d1-1" class="sdb">알아두기</dd><br>
                 <dd id="d1-2" class="sdb">카카오톡 봇</dd><br>
                 <dd id="d1-3" class="sdb">작동 원리</dd><br>
@@ -57,7 +60,10 @@
                 <dd id="d1-6" class="sdb">수신하기</dd><br>
                 <dd id="d1-7" class="sdb">웹 파싱</dd>
             </span>
-            <span id="list" class="legacyAPI" data-isVisible="false">
+        </span>
+        <span id="list" class="legacyAPI" data-isVisible="false">
+            <div class="ttl"><h1 id="ttl">레거시 API</h1><img id="tool_btn" src="img/tool.png"></div>
+            <span class="sideList" id="deepening">
                 <dd id="d2-1" class="sdb">Api</dd><br>
                 <dd id="d2-2" class="sdb">Utils</dd><br>
                 <dd id="d2-3" class="sdb">FileStream</dd><br>
@@ -68,8 +74,11 @@
                 <dd id="d2-8" class="sdb">AppData</dd><br>
                 <dd id="d2-9" class="sdb">replier</dd><br>
                 <dd id="d2-10" class="sdb">imageDB</dd>
-            </span>
-            <span id="list" class="API2" data-isVisible="false">
+            </span> 
+        </span>
+        <span id="list" class="API2" data-isVisible="false">
+            <div class="ttl"><h1 id="ttl">API 2</h1><img id="tool_btn" src="img/tool.png"></div>
+            <span class="sideList" id="deepening">
                 <dd id="d3-1" class="sdb">App</dd><br>
                 <dd id="d3-2" class="sdb">Bot</dd><br>
                 <dd id="d3-3" class="sdb">BotManager</dd><br>
@@ -80,7 +89,10 @@
                 <dd id="d3-8" class="sdb">SessionManager</dd><br>
                 <dd id="d3-9" class="sdb">Security</dd>
             </span>
-            <span id="list" class="rhino" data-isVisible="false">
+        </span>
+        <span id="list" class="rhino" data-isVisible="false">
+            <div class="ttl"><h1 id="ttl">라이노 엔진</h1><img id="tool_btn" src="img/tool.png"></div>
+            <span class="sideList" id="deepening">
                 <dd id="d4-1" class="sdb">기초</dd><br>
                 <dd id="d4-2" class="sdb">자료형</dd><br>
                 <dd id="d4-3" class="sdb">연산자</dd><br>
@@ -94,20 +106,25 @@
                 <dd id="d4-11" class="sdb">람다식</dd><br>
                 <dd id="d4-12" class="sdb">함수</dd>
             </span>
-            <span id="list" class="deepening" data-isVisible="false">
+        </span>
+        <span id="list" class="deepening" data-isVisible="false">
+            <div class="ttl"><h1 id="ttl">심화</h1><img id="tool_btn" src="img/tool.png"></div>
+            <span class="sideList" id="deepening">
                 <dd id="d5-1" class="sdb">이벤트 리스너</dd><br>
                 <dd id="d5-2" class="sdb">외부 패키지/클래스</dd><br>
                 <dd id="d5-3" class="sdb">액티비티</dd><br>
                 <dd id="d5-4" class="sdb">ADB/Broadcast</dd><br>
                 <dd id="d5-5" class="sdb">소켓 통신</dd>
             </span>
-            <span id="list" class="appendix" data-isVisible="false">
+        </span>
+        <span id="list" class="appendix" data-isVisible="false">
+            <div class="ttl"><h1 id="ttl">부록</h1><img id="tool_btn" src="img/tool.png"></div>
+            <span class="sideList" id="deepening">
                 <dd id="d99-1" class="sdb">참고자료</dd><br>
                 <dd id="d99-2" class="sdb">도움주신 분들</dd><br>
                 <dd id="d99-3" class="sdb">문의하기</dd>
             </span>
-        </dl>
-        
+        </span>
     </aside>
     <article>
         <section class="docs_con" id="summary">
@@ -4094,18 +4111,6 @@
             <form autocomplete="off">
                 <input id="search_txt" type="text" placeholder="검색할 내용을 입력하세요!">
                 <button id="search_btn" type="button"><img src="img/search.png"></button>
-<<<<<<< HEAD
-                <div id="auto">
-                    <table>
-                        <tr class="mid"><td>로렘 입숨</td></tr>
-                        <tr class="mid"><td>로렘 입숨</td></tr>
-                        <tr class="mid"><td>로렘 입숨</td></tr>
-                        <tr class="mid"><td>로렘 입숨</td></tr>
-                        <tr class="last"><td>로렘 입숨</td></tr>
-                    </table>
-                </div>
-=======
->>>>>>> bc94d637f7a3bd3955efcdd7aa7ae3cc410f586a
             </form>
             <div class="tool_sec" id="theme">
                 <p class="stitle">테마</p>

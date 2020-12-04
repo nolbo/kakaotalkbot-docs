@@ -7,8 +7,7 @@ $(function () {
     $("#toast_con").css("left", `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
     $('span#list').dequeue();
 
-<<<<<<< HEAD
-    $('aside, aside *, span#list').hover(function (event) {
+    $('aside, aside *').hover(function (event) {
         if (Math.floor(Number($(SPAN_LIST).css('left').replace('px', ''))) <= '30' && $(SPAN_LIST).css('opacity') == '0' && $(SPAN_LIST).css('display') == 'none') {
             $('span#list').dequeue();
             $('body').css('overflow', 'hidden');
@@ -23,28 +22,6 @@ $(function () {
             setTimeout(function () {
                 $(SPAN_LIST).animate({ 'opacity': '1' }, 300);
             }, 570);
-=======
-    $('aside, aside *, span#list').not('#docs').hover(function (event) {
-        if (isTool == false) {
-            if (Math.floor(Number($(SPAN_LIST).css('left').replace('px', ''))) <= '30' && $(SPAN_LIST).css('opacity') == '0' && $(SPAN_LIST).css('display') == 'none') {
-                $('span#list').dequeue();
-                $('body').css('overflow', 'hidden');
-                $('body').css('touch-action', 'none');
-                $(SPAN_LIST).css({ 'left': '0', 'opacity': '0', 'display': 'none' });
-                $(SPAN_LIST).css({ 'display': 'block', 'visibility': 'visible' });
-                if (window.innerWidth > 800) {
-                    $('span#list').animate({ 'left': '10rem' }, 300);
-                } else {
-                    $('span#list').animate({ 'left': '5rem' }, 300);
-                }
-                setTimeout(function () {
-                    $(SPAN_LIST).animate({ 'opacity': '1' }, 300);
-                }, 570);
-            }
-        } else {
-            $('aside').css('width', $('aside').width());
-            event.preventDefault();
->>>>>>> bc94d637f7a3bd3955efcdd7aa7ae3cc410f586a
         }
     });
 
@@ -66,17 +43,11 @@ $(function () {
     });
 
     $('#tool_btn').click(function(){
-        toolbar();
-        
+        toolbar();  
     });
-
-<<<<<<< HEAD
-    $('span#list h1').offset({
-        top : $('#docs').offset().top
-=======
+    
     $("#docs").click(function () {
         location.reload();
->>>>>>> bc94d637f7a3bd3955efcdd7aa7ae3cc410f586a
     });
 
     $("dl span dd, li.sA").click(function (event) {
@@ -94,9 +65,7 @@ $(function () {
     });
 
     $("#docs").click(function() {
-        if($(window).width() > 800) {
-            location.reload();
-        }
+        location.href = 'index.html';
     });
 
     $("li.a").click(function () {

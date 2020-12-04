@@ -43,6 +43,20 @@
         cursor: pointer;
     }
 
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', 'Noto Sans KR';
+        font-size: 1rem;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+
+    /*====================SideBar====================*/
+
     aside:hover {
         width: 35rem;
         transition-delay: 0s;
@@ -54,22 +68,6 @@
 
     aside dt:hover {
         background-color: #515151;
-    }
-
-    div#auto td:hover {
-        background: #dddddd;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: 'Noto Sans', 'Noto Sans KR';
-        font-size: 1rem;
-    }
-
-    html, body {
-        width: 100%;
-        height: 100%;
     }
 
     aside {
@@ -87,9 +85,28 @@
         transition-duration: 0.55s;
     }
 
+    div#docs_space {
+        position: relative;
+        left: 0;
+        width: 100%;
+        transition-duration: 0s;
+    }
+
+    img#docs {
+        width: 3rem;
+        height: 3rem;
+        display: inline;
+    }
+
+    img.side_icon {
+        width: 2.2rem;
+        height: auto;
+        filter: invert(50%);
+    }
+
     aside dl {
         position: relative;
-        top: 15%;
+        top: 10%;
         width: 100%;
         transition-duration: 0s;
     }
@@ -106,9 +123,15 @@
         transition-duration: 0.4s;
     }
 
+    img#this {
+        filter: invert(0%);
+    }
+
     aside span#list {
+        margin: 0;
+        padding: 3rem 0rem;
         display: none;
-        width: 22rem;
+        width: 24rem;
         height: 100%;
         opacity: 0;
         text-align: left;
@@ -118,9 +141,21 @@
     }
 
     span#list h1 {
-        font-size: 3rem !important;
+        font-size: 1.7rem;
         font-weight: bold;
         display: inline;
+        line-height: initial;
+        margin: 0;
+    }
+
+    img#tool_btn {
+        width: 1.7rem;
+        height: 1.7rem;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        display: inline;
+        margin: 0.2rem 0;
     }
 
     span#list dd {
@@ -130,43 +165,13 @@
         margin-bottom: 1.5rem;
     }
 
-    div#docs_space {
+    span.sideList {
         position: relative;
-        left: 0;
-        width: 100%;
-        transition-duration: 0s;
+        top: 10%;
+        display: block;
     }
 
-    span#txt {
-        width: 22rem;
-        position: absolute;
-        top: 0rem;
-        left: 0rem;
-    }
-
-    img#docs {
-        width: 3rem;
-        height: 3rem;
-        display: inline;
-    }
-
-    img.side_icon {
-        width: 2.2rem;
-        height: auto;
-        filter: invert(50%);
-    }
-
-    img#tool_btn {
-        width: 2rem;
-        height: 2rem;
-        position: absolute;
-        right: 0;
-        cursor: pointer;
-    }
-
-    img#this {
-        filter: invert(0%);
-    }
+    /*====================Content====================*/
 
     article {
         padding: 5rem 4rem;
@@ -226,6 +231,10 @@
     li.dscrpt {
         line-height: 2rem;
         white-space: pre-line;
+    }
+
+    i {
+        font-family: 'JetBrains Mono I';
     }
 
     div#sA {
@@ -319,6 +328,8 @@
         filter: invert(100%);
     }
 
+    /*====================Appendix====================*/
+
     img.thank {
         filter: invert(100%);
         width: 5rem;
@@ -334,41 +345,23 @@
         margin-right: 3rem;
     }
 
-    section#guide {
-        margin-top: 8rem;
-        margin-bottom: 4rem;
-    }
-
-    span#front {
-        line-height: 5rem;
-    }
-
-    img.arrow {
-        filter: invert(100%);
-        width: 3rem;
-        height: 3rem;
-    }
-
-    p.txt {
-        margin: 0 2rem;
-        font-size: 2rem;
-    }
-
-    i {
-        font-family: 'JetBrains Mono I';
-    }
-
     div#imgBox {
         overflow: auto;
         padding-bottom: 2rem;
     }
+
+    div#auto td:hover {
+        background: #dddddd;
+    }
+
+    /*====================ToolBar====================*/
 
     section#tool {
         position: fixed;
         top: 0;
         right: 0;
         padding: 5rem 4rem;
-        width: calc(100% - 18rem);
+        width: calc(100% - (7% + 10rem));
         height: 100%;
         overflow: visible;
         padding-top: 9rem;
@@ -410,6 +403,7 @@
     div#auto {
         width: 35rem;
         text-align: left;
+        position: absolute;
     }
 
     div#auto table {
@@ -433,12 +427,6 @@
         border-radius: 0rem 0rem 1.5rem 1.5rem;
     }
 
-<<<<<<< HEAD
-    div.tool_sec {
-        text-align: left;
-        margin-top: 4rem;
-    }
-=======
     .autocomplete-items {
         position: absolute;
         border: 1px solid #d4d4d4;
@@ -453,22 +441,26 @@
         overflow: auto;
       }
       
-      .autocomplete-items div {
+    .autocomplete-items div {
         padding: 10px;
         cursor: pointer;
         background-color: #fff; 
         border-bottom: 1px solid #d4d4d4; 
-      }
+    }
       
-      /*when hovering an item:*/
-      .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    .autocomplete-items div:hover {
         background-color: #e9e9e9; 
-      }
+    }
       
-      /*when navigating through the items using the arrow keys:*/
-      .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    .autocomplete-active {
         background-color: DodgerBlue !important; 
         color: #ffffff; 
-      }
->>>>>>> bc94d637f7a3bd3955efcdd7aa7ae3cc410f586a
+    }
+
+    div.tool_sec {
+        text-align: left;
+        margin-top: 4rem;
+    }
 }

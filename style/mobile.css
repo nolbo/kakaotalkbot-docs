@@ -82,7 +82,7 @@
     
     aside dl {
         position: relative;
-        top: 5rem;
+        top: 7%;
         width: 4rem;
     }
     
@@ -99,6 +99,8 @@
     }
     
     aside span#list {
+        margin: 0;
+        padding: 2rem 0rem;
         display: none;
         width: 11.5rem;
         height: 100%;
@@ -108,12 +110,29 @@
         top: 0rem;
         left: 0rem;
     }
+
+    div.ttl {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+    }
     
     span#list h1 {
         font-size: 1.3rem;
         font-weight: bold;
+        display: inline;
+        line-height: initial;
+        margin: 0;
+    }
+
+    img#tool_btn {
+        width: 1.3rem;
+        height: 1.3rem;
         position: absolute;
-        top: -7.6rem;
+        right: 0;
+        cursor: pointer;
+        display: inline;
+        margin: 0.2rem 0;
     }
     
     span#list dd {
@@ -121,6 +140,12 @@
         display: inline-block;
         font-weight: 500;
         margin-bottom: 1.2rem;
+    }
+
+    span.sideList {
+        position: relative;
+        top: 7%;
+        display: block;
     }
     
     div#docs_space, div#docs_fun {
@@ -181,14 +206,6 @@
         width: 1.5rem;
         height: auto;
         filter: invert(50%);
-    }
-
-    img#tool_btn {
-        width: 1.5rem;
-        height: 1.5rem;
-        position: absolute;
-        top: -7.4rem;
-        right: 0;
     }
     
     img#this {
@@ -410,6 +427,12 @@
     div#auto {
         width: 90%;
         text-align: left;
+        position: absolute;
+    }
+
+    div.tool_sec {
+        text-align: left;
+        margin-top: 2rem;
     }
 
     div#auto table {

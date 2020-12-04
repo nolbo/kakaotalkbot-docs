@@ -18,7 +18,7 @@
 .hljs-built_in{ color:#9670ff; }
 .hljs-meta{ color:#1f7199; }
 .hljs-meta-string{ color:#4d99bf; }
-.hljs-emphasis{ font-family: 'JetBrains Mono I'; }
+.hljs-emphasis{ font-family: 'JetBrains Mono I'; font-size: 0.9rem !important; }
 
 @media screen and (max-width:800px){
     .hljs * {
