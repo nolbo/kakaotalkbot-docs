@@ -26,7 +26,7 @@ $(function () {
                 auth.auth().signInWithEmailAndPassword(email, password)
                     .then((user) => {
                         if (user.emailVerified) {
-                            location.href = "https://kkotbot-docs.kro.kr";
+                            location.href = location.origin;
                         } else {
                             auth.auth().signOut().then(function () {
                                 alert('발송된 링크로 이메일 주소를 인증해주세요.')

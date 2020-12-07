@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     function signup() {
         con = (arr, str) => {
             var a = false;
@@ -100,8 +100,11 @@ $(function() {
                             'email': email,
                             'profile': $('img#profile').attr('src')
                         }).then(function () {
-                            auth.auth().signOut().then(function () {
-                                location.href = 'https://kkotbot-docs.kro.kr/login';
+                            auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').set({
+                            }).then(function () {
+                                auth.auth().signOut().then(function () {
+                                    location.href = 'https://kkotbot-docs.kro.kr/login';
+                                })
                             })
                         });
                     });

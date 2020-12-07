@@ -1,4 +1,4 @@
-var auth;
+var auth, save;
 $(function () {
     $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js', function () {
         $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js', function () {
@@ -33,7 +33,36 @@ $(function () {
                     auth = firebase.initializeApp(authConfig, "other");
                     auth.auth().onAuthStateChanged(function (user) {
                         if (user) {
-                            if (["/signup", "/signin", "/signup.html", "/signin.html"].indexOf(location.href.substring(location.origin.length)) != -1) location.href = "https://kkotbot-docs.kro.kr";
+                            if (["/signup", "/signin", "/signup.html", "/signin.html"].indexOf(location.href.substring(location.origin.length)) != -1) {
+                                location.href = "https://kkotbot-docs.kro.kr";
+                            } else {
+                                var db = firebase.firestore();
+                                db.collection("project").doc("views").update({
+                                    total: firebase.firestore.FieldValue.increment(1)
+                                });
+                                auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').get().then(function (doc) {
+                                    if (doc.exists) {
+                                        a = doc.data();
+                                        if (!!a.settings) {
+                                            // 세팅 업뎃
+                                        }
+                                    }
+                                })
+                                // 로그인바 업뎃
+                                save = function (set) {
+                                    auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
+                                        'settings': set
+                                    })
+                                }
+                                /*
+                                auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
+                                    'bookmark': firebase.firestore.FieldValue.arrayUnion({
+                                        'location': location.href.substring(location.origin.length),
+                                        'pos': window.scrollY,
+                                        'ts': (new Date).toString()
+                                    })
+                                })*/
+                            }
                         }
                     });
                 });
