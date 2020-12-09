@@ -46,6 +46,9 @@ $(function () {
                                         if (!!a.settings) {
                                             // 세팅 업뎃
                                         }
+                                        if (!!a.bookmark) {
+                                            // 북마크 업뎃
+                                        }
                                     }
                                 })
                                 // 로그인바 업뎃
