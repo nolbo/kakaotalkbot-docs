@@ -370,6 +370,19 @@
         display: none;
     }
 
+    div#login {
+        display: block;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 2rem;
+    }
+
+    img#login {
+        width: 4rem;
+        height: auto;
+        border-radius: 4rem;
+    }
+
     section#tool form {
         width: 38rem;
         margin: 0 auto;

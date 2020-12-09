@@ -456,4 +456,17 @@
     tr.last td {
         border-radius: 0rem 0rem 1.2rem 1.2rem;
     }
+
+    div#login {
+        display: block;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 1.5rem;
+    }
+
+    img#login {
+        width: 2.8rem;
+        height: auto;
+        border-radius: 4rem;
+    }
 }

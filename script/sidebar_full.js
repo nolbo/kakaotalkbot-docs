@@ -1,4 +1,4 @@
-const LIST_ARRAY = ['summary', 'legacyAPI', 'API2', 'rhino', 'deepening', 'appendix'];
+const LIST_ARRAY = ['summary', 'legacyAPI', 'API2', 'rhino', 'deepening', 'appendix', 'bookmark'];
 
 $(function(){
     function sideBar(){
