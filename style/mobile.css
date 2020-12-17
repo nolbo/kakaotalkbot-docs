@@ -381,7 +381,7 @@
     }
 
     section#tool {
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         padding: 2.5rem 2rem;
@@ -389,6 +389,7 @@
         height: 100%;
         overflow: visible;
         padding-top: 4.5rem;
+        padding-bottom: 10rem;
         text-align: center;
         background: white;
         display: none;
@@ -468,5 +469,83 @@
         width: 2.8rem;
         height: auto;
         border-radius: 4rem;
+    }
+
+    div.tool_con {
+        margin-top: 1.5rem;
+    }
+
+    img.themeimg {
+        width: 6.5rem;
+        height: auto;
+        display: inline;
+        margin-right: 3rem;
+        margin-bottom: 3rem;
+
+        transition-property: filter;
+        transition-duration: 0.35s;
+    }
+
+    img.themeimg:last-child {
+        margin-bottom: 0rem;
+    }
+
+    img.themeimg:hover {
+        filter: drop-shadow(0rem 0rem 0.8rem #a8a8a8);
+        cursor: pointer;
+    }
+
+    img[data-checked = "true"] {
+        filter: drop-shadow(0rem 0rem 0.5rem #00ffc8);
+    }
+
+    input[type = range] {
+        -webkit-appearance: none; 
+        overflow: hidden;
+        width: 15rem; 
+        height: 0.8rem;
+        background: transparent; 
+        cursor: pointer;
+        background: #dddddd;
+        border-radius: 4rem; /* iOS */
+    }
+    
+    input[type=range]:focus {
+        outline: none;
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 1px;
+        height: 1px;
+        background: linear-gradient(to right, #ff00aa, white);
+        box-shadow: -100vw 0 0 100vw #ff00aa;
+        border: 0.1px solid #ff00aa;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+
+    select.tool_sel {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        font-size: 0.8rem;
+        width: 10rem;
+        height: 2.5rem;
+        border: none;
+        border-radius: 0.8rem;
+        box-shadow: 0rem 0rem 0.8rem #dddddd;
+        padding: 0 1rem;
+        background: url('../img/select_font.png') no-repeat 8rem 50%;
+        background-size: 0.9rem 0.9rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+
+    p.rangeTxt {
+        font-size: 0.9rem;
+        margin-left: 0.8rem;
     }
 }

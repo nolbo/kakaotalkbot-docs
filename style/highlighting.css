@@ -7,6 +7,7 @@
 .hljs,.hljs-subst{ color:#414141; }
 .hljs-comment{ color:#888; font-family: 'JetBrains Mono I', 'D2Coding'; }
 /* .hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta-keyword,.hljs-name,.hljs-selector-tag{ font-weight:600; } */
+.hljs-params{ color: #414141 !important; }
 .hljs-keyword{ color: #ff00aa; font-family: 'JetBrains Mono I'; }
 .hljs-deletion,.hljs-quote,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{ color:#ffc400; }
 .hljs-number{ color: #c300ff; }

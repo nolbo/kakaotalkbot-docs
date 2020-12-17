@@ -4122,15 +4122,80 @@
             </form>
             <div class="tool_sec" id="theme">
                 <p class="stitle">테마</p>
-                <p class="dscrpt">문서의 테마를 설정합니다.</p>
+                <p class="dscrpt">문서의 테마를 설정합니다.</p><br>
+                <div class="tool_con">
+                    <img class="themeimg" id="white" src="img/white.png" data-checked="false">
+                    <img class="themeimg" id="dark" src="img/dark.png" data-checked="false">
+                    <img class="themeimg" id="system" src="img/system_set.png" data-checked="true">
+                </div>
             </div>
-            <div class="tool_sec" id="font_docs">
-                <p class="stitle">텍스트 글꼴</p>
-                <p class="dscrpt">문서 내의 텍스트 글꼴을 설정합니다.</p>
+            <div class="tool_sec" id="font_size">
+                <p class="stitle">텍스트 크기</p>
+                <p class="dscrpt">문서 내 텍스트 크기를 설정합니다.</p>
+                <div class="tool_con">
+                    <input id="font_size" type="range" min="75" max="180" oninput="$('p.rangeTxt').text($('input#font_size').val() + '%')"><p class="rangeTxt"></p>
+                </div>
             </div>
-            <div class="tool_sec" id="font_code">
-                <p class="stitle">코드 글꼴</p>
-                <p class="dscrpt">문서 내의 코드블럭과 코드박스 글꼴을 설정합니다.</p>
+            <div class="tool_sec" id="font">
+                <p class="stitle">글꼴</p>
+                <p class="dscrpt">문서 내 텍스트의 글꼴을 설정합니다.</p>
+                <div class="tool_con">
+                    <p class="dscrpt">일반 텍스트
+                        <select class="tool_sel">
+                            <option>Noto Sans</option>
+                            <option>나눔고딕</option>
+                            <option>나눔바른고딕</option>
+                            <option>나눔스퀘어</option>
+                            <option>나눔스퀘어라운드</option>
+                            <option>나눔바른펜</option>
+                            <option>나눔명조</option>
+                            <option>마루부리</option>
+                        </select>
+                    </p><br>
+                    <p class="dscrpt">코드
+                        <select class="tool_sel">
+                            <option>JetBrains Mono</option>
+                            <option>D2 Coding</option>
+                            <option>Consolas</option>
+                            <option>IBM Plex Mono</option>
+                            <option>Hack</option>
+                            <option>Ubuntu Mono</option>
+                            <option>Monaco</option>
+                        </select>
+                    </p>
+                    <div id="preview">
+                        <p class="title">미리보기</p>
+                        <div id="sA">
+                            <li class="sA">치킨</li>
+                        </div>
+                        <div class="content">
+                            <p class="stitle">치킨</p>
+                            <p class="dscrpt">카카오톡 봇 문서 개발자 중 한 명의 뇌피셜에 따르면, 적어도 후라이드는 b*c가 최고입니다. 이를 </p><p class="code">JavaScript</p><p class="dscrpt">로 증명해보이죠.</p>
+                            <div class="code">
+                                <pre><code class="javascript">var num = 12.5;<br><br>if (msg.toLowerCase() === 'chicken') {<br>    replier.reply('조용히 하고, 치킨이다'.replace(/치킨/g, 'b*c')); // 물론 장난입니다 ^^7<br>}</code></pre>
+                            </div>
+                            <div class="table">
+                                <table>
+                                    <th>로렘</th>
+                                    <th>입숨</th>
+                                    <tr>
+                                        <td><p class="code">nolbo</p>는</td>
+                                        <td>표까지 넣기 귀찮아서 안했는데</td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="code">franknoh</p>가</td>
+                                        <td>넣으래요 흑흑</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="no">너무</td>
+                                        <td id="no">하다!! (?)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p class="dscrpt">그냥 백미나 먹읍시다!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </article>

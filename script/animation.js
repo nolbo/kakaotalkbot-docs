@@ -2,9 +2,11 @@ let mouse = null;
 let isTool = false;
 let isRunning = false;
 const SPAN_LIST = 'span[data-isVisible = "true"]';
+let scroll;
 
 $(function () {
     $("#toast_con").css("left", `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
+    $('p.rangeTxt').text($('input#font_size').val() + '%');
     $('span#list').dequeue();
 
     $('aside, aside *').hover(function (event) {
@@ -85,21 +87,24 @@ $(function () {
         $('section#tool').dequeue();
         if (isTool == false) {
             $('span#list, input').dequeue();
+            scroll = $(document).scrollTop();
+            $(document).scrollTop(0);
             $('section#tool').css({ 'display': 'block', 'visibilty': 'visible', 'opacity': '0' });
             $('section#tool').animate({ 'opacity': '1' }, 300);
+            setTimeout(function () {
+                $('section.docs_con').css({ 'display': 'none' });
+            }, 300);
             isTool = true;
-            $('body').css('overflow', 'hidden');
-            $('body').css('touch-action', 'none');
         } else {
             $('section#tool').css({ 'visibilty': 'visible', 'opacity': '1' });
             $('section#tool').animate({ 'opacity': '0' }, 300);
             setTimeout(function () {
+                $('section.docs_con').css({ 'display': 'block' });
+                $(document).scrollTop(scroll);
                 $('section#tool').css({ 'display': 'none' });
             }, 300);
             isTool = false;
             $('aside').removeAttr('style');
-            $('body').css('overflow', 'auto');
-            $('body').css('touch-action', 'auto');
         }
     }
 });

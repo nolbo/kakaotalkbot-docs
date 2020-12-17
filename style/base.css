@@ -11,9 +11,9 @@
         height: 0rem; 
     }
 
-    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar{       width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; }
-    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: black;  }
-    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar-track{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; }
+    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar {       width: 0.3em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #50505033; }
+    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar-thumb { width: 0.3em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #000000; }
+    div.table::-webkit-scrollbar, div.code::-webkit-scrollbar, div#imgBox::-webkit-scrollbar-track { width: 0.3em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #50505033; }
     div.crf::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #ff00aa;  }
     div.pls::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #00ffc8;  }
 
@@ -93,27 +93,27 @@
     }
 
     img#docs {
-        width: 3rem;
-        height: 3rem;
+        width: calc(1.5rem + 20%);
+        height: calc(1.5rem + 20%);
         display: inline;
     }
 
     img.side_icon {
-        width: 2.2rem;
+        width: calc(1.1rem + 12%);
         height: auto;
         filter: invert(50%);
     }
 
     aside dl {
         position: relative;
-        top: 10%;
+        top: 7%;
         width: 100%;
         transition-duration: 0s;
     }
 
     aside dt {
         height: 2.2rem;
-        margin-bottom: 2.2rem;
+        margin-bottom: calc(1.1rem + 7%);
         padding: 0.5rem 0;
         border-radius: 0.5rem;
         position: relative;
@@ -167,11 +167,16 @@
 
     span.sideList {
         position: relative;
-        top: 10%;
+        top: calc(1.1rem + 7%);
         display: block;
     }
 
     /*====================Content====================*/
+
+    p.title:hover, p.stitle:hover {
+        cursor: pointer;
+        color: #00ffc8;
+    }
 
     article {
         padding: 5rem 4rem;
@@ -195,6 +200,9 @@
         font-size: 1.9rem;
         font-weight: 550;
         margin-bottom: 2.3rem;
+
+        transition-property: color;
+        transition-duration: 0.3s;
     }
 
     p.stitle {
@@ -202,6 +210,9 @@
         font-size: 1.4rem;
         font-weight: 550;
         margin-bottom: 2.3rem;
+
+        transition-property: color;
+        transition-duration: 0.3s;
     }
 
     p.dscrpt, p.code {
@@ -357,10 +368,11 @@
     /*====================ToolBar====================*/
 
     section#tool {
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         padding: 5rem 4rem;
+        padding-bottom: 100rem;
         width: calc(100% - (7% + 10rem));
         height: 100%;
         overflow: visible;
@@ -369,7 +381,27 @@
         background: white;
         display: none;
     }
+/*
+@nolbo
+ㅖ
+폰트 크기는 슬라이더로 바꿔났어요
+봤어요 그게 낫겠더라구요
 
+폰트 크기는요?
+범위좀.
+퍼센트로 계산하는건 어때요?
+최소 75% 최대 180%
+타이틀이랑 설명글마다 폰트가 달라서
+일일이 정하기가 힘든
+예를들면 글크기를 90%로 하면
+모든 글자크기를 90%만큼으로
+슬라이더 하나로
+@franknoh
+
+하나로 통일 해요
+그리고 폰트 fam은 코드하고 본문 두개만
+만
+*/
     div#login {
         display: block;
         width: 100%;
@@ -465,6 +497,11 @@
     .autocomplete-items div:hover {
         background-color: #e9e9e9; 
     }
+
+    img.themeimg:hover {
+        filter: drop-shadow(0rem 0rem 1rem #a8a8a8);
+        cursor: pointer;
+    }
       
     /*when navigating through the items using the arrow keys:*/
     .autocomplete-active {
@@ -475,5 +512,93 @@
     div.tool_sec {
         text-align: left;
         margin-top: 4rem;
+    }
+
+    div.tool_con {
+        margin-top: 3rem;
+    }
+
+    img.themeimg {
+        width: 10rem;
+        height: auto;
+        display: inline;
+        margin-right: 5rem;
+
+        transition-property: filter;
+        transition-duration: 0.35s;
+    }
+
+    img[data-checked = "true"] {
+        filter: drop-shadow(0rem 0rem 0.5rem #00ffc8);
+    }
+
+    input[type=range] {
+        -webkit-appearance: none; 
+        overflow: hidden;
+        width: 20rem; 
+        height: 0.5rem;
+        background: transparent; 
+        cursor: pointer;
+        background: #dddddd;
+        border-radius: 4rem; /* iOS */
+
+        transition-property: height;
+        transition-duration: 0.3s;
+    }
+    
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type=range]:hover {
+        height: 1.5rem;
+    }
+
+    input[type=range]:hover + p.rangeTxt {
+        font-size: 1.5rem;
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 1px;
+        height: 1px;
+        background: linear-gradient(to right, #ff00aa, white);
+        box-shadow: -100vw 0 0 100vw #ff00aa;
+        border: 0.1px solid #ff00aa;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+
+    select.tool_sel {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        width: 15rem;
+        height: 3rem;
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0rem 0rem 0.8rem #dddddd;
+        padding: 0 1.5rem;
+        background: url('../img/select_font.png') no-repeat 12.5rem 50%;
+        background-size: 0.9rem 0.9rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+
+    div#preview {
+        margin: 5rem 0rem;
+        padding: 3rem;
+        border-radius: 3rem;
+        box-shadow: 0rem 0rem 0.8rem #dddddd;
+    }
+
+    p.rangeTxt {
+        font-size: 1rem;
+        margin-left: 1rem;
+
+        transition-property: font-size;
+        transition-duration: 0.3s;
     }
 }
