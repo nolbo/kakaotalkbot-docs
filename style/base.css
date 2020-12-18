@@ -372,7 +372,7 @@
         top: 0;
         right: 0;
         padding: 5rem 4rem;
-        padding-bottom: 100rem;
+        padding-bottom: 100%;
         width: calc(100% - (7% + 10rem));
         height: 100%;
         overflow: visible;
@@ -381,27 +381,7 @@
         background: white;
         display: none;
     }
-/*
-@nolbo
-ㅖ
-폰트 크기는 슬라이더로 바꿔났어요
-봤어요 그게 낫겠더라구요
 
-폰트 크기는요?
-범위좀.
-퍼센트로 계산하는건 어때요?
-최소 75% 최대 180%
-타이틀이랑 설명글마다 폰트가 달라서
-일일이 정하기가 힘든
-예를들면 글크기를 90%로 하면
-모든 글자크기를 90%만큼으로
-슬라이더 하나로
-@franknoh
-
-하나로 통일 해요
-그리고 폰트 fam은 코드하고 본문 두개만
-만
-*/
     div#login {
         display: block;
         width: 100%;
@@ -477,7 +457,7 @@
         border: 1px solid #d4d4d4;
         border-bottom: none;
         border-top: none;
-        z-index: 99;
+        z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
         /*position the autocomplete items to be the same width as the container:*/
         top: 100%;
         left: 0;
@@ -505,8 +485,7 @@
       
     /*when navigating through the items using the arrow keys:*/
     .autocomplete-active {
-        background-color: DodgerBlue !important; 
-        color: #ffffff; 
+        background-color: #00ffff !important; 
     }
 
     div.tool_sec {
