@@ -4,8 +4,17 @@ let isRunning = false;
 const SPAN_LIST = 'span[data-isVisible = "true"]';
 let scroll;
 
+function theme(s) {
+    if (!!s) {
+        //data-checked
+    } else {
+        //set settings as 's'
+    }
+}
+
 $(function () {
-    $("#toast_con").css("left", `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
+    $('#toast_con').css('left', `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
+    $('input#font_size').val(100);
     $('p.rangeTxt').text($('input#font_size').val() + '%');
     $('span#list').dequeue();
 
@@ -44,16 +53,16 @@ $(function () {
         }, 600);
     });
 
-    $('#tool_btn').click(function(){
-        toolbar();  
+    $('#tool_btn').click(function () {
+        toolbar();
     });
-    
+
     $("#docs").click(function () {
         location.reload();
     });
 
     $("dl span dd, li.sA").click(function (event) {
-        if(isTool == false){
+        if (isTool == false) {
             $(SPAN_LIST + ', form').dequeue();
             var offset = $("div#" + event.target.id.replace("d", "")).offset();
             $('article').animate({ opacity: "0" }, 700);
@@ -61,12 +70,12 @@ $(function () {
                 $("html").scrollTop(offset.top - '115');
                 $('article').animate({ opacity: "1" }, 700);
             }, 700);
-        }else{
+        } else {
             return false;
         }
     });
 
-    $("#docs").click(function() {
+    $("#docs").click(function () {
         location.href = 'index.html';
     });
 

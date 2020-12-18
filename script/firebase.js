@@ -1,4 +1,4 @@
-var auth, save;
+var auth, save, uSet;
 $(function () {
     $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js', function () {
         $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js', function () {
@@ -32,6 +32,13 @@ $(function () {
                     };
                     auth = firebase.initializeApp(authConfig, "other");
                     auth.auth().onAuthStateChanged(function (user) {
+                        uSet = function (s) {
+                            $('input#font_size').val(s['font_size']);
+                            document.body.style.fontSize = s['font_size'] + '% !important';
+                            $('#font_norm').val(s['font_norm']);
+                            $('#font_code').val(s['font_code'])
+                            theme(s['theme']);
+                        }
                         if (user) {
                             if (["/signup", "/signin", "/signup.html", "/signin.html"].indexOf(location.href.substring(location.origin.length)) != -1) {
                                 location.href = "https://kkotbot-docs.kro.kr";
@@ -44,7 +51,7 @@ $(function () {
                                     if (doc.exists) {
                                         a = doc.data();
                                         if (!!a.settings) {
-                                            // 세팅 업뎃
+                                            uSet(a.settings);
                                         }
                                         if (!!a.bookmark) {
                                             // 북마크 업뎃
@@ -52,10 +59,14 @@ $(function () {
                                     }
                                 })
                                 // 로그인바 업뎃
+                                var lastSave = Date.now();
                                 save = function (set) {
-                                    auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
-                                        'settings': set
-                                    })
+                                    if (Date.now() > (lastSave + 3000)) {
+                                        auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
+                                            'settings': set
+                                        });
+                                    }
+                                    uSet(set);
                                 }
                                 /*
                                 auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
@@ -65,6 +76,11 @@ $(function () {
                                         'ts': (new Date).toString()
                                     })
                                 })*/
+                            }
+                        } else {
+                            save = function (e) {
+                                uSet(e);
+                                return true;
                             }
                         }
                     });

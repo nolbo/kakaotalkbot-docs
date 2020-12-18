@@ -23,14 +23,14 @@
 
 @media screen and (max-width:800px){
     .hljs * {
-        font-size: 0.8rem;
+        font-size: 0.8rem !important;
     }
 }
 
 
 @media(prefers-color-scheme: dark){
     .hljs{ display: block; background:transparent; font-family: 'JetBrains Mono', 'D2Coding'; color:white; text-shadow: 0em 0em 0.5em white; }
-    .hljs * { font-size: 1rem; font-family: 'JetBrains Mono', 'D2Coding'; color:white; text-shadow: 0em 0em 0.5em white; }
+    .hljs * { font-family: 'JetBrains Mono', 'D2Coding'; color:white; text-shadow: 0em 0em 0.5em white; }
     .hljs,.hljs-subst{ color:white; text-shadow: 0em 0em 0.5em white; }
     .hljs-comment{ color:#888; text-shadow: 0em 0em 0.5em #888888bd; font-family: 'JetBrains Mono I', 'D2Coding'; }
     /* .hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta-keyword,.hljs-name,.hljs-selector-tag{ font-weight:600; } */
