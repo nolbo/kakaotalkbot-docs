@@ -7,31 +7,24 @@ limit = 5;
 var search = [
   {
     'keys': ['2', 'asdf'],
-    'location': '000'
-  },
-  {
-    'keys': ['1300', 'asser'],
-    'location': '0001'
-  },
-  {
-    'keys': ['3001', 'asder'],
-    'location': '00101'
-  },
-  {
-    'keys': ['3100', 'asedr'],
-    'location': '01001'
-  },
-  {
-    'keys': ['3010', 'asefr'],
-    'location': '10001'
-  },
-  {
-    'keys': ['300v', 'asvr'],
-    'location': '000v1'
+    'location': '1-1'
   }
 ];
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+location.get = function () {
+  if (location.search < 3) {
+    return {};
+  } else {
+    var s = {}
+    t = location.search.substr(1).split('&');
+    t.forEach((e) => {
+      s[decodeURIComponent(e.split('=')[0])] = decodeURIComponent(e.split('=')[1]);
+    });
+    return s;
+  }
+}
 
 Array.prototype.in = function (arg) {
   var t = false;
@@ -44,6 +37,20 @@ Array.prototype.in = function (arg) {
 };
 var search_res;
 var x;
+
+function searchExec(r) {
+  o = r;
+  if (o.indexOf(' ') != -1) o = get_key(r);
+  search.forEach((e) => {
+    if (e.keys.in(o)) {
+      $([document.documentElement, document.body]).animate({
+        scrollTop: $("#" + e.location).offset().top
+      }, 500);
+      return true;
+    }
+  });
+  setToast("'" + r + "' 이라는 검색결과가 없습니다.");
+}
 
 function get_key(txt) {
   var result = null;
@@ -62,6 +69,25 @@ function get_key(txt) {
 }
 
 $(() => {
+  if (!!location.get().search && location.get().search != '') {
+    if (['/full', '/full.html'].includes(location.pathname)) {
+      searchExec(location.get().search);
+    } else {
+      $.cookie('docs_search', location.get().search, { expires: 1 });
+      location.href = 'full';
+    }
+  }
+  if (!!$.cookie('docs_search')) {
+    searchExec($.cookie('docs_search'));
+    $.removeCookie('docs_search');
+  }
+  $('#search_txt').keydown(function (event) {
+    // enter has keyCode = 13, change it if you want to use another button
+    if (event.keyCode == 13) {
+      this.form.submit();
+      return false;
+    }
+  });
   var inp = document.getElementById("search_txt")
   //the autocomplete function takes two arguments,
   //the text field element and an array of possible autocompleted values:

@@ -35,7 +35,7 @@
         padding-left: 0.3em !important; 
     }
 
-    li.sA, li.a, aside dt, img#docs, dd, div.code:hover {
+    li.sA:hover, li.a:hover, aside dt:hover, img#docs:hover, dd:hover, div.code:hover {
         cursor: pointer;
     }
 
@@ -171,7 +171,6 @@
 
     p.title:hover, p.stitle:hover {
         cursor: pointer;
-        color: #00ffc8;
     }
 
     article {
@@ -357,11 +356,24 @@
         padding-bottom: 2rem;
     }
 
+    /*====================ToolBar====================*/
+
     div#auto td:hover {
         background: #dddddd;
     }
 
-    /*====================ToolBar====================*/
+    .autocomplete-items div:hover {
+        background-color: #e9e9e9; 
+    }
+
+    img.themeimg:hover {
+        filter: drop-shadow(0rem 0rem 1rem #a8a8a8);
+        cursor: pointer;
+    }
+
+    input[type=range]:hover {
+        height: 1.5rem;
+    }
 
     section#tool {
         position: absolute;
@@ -377,27 +389,7 @@
         background: white;
         display: none;
     }
-/*
-@nolbo
-ㅖ
-폰트 크기는 슬라이더로 바꿔났어요
-봤어요 그게 낫겠더라구요
 
-폰트 크기는요?
-범위좀.
-퍼센트로 계산하는건 어때요?
-최소 75% 최대 180%
-타이틀이랑 설명글마다 폰트가 달라서
-일일이 정하기가 힘든
-예를들면 글크기를 90%로 하면
-모든 글자크기를 90%만큼으로
-슬라이더 하나로
-@franknoh
-
-하나로 통일 해요
-그리고 폰트 fam은 코드하고 본문 두개만
-만
-*/
     div#login {
         display: block;
         width: 100%;
@@ -464,7 +456,7 @@
         transition-duration: 0.5s;
     }
 
-    tr.last td {
+    tr:last-child td {
         border-radius: 0rem 0rem 1.5rem 1.5rem;
     }
 
@@ -473,8 +465,7 @@
         border: 1px solid #d4d4d4;
         border-bottom: none;
         border-top: none;
-        z-index: 99;
-        /*position the autocomplete items to be the same width as the container:*/
+        z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
         top: 100%;
         left: 0;
         right: 0;
@@ -488,21 +479,9 @@
         background-color: #fff; 
         border-bottom: 1px solid #d4d4d4; 
     }
-      
-    /*when hovering an item:*/
-    .autocomplete-items div:hover {
-        background-color: #e9e9e9; 
-    }
 
-    img.themeimg:hover {
-        filter: drop-shadow(0rem 0rem 1rem #a8a8a8);
-        cursor: pointer;
-    }
-      
-    /*when navigating through the items using the arrow keys:*/
     .autocomplete-active {
-        background-color: DodgerBlue !important; 
-        color: #ffffff; 
+        background-color: #00ffff !important; 
     }
 
     div.tool_sec {
@@ -528,7 +507,7 @@
         filter: drop-shadow(0rem 0rem 0.5rem #00ffc8);
     }
 
-    input[type=range] {
+    input[type = range] {
         -webkit-appearance: none; 
         overflow: hidden;
         width: 20rem; 
@@ -541,13 +520,17 @@
         transition-property: height;
         transition-duration: 0.3s;
     }
+
+    p.rangeTxt {
+        font-size: 1rem;
+        margin-left: 1rem;
+
+        transition-property: font-size;
+        transition-duration: 0.3s;
+    }
     
     input[type=range]:focus {
         outline: none;
-    }
-
-    input[type=range]:hover {
-        height: 1.5rem;
     }
 
     input[type=range]:hover + p.rangeTxt {
@@ -588,13 +571,5 @@
         padding: 3rem;
         border-radius: 3rem;
         box-shadow: 0rem 0rem 0.8rem #dddddd;
-    }
-
-    p.rangeTxt {
-        font-size: 1rem;
-        margin-left: 1rem;
-
-        transition-property: font-size;
-        transition-duration: 0.3s;
     }
 }

@@ -15,6 +15,7 @@
     <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script type="text/javascript" src="script/cookie.js"></script>
     <script type="text/javascript" src="script/animation.js"></script>
     <script type="text/javascript" src="script/sidebar.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
@@ -82,119 +83,119 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">getContext()</p></td>
-                            <td><p class="code" id="p">android.content.Context</p></td>
+                            <td><p class="code">getContext()</p></td>
+                            <td><p class="code">android.content.Context</p></td>
                             <td>앱의 컨텍스트를 가져옵니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">reload()</p><br><p class="code" id="p">compile()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>모든 스크립트를 재컴파일합니다. 반환값은 항상 <p class="code" id="p">true</p>입니다.</td>
+                            <td><p class="code">reload()</p><br><p class="code">compile()</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>모든 스크립트를 재컴파일합니다. 반환값은 항상 <p class="code">true</p>입니다.</td>
                         </tr>
                         <tr>
                             <td><p class="code" id="p">reload(scriptName: String, throwOnError: Boolean = false)</p><br><p class="code" id="p">compile(String scriptName, Boolean throwOnError = false)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>특정 스크립트를 재컴파일합니다.<br><p class="code" id="p">throwOnError</p>가 <p class="code" id="p">true</p>라면, 컴파일 에러시 예외를 throw합니다.<br>에러 발생시, 또는 스크립트가 존재하지 않을 시 <p class="code" id="p">false</p>를 반환하고, 컴파일 성공시 <p class="code" id="p">true</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">prepare(scriptName: String)</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">prepare(scriptName: String)</p></td>
+                            <td><p class="code">int</p></td>
                             <td>해당 스크립트가 한번도 컴파일 된 적이 없을 경우에만 컴파일합니다.<br>컴파일 실패시 에러를 throw하고, 스크립트가 존재하지 않을 시 <p class="code" id="p">0</p>, 컴파일 성공시 <p class="code" id="p">1</p>, 한번이라도 컴파일 된 적이 있을 시 <p class="code" id="p">2</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">unload(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 스크립트를 컴파일되지 않은 상태로 전환합니다.<br>원래부터 컴파일되지 않은 상태였거나, 스크립트가 존재하지 않을 시 <p class="code" id="p">false</p>를 반환하며, 그렇지 않은 경우에는 <p class="code" id="p">true</p>를 반환합니다.</td>
+                            <td><p class="code">unload(scriptName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>해당 스크립트를 컴파일되지 않은 상태로 전환합니다.<br>원래부터 컴파일되지 않은 상태였거나, 스크립트가 존재하지 않을 시 <p class="code">false</p>를 반환하며, 그렇지 않은 경우에는 <p class="code">true</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">off()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>모든 스크립트의 전원을 끕니다. 반환값은 항상 <p class="code" id="p">true</p>입니다.</td>
+                            <td><p class="code">off()</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>모든 스크립트의 전원을 끕니다. 반환값은 항상 <p class="code">true</p>입니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">off(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">off(scriptName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>해당 스크립트의 전원을 끕니다.<br>스크립트가 존재하지 않거나, 스크립트의 설정에서 <p class="code" id="p">Api.off()</p>를 무시하도록 설정했을 경우 <p class="code" id="p">false</p>를 반환하고, 그렇지 않은 경우에는 <p class="code" id="p">true</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">on()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>모든 스크립트의 전원을 켭니다. 반환값은 항상 <p class="code" id="p">true</p>입니다.</td>
+                            <td><p class="code">on()</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>모든 스크립트의 전원을 켭니다. 반환값은 항상 <p class="code">true</p>입니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">on(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>해당 스크립트의 전원을 켭니다.<br>스크립트가 존재하지 않을 시 <p class="code" id="p">false</p>, 존재할 시 <p class="code" id="p">true</p>를 반환합니다.</td>
+                            <td><p class="code">on(scriptName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>해당 스크립트의 전원을 켭니다.<br>스크립트가 존재하지 않을 시 <p class="code">false</p>, 존재할 시 <p class="code">true</p>를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isOn(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">isOn(scriptName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>해당 스크립트의 전원 상태를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isCompiled(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">isCompiled(scriptName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>해당 스크립트의 컴파일 완료 여부를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isCompiling(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">isCompiling(scriptName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>해당 스크립트가 컴파일 진행 중 인지 여부를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getScriptNames()</p></td>
-                            <td><p class="code" id="p">String[]</p></td>
+                            <td><p class="code">getScriptNames()</p></td>
+                            <td><p class="code">String[]</p></td>
                             <td>모든 스크립트의 이름을 배열로 반환합니다.</td>
                         </tr>
                         <tr>
                             <td><p class="code" id="p">replyRoom(room: String, message: String)</p><br><p class="code" id="p">replyRoom(String room, String message, Boolean hideToast = false)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>해당 룸에 메시지를 보냅니다. <p class="code" id="p">hideToast</p>가 <p class="code" id="p">true</p>일 경우 방 세션이 없어도 토스트를 띄우지 않습니다.<br>방 세션이 있을 시 <p class="code" id="p">true</p>, 없을 시 <p class="code" id="p">false</p>를 반환합니다. (이는 일반적인 상황에서 전송 성공 여부를 나타냅니다.)</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">canReply(room: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">canReply(room: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>해당 룸으로의 메시지 전송 가능 여부를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">showToast(content: String, length: int)</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">showToast(content: String, length: int)</p></td>
+                            <td><p class="code">void</p></td>
                             <td>토스트 메시지를 발생시킵니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">makeNoti(title: String, content: String, id: int)</p></td>
-                            <td><p class="code" id="p">String[]</p></td>
-                            <td>알림을 띄웁니다. <p class="code" id="p">id</p>는 알림의 고유 아이디로,<br>같은 아이디로 <p class="code" id="p">Api.makeNoti</p>를 다시 한번 호출하면 알림이 새로 뜨지 않고 내용이 수정됩니다.</td>
+                            <td><p class="code">makeNoti(title: String, content: String, id: int)</p></td>
+                            <td><p class="code">String[]</p></td>
+                            <td>알림을 띄웁니다. <p class="code">id</p>는 알림의 고유 아이디로,<br>같은 아이디로 <p class="code">Api.makeNoti</p>를 다시 한번 호출하면 알림이 새로 뜨지 않고 내용이 수정됩니다.</td>
                         </tr>
                         <tr>
                             <td><p class="code" id="p">papagoTranslate(sourceLanguage: String, targetLanguage: String, content: String)</p><br><p class="code" id="p">papagoTranslate(String sourceLanguage, String targetLanguage, String content, Boolean errorToString = false)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>번역 결과를 제공합니다.<br><p class="code" id="p">errorToString</p>이 <p class="code" id="p">true</p>일 경우 에러를 throw하지 않고 <p class="code" id="p">String</p>으로 반환합니다.</td>
+                            <td><p class="code">String</p></td>
+                            <td>번역 결과를 제공합니다.<br><p class="code">errorToString</p>이 <p class="code">true</p>일 경우 에러를 throw하지 않고 <p class="code">String</p>으로 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">gc()</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">gc()</p></td>
+                            <td><p class="code">void</p></td>
                             <td>가비지 컬렉팅을 강제로 시작합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">UIThread(func: Function, onComplete: Function)</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">UIThread(func: Function, onComplete: Function)</p></td>
+                            <td><p class="code">void</p></td>
                             <td>UI 쓰레드에서 <p class="code" id="p">func</p>함수를 실행합니다.<br><p class="code" id="p">onComplete</p>함수는 <p class="code" id="p">error</p>, <p class="code" id="p">result</p>의 인자를 가지며, <p class="code" id="p">func</p>함수 실행 후 에러 발생시 <p class="code" id="p">error</p>에 에러객체가 전달되고,<br>성공적으로 실행됐을 시 반환값을 <p class="code" id="p">result</p>에 전달합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getActiveThreadsCound(scriptName: String)</p></td>
-                            <td><p class="code" id="p">int</p></td>
-                            <td>해당 스크립트의 활성 쓰레드 수를 반환합니다. <p class="code" id="p">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
+                            <td><p class="code">getActiveThreadsCound(scriptName: String)</p></td>
+                            <td><p class="code">int</p></td>
+                            <td>해당 스크립트의 활성 쓰레드 수를 반환합니다. <p class="code">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">interruptThreads(scriptName: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>해당 스크립트의 쓰레드들에 interrupt요청을 보냅니다. <p class="code" id="p">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
+                            <td><p class="code">interruptThreads(scriptName: String)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>해당 스크립트의 쓰레드들에 interrupt요청을 보냅니다. <p class="code">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isTerminated(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">Api.interruptThreads</p> 이후, 모든 쓰레드들이 interrupt되었는지를 확인합니다. <p class="code" id="p">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
+                            <td><p class="code">isTerminated(scriptName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code">Api.interruptThreads</p> 이후, 모든 쓰레드들이 interrupt되었는지를 확인합니다. <p class="code">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
                     </table>
                 </div>
             </div>
@@ -207,33 +208,33 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">getWebText(url: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getWebText(url: String)</p></td>
+                            <td><p class="code">String</p></td>
                             <td>웹사이트의 HTML을 로드하여 문자열로 반환합니다. (동기적)</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">parse(url: String)</p></td>
-                            <td><p class="code" id="p">org.jsoup.nodes</p></td>
-                            <td>웹사이트의 HTML을 get하여 <p class="code" id="p">org.jsoup.nodes.Document</p>로 반환합니다. (동기적)</td>
+                            <td><p class="code">parse(url: String)</p></td>
+                            <td><p class="code">org.jsoup.nodes</p></td>
+                            <td>웹사이트의 HTML을 get하여 <p class="code">org.jsoup.nodes.Document</p>로 반환합니다. (동기적)</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getAndroidVersionCode()</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">getAndroidVersionCode()</p></td>
+                            <td><p class="code">int</p></td>
                             <td>앱 구동 환경의 안드로이드 버전 코드를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getAndroidVersionName()</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getAndroidVersionName()</p></td>
+                            <td><p class="code">String</p></td>
                             <td>앱 구동 환경의 안드로이드 버전 이름을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getPhoneBrand()</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getPhoneBrand()</p></td>
+                            <td><p class="code">String</p></td>
                             <td>앱 구동 환경의 휴대폰 브랜드명을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getPhoneModel()</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getPhoneModel()</p></td>
+                            <td><p class="code">String</p></td>
                             <td>앱 구동 환경의 휴대폰 모델명을 반환합니다.</td>
                         </tr>
                     </table>
@@ -248,24 +249,24 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">read(path: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">read(path: String)</p></td>
+                            <td><p class="code">String</p></td>
                             <td>path경로(파일 이름까지 포함)에 있는 파일 내용을 읽어 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">write(path: String, data: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>path경로(파일 이름까지 포함)에 <p class="code" id="p">data</p>를 덮어씁니다. 반환값은 최종 파일 내용입니다.</td>
+                            <td><p class="code">write(path: String, data: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>path경로(파일 이름까지 포함)에 <p class="code">data</p>를 덮어씁니다. 반환값은 최종 파일 내용입니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">append(path: String, data: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td>path경로(파일 이름까지 포함)에 <p class="code" id="p">data</p>를 이어씁니다. 반환값은 최종 파일 내용입니다.</td>
+                            <td><p class="code">append(path: String, data: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>path경로(파일 이름까지 포함)에 <p class="code">data</p>를 이어씁니다. 반환값은 최종 파일 내용입니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">remove(path: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td>path경로(파일 이름까지 포함)을 삭제합니다.<br>반환값은 <p class="code" id="p">java.io.File.delete()</p>의 결과값이며 삭제중 예외가 발생할 경우 <p class="code" id="p">false</p>를 반환합니다.</td>
+                            <td><p class="code">remove(path: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>path경로(파일 이름까지 포함)을 삭제합니다.<br>반환값은 <p class="code">java.io.File.delete()</p>의 결과값이며 삭제중 예외가 발생할 경우 <p class="code">false</p>를 반환합니다.</td>
                         </tr>
                     </table>
                 </div>
@@ -279,23 +280,23 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">getDataBase(fileName: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">앱_데이터_폴더/Database/fileName</p>파일을 읽어 내용을 문자열로 반환합니다.</td>
+                            <td><p class="code">getDataBase(fileName: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">앱_데이터_폴더/Database/fileName</p>파일을 읽어 내용을 문자열로 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">setDataBase(fileName: String, data: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">setDataBase(fileName: String, data: String)</p></td>
+                            <td><p class="code">String</p></td>
                             <td><p class="code" id="p">앱_데이터_폴더/Database</p>폴더 내에 <p class="code" id="p">fileName</p>이라는 파일을 만들고, <p class="code" id="p">data</p>를 덮어씁니다.<br><p class="code" id="p">fileName</p>에 확장자가 명시되지 않은 경우 확장자는 자동으로 <p class="code" id="p">.txt</p>가 됩니다. 최종 파일 내용을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">appendDataBase(fileName: String, data: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
-                            <td><p class="code" id="p">앱_데이터_폴더/Database/fileName</p>파일에 <p class="code" id="p">data</p>를 이어씁니다. 최종 파일 내용을 반환합니다.</td>
+                            <td><p class="code">appendDataBase(fileName: String, data: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">앱_데이터_폴더/Database/fileName</p>파일에 <p class="code">data</p>를 이어씁니다. 최종 파일 내용을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">removeDataBase(fileName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">removeDataBase(fileName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td><p class="code" id="p">앱_데이터_폴더/Database/fileName</p>파일을 삭제합니다.<br>앱 옵션에서 삭제시 백업기능을 켜두었을 경우, <p class="code" id="p">fileName.bak</p>으로 내용이 백업됩니다. <p class="code" id="p">java.io.File.delete()</p>의 결과를 반환합니다.</td>
                         </tr>
                     </table>
@@ -311,22 +312,22 @@
                         <th>설명</th>
                         <tr>
                             <td><p class="code" id="p">d(data: String)</p><br><p class="code" id="p">debug(String data)</p><br><p class="code" id="p">d(String data, Boolean showToast = false)</p><br><p class="code" id="p">debug(String data, Boolean showToast = false)</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">void</p></td>
                             <td>디버그 로그를 작성합니다.</td>
                         </tr>
                         <tr>
                             <td><p class="code" id="p">e(data: String)</p><br><p class="code" id="p">error(String data)</p><br><p class="code" id="p">e(String data, Boolean showToast = false)</p><br><p class="code" id="p">error(String data, Boolean showToast = false)</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">void</p></td>
                             <td>에러 로그를 작성합니다.</td>
                         </tr>
                         <tr>
                             <td><p class="code" id="p">i(data: String)</p><br><p class="code" id="p">info(String data)</p><br><p class="code" id="p">i(String data, Boolean showToast = false)</p><br><p class="code" id="p">info(String data, Boolean showToast = false)</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">void</p></td>
                             <td>정보 로그를 작성합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">clear()</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">clear()</p></td>
+                            <td><p class="code">void</p></td>
                             <td>로그를 모두 삭제합니다.</td>
                         </tr>
                     </table>
@@ -341,69 +342,69 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">getBuild()</p></td>
-                            <td><p class="code" id="p">android.os.Build</p></td>
-                            <td><p class="code" id="p">android.os.Build()</p>값을 반환합니다.</td>
+                            <td><p class="code">getBuild()</p></td>
+                            <td><p class="code">android.os.Build</p></td>
+                            <td><p class="code">android.os.Build()</p>값을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getAndroidVersionCode()</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">getAndroidVersionCode()</p></td>
+                            <td><p class="code">int</p></td>
                             <td>앱 구동 환경의 안드로이드 버전 코드를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getAndroidVersionName()</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getAndroidVersionName()</p></td>
+                            <td><p class="code">String</p></td>
                             <td>앱 구동 환경의 안드로이드 버전 이름을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getPhoneBrand()</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getPhoneBrand()</p></td>
+                            <td><p class="code">String</p></td>
                             <td>앱 구동 환경의 휴대폰 브랜드명을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getPhoneModel()</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getPhoneModel()</p></td>
+                            <td><p class="code">String</p></td>
                             <td>앱 구동 환경의 휴대폰 모델명을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isCharging()</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">isCharging()</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>앱 구동 환경 휴대폰이 충전중 여부를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getPlugType()</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getPlugType()</p></td>
+                            <td><p class="code">String</p></td>
                             <td>충전기의 타입을 반환합니다. (ac/wireless/usb/unknown)</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getBatteryLevel()</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">getBatteryLevel()</p></td>
+                            <td><p class="code">int</p></td>
                             <td>배터리 잔량(%)를 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getBatteryHealth()</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">getBatteryHealth()</p></td>
+                            <td><p class="code">int</p></td>
                             <td>배터리 건강 상태에 대한 상수를 반환합니다. 반환하는 상수는 다음과 같습니다:<br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_COLD</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_DEAD</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_GOOD</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE</p></td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getBatteryTemperature()</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">getBatteryTemperature()</p></td>
+                            <td><p class="code">int</p></td>
                             <td>현재 배터리 온도의 10배 값을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getBatteryVoltage()</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">getBatteryVoltage()</p></td>
+                            <td><p class="code">int</p></td>
                             <td>현재 배터리 전압(mV)을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getBatteryStatus()</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">getBatteryStatus()</p></td>
+                            <td><p class="code">int</p></td>
                             <td><p>배터리 상태에 대한 상수를 반환합니다. 반환하는 상수는 다음과 같습니다:<br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_CHARGING</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_DISCHARGING</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_FULL</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_NOT_CHARGING</p><br><p class="code" id="p">android.os.BatteryManager.BATTERY_STATUS_UNKNOWN</p></td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getBatteryIntent()</p></td>
-                            <td><p class="code" id="p">android.content.Intent</p></td>
-                            <td><p class="code" id="p">context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))</p> 값을 반환합니다.</td>
+                            <td><p class="code">getBatteryIntent()</p></td>
+                            <td><p class="code">android.content.Intent</p></td>
+                            <td><p class="code">context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))</p> 값을 반환합니다.</td>
                         </tr>
                     </table>
                 </div>
@@ -417,14 +418,14 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">getScopeOf(scriptName: String)</p></td>
-                            <td><p class="code" id="p">org.mozilla.javascript.ScriptableObject</p></td>
+                            <td><p class="code">getScopeOf(scriptName: String)</p></td>
+                            <td><p class="code">org.mozilla.javascript.ScriptableObject</p></td>
                             <td><p class="code" id="p">scriptName</p>스크립트의 전역 스코프를 반환합니다.<br>만약 대상 스크립트가 컴파일 또는 인터프리트되지 않았거나, 설정에서 Bridge를 통한 접근을 허용하지 않은 경우 <p class="code" id="p">null</p>을 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">isAllowed(scriptName: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">scriptName</p>스크립트의 Bridge를 통한 접근 허용 여부를 반환합니다.</td>
+                            <td><p class="code">isAllowed(scriptName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code">scriptName</p>스크립트의 Bridge를 통한 접근 허용 여부를 반환합니다.</td>
                         </tr>
                     </table>
                 </div>
@@ -438,43 +439,43 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">putBoolean(key: String, boolean: Boolean)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>앱 데이터에 불린값<p class="code" id="p">boolean</p>을 씁니다.</td>
+                            <td><p class="code">putBoolean(key: String, boolean: Boolean)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>앱 데이터에 불린값<p class="code">boolean</p>을 씁니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getBoolean(key: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">getBoolean(key: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td>앱 데이터에서 boolean값을 불러옵니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">putInt(key: String, integer: int)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>앱 데이터에 정수<p class="code" id="p">integer</p>를 씁니다.</td>
+                            <td><p class="code">putInt(key: String, integer: int)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>앱 데이터에 정수<p class="code">integer</p>를 씁니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getInt(key: String)</p></td>
-                            <td><p class="code" id="p">int</p></td>
+                            <td><p class="code">getInt(key: String)</p></td>
+                            <td><p class="code">int</p></td>
                             <td>앱 데이터에서 정수값을 불러옵니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">putString(key: String, string: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>앱 데이터에 문자열<p class="code" id="p">string</p>을 씁니다.</td>
+                            <td><p class="code">putString(key: String, string: String)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>앱 데이터에 문자열<p class="code">string</p>을 씁니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getString(key: String)</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getString(key: String)</p></td>
+                            <td><p class="code">String</p></td>
                             <td>앱 데이터에서 문자열값을 불러옵니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">remove(key: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">remove(key: String)</p></td>
+                            <td><p class="code">void</p></td>
                             <td>AppData를 통해 저장한 앱 데이터 중 키값에 해당하는 앱 데이터를 지웁니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">clear()</p></td>
-                            <td><p class="code" id="p">void</p></td>
+                            <td><p class="code">clear()</p></td>
+                            <td><p class="code">void</p></td>
                             <td>AppData를 통해 저장한 모든 앱 데이터를 지웁니다.</td>
                         </tr>
                     </table>
@@ -489,18 +490,18 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">reply(msg: String)</p></td>
-                            <td><p class="code" id="p">void</p></td>
-                            <td>replier객체가 현재 저장하고 있는 방에 <p class="code" id="p">msg</p>이라는 내용을 전송합니다.</td>
+                            <td><p class="code">reply(msg: String)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>replier객체가 현재 저장하고 있는 방에 <p class="code">msg</p>이라는 내용을 전송합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">reply(room: String, msg: String)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
-                            <td><p class="code" id="p">room</p>이라는 방에 <p class="code" id="p">msg</p>라는 내용을 전송합니다.</td>
+                            <td><p class="code">reply(room: String, msg: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code">room</p>이라는 방에 <p class="code">msg</p>라는 내용을 전송합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">reply(room: String, msg: String, hideToast: Boolean = false)</p></td>
-                            <td><p class="code" id="p">Boolean</p></td>
+                            <td><p class="code">reply(room: String, msg: String, hideToast: Boolean = false)</p></td>
+                            <td><p class="code">Boolean</p></td>
                             <td><p class="code" id="p">room</p>이라는 방에 <p class="code" id="p">msg</p>라는 내용을 전송합니다.<br>메신저봇R의 작동방식상 메신저봇R이 구동된 이후에 알림을 단 한번도 받지 못한 채팅방으로는 답장이 불가능한데, 이를 시도할 경우 화면 하단에 Toast알림을 표시하게 됩니다. (<p class="code" id="p">hideToast = false</p>인 경우.)<br>반환값은 메신저봇이 해당 방의 답장 세션을 가지고 있는지에 대한 여부입니다. 이는 일반적으로 메시지 전송요청의 성공 여부를 나타냅니다.<br>(단, 통신 문제등으로 전송이 실패하는 경우는 고려하지 않습니다.)</td>
                         </tr>
                     </table>
@@ -515,19 +516,19 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code" id="p">getProfileBase64()</p><br><p class="code" id="p">getProfileImage()</p></td>
-                            <td><p class="code" id="p">String</p></td>
+                            <td><p class="code">getProfileBase64()</p><br><p class="code">getProfileImage()</p></td>
+                            <td><p class="code">String</p></td>
                             <td>프로필 이미지를 Base64의 형태로 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">getProfileBitmap()</p></td>
-                            <td><p class="code" id="p">android.graphics.Bitmap</p></td>
+                            <td><p class="code">getProfileBitmap()</p></td>
+                            <td><p class="code">android.graphics.Bitmap</p></td>
                             <td>프로필 이미지를 Bitmap으로 반환합니다.</td>
                         </tr>
                         <tr>
-                            <td id="no"><p class="code" id="p">getImage()</p></td>
-                            <td id="no"><p class="code" id="p">null</p></td>
-                            <td id="no">호환성을 위해 존재하기 때문에 기능이 없는 메서드입니다. 이는 항상 <p class="code" id="p">null</p>을 반환합니다.</td>
+                            <td id="no"><p class="code">getImage()</p></td>
+                            <td id="no"><p class="code">null</p></td>
+                            <td id="no">호환성을 위해 존재하기 때문에 기능이 없는 메서드입니다. 이는 항상 <p class="code">null</p>을 반환합니다.</td>
                         </tr>
                     </table>
                 </div>
