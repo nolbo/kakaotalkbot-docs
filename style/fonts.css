@@ -49,3 +49,37 @@
 /*D2 Coding*/
 
 @font-face{ font-family: 'D2Coding';         src: url(font/D2Coding.woff)                    format('woff'); }
+
+
+/*Ubuntu Mono*/
+
+@font-face{ font-family: 'UbM'; src: url(font/UbuntuMono-Regular.ttf)         format('truetype'); }
+@font-face{ font-family: 'UbM I'; src: url(font/UbuntuMono-Italic.ttf)         format('truetype'); }
+@font-face{ font-family: 'UbM B'; src: url(font/UbuntuMono-Bold.ttf)         format('truetype'); }
+@font-face{ font-family: 'UbM BI'; src: url(font/UbuntuMono-BoldItalic.ttf)         format('truetype'); }
+
+
+/*Hack*/
+
+@font-face{ font-family: 'H'; src: url(font/Hack-Regular.ttf)         format('truetype'); }
+@font-face{ font-family: 'H I'; src: url(font/Hack-Italic.ttf)         format('truetype'); }
+@font-face{ font-family: 'H B'; src: url(font/Hack-Bold.ttf)         format('truetype'); }
+@font-face{ font-family: 'H BI'; src: url(font/Hack-BoldItalic.ttf)         format('truetype'); }
+
+
+/*IBM*/
+
+@font-face{ font-family: 'IBM'; src: url(font/IBMPlexMono-Regular.ttf)         format('truetype'); }
+@font-face{ font-family: 'IBM I'; src: url(font/IBMPlexMono-Italic.ttf)         format('truetype'); }
+@font-face{ font-family: 'IBM B'; src: url(font/IBMPlexMono-Bold.ttf)         format('truetype'); }
+@font-face{ font-family: 'IBM BI'; src: url(font/IBMPlexMono-BoldItalic.ttf)         format('truetype'); }
+
+
+/*Monaco*/
+
+@font-face{ font-family: 'Mon';         src: url(font/Monaco.woff)                    format('woff'); }
+
+
+/*Consolas*/
+
+@font-face{ font-family: 'Con';         src: url(font/Consolas.woff)                    format('woff'); }
