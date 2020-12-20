@@ -1,0 +1,51 @@
+
+/*나눔 바른 고딕*/
+
+@font-face{ font-family: 'NBG';   src: url(font/NanumBarunGothic.ttf)      format('truetype'); }
+@font-face{ font-family: 'NBG B'; src: url(font/NanumBarunGothicBold.ttf)  format('truetype'); }
+@font-face{ font-family: 'NBG L'; src: url(font/NanumBarunGothicLight.ttf) format('truetype'); }
+
+/*나눔 바른펜*/
+
+@font-face{ font-family: 'NBP';   src: url(font/NanumBarunpenR.ttf)        format('truetype'); }
+@font-face{ font-family: 'NBP B'; src: url(font/NanumBarunpenB.ttf)        format('truetype'); }
+
+/*나눔 고딕*/
+
+@font-face{ font-family: 'NG';   src: url(font/NanumGothic.ttf)            format('truetype'); }
+@font-face{ font-family: 'NG B'; src: url(font/NanumGothicBold.ttf)        format('truetype'); }
+@font-face{ font-family: 'NG L'; src: url(font/NanumGothicLight.ttf)       format('truetype'); }
+
+/*나눔 명조*/
+
+@font-face{ font-family: 'NM';   src: url(font/NanumMyeongjo.ttf)          format('truetype'); }
+@font-face{ font-family: 'NM B'; src: url(font/NanumMyeongjoBold.ttf)      format('truetype'); }
+
+/*나눔 스퀘어 라운드*/
+
+@font-face{ font-family: 'NSR';   src: url(font/NanumSquareRoundR.ttf)     format('truetype'); }
+@font-face{ font-family: 'NSR B'; src: url(font/NanumSquareRoundB.ttf)     format('truetype'); }
+@font-face{ font-family: 'NSR L'; src: url(font/NanumSquareRoundL.ttf)     format('truetype'); }
+
+/*나눔 스퀘어*/
+
+@font-face{ font-family: 'NS';   src: url(font/NanumSquareR.ttf)           format('truetype'); }
+@font-face{ font-family: 'NS B'; src: url(font/NanumSquareB.ttf)           format('truetype'); }
+@font-face{ font-family: 'NS L'; src: url(font/NanumSquareL.ttf)           format('truetype'); }
+
+/*마루부리*/
+
+@font-face{ font-family: 'MB'; src: url(font/MaruBuri-Regular.ttf)         format('truetype'); }
+
+
+/*Coding Font*/
+
+/*JetBrains Mono*/
+
+@font-face{ font-family: 'JetBrains Mono';   src: url(font/JetBrainsMono-Medium.woff)        format('woff'); }
+@font-face{ font-family: 'JetBrains Mono I'; src: url(font/JetBrainsMono-Medium-Italic.woff) format('woff'); }
+
+
+/*D2 Coding*/
+
+@font-face{ font-family: 'D2Coding';         src: url(font/D2Coding.woff)                    format('woff'); }

@@ -55,7 +55,8 @@ $(function () {
                                 save = function (set) {
                                     auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
                                         'settings': set
-                                    })
+                                    });
+                                    uSet()
                                 }
                                 /*
                                 auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
@@ -65,6 +66,10 @@ $(function () {
                                         'ts': (new Date).toString()
                                     })
                                 })*/
+                            }
+                        }else{
+                            save = function (set) {
+                                uSet(set);
                             }
                         }
                     });
