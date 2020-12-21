@@ -98,6 +98,6 @@ article#content {
 }
 
 img#arrow:hover {
-    padding-top: 2rem;
+    padding-top: 2rem !important;
     /*filter: drop-shadow(0rem 0rem 1rem #dddddd) invert(0%);*/
 }

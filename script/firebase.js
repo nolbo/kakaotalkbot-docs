@@ -116,7 +116,7 @@ $(function () {
 
                         if (user) {
                             if (["/signup", "/signin", "/signup.html", "/signin.html"].indexOf(location.href.substring(location.origin.length)) != -1) {
-                                location.href = "https://kkotbot-docs.kro.kr";
+                                location.href = location.origin;
                             } else {
                                 var db = firebase.firestore();
                                 db.collection("project").doc("views").update({
