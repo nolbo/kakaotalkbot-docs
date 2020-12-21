@@ -376,10 +376,18 @@
         margin-bottom: 1.5rem;
     }
 
-    img#login {
+    img#login_img {
         width: 2.8rem;
         height: auto;
         border-radius: 4rem;
+    }
+
+    p#login_txt {
+        position: relative;
+        top: -1rem;
+        margin-right: 1rem;
+        text-align: right;
+        font-size: 0.8rem;
     }
 
     section#tool form {

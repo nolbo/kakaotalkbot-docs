@@ -128,8 +128,12 @@ $(function () {
                                         }
                                     }
                                 })
-                                // 로그인바 업뎃
+                                auth.firestore().collection('users').doc(auth.auth().currentUser.uid).get().then(function (doc) {
+                                    $('#login_img').attr('src', doc.data().profile);
+                                    $('#login_txt').text(doc.data().id);
+                                });
                                 var lastSave = Date.now();
+                                if(["/signup", "/signin", "/signup.html", "/signin.html", "/", "/index", "/index.html"].indexOf(location.href.substring(location.origin.length)) == -1){
                                 save = function (set, f) {
                                     if (Date.now() > (lastSave + 30000) || f === true) {
                                         auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
@@ -137,7 +141,10 @@ $(function () {
                                         });
                                     }
                                     uSet(set);
-                                }
+                                }}else{save = function (e) {
+                                    uSet(e);
+                                    return true;
+                                }}
                                 /*
                                 auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
                                     'bookmark': firebase.firestore.FieldValue.arrayUnion({

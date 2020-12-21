@@ -371,7 +371,11 @@
         cursor: pointer;
     }
 
-    input[type=range]:hover {
+    button#search_btn:hover, img#login_img:hover {
+        cursor: pointer;
+    }
+
+    input[type = range]:hover {
         height: 1.5rem;
     }
 
@@ -395,12 +399,20 @@
         width: 100%;
         text-align: right;
         margin-bottom: 2rem;
+        position: relative;
     }
 
-    img#login {
+    img#login_img {
         width: 4rem;
         height: auto;
         border-radius: 4rem;
+    }
+
+    p#login_txt {
+        position: relative;
+        top: -1.3rem;
+        margin-right: 1rem;
+        text-align: right;
     }
 
     section#tool form {
@@ -507,7 +519,7 @@
         filter: drop-shadow(0rem 0rem 0.5rem #00ffc8);
     }
 
-    input[type = range] {
+    input[type = 'range'] {
         -webkit-appearance: none; 
         overflow: hidden;
         width: 20rem; 
