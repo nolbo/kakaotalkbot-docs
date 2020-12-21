@@ -34,7 +34,7 @@ $(function () {
                     auth.auth().onAuthStateChanged(function (user) {
                         uSet = function (s) {
                             $('input#font_size').val(s['font_size']);
-                            $('p.rangeTxt').text($('input#font_size').val() + '%');
+                            $('p.rangeTxt').text(s['font_size'] + '%');
                             var fs = s['font_size'];
                             fs = (Number(fs) / 100);
                             if (window.innerWidth < 800) {
@@ -80,7 +80,7 @@ $(function () {
                                 '마루부리': 'MB'
                             }[s['font_norm']] + '\', \'Noto Sans KR\'');
                             $('#font_code').val(s['font_code']);
-                            $("p.code").css('font-family', '\'' + {
+                            $("p.code, div.code code span, div.code code, .hljs, .hljs *").css('font-family', '\'' + {
                                 'JetBrains Mono': 'JetBrains Mono',
                                 'D2 Coding': 'D2Coding',
                                 'Consolas': 'Con',
@@ -89,19 +89,10 @@ $(function () {
                                 'Ubuntu Mono': 'UbM',
                                 'Monaco': 'Mon'
                             }[s['font_code']] + '\', \'D2Coding\'');
-                            $("div.code code").css('font-family', '\'' + {
-                                'JetBrains Mono': 'JetBrains Mono',
-                                'D2 Coding': 'D2Coding',
-                                'Consolas': 'Con',
-                                'IBM Plex Mono': 'IBM',
-                                'Hack': 'H',
-                                'Ubuntu Mono': 'UbM',
-                                'Monaco': 'Mon'
-                            }[s['font_code']] + '\', \'D2Coding\'');
-                            $("i").css('font-family', '\'' + {
+                            $("i, .hljs-comment, .hljs-keyword, .hljs-literal, .hljs-emphasis").css('font-family', '\'' + {
                                 'JetBrains Mono': 'JetBrains Mono I',
                                 'D2 Coding': 'D2Coding',
-                                'Consolas': 'Con',
+                                'Consolas': 'Con I',
                                 'IBM Plex Mono': 'IBM I',
                                 'Hack': 'H I',
                                 'Ubuntu Mono': 'UbM I',
@@ -109,7 +100,9 @@ $(function () {
                             }[s['font_code']] + '\', \'D2Coding\'');
                             theme(s['theme']);
                         }
-
+                        $('input#font_size').on('mouseup', function () {
+                            save({ 'font_size': $('input#font_size').val(), 'font_norm': $('#font_norm').val(), 'font_code': $('#font_code').val(), 'theme': theme() });
+                        });
                         window.onunload = function () {
                             save({ 'font_size': $('input#font_size').val(), 'font_norm': $('#font_norm').val(), 'font_code': $('#font_code').val(), 'theme': theme() }, true);
                         }
@@ -126,7 +119,9 @@ $(function () {
                                     if (doc.exists) {
                                         a = doc.data();
                                         if (!!a.settings) {
-                                            uSet(a.settings);
+                                            setTimeout(() => {
+                                                uSet(a.settings);
+                                            }, 500);
                                         }
                                         if (!!a.bookmark) {
                                             // 북마크 업뎃
