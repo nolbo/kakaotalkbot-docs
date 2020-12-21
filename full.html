@@ -4135,7 +4135,7 @@
                 <p class="stitle">텍스트 크기</p>
                 <p class="dscrpt">문서 내 텍스트 크기를 설정합니다.</p>
                 <div class="tool_con">
-                    <input id="font_size" type="range" min="75" max="180" oninput="$('p.rangeTxt').text($('input#font_size').val() + '%'); save({'font_size': $('input#font_size').val(), 'font_norm': $('#font_norm').val(), 'font_code': $('#font_code').val(), 'theme': theme()});"><p class="rangeTxt"></p>
+                    <input id="font_size" type="range" min="75" max="180" oninput="save({'font_size': $('input#font_size').val(), 'font_norm': $('#font_norm').val(), 'font_code': $('#font_code').val(), 'theme': theme()});"><p class="rangeTxt"></p>
                 </div>
             </div>
             <div class="tool_sec" id="font">
@@ -4143,7 +4143,7 @@
                 <p class="dscrpt">문서 내 텍스트의 글꼴을 설정합니다.</p>
                 <div class="tool_con">
                     <p class="dscrpt">일반 텍스트
-                        <select class="tool_sel" id="font_norm">
+                        <select class="tool_sel" id="font_norm" onchange="save({'font_size': $('input#font_size').val(), 'font_norm': $('#font_norm').val(), 'font_code': $('#font_code').val(), 'theme': theme()});">
                             <option>Noto Sans</option>
                             <option>나눔고딕</option>
                             <option>나눔바른고딕</option>
@@ -4155,7 +4155,7 @@
                         </select>
                     </p><br>
                     <p class="dscrpt">코드
-                        <select class="tool_sel" id="font_code">
+                        <select class="tool_sel" id="font_code" onchange="save({'font_size': $('input#font_size').val(), 'font_norm': $('#font_norm').val(), 'font_code': $('#font_code').val(), 'theme': theme()});">
                             <option>JetBrains Mono</option>
                             <option>D2 Coding</option>
                             <option>Consolas</option>

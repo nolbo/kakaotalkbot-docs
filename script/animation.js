@@ -7,8 +7,10 @@ let scroll;
 function theme(s) {
     if (!!s) {
         //data-checked
+        return true;
     } else {
         //set settings as 's'
+        return true;
     }
 }
 
