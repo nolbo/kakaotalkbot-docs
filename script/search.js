@@ -6,16 +6,16 @@ limit = 5;
 
 var search = [
   {
-    'keys': [],
+    'keys': ['알아두기', 'Java와 JavaScript는 서로 다른 언어입니다.', '순수 자바스크립트', 'Rhino', 'JavaScript 엔진', 'iOS', '안드로이드 버전', '안드로이드 버전 5.0(롤리팝) 미만'],
     'location': '1-1'
   }, {
-    'keys': [],
+    'keys': ['카카오톡 봇', '자동으로 응답', '메신저봇R을 기준', '채팅 자동응답 봇'],
     'location': '1-2'
   }, {
-    'keys': [],
+    'keys': ['작동 원리', '메신저봇', 'NotificationListenerService', 'WearableExtender', 'Rhino JavaScript Engine', '알림 정보를 전달'],
     'location': '1-3'
   }, {
-    'keys': [],
+    'keys': ['개발 준비', '앱 설치', '부계정을 사용할 경우', 'Google Play', 'Wear OS by Google', 'Android Wear', '안드로이드 버전이 7.0', '앱을 추가로 설치', '구동할 수 있는 환경이 조성', '알림 읽기 권한이 없습니다.', '데이터 폴더', '변경을 선택해 저장할 경로를 지정합니다.', '메신저봇R의 메인 화면', '스크립트 추가 버튼', '새 봇 창', '스크립트 이름', '올바른 추가 설정', '본계정과 부계정 모두', '삼성 듀얼 메신저 기능을 사용할 경우', '복제 앱을 사용할 경우', '공용 설정 > 알림을 읽을 패키지명', 'if(packageName != \'복제된 앱의 패키지명\') return;'],
     'location': '1-4'
   }, {
     'keys': [],
@@ -155,7 +155,7 @@ location.get = function () {
     var s = {}
     t = location.search.substr(1).split('&');
     t.forEach((e) => {
-      s[decodeURIComponent(e.split('=')[0])] = decodeURIComponent(e.split('=')[1]);
+      s[decodeURIComponent(e.split('=')[0].replaceAll('+', ' '))] = decodeURIComponent(e.split('=')[1].replaceAll('+', ' '));
     });
     return s;
   }
@@ -175,16 +175,18 @@ var x;
 
 function searchExec(r) {
   o = r;
+  fnd = false;
   if (o.indexOf(' ') != -1) o = get_key(r);
   search.forEach((e) => {
-    if (e.keys.in(o)) {
+    if (!!e.keys.in(o) && !fnd) {
+      console.log(e.location)
       $([document.documentElement, document.body]).animate({
-        scrollTop: $("#" + e.location).offset().top
+        scrollTop: $("#" + e.location).offset().top - 150
       }, 500);
-      return true;
+      fnd = true;
     }
   });
-  setToast("'" + r + "' 이라는 검색결과가 없습니다.");
+  if (!fnd) setToast("'" + r + "' 이라는 검색결과가 없습니다.");
 }
 
 function get_key(txt) {
@@ -206,10 +208,13 @@ function get_key(txt) {
 $(() => {
   if (!!location.get().search && location.get().search != '') {
     if (['/full', '/full.html'].includes(location.pathname)) {
-      searchExec(location.get().search);
+      setTimeout(() => {
+        $('input#search_txt').val(location.get().search)
+        searchExec(location.get().search);
+      }, 500);
     } else {
       $.cookie('docs_search', location.get().search, { expires: 1 });
-      location.href = 'full';
+      location.href = 'full' + location.search;
     }
   }
   if (!!$.cookie('docs_search')) {
@@ -255,7 +260,7 @@ $(() => {
       }
     });
     function strong(s, l) {
-      return l.split('').reverse().join('').substr(l.substr(l.toUpperCase().indexOf(s.toUpperCase())).length).split('').reverse().join('') + '<strong>' + s + '</strong>' + l.substr(l.indexOf(s)).substr(s.length)
+      return l.split('').reverse().join('').substr(l.substr(l.toUpperCase().indexOf(s.toUpperCase())).length).split('').reverse().join('') + '<strong>' + l.substr(l.split('').reverse().join('').substr(l.substr(l.toUpperCase().indexOf(s.toUpperCase())).length).split('').reverse().join('').length).split('').reverse().join('').substr(l.substr(l.toUpperCase().indexOf(s.toUpperCase())).substr(s.length).length).split('').reverse().join('') + '</strong>' + l.substr(l.toUpperCase().indexOf(s.toUpperCase())).substr(s.length)
     }
     var nLim = limit;
     search_res.forEach((f) => {
