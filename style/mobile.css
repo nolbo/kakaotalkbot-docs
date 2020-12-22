@@ -350,7 +350,7 @@
     }
 
     img.themeimg:hover {
-        filter: drop-shadow(0rem 0rem 0.8rem #a8a8a8);
+        border-top: 0.5rem solid #dddddd;
         cursor: pointer;
     }
 
@@ -377,14 +377,14 @@
     }
 
     img#login_img {
-        width: 2.8rem;
+        width: 2rem;
         height: auto;
         border-radius: 4rem;
     }
 
     p#login_txt {
         position: relative;
-        top: -1rem;
+        top: -0.7rem;
         margin-right: 1rem;
         text-align: right;
         font-size: 0.8rem;
@@ -489,8 +489,10 @@
         display: inline;
         margin-right: 3rem;
         margin-bottom: 3rem;
+        border-radius: 0.9rem 0.9rem 0rem 0rem;
+        border-top: 0.5rem solid transparent;
 
-        transition-property: filter;
+        transition-property: border-top;
         transition-duration: 0.35s;
     }
     
@@ -499,7 +501,7 @@
     }
 
     img[data-checked = "true"] {
-        filter: drop-shadow(0rem 0rem 0.5rem #00ffc8);
+        border-top: 0.5rem solid #00ffc8;
     }
     
     input[type = range] {

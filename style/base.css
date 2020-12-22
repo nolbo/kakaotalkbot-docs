@@ -367,7 +367,7 @@
     }
 
     img.themeimg:hover {
-        filter: drop-shadow(0rem 0rem 1rem #a8a8a8);
+        border-top: 0.7rem solid #dddddd;
         cursor: pointer;
     }
 
@@ -403,14 +403,14 @@
     }
 
     img#login_img {
-        width: 4rem;
+        width: 3rem;
         height: auto;
         border-radius: 4rem;
     }
 
     p#login_txt {
         position: relative;
-        top: -1.3rem;
+        top: -1.2rem;
         margin-right: 1rem;
         text-align: right;
     }
@@ -477,7 +477,6 @@
         border: 1px solid #d4d4d4;
         border-bottom: none;
         border-top: none;
-        z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
         top: 100%;
         left: 0;
         right: 0;
@@ -510,13 +509,15 @@
         height: auto;
         display: inline;
         margin-right: 5rem;
+        border-radius: 1.1rem 1.1rem 0rem 0rem;
+        border-top: 0.7rem solid transparent;
 
-        transition-property: filter;
-        transition-duration: 0.35s;
+        transition-property: border-top;
+        transition-duration: 0.4s;
     }
 
     img[data-checked = "true"] {
-        filter: drop-shadow(0rem 0rem 0.5rem #00ffc8);
+        border-top: 0.7rem solid #00ffc8;
     }
 
     input[type = 'range'] {
