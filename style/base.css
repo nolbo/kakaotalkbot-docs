@@ -344,6 +344,7 @@
     div#imgBox {
         white-space: nowrap;
         overflow: auto;
+        padding-bottom: 2rem;
     }
 
     div.thanks_box {
@@ -351,9 +352,29 @@
         margin-right: 3rem;
     }
 
-    div#imgBox {
-        overflow: auto;
-        padding-bottom: 2rem;
+    div#dev {
+        text-align: center;
+        margin: 10rem 0rem;
+    }
+
+    div#imgs {
+        margin-bottom: 4rem;
+    }
+
+    div#imgs img {
+        filter: invert(100%);
+        width: 5rem;
+        height: auto;
+        margin-right: 5rem;
+    }
+
+    div#imgs img:last-child {
+        margin-right: 0rem;
+    }
+
+    div#dev p#dev {
+        font-size: 1.5rem;
+        word-spacing: 0.7rem;
     }
 
     /*====================ToolBar====================*/

@@ -4,16 +4,6 @@ let isRunning = false;
 const SPAN_LIST = 'span[data-isVisible = "true"]';
 let scroll;
 
-function theme(s) {
-    if (!!s) {
-        //data-checked
-        return true;
-    } else {
-        //set settings as 's'
-        return true;
-    }
-}
-
 $(function () {
     $('#toast_con').css('left', `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
     $('input#font_size').val(100);
@@ -63,7 +53,7 @@ $(function () {
         location.reload();
     });
 
-    $("dl span dd, li.sA").click(function (event) {
+    $("dd#sdb, li.sA").click(function (event) {
         if (isTool == false) {
             $(SPAN_LIST + ', form').dequeue();
             var offset = $("div#" + event.target.id.replace("d", "")).offset();

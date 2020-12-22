@@ -97,7 +97,7 @@
     
     aside dl {
         position: relative;
-        top: 9%;
+        top: 3%;
         width: 3.5rem;
     }
 
@@ -157,7 +157,7 @@
 
     span.sideList {
         position: relative;
-        top: 5%;
+        top: 2%;
         display: block;
     }
 
