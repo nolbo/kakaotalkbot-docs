@@ -60,14 +60,15 @@ $(function () {
                                             }, 5000);
                                         }
                                         if (!!a.bookmark) {
+                                            //var t = document.getElementById();
                                             a.bookmark.forEach(element => {
-                                                //
+                                                //t
                                             });
                                         }
                                     }
                                 })
-                                $('p.title, p.stitle').each(function(e, t){
-                                    t.onclick = function(){
+                                $('p.title, p.stitle').each(function (e, t) {
+                                    t.onclick = function () {
                                         auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
                                             'bookmark': firebase.firestore.FieldValue.arrayUnion({
                                                 'location': location.href.substring(location.origin.length),
@@ -83,18 +84,21 @@ $(function () {
                                     $('#login_txt').text(doc.data().id);
                                 });
                                 var lastSave = Date.now();
-                                if(["/signup", "/signin", "/signup.html", "/signin.html", "/", "/index", "/index.html"].indexOf(location.href.substring(location.origin.length)) == -1){
-                                save = function (set, f) {
-                                    if (Date.now() > (lastSave + 30000) || f === true) {
-                                        auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
-                                            'settings': set
-                                        });
+                                if (["/signup", "/signin", "/signup.html", "/signin.html", "/", "/index", "/index.html"].indexOf(location.href.substring(location.origin.length)) == -1) {
+                                    save = function (set, f) {
+                                        if (Date.now() > (lastSave + 30000) || f === true) {
+                                            auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
+                                                'settings': set
+                                            });
+                                        }
+                                        uSet(set);
                                     }
-                                    uSet(set);
-                                }}else{save = function (e) {
-                                    uSet(e);
-                                    return true;
-                                }}
+                                } else {
+                                    save = function (e) {
+                                        uSet(e);
+                                        return true;
+                                    }
+                                }
                             }
                         } else {
                             save = function (e) {
