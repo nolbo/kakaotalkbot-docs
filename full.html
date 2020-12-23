@@ -38,7 +38,7 @@
     <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/mobile.css">
-    <link id="dark" rel="stylesheet" href="style/dark.css">
+    <link id="dark" rel="stylesheet" href="style/dark.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="style/newToast.css">
     <title>KBot Docs | 전체</title>
 </head>
@@ -55,9 +55,9 @@
             <dt id="appendix"><img class="side_icon" src="img/appendix.png"></dt>
             <dt id="bookmark"><img class="side_icon" src="img/bookmark.png"></dt>
         </dl>
-        <span id="list" class="summary" data-isVisible="true">
+        <span class="list" id="summary" data-isVisible="true">
             <div class="ttl"><h1 id="ttl">개요</h1><img id="tool_btn" src="img/tool.png"></div>
-            <span class="sideList" id="deepening">
+            <span class="sideList" id="summary">
                 <dd id="d1-1" class="sdb">알아두기</dd><br>
                 <dd id="d1-2" class="sdb">카카오톡 봇</dd><br>
                 <dd id="d1-3" class="sdb">작동 원리</dd><br>
@@ -67,9 +67,9 @@
                 <dd id="d1-7" class="sdb">웹 파싱</dd>
             </span>
         </span>
-        <span id="list" class="legacyAPI" data-isVisible="false">
+        <span class="list" id="legacyAPI" data-isVisible="false">
             <div class="ttl"><h1 id="ttl">레거시 API</h1><img id="tool_btn" src="img/tool.png"></div>
-            <span class="sideList" id="deepening">
+            <span class="sideList" id="legacyAPI">
                 <dd id="d2-1" class="sdb">Api</dd><br>
                 <dd id="d2-2" class="sdb">Utils</dd><br>
                 <dd id="d2-3" class="sdb">FileStream</dd><br>
@@ -82,9 +82,9 @@
                 <dd id="d2-10" class="sdb">imageDB</dd>
             </span> 
         </span>
-        <span id="list" class="API2" data-isVisible="false">
+        <span class="list" id="API2" data-isVisible="false">
             <div class="ttl"><h1 id="ttl">API 2</h1><img id="tool_btn" src="img/tool.png"></div>
-            <span class="sideList" id="deepening">
+            <span class="sideList" id="API2">
                 <dd id="d3-1" class="sdb">App</dd><br>
                 <dd id="d3-2" class="sdb">Bot</dd><br>
                 <dd id="d3-3" class="sdb">BotManager</dd><br>
@@ -96,9 +96,9 @@
                 <dd id="d3-9" class="sdb">Security</dd>
             </span>
         </span>
-        <span id="list" class="rhino" data-isVisible="false">
+        <span class="list" id="rhino" data-isVisible="false">
             <div class="ttl"><h1 id="ttl">라이노 엔진</h1><img id="tool_btn" src="img/tool.png"></div>
-            <span class="sideList" id="deepening">
+            <span class="sideList" id="rhino">
                 <dd id="d4-1" class="sdb">기초</dd><br>
                 <dd id="d4-2" class="sdb">자료형</dd><br>
                 <dd id="d4-3" class="sdb">연산자</dd><br>
@@ -113,7 +113,7 @@
                 <dd id="d4-12" class="sdb">함수</dd>
             </span>
         </span>
-        <span id="list" class="deepening" data-isVisible="false">
+        <span class="list" id="deepening" data-isVisible="false">
             <div class="ttl"><h1 id="ttl">심화</h1><img id="tool_btn" src="img/tool.png"></div>
             <span class="sideList" id="deepening">
                 <dd id="d5-1" class="sdb">이벤트 리스너</dd><br>
@@ -123,15 +123,15 @@
                 <dd id="d5-5" class="sdb">소켓 통신</dd>
             </span>
         </span>
-        <span id="list" class="appendix" data-isVisible="false">
+        <span class="list" id="appendix" data-isVisible="false">
             <div class="ttl"><h1 id="ttl">부록</h1><img id="tool_btn" src="img/tool.png"></div>
-            <span class="sideList" id="deepening">
+            <span class="sideList" id="appendix">
                 <dd id="d99-1" class="sdb">참고자료</dd><br>
                 <dd id="d99-2" class="sdb">도움주신 분들</dd><br>
                 <dd id="d99-3" class="sdb">문의하기</dd>
             </span>
         </span>
-        <span id="list" class="bookmark" data-isVisible="false">
+        <span class="list" id="bookmark" data-isVisible="false">
             <div class="ttl"><h1 id="ttl">북마크</h1><img id="tool_btn" src="img/tool.png"></div>
             <span class="sideList" id="bookmark">
                 <dd class="sdb" onclick="bkmk(0)">bkmk1</dd>
@@ -4093,19 +4093,19 @@
                 <div id="imgBox">
                     <div class="thanks_box" id="주현명님">
                         <img class="thank" src="../img/default.png">
-                        <p id="thank_you" class="주현명님"><strong>주현명</strong> 님</p>
+                        <p class="thank_you" id="주현명님"><strong>주현명</strong> 님</p>
                     </div>
                     <div class="thanks_box" id="Violet_XF님">
                         <img class="thank" src="../img/default.png">
-                        <p id="thank_you" class="Violet_XF님"><strong>Violet XF</strong> 님</p>
+                        <p class="thank_you" id="Violet_XF님"><strong>Violet XF</strong> 님</p>
                     </div>
                     <div class="thanks_box" id="Doami님">
                         <img class="thank" src="../img/default.png">
-                        <p id="thank_you" class="Doami님"><strong>Doami</strong> 님</p>
+                        <p class="thank_you" id="Doami님"><strong>Doami</strong> 님</p>
                     </div>
                     <div class="thanks_box" id="JusticeHui님">
                         <img class="thank" src="../img/default.png">
-                        <p id="thank_you" class="JusticeHui님"><strong>JusticeHui</strong> 님</p>
+                        <p class="thank_you" id="JusticeHui님"><strong>JusticeHui</strong> 님</p>
                     </div>
                 </div>
             </div>

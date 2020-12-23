@@ -9,13 +9,13 @@ $(function(){
 
     $(`aside dt#bookmark, aside dt#${thisId}`).click(function(event){
         if(isTool == false) {
-            let ele = `span.${$(this).attr('id')}`;
+            let ele = `span#${$(this).attr('id')}`;
 
             for(txt of LIST_ARRAY){
-                if($(`span.${txt}`).css('opacity') == '1'){
-                    $(`span.${txt}`).animate({'opacity' : '0'}, 300);
+                if($(`span#${txt}`).css('opacity') == '1'){
+                    $(`span#${txt}`).animate({'opacity' : '0'}, 300);
                     setTimeout(function(){
-                        $(`span.${txt}`).css('display', 'none');
+                        $(`span#${txt}`).css('display', 'none');
                     }, 300);
                     break;
                 }

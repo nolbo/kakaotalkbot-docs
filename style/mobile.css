@@ -97,7 +97,7 @@
     
     aside dl {
         position: relative;
-        top: 3%;
+        top: 7%;
         width: 3.5rem;
     }
 
@@ -117,7 +117,7 @@
         filter: invert(0%);
     }
 
-    aside span#list {
+    aside span.list {
         margin: 0;
         padding: 2rem 0rem;
         display: none;
@@ -130,7 +130,7 @@
         left: 0rem;
     }
 
-    span#list h1 {
+    span.list h1 {
         font-size: 1.1rem;
         font-weight: bold;
         display: inline;
@@ -148,7 +148,7 @@
         margin: 0.2rem 0;
     }
 
-    span#list dd {
+    span.list dd {
         font-size: 0.9rem;
         display: inline-block;
         font-weight: 500;
@@ -157,7 +157,7 @@
 
     span.sideList {
         position: relative;
-        top: 2%;
+        top: 5%;
         display: block;
     }
 
@@ -330,7 +330,7 @@
 
     img.thank {
         filter: invert(100%);
-        width: 5rem;
+        width: 4rem;
     }
     
     div#imgBox {
@@ -341,6 +341,35 @@
     div.thanks_box {
         display: inline;
         margin-right: 3rem;
+    }
+
+    p.thank_you {
+        font-size: 0.8rem;
+    }
+
+    div#dev {
+        text-align: center;
+        margin: 5rem 0rem;
+    }
+
+    div#imgs {
+        margin-bottom: 2rem;
+    }
+
+    div#imgs img {
+        filter: invert(100%);
+        width: 3rem;
+        height: auto;
+        margin-right: 3rem;
+    }
+
+    div#imgs img:last-child {
+        margin-right: 0rem;
+    }
+
+    div#dev p#dev {
+        font-size: 0.8rem;
+        word-spacing: 0.5rem;
     }
 
     /*====================ToolBar====================*/

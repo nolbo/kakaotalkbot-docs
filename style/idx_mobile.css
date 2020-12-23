@@ -46,7 +46,7 @@
         top: 20%;
     }
 
-    div#list {
+    div.list {
         position: relative;
         top: calc(20% + 7rem);
         margin: 0 2rem;

@@ -4,8 +4,8 @@ function font(s){
     var fs = s['font_size'];
     fs = (Number(fs) / 100);
     if (window.innerWidth < 800) {
-        $('span#list h1').css('font-size', 1.1 * fs + 'rem');
-        $('span#list dd').css('font-size', 0.9 * fs + 'rem');
+        $('span.list h1').css('font-size', 1.1 * fs + 'rem');
+        $('span.list dd').css('font-size', 0.9 * fs + 'rem');
         $('p.title').css('font-size', 1.3 * fs + 'rem');
         $('p.stitle').css('font-size', 1.1 * fs + 'rem');
         $('p.dscrpt').css('font-size', 0.8 * fs + 'rem');
@@ -21,8 +21,8 @@ function font(s){
         $('select.tool_sel').css('font-size', 0.8 * fs + 'rem');
     } else {
         $('*').css('font-size', 1 * fs + 'rem');
-        $('span#list h1').css('font-size', 1.7 * fs + 'rem');
-        $('span#list dd').css('font-size', 1.1 * fs + 'rem');
+        $('span.list h1').css('font-size', 1.7 * fs + 'rem');
+        $('span.list dd').css('font-size', 1.1 * fs + 'rem');
         $('p.title').css('font-size', 1.9 * fs + 'rem');
         $('p.stitle').css('font-size', 1.4 * fs + 'rem');
         $('p.code').css('font-size', 0.9 * fs + 'rem');

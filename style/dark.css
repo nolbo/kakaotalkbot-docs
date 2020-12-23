@@ -6,89 +6,133 @@
 @font-face{ font-family: 'D2Coding'; src:url(font/D2Coding.woff) format('woff'); }
 
 
-@media(prefers-color-scheme: dark){
-    div.table::-webkit-scrollbar-thumb, div.code::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: white;  }
+div.table::-webkit-scrollbar-thumb, div.code::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: white;  }
 
-    body {
-        background: #3a3a3a;
-    }
+body {
+    background: #3a3a3a;
+}
 
-    li.a::before, li.sA::before {
-        filter: invert(0%);
-    }
+li.a::before, li.sA::before {
+    filter: invert(0%);
+}
 
-    div#auto td:hover {
-        background: black;
-    }
+div#auto td:hover {
+    background: black;
+}
 
-    article {
-        background: #3a3a3a;
-        color: white !important;
-    }
+article {
+    background: #3a3a3a;
+    color: white !important;
+}
 
-    article img {
-        filter: invert(0%);
-    }
+article img {
+    filter: invert(0%);
+}
 
-    span#list dd {
-        color: white;
-    }
+span.list dd {
+    color: white;
+}
 
-    p.code {
-        color: white;
-        background: black;
-        box-shadow: 0rem 0rem 0.5rem 0rem #cfcfcf;
-    }
+p.code {
+    color: white;
+    background: black;
+    box-shadow: 0rem 0rem 0.5rem 0rem #cfcfcf;
+}
 
-    div.crf, div.pls {
-        background: #3a3a3a;
-    }
+div.crf, div.pls {
+    background: #3a3a3a;
+}
 
-    div.code {
-        background: black;
-        box-shadow: 0rem 0rem 1rem 0rem #161616;
-    }
+ div.code {
+    background: black;
+    box-shadow: 0rem 0rem 1rem 0rem #161616;
+}
 
-    table {
-        border-left: 0em solid transparent;
-        border-right: 0em solid transparent;
-        border-top: 0.5rem solid white;
-    }
+table {
+    border-left: 0em solid transparent;
+    border-right: 0em solid transparent;
+    border-top: 0.5rem solid white;
+}
 
-    th, td {
-        border-bottom: 0.1em solid white;
-    }
+th, td {
+    border-bottom: 0.1em solid white;
+}
 
-    img.thank {
-        filter: invert(0%);
-    }
+img.thank {
+    filter: invert(0%);
+}
 
-    img.sttc, img.prttp {
-        filter: invert(0%);
-    }
+img.sttc, img.prttp {
+    filter: invert(0%);
+}
 
-    section#tool {
-        background: #3a3a3a;
-    }
+section#tool {
+    background: #3a3a3a;
+}
 
-    input#search_txt {
-        color: white;
-        border-bottom: 0.3rem solid white;
-        background: transparent;
-    }
+input#search_txt {
+    color: white;
+    border-bottom: 0.3rem solid white;
+    background: transparent;
+}
 
-    button#search_btn img {
-        filter: invert(0%);
-    }
+button#search_btn img {
+    filter: invert(0%);
+}
 
-    div#auto table {
-        border: none;
-        margin-top: -0.7rem;
-        margin-left: 0.1rem;
-        z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-    }
+div#auto table {
+    border: none;
+    margin-top: -0.7rem;
+    margin-left: 0.1rem;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+}
 
-    div#auto tr {
-        background: #303030;
-    }
+div#auto tr {
+    background: #303030;
+}
+
+div#imgs img {
+    filter: invert(0%);
+    width: 3rem;
+    height: auto;
+    margin-right: 3rem;
+}
+
+input[type = 'range'] {
+    -webkit-appearance: none; 
+    overflow: hidden;
+    width: 20rem; 
+    height: 0.5rem;
+    background: transparent; 
+    cursor: pointer;
+    background: #161616;
+    border-radius: 4rem; /* iOS */
+
+    transition-property: height;
+    transition-duration: 0.3s;
+}
+
+select.tool_sel {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    width: 15rem;
+    height: 3rem;
+    border: none;
+    border-radius: 1rem;
+    padding: 0 1.5rem;
+    background: url('../img/select_font.png') no-repeat 12.5rem 50%;
+    filter: invert(100%);
+    background-size: 0.9rem 0.9rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+div#preview {
+    margin: 5rem 0rem;
+    padding: 3rem;
+    border-radius: 3rem;
+    box-shadow: 0rem 0rem 0.8rem #161616;
 }

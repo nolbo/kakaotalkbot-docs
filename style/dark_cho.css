@@ -30,7 +30,7 @@
         filter: invert(0%);
     }
 
-    span#list dd {
+    span.list dd {
         color: white;
     }
 

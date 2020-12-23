@@ -16,16 +16,16 @@ function getChangeWhiteMode(){
 
 $(function(){
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        $.getChangeDarkMode();
+        getChangeDarkMode();
     }
 });
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     if(e.matches){
-        $.getChangeDarkMode();
+        getChangeDarkMode();
     }
     else{
-        $.getChangeWhiteMode();
+        getChangeWhiteMode();
     }
 });
 
