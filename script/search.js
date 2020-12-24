@@ -19,6 +19,21 @@ location.get = function () {
   }
 }
 
+location.set = function(a){
+  var b='';
+  Object.keys(a).forEach((e)=>{b+=encodeURIComponent(e)+'='+encodeURIComponent(a[e])+'&'});
+  if(b.reverse().startsWith('&')) b = b.reverse().substr(1).reverse();
+  if(a!={}){
+    location.search = b;
+  }else{
+    location.search = ''
+  }
+}
+
+location.update = function(a){
+  a;
+}
+
 Array.prototype.in = function (arg) {
   var t = false;
   this.forEach((e) => {
@@ -61,6 +76,10 @@ function get_key(txt) {
   if (result.phrases[0]) {
     return result.phrases[0].split('(')[0];
   }
+}
+
+function submit(){
+  location.update({'search': $('input#search_txt').val()});
 }
 
 $(() => {

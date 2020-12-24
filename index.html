@@ -18,6 +18,7 @@
     <script type="text/javascript" src="script/dark.js"></script>
     <script type="text/javascript" src="script/index.js"></script>
     <script type="text/javascript" src="script/anime.js"></script>
+    <script type="text/javascript" src="script/firebase.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
     <link rel="stylesheet" href="style/index.css">
@@ -29,6 +30,327 @@
     <title>KBot Docs | 카카오톡 봇 문서</title>
 </head>
 <body>
-    
+    <!-- <canvas id='canvas' width="180.4" height="124.5" viewBox="0 0 180.4 124.5"></canvas> -->
+    <header>
+        <svg
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:cc="http://creativecommons.org/ns#"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            version="1.1"
+            class = "header_obj"
+            id="svg10"
+            width="300"
+            height="300"
+            viewBox="0 0 300 300"
+            sodipodi:docname="docs_black.svg"
+            inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+            <metadata id="metadata16">
+                <rdf:RDF>
+                    <cc:Work
+                        rdf:about="">
+                        <dc:format>image/svg+xml</dc:format>
+                        <dc:type
+                            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                        <dc:type />
+                    </cc:Work>
+                </rdf:RDF>
+            </metadata>
+            <defs id="defs14" />
+            <sodipodi:namedview
+                pagecolor="#ffffff"
+                bordercolor="#666666"
+                borderopacity="1"
+                objecttolerance="10"
+                gridtolerance="10"
+                guidetolerance="10"
+                inkscape:pageopacity="0"
+                inkscape:pageshadow="2"
+                inkscape:window-width="1680"
+                inkscape:window-height="983"
+                id="namedview12"
+                showgrid="false"
+                inkscape:zoom="2.45"
+                inkscape:cx="115.22445"
+                inkscape:cy="168.33983"
+                inkscape:window-x="-9"
+                inkscape:window-y="-9"
+                inkscape:window-maximized="1"
+                inkscape:current-layer="g18"
+                inkscape:document-rotation="0" />
+            <g inkscape:groupmode="layer" inkscape:label="Image" id="g18">
+                <path
+                    style="fill : none;
+                        stroke : #ffffff;
+                        stroke-width : 25px;
+                        stroke-linecap : butt;
+                        stroke-linejoin : miter;
+                        stroke-opacity : 1"
+                    d="m 12.244898,33.367347 
+                        c -0.442176,15.890482 0.102041,253.775513 0.102041,253.775513
+                        l 89.183671,-76.53061 
+                        c 1.84524,-1.75595 3.90732,-2.52976 6.53062,-2.55102 
+                        l 154.89795,-0.30613 
+                        c 12.82313,-0.22109 24.34123,-10.56348 24.38776,-23.77551 
+                        L 287.2449,36.938775 
+                        c -0.28412,-13.859285 -8.93808,-24.83242 -21.63265,-24.693877 0,0 -222.21089,-0.136055 -233.163271,0.204081 -10.952381,0.340136 -19.761905,5.027886 -20.204081,20.918368 z"
+                    id="path26"
+                    sodipodi:nodetypes="zccccccczz" />
+            </g>
+        </svg>
+        <div><img class="header_obj" id="login_img" src="img/profile.png"><p id="login_txt">로그인하기</p></div>
+    </header>
+    <article>
+        <section id="main">
+            <div class="block" id="summary">
+                <div>
+                    <img class="docs_img" src="img/summary.png">
+                    <h2 class="title">개요</h2>
+                </div>
+                <p class="dscrpt">카카오톡 봇 개발에 첫 발을 내딛기 시작한 개발자들을 위한 문서입니다. 카카오톡 봇에 관한 개념, 유의사항, 개발환경 구축 방법에 대해 설명합니다.</p>
+            </div>
+            <div class="block" id="legacyAPI">
+                <div>
+                    <img class="docs_img" src="img/api.png">
+                    <h2 class="title">레거시 API</h2>
+                </div>
+                <p class="dscrpt">대부분의 카카오톡 봇 앱에 내장되어 있는 기본적인 API에 관한 문서입니다. 앱에 따라 다를 수 있습니다.</p>
+            </div>
+            <div class="block" id="API2">
+                <div>
+                    <img class="docs_img" src="img/api2.png">
+                    <h2 class="title">API2</h2>
+                </div>
+                <p class="dscrpt">메신저봇R 한정으로 내장되어 있는 레거시 API보다 더 많은 기능을 제공하는 API에 관한 문서입니다.</p>
+            </div>
+            <div class="block" id="rhino">
+                <div>
+                    <img class="docs_img" src="img/rhino.png">
+                    <h2 class="title">라이노 엔진</h2>
+                </div>
+                <p class="dscrpt">카카오톡 봇 개발을 위한 본격적인 단계에 들어서는 개발자들을 위한 문서입니다. 자바스크립트 라이노 엔진에 대한 매우 자세한 내용이 작성되어 있습니다.</p>
+            </div>
+            <div class="block" id="deepening">
+                <div>
+                    <img class="docs_img" src="img/deepening.png">
+                    <h2 class="title">심화</h2>
+                </div>
+                <p class="dscrpt">더 복잡한 기능을 만들거나, 카카오톡 봇 개발에 관한 더 심화된 내용이 작성된 문서입니다. 자바스크립트를 잘 다룰 정도의 실력일 때 읽는 것을 추천드립니다.</p>
+            </div>
+            <div class="block" id="appendix">
+                <div>
+                    <img class="docs_img" src="img/appendix.png">
+                    <h2 class="title">부록</h2>
+                </div>
+                <p class="dscrpt">카카오톡 봇 문서 작성에 참고한 자료나 도움을 주신 분들에 대한 내용입니다.</p>
+            </div>
+            <div class="block" id="full">
+                <div>
+                    <img class="docs_img" src="img/full.png">
+                    <h2 class="title">전체</h2>
+                </div>
+                <p class="dscrpt">개요, 레거시 API, API2, 라이노 엔진, 심화, 부록 문서를 모두 모아놓은 종합 문서입니다.</p>
+            </div>
+            <div class="block" id="index">
+                <img class="docs_img" src="img/docs.png">
+            </div>
+        </section>
+        <section id="log">
+            <div class="logblock" id="16.1">
+                <h1 class="title">Kakaotalk Bot Docs 16.1</h1>
+                <ul class="big">
+                    <li>코드박스 하이라이팅 색상 개선</li>
+                    <li>사이드바 글꼴 개선 (JetBrains Mono Regular, 맑은고딕)</li>
+                </ul>
+            </div>
+            <div class="logblock" id="16">
+                <h1 class="title">Kakaotalk Bot Docs 16</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>내장 객체 (Number, Math) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                    <li>정적 속성/메소드, 프로토타입 속성/메소드 아이콘 추가</li>
+                    <li>404, 503 에러 페이지 추가</li>
+                    <li>코드박스 하이라이팅 색상 개선</li>
+                    <li>사이드바 글꼴 개선 (JetBrains Mono Regular, 맑은고딕)</li>
+                </ul>
+            </div>
+            <div class="logblock" id="15">
+                <h1 class="title">Kakaotalk Bot Docs 15</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>내장 객체 (Error, EvalError, InternalError, ReferenceError, SystaxError, TypeError) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                    <li>코드박스 숫자 하이라이팅 색상 추가 (#D400FF)</li>
+                </ul>
+            </div>
+            <div class="logblock" id="14">
+                <h1 class="title">Kakaotalk Bot Docs 14</h1>
+                <ul class="big">
+                    <li>이름 변경 (KakaotalkBot Docs → KakaotalkBot Docs)</li>
+                    <li>내용 추가
+                        <ul>
+                            <li>내장 객체 (Boolean, Symbol) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logblock" id="13">
+                <h1 class="title">Kakaotalk Bot Reference 13</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>내장 객체 (Function) 내용 추가작성</li>
+                            <li>Api 내용 추가작성</li>
+                            <li>객체(Object객체) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                    <li>404 에러 페이지 제작</li>
+                </ul>
+            </div>
+            <div class="logblock" id="12">
+                <h1 class="title">Kakaotalk Bot Reference 12</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>정규식 (정규식 사용하기) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                    <li>404 에러 페이지 제작</li>
+                </ul>
+            </div>
+            <div class="logblock" id="11">
+                <h1 class="title">Kakaotalk Bot Reference 11</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>배열 (배열 사용법, 다차원 배열) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                    <li>내용 오류 수정
+                        <ul>
+                            <li>정규식 (정규식 사용하기) 내용 수정</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logblock" id="10">
+                <h1 class="title">Kakaotalk Bot Reference 10</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>정규식 (정규식 만들기, 정규식 패턴 작성하기) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logblock" id="9">
+                <h1 class="title">Kakaotalk Bot Reference 9</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>Api 내용 추가작성</li>
+                            <li>조건문 내용 추가작성</li>
+                            <li>객체 내용 추가작성</li>
+                            <li>반복문 (break문, continue문, label문, do-while문, for-in문, for-of문) 내용 작성</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logblock" id="8">
+                <h1 class="title">Kakaotalk Bot Reference 8</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>반복문 (while문, 중첩 for문) 내용 추가작성</li>
+                            <li>부록 작성</li>
+                        </ul>
+                    </li>
+                    <li>정보박스 추가</li>
+                    <li>내용 오류 수정</li>
+                </ul>
+            </div>
+            <div class="logblock" id="7">
+                <h1 class="title">Kakaotalk Bot Reference 7</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>반복문 (for문) 내용 추가작성</li>
+                            <li>부록 작성</li>
+                        </ul>
+                    </li>
+                    <li>코드박스 소스 하이라이팅 업그레이드</li>
+                    <li>경고박스 추가</li>
+                </ul>
+            </div>
+            <div class="logblock" id="6">
+                <h1 class="title">Kakaotalk Bot Reference 6</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>조건문 (if문) 내용 추가작성</li>
+                            <li>부록 작성</li>
+                        </ul>
+                    </li>
+                    <li>위치이동 속도 변경 (1s → 1.5s)</li>
+                </ul>
+            </div>
+            <div class="logblock" id="4">
+                <h1 class="title">Kakaotalk Bot Reference 4</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>연산자 내용 작성</li>
+                            <li>배열 내용 작성</li>
+                        </ul>
+                    </li>
+                    <li>다크테마 추가 (시스템 테마에 따라 변경)</li>
+                </ul>
+            </div>
+            <div class="logblock" id="3">
+                <h1 class="title">Kakaotalk Bot Reference 3</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>연산자(일부) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                    <li>오픈 그래픽 추가</li>
+                    <li>모바일 사이드바 개선</li>
+                    <li>내용 오류 수정
+                        <ul>
+                            <li>비교연산자 내용 수정</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logblock" id="2">
+                <h1 class="title">Kakaotalk Bot Reference 2</h1>
+                <ul class="big">
+                    <li>내용 추가
+                        <ul>
+                            <li>기초 내용 작성</li>
+                            <li>자료형 내용 작성</li>
+                            <li>연산자(일부) 내용 추가작성</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logblock" id="1">
+                <h1 class="title">Kakaotalk Bot Reference 1</h1>
+                <ul class="big">
+                    <li>모바일 버전 사이드바 추가 (로고 클릭)</li>
+                    <li>코드박스, 코드블럭, 사이드바 글꼴변경 (JetBrains Mono, D2Coding)</li>
+                </ul>
+            </div>
+        </section>
+    </article>
 </body>
 </html>

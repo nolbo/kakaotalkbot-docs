@@ -485,6 +485,11 @@
         bottom: 4rem;
     }
 
+    .autocomplete-active {
+        background-color: #00ffc8 !important;
+        color: black !important;
+    }
+
     li.auto {
         display: inline;
         background: #505050;

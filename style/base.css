@@ -510,7 +510,8 @@
     }
 
     .autocomplete-active {
-        background-color: #00ffff !important; 
+        background-color: #00ffc8 !important;
+        color: black !important;
     }
 
     div.tool_sec {
@@ -553,19 +554,12 @@
     }
 
     p.rangeTxt {
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin-left: 1rem;
-
-        transition-property: font-size;
-        transition-duration: 0.3s;
     }
     
     input[type=range]:focus {
         outline: none;
-    }
-
-    input[type=range]:hover + p.rangeTxt {
-        font-size: 1.5rem;
     }
     
     input[type=range]::-webkit-slider-thumb {
