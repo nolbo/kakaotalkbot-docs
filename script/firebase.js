@@ -60,23 +60,51 @@ $(function () {
                                             }, 5000);
                                         }
                                         if (!!a.bookmark) {
-                                            //var t = document.getElementById();
-                                            a.bookmark.forEach(element => {
-                                                //t
+                                            t = $('span#bookmark')[0];
+                                            a.bookmark.forEach((elem) => {
+                                                var b = document.createElement("span");
+                                                b.className = "sideList";
+                                                var c = document.createElement("dd");
+                                                c.innerText = elem.ttl;
+                                                c.className = "sdb";
+                                                c.onclick = function () {
+                                                    $([document.documentElement, document.body]).animate({
+                                                        scrollTop: elem.pos - 150
+                                                    }, 500);
+                                                }
+                                                b.appendChild(c);
+                                                t.appendChild(b);
                                             });
                                         }
                                     }
                                 })
                                 $('p.title, p.stitle').each(function (e, t) {
                                     t.onclick = function () {
+                                        var k = {
+                                            'location': location.href.substring(location.origin.length),
+                                            'pos': t.offsetTop,
+                                            'ttl': t.innerText,
+                                            'ts': (new Date).toString()
+                                        };
                                         auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
-                                            'bookmark': firebase.firestore.FieldValue.arrayUnion({
-                                                'location': location.href.substring(location.origin.length),
-                                                'pos': t.offsetTop,
-                                                'ttl': t.innerText,
-                                                'ts': (new Date).toString()
-                                            })
+                                            'bookmark': firebase.firestore.FieldValue.arrayUnion(k)
                                         })
+                                        var elem;
+                                        t = $('span#bookmark')[0];
+                                        elem = k;
+                                        var b = document.createElement("span");
+                                        b.className = "sideList";
+                                        var c = document.createElement("dd");
+                                        c.innerText = elem.ttl;
+                                        c.className = "sdb";
+                                        c.onclick = function () {
+                                            $([document.documentElement, document.body]).animate({
+                                                scrollTop: elem.pos - 150
+                                            }, 500);
+                                        }
+                                        b.appendChild(c);
+                                        t.appendChild(b);
+
                                     }
                                 });
                                 auth.firestore().collection('users').doc(auth.auth().currentUser.uid).get().then(function (doc) {
