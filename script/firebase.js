@@ -79,17 +79,17 @@ $(function() {
                                                     var c = document.createElement("dd");
                                                     c.innerText = elem.ttl;
                                                     c.className = "sdb";
-                                                    c.onclick = function() {
-                                                        $([document.documentElement, document.body]).animate({
-                                                            scrollTop: elem.pos - 150
-                                                        }, 500);
-                                                    }
-                                                    c.ondblclick = function() {
-                                                        auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
-                                                            'bookmark': firebase.firestore.FieldValue.arrayRemove(elem)
-                                                        })
-                                                        c.remove();
-                                                    }
+                                                    c.addEventListener("click", function (e) {
+                                                        if (e.detail === 1) { 
+                                                            $([document.documentElement, document.body]).animate({
+                                                                scrollTop: elem.pos - 150
+                                                            }, 500);
+                                                        } else if (e.detail === 2) {
+                                                            auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
+                                                                'bookmark': firebase.firestore.FieldValue.arrayRemove(elem)
+                                                            })
+                                                            c.remove();
+                                                    } });
 
                                                     b.appendChild(c);
                                                     t.appendChild(b);
@@ -116,17 +116,17 @@ $(function() {
                                             var c = document.createElement("dd");
                                             c.innerText = elem.ttl;
                                             c.className = "sdb";
-                                            c.onclick = function() {
-                                                $([document.documentElement, document.body]).animate({
-                                                    scrollTop: elem.pos - 150
-                                                }, 500);
-                                            }
-                                            c.ondblclick = function() {
-                                                auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
-                                                    'bookmark': firebase.firestore.FieldValue.arrayRemove(elem)
-                                                })
-                                                c.remove();
-                                            }
+                                            c.addEventListener("click", function (e) {
+                                                if (e.detail === 1) { 
+                                                    $([document.documentElement, document.body]).animate({
+                                                        scrollTop: elem.pos - 150
+                                                    }, 500);
+                                                } else if (e.detail === 2) {
+                                                    auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
+                                                        'bookmark': firebase.firestore.FieldValue.arrayRemove(elem)
+                                                    })
+                                                    c.remove();
+                                            } });
                                             b.appendChild(c);
                                             t.appendChild(b);
 

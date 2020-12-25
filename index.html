@@ -15,6 +15,7 @@
     <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script type="text/javascript" src="script/newToast.js"></script>
     <script type="text/javascript" src="script/theme.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
     <script type="text/javascript" src="script/index.js"></script>
@@ -24,6 +25,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
     <link rel="stylesheet" href="style/index.css" media="screen and (min-width:801px)">
     <link rel="stylesheet" href="style/idx_mobile.css" media="screen and (max-width:800px)">
+    <link rel="stylesheet" href="style/newToast.css">
     <link rel="stylesheet" href="style/idx_dark.css" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://kkotbot-docs.kro.kr">
     <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/docs_black.png">
@@ -31,8 +33,9 @@
     <title>KBot Docs | 카카오톡 봇 문서</title>
 </head>
 <body>
+    <div id="toast_con" class="default" role="alert"><p id="toast_txt"></p></div>
     <!-- <canvas id='canvas' width="180.4" height="124.5" viewBox="0 0 180.4 124.5"></canvas> -->
-    <header>
+<header>
         <svg
             xmlns:dc="http://purl.org/dc/elements/1.1/"
             xmlns:cc="http://creativecommons.org/ns#"
@@ -102,7 +105,7 @@
                     sodipodi:nodetypes="zccccccczz" />
             </g>
         </svg>
-        <img class="header_obj" id="login_img" src="img/profile.png">
+        <div onclick="if(!auth.auth().currentUser){location.href='signin.html';}"><img class="header_obj" id="login_img" src="img/profile.png"></div>
     </header>
     <article>
         <section id="main">

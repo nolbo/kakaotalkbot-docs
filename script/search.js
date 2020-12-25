@@ -22,7 +22,7 @@ location.get = function () {
 location.set = function(a){
   var b='';
   Object.keys(a).forEach((e)=>{b+=encodeURIComponent(e)+'='+encodeURIComponent(a[e])+'&'});
-  if(b.reverse().startsWith('&')) b = b.reverse().substr(1).reverse();
+  if(b.split('').reverse().join('').startsWith('&')) b = b.split('').reverse().join('').substr(1).split('').reverse().join('');
   if(a!={}){
     location.search = b;
   }else{
@@ -31,7 +31,11 @@ location.set = function(a){
 }
 
 location.update = function(a){
-  a;
+  var d = location.get()
+  Object.keys(a).forEach((e)=>{
+    d[e]=a[e]
+  })
+  location.set(d)
 }
 
 Array.prototype.in = function (arg) {
@@ -98,11 +102,16 @@ $(() => {
     searchExec($.cookie('docs_search'));
     $.removeCookie('docs_search');
   }
-  $('#search_txt').keydown(function (event) {
-    // enter has keyCode = 13, change it if you want to use another button
-    if (event.keyCode == 13) {
-      this.form.submit();
-      return false;
+  $('#search').on('keyup keypress', function(e) {
+    var keyCode = e.keyCode || e.which;
+    if (keyCode === 13) { 
+      if(!$('#last')[0]){
+        e.preventDefault();
+        //return false;
+      }
+      location.update({
+        'search': $('#search_txt').val()
+      });
     }
   });
   var inp = document.getElementById("search_txt")
@@ -185,7 +194,7 @@ $(() => {
     } else if (e.key == "Enter") {
       //If the ENTER key is pressed, prevent the form from being submitted,
       e.preventDefault();
-      if (currentFocus > -1) {
+      if (currentFocus > -1 && !!$('#last')[0]) {
         inp.value = x[currentFocus].innerText;
         //and simulate a click on the "active" item:
         x[currentFocus].click();

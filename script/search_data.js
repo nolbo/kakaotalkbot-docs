@@ -12,16 +12,16 @@ var search = [
       'keys': ['개발 준비', '앱 설치', '부계정을 사용할 경우', 'Google Play', 'Wear OS by Google', 'Android Wear', '안드로이드 버전이 7.0', '앱을 추가로 설치', '구동할 수 있는 환경이 조성', '알림 읽기 권한이 없습니다.', '데이터 폴더', '변경을 선택해 저장할 경로를 지정합니다.', '메신저봇R의 메인 화면', '스크립트 추가 버튼', '새 봇 창', '스크립트 이름', '올바른 추가 설정', '본계정과 부계정 모두', '삼성 듀얼 메신저 기능을 사용할 경우', '복제 앱을 사용할 경우', '공용 설정 > 알림을 읽을 패키지명', 'if(packageName != \'복제된 앱의 패키지명\') return;'],
       'location': '1-4'
     }, {
-      'keys': [],
+      'keys': ['response 함수', '기본적인 이벤트 리스너', '기본', '기본적인 response함수', '여러 개의 매개변수', 'response함수 내부', '통합된 매개변수', 'params'],
       'location': '1-5'
     }, {
-      'keys': [],
+      'keys': ['수신하기', '수신기능'],
       'location': '1-6'
     }, {
-      'keys': [],
+      'keys': ['웹 파싱', '날씨같은 정보', 'Jsoup', '자신이 필요한 정보'],
       'location': '1-7'
     }, {
-      'keys': [],
+      'keys': ['Api','Api.getContext()','Api.reload()','Api.compile()','Api.reload(scriptName: String, throwOnError: Boolean = false)','Api.compile(String scriptName, Boolean throwOnError = false)','Api.prepare(scriptName: String)','Api.unload(scriptName: String)','Api.off()','Api.off(scriptName: String)','Api.on()','Api.on(scriptName: String)','Api.isOn(scriptName: String)','Api.isCompiled(scriptName: String)','Api.isCompiling(scriptName: String)','Api.getScriptNames()','Api.replyRoom(room: String, message: String)','Api.replyRoom(String room, String message, Boolean hideToast = false)','Api.canReply(room: String)','Api.showToast(content: String, length: int)','Api.makeNoti(title: String, content: String, id: int)','Api.papagoTranslate(sourceLanguage: String, targetLanguage: String, content: String)','Api.papagoTranslate(String sourceLanguage, String targetLanguage, String content, Boolean errorToString = false)	','Api.gc()','Api.UIThread(func: Function, onComplete: Function)','Api.getActiveThreadsCound(scriptName: String)','Api.interruptThreads(scriptName: String)','Api.isTerminated(scriptName: String)	','파파고'],
       'location': '2-1'
     }, {
       'keys': [],
@@ -51,58 +51,58 @@ var search = [
       'keys': [],
       'location': '2-10'
     }, {
-      'keys': [],
+      'keys': ['App', 'App.getContext()', 'App.runOnUiThread(task: Function, onComplete: Function)'],
       'location': '3-1'
     }, {
-      'keys': [],
+      'keys': ['Bot', 'Bot.setCommandPrefix(prefix: String)', 'Bot.send(room: String, msg: String, packageName: String = null)', 'Bot.canReply(room: String, packageName: String = null)', 'Bot.getName()', 'Bot.setPower(power: Boolean)', 'Bot.getPower()', 'Bot.compile()', 'Bot.unload()', 'Bot.on(eventName: String, listener: Function)', 'Bot.addListener(eventName: String, listener: Function)', 'Bot.off(eventName: String, listener: Function)', 'Bot.removeListener(eventName: String, listener: Function)', 'Bot.removeAllListeners(eventName: String)', 'Bot.prependListener(eventName: String, listener: Function)', 'Bot.listeners(eventName: String)'],
       'location': '3-2'
     }, {
-      'keys': [],
+      'keys': ['BotManager', 'BotManager.getCurrentBot()', 'BotManager.getBot(botName: String)', 'BotManager.getRooms(packageName: String = null)', 'BotManager.getBotList()', 'BotManager.getPower(botName: String)', 'BotManager.setPower(botName: String, power: Boolean)', 'BotManager.compile(botName: String, throwOnError: Boolean = false)', 'BotManager.compileAll()', 'BotManager.prepare(botName: String, throwOnError: Boolean)', 'BotManager.prepareAll(throwOnError: Boolean = false)', 'BotManager.isCompiled(botName: String)', 'BotManager.unload(botName: String)'],
       'location': '3-3'
     }, {
-      'keys': [],
+      'keys': ['Broadcast', 'Broadcast.send(broadcastName: String, value: Any)', 'Broadcast.register(broadcastName: String, task: Function)', 'Broadcast.register(broadcastName: String, task: Function)', 'Broadcast.unregisterAll()'],
       'location': '3-4'
     }, {
-      'keys': [],
+      'keys': ['Database', 'Database.exists(fileName: String)', 'Database.readObject(fileName: String)', 'Database.readString(fileName: String)', 'Database.writeObject(fileName: String, obj: Object)', 'Database.writeString(fileName: String, str: String)'],
       'location': '3-5'
     }, {
-      'keys': [],
+      'keys': ['Event', 'Event.Activity.BACK_PROSSED = "activityBackProssed"', 'Event.Activity.CREATE = "activityCreate"', 'Event.Activity.DESTROY = "activityDestroy"', 'Event.Activity.PAUSE = "activityPause"', 'Event.Activity.RESTART = "activityRestart"', 'Event.Activity.RESUME = "activityResume"', 'Event.Activity.START = "activityStart"', 'Event.Activity.STOP = "activityStop"', 'Event.NOTIFICATION_POSTED = "notificationPosted"', 'Event.START_COMPILE = "startCompile"', 'Event.TICK = "tick"', 'Event.COMMAND = "command"', 'Event.MESSAGE = "message"'],
       'location': '3-6'
-    }, {
-      'keys': [],
+    },{
+      'keys': ['Http', 'Http.request(url: String, callBack: Function)', 'Http.request(options: Object, callBack: Function)', 'Http.requestSync(url: String)', 'Http.requestSync(options: Object)'],
       'location': '3-7'
     }, {
-      'keys': [],
+      'keys': ['SessionManager', 'SessionManager.bindSession(packageName: String, room: String, action: Notification.Action = null)'],
       'location': '3-8'
     }, {
-      'keys': [],
+      'keys': ['Security', 'Security.aesDecode(key: String, initVector: String, value: String)', 'Security.aesEncode(key: String, initVector: String, value: String)', 'Security.ariaDecode(key: String, value: String)', 'Security.ariaEncode(key: String, value: String)', 'Security.base32Decode(value: String)', 'Security.base32Encode(value: String)', 'Security.base64Decode(value: String)', 'Security.base64Encode(value: String)', 'Security.desDecode(key: String, value: String)', 'Security.desEncode(key: String, value: String)', 'Security.desKey()', 'Security.des3Decode(key: String, value: String)', 'Security.des3Encode(key: String, value: String)', 'Security.eccDecode(key: String, value: String)', 'Security.eccEncode(key: String, value: String)', 'Security.hashCode(value: String)', 'Security.md2(value: String)', 'Security.md5(value: String)', 'Security.rc4Decode(key: String, value: String)', 'Security.rc4Encode(key: String, value: String)', 'Security.seedDecode(seed: String, value: String)', 'Security.seedEncode(seed: String, value: String)', 'Security.sha(value: String)', 'Security.sha256(value: String)', 'Security.sha384(value: String)', 'Security.sha512(value: String)', 'Security.sha3_224(value: String)', 'Security.sha3_256(value: String)', 'Security.sha3_384(value: String)', 'Security.sha3_512(value: String)', '암호화', '인코딩', '디코딩', '복호화'],
       'location': '3-9'
     }, {
-      'keys': [],
+      'keys': ['기초', '문법', '주석', '선언', '변수', '상수', ''],
       'location': '4-1'
     }, {
-      'keys': [],
+      'keys': ['자료형', '자료형 변환', '동적 형지정', '속성'],
       'location': '4-2'
     }, {
-      'keys': [],
+      'keys': ['연산자', '할당 연산자', '비교 연산자', '산술 연산자', '비트 연산자', '논리 연산자', '문자열 연산자', '조건(삼항) 연산자', '쉼표 연산자', '단항 연산자', '관계 연산자', '연산자 우선순위', '피연산자', '단항 연산자', '이항 연산자'],
       'location': '4-3'
     }, {
-      'keys': [],
+      'keys': ['배열', 'Array', 'Array객체', '다차원 배열', '이차원 배열', '배열 객체'],
       'location': '4-4'
     }, {
-      'keys': [],
+      'keys': ['객체', 'Object', 'Object객체', '키', 'key', '프로퍼티', '메소드'],
       'location': '4-5'
     }, {
-      'keys': [],
+      'keys': ['조건문', 'if',, 'else', 'else if', '중첩 if문', 'switch', 'case', 'switch-case문', '선택문'],
       'location': '4-6'
     }, {
-      'keys': [],
+      'keys': ['반복문', 'for', 'while', '중첩 for문', 'break', 'label', 'continue', 'do-while', 'for-in', 'for-of', '루프', '레이블', '반복'],
       'location': '4-7'
     }, {
-      'keys': [],
+      'keys': ['정규식', '정규 표현식', 'RegExp', '패턴', '플래그'],
       'location': '4-8'
     }, {
-      'keys': [],
+      'keys': ['내장 객체', 'Function', 'Boolean', 'Symbol', 'Error', 'EvalError', 'InternalError', 'ReferenceError', 'SyntaxError', 'TypeError', 'Number', 'Math', 'Date', 'String', 'Map', 'Set', 'WeakMap', 'WeakSet', 'ArrayBuffer', 'JSON'],
       'location': '4-9'
     }, {
       'keys': [],
