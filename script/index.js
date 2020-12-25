@@ -42,6 +42,10 @@ $(function () {
         location.href = 'signin.html';
     });
 
+    $('div.block').click(function() {
+        location.href = `${$(this).attr('id')}.html`;
+    })
+
     var pathEl = document.getElementById('path26');
     var offset = anime.setDashoffset(pathEl);
 

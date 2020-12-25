@@ -12,15 +12,15 @@ $(function () {
 
     $('aside, aside *').hover(function (event) {
         if (Math.floor(Number($(SPAN_LIST).css('left').replace('px', ''))) <= '30' && $(SPAN_LIST).css('opacity') == '0' && $(SPAN_LIST).css('display') == 'none') {
-            $('span.list').dequeue();
+            $('aside > span.list').dequeue();
             $('body').css('overflow', 'hidden');
             $('body').css('touch-action', 'none');
             $(SPAN_LIST).css({ 'left': '0', 'opacity': '0', 'display': 'none' });
             $(SPAN_LIST).css({ 'display': 'block', 'visibility': 'visible' });
             if ($(window).width() > 800) {
-                $('span.list').animate({ 'left': '10rem' }, 300);
+                $('aside > span.list').animate({ 'left': '10rem' }, 300);
             } else {
-                $('span.list').animate({ 'left': '5rem' }, 300);
+                $('aside > span.list').animate({ 'left': '5rem' }, 300);
             }
             setTimeout(function () {
                 $(SPAN_LIST).animate({ 'opacity': '1' }, 300);
@@ -29,19 +29,19 @@ $(function () {
     });
 
     $('aside').mouseleave(function () {
-        $('span.list, input').dequeue();
+        $('aside > span.list, input').dequeue();
         $('body').css('overflow', 'visible');
         $('aside, aside *').css('overflow', '');
         $('body').css('touch-action', 'auto');
         if ($(window).width() > 800) {
-            $('span.list').css({ 'left': '10rem' });
+            $('aside > span.list').css({ 'left': '10rem' });
         } else {
-            $('span.list').css({ 'left': '5rem' });
+            $('aside > span.list').css({ 'left': '5rem' });
         }
-        $('span.list').animate({ 'opacity': '0' }, 300);
-        $('span.list').animate({ 'left': '0' }, 300);
+        $('aside > span.list').animate({ 'opacity': '0' }, 300);
+        $('aside > span.list').animate({ 'left': '0' }, 300);
         setTimeout(function () {
-            $('span.list').css({ 'display': 'none' });
+            $('aside > span.list').css({ 'display': 'none' });
         }, 600);
     });
 

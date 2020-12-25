@@ -48,13 +48,13 @@ $(function(){
 
     $('aside dt').click(function(event){
         if(isTool == false) {
-            let ele = `span#${$(this).attr('id')}`;
+            let ele = `aside > span#${$(this).attr('id')}`;
 
             for(txt of LIST_ARRAY){
-                if($(`span#${txt}`).css('opacity') == '1'){
-                    $(`span#${txt}`).animate({'opacity' : '0'}, 300);
+                if($(`aside > span#${txt}`).css('opacity') == '1'){
+                    $(`aside > span#${txt}`).animate({'opacity' : '0'}, 300);
                     setTimeout(function(){
-                        $(`span#${txt}`).css('display', 'none');
+                        $(`aside > span#${txt}`).css('display', 'none');
                     }, 300);
                     break;
                 }

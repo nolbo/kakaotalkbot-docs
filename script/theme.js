@@ -1,6 +1,7 @@
-var theme, s;
-$(function () {
-    theme = function (s) {
+
+
+function theme(s) {
+    $(function() {
         if (!s) {
             if ($('#system').attr('data-checked')==='true') {
                 return 'system';
@@ -10,46 +11,59 @@ $(function () {
                 return 'light';
             }
         } else {
-            if(s=='system'){
+            if(s == 'system'){
                 $('#system').attr('data-checked', 'true');
                 $('#white').attr('data-checked', 'false');
                 $('#dark').attr('data-checked', 'false');
-                $('#t_dark').attr('media', '(prefers-color-scheme: dark)');
-            }else if(s=='dark'){
+                $('.t_dark').attr('media', '(prefers-color-scheme: dark)');
+            }else if(s == 'dark'){
                 $('#system').attr('data-checked', 'false');
                 $('#white').attr('data-checked', 'false');
                 $('#dark').attr('data-checked', 'true');
-                $('#t_dark').removeAttr('media');
-            }else if(s=='light'){
+                $('.t_dark').removeAttr('media');
+            }else if(s == 'light'){
                 $('#system').attr('data-checked', 'false');
                 $('#white').attr('data-checked', 'true');
                 $('#dark').attr('data-checked', 'false');
-                $('#t_dark').attr('media', 'asdf');
+                $('.t_dark').attr('media', 'asdf');
             }
         }
-    }
+    }); 
+}
+
+$(function () {
     $('#white').click(function () {
         $('#system').attr('data-checked', 'false');
         $('#white').attr('data-checked', 'true');
         $('#dark').attr('data-checked', 'false');
         s();
-        $('#t_dark').attr('media', 'asdf');
+        $('.t_dark').attr('media', 'asdf');
+        getChangeWhiteMode();
     })
     $('#dark').click(function () {
         $('#system').attr('data-checked', 'false');
         $('#white').attr('data-checked', 'false');
         $('#dark').attr('data-checked', 'true');
         s();
-        $('#t_dark').removeAttr('media');
+        $('.t_dark').removeAttr('media');
+        getChangeDarkMode();
     })
     $('#system').click(function () {
         $('#system').attr('data-checked', 'true');
         $('#white').attr('data-checked', 'false');
         $('#dark').attr('data-checked', 'false');
         s();
-        $('#t_dark').attr('media', '(prefers-color-scheme: dark)');
-    })
-    s = function() {
+        $('.t_dark').attr('media', '(prefers-color-scheme: dark)');
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if(e.matches) {
+                getChangeDarkMode();
+            } else {
+                getChangeWhiteMode();
+            }
+        });
+    });
+    
+    function s() {
         save({ 'font_size': $('input#font_size').val(), 'font_norm': $('#font_norm').val(), 'font_code': $('#font_code').val(), 'theme': theme() });
     }
 })

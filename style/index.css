@@ -65,6 +65,7 @@ div.block {
     box-shadow: 0rem 0rem 1rem #dddddd;
     padding: 2rem;
     margin: 3% 1rem;
+    cursor: pointer;
 
     transition-property: box-shadow;
     transition-duration: 0.3s;

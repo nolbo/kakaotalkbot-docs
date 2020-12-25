@@ -15,16 +15,16 @@ function getChangeWhiteMode(){
 }
 
 $(function(){
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && (theme() === 'system' || theme() === 'dark')) {
         getChangeDarkMode();
     }
 });
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if(e.matches){
+    if(e.matches && (theme() === 'system' || theme() === 'dark')){
         getChangeDarkMode();
     }
-    else{
+    else if(theme() === 'system' || theme() === 'white'){
         getChangeWhiteMode();
     }
 });
