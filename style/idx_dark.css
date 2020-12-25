@@ -1,0 +1,49 @@
+*::-webkit-scrollbar {
+    width: 0rem;
+}
+
+html, body {
+    color: #dddddd !important;
+}
+
+/*====================Header====================*/
+
+header {
+    background-color: black;
+}
+
+.header_obj {
+    filter: invert(20%);
+}
+
+/*====================Content====================*/
+
+article {
+    background: #3a3a3a;
+}
+
+/*====================Content - main====================*/
+
+div.block:hover {
+    box-shadow: 0rem 0rem 1.5rem black;
+}
+
+div.block {
+    box-shadow: 0rem 0rem 1rem #161616;
+
+    transition-property: box-shadow;
+    transition-duration: 0.3s;
+}
+
+img.docs_img {
+    filter: invert(20%);
+}
+
+/*====================Content - ChangeLog====================*/
+
+section#log * {
+    background: black;
+    color: #cecece;
+}
+
+

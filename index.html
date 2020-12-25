@@ -15,15 +15,16 @@
     <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script type="text/javascript" src="script/theme.js"></script>
     <script type="text/javascript" src="script/dark.js"></script>
     <script type="text/javascript" src="script/index.js"></script>
     <script type="text/javascript" src="script/anime.js"></script>
     <script type="text/javascript" src="script/firebase.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-    <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="style/idx_dark.css">
-    <link rel="stylesheet" href="style/idx_mobile.css">
+    <link rel="stylesheet" href="style/index.css" media="screen and (min-width:801px)">
+    <link rel="stylesheet" href="style/idx_mobile.css" media="screen and (max-width:800px)">
+    <link rel="stylesheet" href="style/idx_dark.css" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://kkotbot-docs.kro.kr">
     <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/docs_black.png">
     <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
@@ -161,7 +162,7 @@
         <section id="log">
             <div class="logblock" id="19">
                 <h1 class="title">Kakaotalk Bot Docs 19</h1>
-                <ul class="big">
+                <div class="big">
                     <li>새로운 디자인 구성
                         <ul>
                             <li>문서 개별화 (개요, 레거시 API, API2, 라이노 엔진, 심화, 부록 개별화)</li>
@@ -181,11 +182,11 @@
                         </ul>
                     </li>
                     <li>북마크 기능 추가</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="18">
                 <h1 class="title">Kakaotalk Bot Docs 18</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>개요 > 개발준비 작성</li>
@@ -197,18 +198,18 @@
                     <li>부록 > 도움주신 분들 디자인 변경</li>
                     <li>코드박스 하이라이팅 색상 수정</li>
                     <li>링크참조 텍스트 추가</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="17.1">
                 <h1 class="title">Kakaotalk Bot Docs 17.1</h1>
-                <ul class="big">
+                <div class="big">
                     <li>구글 검색엔진에 카카오톡 봇 문서 표기</li>
                     <li>새로운 오픈 그래픽 이미지</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="17">
                 <h1 class="title">Kakaotalk Bot Docs 17</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>내장 객체 (String) 추가작성</li>
@@ -218,18 +219,18 @@
                         </ul>
                     </li>
                     <li>페이지 위치이동 애니메이션 추가</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="16.1">
                 <h1 class="title">Kakaotalk Bot Docs 16.1</h1>
-                <ul class="big">
+                <div class="big">
                     <li>정적 속성/메소드, 프로토타입 속성/메소드 아이콘이 비정상적으로 커진 문제 수정</li>
                     <li>참고자료 링크 오류 수정</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="16">
                 <h1 class="title">Kakaotalk Bot Docs 16</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>내장 객체 (Number, Math) 내용 추가작성</li>
@@ -239,33 +240,33 @@
                     <li>404, 503 에러 페이지 추가</li>
                     <li>코드박스 하이라이팅 색상 개선</li>
                     <li>사이드바 글꼴 개선 (JetBrains Mono Regular, 맑은고딕)</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="15">
                 <h1 class="title">Kakaotalk Bot Docs 15</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>내장 객체 (Error, EvalError, InternalError, ReferenceError, SystaxError, TypeError) 내용 추가작성</li>
                         </ul>
                     </li>
                     <li>코드박스 숫자 하이라이팅 색상 추가 (#D400FF)</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="14">
                 <h1 class="title">Kakaotalk Bot Docs 14</h1>
-                <ul class="big">
+                <div class="big">
                     <li>이름 변경 (KakaotalkBot Docs → KakaotalkBot Docs)</li>
                     <li>내용 추가
                         <ul>
                             <li>내장 객체 (Boolean, Symbol) 내용 추가작성</li>
                         </ul>
                     </li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="13">
                 <h1 class="title">Kakaotalk Bot Reference 13</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>내장 객체 (Function) 내용 추가작성</li>
@@ -274,22 +275,22 @@
                         </ul>
                     </li>
                     <li>404 에러 페이지 제작</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="12">
                 <h1 class="title">Kakaotalk Bot Reference 12</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>정규식 (정규식 사용하기) 내용 추가작성</li>
                         </ul>
                     </li>
                     <li>404 에러 페이지 제작</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="11">
                 <h1 class="title">Kakaotalk Bot Reference 11</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>배열 (배열 사용법, 다차원 배열) 내용 추가작성</li>
@@ -300,21 +301,21 @@
                             <li>정규식 (정규식 사용하기) 내용 수정</li>
                         </ul>
                     </li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="10">
                 <h1 class="title">Kakaotalk Bot Reference 10</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>정규식 (정규식 만들기, 정규식 패턴 작성하기) 내용 추가작성</li>
                         </ul>
                     </li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="9">
                 <h1 class="title">Kakaotalk Bot Reference 9</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>Api 내용 추가작성</li>
@@ -323,11 +324,11 @@
                             <li>반복문 (break문, continue문, label문, do-while문, for-in문, for-of문) 내용 작성</li>
                         </ul>
                     </li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="8">
                 <h1 class="title">Kakaotalk Bot Reference 8</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>반복문 (while문, 중첩 for문) 내용 추가작성</li>
@@ -336,11 +337,11 @@
                     </li>
                     <li>정보박스 추가</li>
                     <li>내용 오류 수정</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="7">
                 <h1 class="title">Kakaotalk Bot Reference 7</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>반복문 (for문) 내용 추가작성</li>
@@ -349,11 +350,11 @@
                     </li>
                     <li>코드박스 소스 하이라이팅 업그레이드</li>
                     <li>경고박스 추가</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="6">
                 <h1 class="title">Kakaotalk Bot Reference 6</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>조건문 (if문) 내용 추가작성</li>
@@ -361,11 +362,11 @@
                         </ul>
                     </li>
                     <li>위치이동 속도 변경 (1s → 1.5s)</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="4">
                 <h1 class="title">Kakaotalk Bot Reference 4</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>연산자 내용 작성</li>
@@ -373,11 +374,11 @@
                         </ul>
                     </li>
                     <li>다크테마 추가 (시스템 테마에 따라 변경)</li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="3">
                 <h1 class="title">Kakaotalk Bot Reference 3</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>연산자(일부) 내용 추가작성</li>
@@ -390,11 +391,11 @@
                             <li>비교연산자 내용 수정</li>
                         </ul>
                     </li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="2">
                 <h1 class="title">Kakaotalk Bot Reference 2</h1>
-                <ul class="big">
+                <div class="big">
                     <li>내용 추가
                         <ul>
                             <li>기초 내용 작성</li>
@@ -402,14 +403,14 @@
                             <li>연산자(일부) 내용 추가작성</li>
                         </ul>
                     </li>
-                </ul>
+                </div>
             </div>
             <div class="logblock" id="1">
                 <h1 class="title">Kakaotalk Bot Reference 1</h1>
-                <ul class="big">
+                <div class="big">
                     <li>모바일 버전 사이드바 추가 (로고 클릭)</li>
                     <li>코드박스, 코드블럭, 사이드바 글꼴변경 (JetBrains Mono, D2Coding)</li>
-                </ul>
+                </div>
             </div>
         </section>
     </article>

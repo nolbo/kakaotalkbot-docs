@@ -76,3 +76,18 @@ $(function () {
     //     }, 300);
     // }, 2500);
 });
+
+$(function(){
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        getChangeDarkMode();
+    }
+});
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if(e.matches){
+        getChangeDarkMode();
+    }
+    else {
+        getChangeWhiteMode();
+    }
+});
