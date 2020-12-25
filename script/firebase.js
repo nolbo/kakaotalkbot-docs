@@ -79,23 +79,18 @@ $(function() {
                                                     var c = document.createElement("dd");
                                                     c.innerText = elem.ttl;
                                                     c.className = "sdb";
-                                                    $('aside > span#bookmark dd').click(function() {
-                                                        $('article').animate({ opacity: "0" }, 700);
-                                                        setTimeout(function () {
-                                                            $("html").scrollTop(elem.pos - 115);
-                                                            $('article').animate({ opacity: "1" }, 700);
-                                                        }, 700);
-                                                    });
-
-                                                    $('aside > span#bookmark dd').dblclick(function(event) {
-                                                        event.stopPropagation();
+                                                    c.onclick = function() {
+                                                        $([document.documentElement, document.body]).animate({
+                                                            scrollTop: elem.pos - 150
+                                                        }, 500);
+                                                    }
+                                                    c.ondblclick = function() {
                                                         auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
                                                             'bookmark': firebase.firestore.FieldValue.arrayRemove(elem)
-                                                        });
-                                                    });
-                                                    
-                                                    
-                                                    
+                                                        })
+                                                        c.remove();
+                                                    }
+
                                                     b.appendChild(c);
                                                     t.appendChild(b);
                                                 });
