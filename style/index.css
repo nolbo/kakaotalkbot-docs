@@ -26,6 +26,10 @@ header {
     cursor: pointer;
 }
 
+header div {
+    display: inline;
+}
+
 img#login_img {
     background-color: white;
     position: fixed;
@@ -35,15 +39,29 @@ img#login_img {
 
 /*====================Content====================*/
 
-article {
-    padding-top: 12rem;
+article#notice {
+    display: block;
+    margin-top: 7.2rem !important;
+    background-color: black;
+    cursor: pointer;
 }
 
-article section {
+article#notice img {
+    width: 100%;
+    height: 300px;
+    background: url(../img/notice/github.png) no-repeat 50% center;
+    background-size: 100% auto;
+}
+
+article#con {
+    padding-top: 5rem;
+}
+
+article#con section {
     padding: 10rem 12%;
 }
 
-article section:first-child {
+article#con section:first-child {
     padding-top: 0rem;
 }
 

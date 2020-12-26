@@ -40,12 +40,16 @@ $(function () {
 
     $('div.block').click(function() {
         location.href = `${$(this).attr('id')}.html`;
-    })
+    });
+
+    $('article#notice').click(function() {
+        window.open('https://github.com/nolbo/kakaotalkbot-docs');
+    });
 
     var pathEl = document.getElementById('path26');
     var offset = anime.setDashoffset(pathEl);
 
-    $('article section *').css('opacity', '0');
+    $('article#notice *, article section *').css('opacity', '0');
 
     pathEl.setAttribute('stroke-dashoffset', offset);
     anime({
@@ -59,7 +63,7 @@ $(function () {
         autoplay: true
     });
     setTimeout(function() {
-        $('article section *').animate({'opacity' : '1'}, 500);
+        $('article#notice *, article section *').animate({'opacity' : '1'}, 500);
     }, 2400);
     // setTimeout(function () {
     //     $('#top_txt').animate({ 'opacity': '1' }, 300);

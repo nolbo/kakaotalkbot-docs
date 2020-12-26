@@ -24,31 +24,31 @@ var search = [
       'keys': ['Api','Api.getContext()','Api.reload()','Api.compile()','Api.reload(scriptName: String, throwOnError: Boolean = false)','Api.compile(String scriptName, Boolean throwOnError = false)','Api.prepare(scriptName: String)','Api.unload(scriptName: String)','Api.off()','Api.off(scriptName: String)','Api.on()','Api.on(scriptName: String)','Api.isOn(scriptName: String)','Api.isCompiled(scriptName: String)','Api.isCompiling(scriptName: String)','Api.getScriptNames()','Api.replyRoom(room: String, message: String)','Api.replyRoom(String room, String message, Boolean hideToast = false)','Api.canReply(room: String)','Api.showToast(content: String, length: int)','Api.makeNoti(title: String, content: String, id: int)','Api.papagoTranslate(sourceLanguage: String, targetLanguage: String, content: String)','Api.papagoTranslate(String sourceLanguage, String targetLanguage, String content, Boolean errorToString = false)	','Api.gc()','Api.UIThread(func: Function, onComplete: Function)','Api.getActiveThreadsCound(scriptName: String)','Api.interruptThreads(scriptName: String)','Api.isTerminated(scriptName: String)	','파파고'],
       'location': '2-1'
     }, {
-      'keys': [],
+      'keys': ['Utils', 'Utils.getWebText(url: String)', 'Utils.parse(url: String)', 'Utils.getAndroidVersionCode()', 'Utils.getAndroidVersionName()	', 'Utils.getPhoneBrand()', 'Utils.getPhoneModel()'],
       'location': '2-2'
     }, {
-      'keys': [],
+      'keys': ['FileStream', 'FileStream.read(path: String)', 'FileStream.write(path: String, data: String)', 'FileStream.append(path: String, data: String)', 'FileStream.remove(path: String)'],
       'location': '2-3'
     }, {
-      'keys': [],
+      'keys': ['DataBase', 'DataBase.getDataBase(fileName: String)', 'DataBase.setDataBase(fileName: String, data: String)', 'DataBase.appendDataBase(fileName: String, data: String)', 'DataBase.removeDataBase(fileName: String)'],
       'location': '2-4'
     }, {
-      'keys': [],
+      'keys': ['Log', 'Log.d(data: String)', 'Log.debug(String data)', 'Log.d(String data, Boolean showToast = false)', 'Log.debug(String data, Boolean showToast = false)', 'Log.d(String data, Boolean showToast = false)', 'Log.debug(String data, Boolean showToast = false)', 'Log.e(data: String)', 'Log.error(String data)', 'Log.e(String data, Boolean showToast = false)', 'Log.error(String data, Boolean showToast = false)', 'Log.i(data: String)', 'Log.info(String data)', 'Log.i(String data, Boolean showToast = false)', 'Log.info(String data, Boolean showToast = false)', 'Log.clear()'],
       'location': '2-5'
     }, {
-      'keys': [],
+      'keys': ['Device', 'Device.getBuild()', 'Device.getAndroidVersionCode()', 'Device.getAndroidVersionName()', 'Device.getPhoneBrand()', 'Device.getPhoneModel()', 'Device.isCharging()', 'Device.getPlugType()', 'Device.getBatteryLevel()', 'Device.getBatteryHealth()', 'Device.getBatteryTemperature()', 'Device.getBatteryVoltage()', 'Device.getBatteryStatus()', 'Device.getBatteryIntent()'],
       'location': '2-6'
     }, {
-      'keys': [],
+      'keys': ['Bridge', 'Bridge.getScopeOf(scriptName: String)', 'Bridge.isAllowed(scriptName: String)'],
       'location': '2-7'
     }, {
-      'keys': [],
+      'keys': ['AppData', 'AppData.putBoolean(key: String, boolean: Boolean)', 'AppData.getBoolean(key: String)', 'AppData.putInt(key: String, integer: int)', 'AppData.getInt(key: String)', 'AppData.putString(key: String, string: String)', 'AppData.getString(key: String)', 'AppData.remove(key: String)', 'AppData.clear()'],
       'location': '2-8'
     }, {
-      'keys': [],
+      'keys': ['replier', 'replier.reply(msg: String)', 'replier.reply(room: String, msg: String)', 'replier.reply(room: String, msg: String, hideToast: Boolean = false)'],
       'location': '2-9'
     }, {
-      'keys': [],
+      'keys': ['imageDB', 'imageDB.getProfileBase64()', 'imageDB.getProfileImage()', 'imageDB.getProfileBitmap()', 'imageDB.getImage()'],
       'location': '2-10'
     }, {
       'keys': ['App', 'App.getContext()', 'App.runOnUiThread(task: Function, onComplete: Function)'],
