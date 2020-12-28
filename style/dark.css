@@ -6,7 +6,7 @@
 @font-face{ font-family: 'D2Coding'; src:url(font/D2Coding.woff) format('woff'); }
 
 
-div.table::-webkit-scrollbar-thumb, div.code::-webkit-scrollbar-thumb{ width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: white;  }
+div.table::-webkit-scrollbar-thumb, div.code::-webkit-scrollbar-thumb,  div.pls::-webkit-scrollbar-thumb,  div.crf::-webkit-scrollbar-thumb { width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: rgb(85, 85, 85);  }
 
 body {
     background: #3a3a3a;
@@ -37,6 +37,10 @@ p.code {
     color: white;
     background: black;
     box-shadow: 0rem 0rem 0.5rem 0rem #cfcfcf;
+}
+
+p#i {
+    font-family: 'JetBrains Mono I' !important;
 }
 
 div.crf, div.pls {
@@ -91,25 +95,18 @@ div#auto tr {
     background: #303030;
 }
 
+img#arrow {
+    filter: invert(0%);
+}
+
 div#imgs img {
     filter: invert(0%);
-    width: 3rem;
-    height: auto;
-    margin-right: 3rem;
 }
 
 input[type = 'range'] {
     -webkit-appearance: none; 
     overflow: hidden;
-    width: 20rem; 
-    height: 0.5rem;
-    background: transparent; 
-    cursor: pointer;
     background: #161616;
-    border-radius: 4rem; /* iOS */
-
-    transition-property: height;
-    transition-duration: 0.3s;
 }
 
 select.tool_sel {

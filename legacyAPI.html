@@ -98,9 +98,9 @@
                             <td>모든 스크립트를 재컴파일합니다. 반환값은 항상 <p class="code">true</p>입니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code" id="p">reload(scriptName: String, throwOnError: Boolean = false)</p><br><p class="code" id="p">compile(String scriptName, Boolean throwOnError = false)</p></td>
+                            <td><p class="code" id="p">reload(scriptName: String, <i>throwOnError: Boolean = false</i>)</p><br><p class="code" id="p">compile(scriptName: String, <i>throwOnError: Boolean = false</i>)</p></td>
                             <td><p class="code">Boolean</p></td>
-                            <td>특정 스크립트를 재컴파일합니다.<br><p class="code" id="p">throwOnError</p>가 <p class="code" id="p">true</p>라면, 컴파일 에러시 예외를 throw합니다.<br>에러 발생시, 또는 스크립트가 존재하지 않을 시 <p class="code" id="p">false</p>를 반환하고, 컴파일 성공시 <p class="code" id="p">true</p>를 반환합니다.</td>
+                            <td>특정 스크립트를 재컴파일합니다.<br><p class="code" id="i">throwOnError</p>가 <p class="code" id="p">true</p>라면, 컴파일 에러시 예외를 throw합니다.<br>에러 발생시, 또는 스크립트가 존재하지 않을 시 <p class="code" id="p">false</p>를 반환하고, 컴파일 성공시 <p class="code" id="p">true</p>를 반환합니다.</td>
                         </tr>
                         <tr>
                             <td><p class="code">prepare(scriptName: String)</p></td>
@@ -201,6 +201,12 @@
                             <td><p class="code">isTerminated(scriptName: String)</p></td>
                             <td><p class="code">Boolean</p></td>
                             <td><p class="code">Api.interruptThreads</p> 이후, 모든 쓰레드들이 interrupt되었는지를 확인합니다. <p class="code">scriptName</p>을 제공하지 않을 경우 이 함수를 호출한 스크립트가 지정됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">markAsRead(<i>room: String</i>, <i>packageName: String</i>)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>메시지를 읽음 처리합니다.<br><p class="code" id="i">room</p>은 읽음 처리를 할 방의 이름이며, (선택적)<br><p class="code" id="i">packageName</p>은 메시지를 읽음 처리할 메신저 앱의 패키지명입니다. (선택적)<br><br>알림 읽기 액션을 찾을 수 있는 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -495,19 +501,19 @@
                         <th>형식</th>
                         <th>설명</th>
                         <tr>
-                            <td><p class="code">reply(msg: String)</p></td>
-                            <td><p class="code">void</p></td>
-                            <td>replier객체가 현재 저장하고 있는 방에 <p class="code">msg</p>이라는 내용을 전송합니다.</td>
+                            <td><p class="code">reply(<i>room: String</i>, msg: String, <i>hideToast: Boolean = false</i>)</p></td>
+                            <td><p class="code">void</p><br><p class="code">Boolean</p></td>
+                            <td>replier객체가 현재 저장하고 있는 방에 <p class="code">msg</p>이라는 내용을 전송합니다.<br><p class="code" id="i">room</p>은 <p class="code">msg</p>를 수신할 방의 이름이며, (선택적)<br><p class="code" id="i">hideToast</p>는 메신저봇R이 구동된 이후에 알림을 단 한번도 받지 못해 채팅방으로 답장이 불가능 할 때 토스트 메시지를 출력할지의 여부입니다. (선택적)<br><br><p class="code" id="i">hideToast</p>의 값이 지정되었을 때, 반환값은 메신저봇이 해당 방의 답장 세션을 가지고 있는지에 대한 여부입니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code">reply(room: String, msg: String)</p></td>
-                            <td><p class="code">Boolean</p></td>
-                            <td><p class="code">room</p>이라는 방에 <p class="code">msg</p>라는 내용을 전송합니다.</td>
+                            <td><p class="code">replyDelayed(<i>room: String</i>, msg: String, delay: Number, <i>hideToast: Boolean = false</i>)</p></td>
+                            <td><p class="code">void</p><br><p class="code">Boolean</p></td>
+                            <td>replier객체가 현재 저장하고 있는 방에 <p class="code">msg</p>이라는 내용을 <p class="code">delay</p>밀리초 후에 전송합니다.<br><p class="code" id="i">room</p>은 <p class="code">msg</p>를 수신할 방의 이름이며, (선택적)<br><p class="code" id="i">hideToast</p>는 메신저봇R이 구동된 이후에 알림을 단 한번도 받지 못해 채팅방으로 답장이 불가능 할 때 토스트 메시지를 출력할지의 여부입니다. (선택적)<br><br><p class="code" id="i">hideToast</p>의 값이 지정되었을 때, 반환값은 메신저봇이 해당 방의 답장 세션을 가지고 있는지에 대한 여부입니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code">reply(room: String, msg: String, hideToast: Boolean = false)</p></td>
+                            <td><p class="code">markAsRead(<i>room: String</i>, <i>packageName: String</i>)</p></td>
                             <td><p class="code">Boolean</p></td>
-                            <td><p class="code" id="p">room</p>이라는 방에 <p class="code" id="p">msg</p>라는 내용을 전송합니다.<br>메신저봇R의 작동방식상 메신저봇R이 구동된 이후에 알림을 단 한번도 받지 못한 채팅방으로는 답장이 불가능한데, 이를 시도할 경우 화면 하단에 Toast알림을 표시하게 됩니다. (<p class="code" id="p">hideToast = false</p>인 경우.)<br>반환값은 메신저봇이 해당 방의 답장 세션을 가지고 있는지에 대한 여부입니다. 이는 일반적으로 메시지 전송요청의 성공 여부를 나타냅니다.<br>(단, 통신 문제등으로 전송이 실패하는 경우는 고려하지 않습니다.)</td>
+                            <td>메시지를 읽음 처리합니다.<br><p class="code" id="i">room</p>은 읽음 처리를 할 방의 이름이며, (선택적)<br><p class="code" id="i">packageName</p>은 메시지를 읽음 처리할 메신저 앱의 패키지명입니다. (선택적)<br><br>알림 읽기 액션을 찾을 수 있는 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
                         </tr>
                     </table>
                 </div>
@@ -533,15 +539,16 @@
                         <tr>
                             <td id="no"><p class="code">getImage()</p></td>
                             <td id="no"><p class="code">null</p></td>
-                            <td id="no">호환성을 위해 존재하기 때문에 기능이 없는 메서드입니다. 이는 항상 <p class="code">null</p>을 반환합니다.</td>
+                            <td id="no">호환성을 위해 존재하기 때문에 기능이 없는 메소드입니다. 이는 항상 <p class="code">null</p>을 반환합니다.</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
         <section id="tool">
+            <div id="view"><img id="view_img" src="img/view.png"><p id="view_txt">0</p><img id="arrow" src="img/arrow_up.png"></div>
             <div id="login"><p id="login_txt">로그인하기</p><img id="login_img" src="img/profile.png"></div>
-            <form autocomplete="off">
+            <form autocomplete="off" id="search">
                 <input id="search_txt" type="text" placeholder="검색할 내용을 입력하세요!" name="search">
                 <button id="search_btn" type="submit"><img src="img/search.png"></button>
             </form>
@@ -618,7 +625,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <p class="code"><i>Dante Alighieri - La Divina Commedia</i></p>
+                            <p class="code" id="i">Dante Alighieri - La Divina Commedia</p>
                         </div>
                     </div>
                 </div>

@@ -220,6 +220,15 @@
         border-radius: 0.4rem;
     }
 
+    p#i {
+        font-family: 'JetBrains Mono I' !important;
+        font-size: 0.9rem;
+    }
+
+    i {
+        font-size: 11.7px !important;
+    }
+
     li.a, li.sA {
         list-style: none;
         line-height: 2rem;
@@ -234,10 +243,6 @@
     li.dscrpt {
         line-height: 2rem;
         white-space: pre-line;
-    }
-
-    i {
-        font-family: 'JetBrains Mono I';
     }
 
     div#sA {
@@ -301,8 +306,6 @@
     }
 
     table {
-        border-left: 0em solid white;
-        border-right: 0em solid white;
         border-collapse: collapse;
         width: 100%;
         border-top: 0.5rem solid black;
@@ -322,6 +325,10 @@
         border-bottom: 0.1em solid black;
         padding: 1.2rem;
         overflow: auto;
+    }
+
+    td#no {
+        background: #ff00aa;
     }
 
     img.sttc, img.prttp {
@@ -412,9 +419,36 @@
         display: none;
     }
 
+    div#view {
+        display: inline-block;
+        width: 50%;
+        text-align: left;
+        float: left;
+    }
+
+    img#view_img {
+        display: inline;
+        width: 1.2rem;
+        height: auto;
+    }
+
+    p#view_txt {
+        display: inline;
+        margin-left: 1rem;
+        position: relative;
+        top: -0.2rem;
+    }
+
+    img#arrow {
+        filter: invert(100%);
+        width: 1.2rem;
+        height: auto;
+        margin-left: 1rem;
+    }
+
     div#login {
-        display: block;
-        width: 100%;
+        display: inline-block;
+        width: 50%;
         text-align: right;
         margin-bottom: 2rem;
         position: relative;
@@ -486,7 +520,7 @@
         transition-duration: 0.5s;
     }
 
-    tr:last-child td {
+    div#auto tr:last-child td {
         border-radius: 0rem 0rem 1.5rem 1.5rem;
     }
 

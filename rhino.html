@@ -68,9 +68,10 @@
                 <dd id="d4-7" class="sdb">반복문</dd><br>
                 <dd id="d4-8" class="sdb">정규식 (RegExp객체)</dd><br>
                 <dd id="d4-9" class="sdb">내장 객체</dd><br>
-                <dd id="d4-10" class="sdb">예외</dd><br>
-                <dd id="d4-11" class="sdb">람다식</dd><br>
-                <dd id="d4-12" class="sdb">함수</dd>
+                <dd id="d4-10" class="sdb">내장 함수</dd><br>
+                <dd id="d4-11" class="sdb">예외</dd><br>
+                <dd id="d4-12" class="sdb">람다식</dd><br>
+                <dd id="d4-13" class="sdb">함수</dd>
             </span>
         </span>
         <span class="list" id="bookmark" data-isVisible="false">
@@ -698,7 +699,7 @@
             </div>
             <div id="4-4" class="content">
                 <p class="title">배열 (Array객체)</p>
-                <p class="dscrpt">배열은 프로토타입으로 탐색과 변형 작업을 수행하는 메서드를 갖는, 리스트와 비슷한 객체입니다. (Array 객체) JavaScript에서 배열의 길이와 요소의 자료형은 고정되어 있지 않습니다. 따라서, 배열의 길이가 언제든지 늘어나거나 줄어들 수 있습니다. 배열(Array객체)의 생성자는 이와 같습니다:</p>
+                <p class="dscrpt">배열은 프로토타입으로 탐색과 변형 작업을 수행하는 메소드를 갖는, 리스트와 비슷한 객체입니다. (Array 객체) JavaScript에서 배열의 길이와 요소의 자료형은 고정되어 있지 않습니다. 따라서, 배열의 길이가 언제든지 늘어나거나 줄어들 수 있습니다. 배열(Array객체)의 생성자는 이와 같습니다:</p>
                 <div class="code">
                     <pre><code class="javascript">Array();<br>Array(element0, element1, ..., <i>elementN</i>);<br>Array(arrayLength);</code></pre>
                 </div>
@@ -707,7 +708,7 @@
                         <th>매개변수</th>
                         <th>뜻</th>
                         <tr>
-                            <td><p class="code"><i>elementN</i></p></td>
+                            <td><p class="code" id="i">elementN</p></td>
                             <td>JavaScript배열을 초기화할 때 채워넣을 요소입니다. 단, 요소가 하나뿐이고 그 요소의 자료형이 Number형일 경우 <p class="code">arrayLength</p>매개변수로 인식합니다.</td>
                         </tr>
                         <tr>
@@ -736,7 +737,7 @@
                     <div class="code">
                         <pre><code class="javascript">var arr = [1, 2, "Text", true];<br><br>replier.reply(arr[0]); // 1 출력<br>replier.reply(arr[1]); // 2 출력</p><br>replier.reply(arr[2]); // 'Text' 출력<br>replier.reply(arr[3]); // true 출력</code></pre>
                     </div>
-                    <p class="dscrpt">다음 표는 배열 객체에 관한 메서드 및 속성입니다. (arr1이란 배열이 선언되었다고 가정합니다.)</p>
+                    <p class="dscrpt">다음 표는 배열 객체에 관한 메소드 및 속성입니다. (arr1이란 배열이 선언되었다고 가정합니다.)</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -755,7 +756,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">of(element1, <i>element2</i>, ... <i>elementN</i>)</p><img class="sttc" src="img/static.png"></td>
-                                <td>인자의 수나 유형에 관계없이 가변 인자를 갖는 새 배열을 생성합니다. 여기서 <p class="code"><i>elementN</i></p>은 배열을 생성할 때 사용할 요소입니다.</td>
+                                <td>인자의 수나 유형에 관계없이 가변 인자를 갖는 새 배열을 생성합니다. 여기서 <p class="code" id="i">elementN</p>은 배열을 생성할 때 사용할 요소입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code" id="p">copyWithin(target)</p><br><p class="code" id="p">copyWithin(Number target, Number start)</p><br><p class="code" id="p">copyWithin(Number target, Number start, Number end)</p><img class="prttp" src="img/prototype.png"></td>
@@ -890,7 +891,7 @@
             </div>
             <div id="4-5" class="content">
                 <p class="title">객체 (Object객체)</p>
-                <p class="dscrpt">객체는 속성과 기능의 묶음과 같습니다. JavaScript에서 객체는 Object객체를 이용해 생성합니다. JavaScript의 객체에서 '속성'을 '프로퍼티'라 부르고 '기능'을 '메서드'라고 부릅니다. 객체(Object객체)의 생성자는 이와 같습니다:</p>
+                <p class="dscrpt">객체는 속성과 기능의 묶음과 같습니다. JavaScript에서 객체는 Object객체를 이용해 생성합니다. JavaScript의 객체에서 '속성'을 '프로퍼티'라 부르고 '기능'을 '메소드'라고 부릅니다. 객체(Object객체)의 생성자는 이와 같습니다:</p>
                 <div class="code">
                     <pre><code class="javascript">Object(<i>value</i>)</code></pre>
                 </div>
@@ -899,16 +900,16 @@
                         <th>매개변수</th>
                         <th>뜻</th>
                         <tr>
-                            <td><p class="code"><i>value</i></p></td>
+                            <td><p class="code" id="i">value</p></td>
                             <td>아무 값입니다.</td>
                         </tr>
                     </table>
                 </div>
                 <p class="dscrpt">이 외에도 객체를 생성하는 방법은 이와 같습니다:</p>
                 <div class="code">
-                    <pre><code class="javascript">var Obj0 = new Object(); // 빈 객체<br>var Obj1 = {}; // 빈 객체<br>var Obj2 = {"A" : 1, B : "String!", C : {<br>        C1 : 3,<br>        C2 : 4<br>    }<br>}; // 내용(메서드)도 포함<br>var Obj3 = {A : 2, "B" : [<br>        1,<br>        true,<br>        "String!"<br>    ]<br>}; // 배열이 포함된 객체<br><br>var Obj4 = {<br>    ObjMethod: function() {<br>        return "Method";<br>    }<br>}; // 메서드가 포함된 객체</code></pre>
+                    <pre><code class="javascript">var Obj0 = new Object(); // 빈 객체<br>var Obj1 = {}; // 빈 객체<br>var Obj2 = {"A" : 1, B : "String!", C : {<br>        C1 : 3,<br>        C2 : 4<br>    }<br>}; // 내용(메소드)도 포함<br>var Obj3 = {A : 2, "B" : [<br>        1,<br>        true,<br>        "String!"<br>    ]<br>}; // 배열이 포함된 객체<br><br>var Obj4 = {<br>    ObjMethod: function() {<br>        return "Method";<br>    }<br>}; // 메소드가 포함된 객체</code></pre>
                 </div>
-                <p class="dscrpt">이와 같이 객체에는 아무 내용을 넣지 않거나, 메서드를 추가하거나, 배열을 함께 추가할 수 있습니다. 그리고 객체의 내용을 가지고 오는 방법은 이렇습니다(위 객체들을 사용):</p>
+                <p class="dscrpt">이와 같이 객체에는 아무 내용을 넣지 않거나, 메소드를 추가하거나, 배열을 함께 추가할 수 있습니다. 그리고 객체의 내용을 가지고 오는 방법은 이렇습니다(위 객체들을 사용):</p>
                 <div class="code">
                     <pre><code class="javascript">replier.reply(Obj2.A);  // 1을 출력<br>replier.reply(Obj2.B);  // 'String!'을 출력<br>replier.reply(Obj3.B[0]);  // 1을 출력<br>replier.reply(Obj2.C.C1);  //3을 출력<br>replier.reply(Obj2["C"]["C2"]); // 4를 출력<br>replier.reply(Obj4.ObjMethod()); // 'Method'를 출력</code></pre>
                 </div>
@@ -922,7 +923,7 @@
                     <pre><code class="javascript">var Obj = { A : 5, B : this.A };<br><br>replier.reply(Obj.B);</code></pre>
                 </div>
                 <p class="dscrpt">이 코드를 실행시키면 </p><p class="code" id="p">5</p><p class="dscrpt">를 출력합니다. </p><p class="code" id="p">Obj.B</p><p class="dscrpt">의 값을 </p><p class="code" id="p">this.A</p><p class="dscrpt">의 값으로 지정했기 때문입니다. 이 소스 내에 있는 </p><p class="code" id="p">this.A</p><p class="dscrpt">에서 </p><p class="code" id="p">this</p><p class="dscrpt">는 </p><p class="code" id="p">Obj</p><p class="dscrpt">을 나타냅니다.</p><br><br>
-                <p class="dscrpt">객체를 선언할 때에는 Object객체를 이용하기 때문에, 기본적으로 메서드와 속성을 가지고 있습니다:</p>
+                <p class="dscrpt">객체를 선언할 때에는 Object객체를 이용하기 때문에, 기본적으로 메소드와 속성을 가지고 있습니다:</p>
                 <div class="table">
                     <table>
                         <th>이름</th>
@@ -945,7 +946,7 @@
                         </tr>
                         <tr>
                             <td><p class="code">assign(Object target, Object source1, Object source2, ... Object source<i>N</i>)</p><img class="sttc" src="img/static.png"></td>
-                            <td>하나 이상의 <p class="code">source<i>N</i></p>객체로부터 <p class="code">target</p>객체로 속성을 복사합니다.</td>
+                            <td>하나 이상의 <p class="code">source<p>N</p>객체로부터 <p class="code">target</p>객체로 속성을 복사합니다.</td>
                         </tr>
                         <tr>
                             <td><p class="code">create(photo)</p><br><p class="code">create(photo, propertiesObject)</p><img class="sttc" src="img/static.png"></td>
@@ -1298,7 +1299,7 @@
             </div>
             <div id="4-8" class="content">
                 <p class="title">정규식 (RegExp객체)</p>
-                <p class="dscrpt">정규식 (정규 표현식이라고도 함)은 문자열에 나타는 특정 문자 조합과 대응시키기 위해 사용되는 패턴입니다. JavaScript에서 정규식은 객체입니다.(RegExp객체) 따라서, 정규식에는 메서드가 있습니다. 정규식(RegExp객체)의 생성자는 이와 같습니다:</p>
+                <p class="dscrpt">정규식 (정규 표현식이라고도 함)은 문자열에 나타는 특정 문자 조합과 대응시키기 위해 사용되는 패턴입니다. JavaScript에서 정규식은 객체입니다.(RegExp객체) 따라서, 정규식에는 메소드가 있습니다. 정규식(RegExp객체)의 생성자는 이와 같습니다:</p>
                 <div class="code">
                     <pre><code class="javascript">RegExp(pattern, <i>flags</i>);</code></pre>
                 </div>
@@ -1311,7 +1312,7 @@
                             <td>정규식을 나타내는 텍스트입니다.</td>
                         </tr>
                         <tr>
-                            <td><p class="code"><i>flags</i></p></td>
+                            <td><p class="code" id="i">flags</p></td>
                             <td>정규식에 추가할 플래그입니다.</td>
                         </tr>
                     </table>
@@ -1419,7 +1420,7 @@
                                 <td>단어 경계가 아닌 부분에 대응됩니다.</li></td>
                             </tr>
                             <tr>
-                                <td><p class="code">\c<i>X</i></p></td>
+                                <td><p class="code">\c<p>X</p></td>
                                 <td>문자열 내부의 제어 문자에 대응됩니다. 여기서 <i>X</i>는 A에서 Z까지의 문자 중 하나입니다.</td>
                             </tr>
                             <tr>
@@ -1467,7 +1468,7 @@
                                 <td>단어 문자가 아닌 문자에 대응됩니다. <p class="code">[^A-Za-z0-9_]</p>와 같습니다.</td>
                             </tr>
                             <tr>
-                                <td><p class="code">\<i>n</i></p></td>
+                                <td><p class="code">\<p>n</p></td>
                                 <td>정규식 안 <i>n</i>번 괄호의 최근 일치 부분의 역참조 입니다. (<i>n</i>은 양의 정수여야 합니다.)<br>예를 들면, <p class="code" id="p">/apple(,)\sorange\1/</p>는 '"apple, orange, cherry, peach.'의 'apple, orange,'에 대응됩니다.</td>
                             </tr>
                             <tr>
@@ -1487,7 +1488,7 @@
                 </div>
                 <div id="4-8-3" class="content">
                     <p class="stitle">정규식 사용하기</p>
-                    <p class="dscrpt">위에도 언급되었듯이, 정규식은 객체이기 때문에 메서드와 속성이 존재합니다:</p>
+                    <p class="dscrpt">위에도 언급되었듯이, 정규식은 객체이기 때문에 메소드와 속성이 존재합니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -1561,7 +1562,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">y</p></td>
-                                <td><p class="code">lastIndex</p>메서드로 지정된 인덱스에서 부터 검색합니다.</td>
+                                <td><p class="code">lastIndex</p>메소드로 지정된 인덱스에서 부터 검색합니다.</td>
                             </tr>
                         </table>
                     </div>
@@ -1574,7 +1575,7 @@
                     <pre><code class="javascript">new 생성자(); // 내장 객체 또는 객체 생성자 함수를 사용할 때<br>var 변수명 = new 생성자(); // 내장 객체 또는 객체 생성자 함수를 특정 변수에 참조할 때</code></pre>
                 </div>
                 <p class="code">new 생성자();</p><p class="dscrpt">에서 </p><p class="code">생성자()</p><p class="dscrpt">와 같은 것을 생성자라고 합니다. 생성자는 객체에 따라 다양하게 제공됩니다.</p><br><br>
-                <p class="dscrpt">또한, 정적 속성 또는 정적 메서드를 사용할 때에는 </p><p class="code" id="p">new</p><p class="dscrpt">연산자를 사용해 객체를 생성한 다음 사용하지 않고, </p><p class="code" id="p">객체.속성</p><p class="dscrpt">또는 </p><p class="code" id="p">객체.메서드()</p><p class="dscrpt">과 같이 사용합니다.</p><br><br>
+                <p class="dscrpt">또한, 정적 속성 또는 정적 메소드를 사용할 때에는 </p><p class="code" id="p">new</p><p class="dscrpt">연산자를 사용해 객체를 생성한 다음 사용하지 않고, </p><p class="code" id="p">객체.속성</p><p class="dscrpt">또는 </p><p class="code" id="p">객체.메소드()</p><p class="dscrpt">과 같이 사용합니다.</p><br><br>
                 <p class="dscrpt">라이노 자바스크립트 엔진에서 지원하는 내장 객체는 이와 같습니다:</p>
                 <div id="sA">
                     <li id="d4-5" class="sA">Object</li>
@@ -1597,12 +1598,11 @@
                     <li id="d4-9-16" class="sA">Set</li>
                     <li id="d4-9-17" class="sA">WeakMap</li>
                     <li id="d4-9-18" class="sA">WeakSet</li>
-                    <li id="d4-9-19" class="sA">ArrayBuffer</li>
-                    <li id="d4-9-20" class="sA">JSON</li>
+                    <li id="d4-9-19" class="sA">JSON</li>
                 </div>
                 <div id="4-9-2" class="content">
                     <p class="stitle">Function</p>
-                    <p class="dscrpt">Function객체는 함수를 선언하는 객체입니다.(*JavaScript에서는 함수도 객체 취급을 받을 수 있습니다.) 그리고 함수에 대한 속성 및 메서드를 제공합니다. (<strong>라이노 엔진>함수</strong> 편과 함께 보시는 것을 추천드립니다.)</p><br><br>
+                    <p class="dscrpt">Function객체는 함수를 선언하는 객체입니다.(*JavaScript에서는 함수도 객체 취급을 받을 수 있습니다.) 그리고 함수에 대한 속성 및 메소드를 제공합니다. (<strong>라이노 엔진>함수</strong> 편과 함께 보시는 것을 추천드립니다.)</p><br><br>
                     <p class="dscrpt">Function객체의 생성자는 이와 같습니다:</p>
                     <div class="code">
                         <pre><code class="javascript">Function(<i>arg1</i>, <i>arg2</i>, ... <i>argN</i>, functionBody);</code></pre>
@@ -1612,7 +1612,7 @@
                             <th>매개변수</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code"><i>argN</i></p></td>
+                                <td><p class="code" id="i">argN</p></td>
                                 <td>함수의 매개변수(함수의 기능을 구현하는데 필요한 추가정보를 의미하는 변수)를 의미하는 문자열 입니다. (선택적)</td>
                             </tr>
                             <tr>
@@ -1621,7 +1621,7 @@
                             </tr>
                         </table>
                     </div>
-                    <p class="dscrpt">그리고 다음은 Function객체의 속성 및 메서드입니다:</p>
+                    <p class="dscrpt">그리고 다음은 Function객체의 속성 및 메소드입니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -1648,7 +1648,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">call(thisArg, arg1, arg2, ... arg<i>N</i>)</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>주어진 <p class="code" id="p">this</p>값 및 각각 전달된 매개변수와 함께 함수를 호출합니다.<br><p class="code" id="p">thisArg</p>은 함수 객체 호출에 제공되는 <p class="code" id="p">this</p>의 값이고, <p class="code" id="p">arg<i>N</i></p>은 객체를 위한 매개변수입니다.</td>
+                                <td>주어진 <p class="code" id="p">this</p>값 및 각각 전달된 매개변수와 함께 함수를 호출합니다.<br><p class="code" id="p">thisArg</p>은 함수 객체 호출에 제공되는 <p class="code" id="p">this</p>의 값이고, <p class="code" id="p">arg<p>N</p>은 객체를 위한 매개변수입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">toSource()</p><img class="prttp" src="img/prototype.png"></td>
@@ -1685,18 +1685,18 @@
                     <div class="code">
                         <pre><code class="nohighlight">&gt; It is true.</code></pre>
                     </div>
-                    <p class="dscrpt">와 같습니다. 다음은 Boolean객체의 속성 및 메서드입니다:</p>
+                    <p class="dscrpt">와 같습니다. 다음은 Boolean객체의 속성 및 메소드입니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
                             <th>설명</th>
                             <tr>
                                 <td><p class="code">toString()</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>객체의 값에 따라 문자열 <p class="code" id="p">"true"</p> 또는 <p class="code" id="p">"false"</p>를 반환합니다. (<p class="code" id="p">Object.prototype.toString()</p> 메서드를 재정의합니다.)</td>
+                                <td>객체의 값에 따라 문자열 <p class="code" id="p">"true"</p> 또는 <p class="code" id="p">"false"</p>를 반환합니다. (<p class="code" id="p">Object.prototype.toString()</p> 메소드를 재정의합니다.)</td>
                             </tr>
                             <tr>
                                 <td><p class="code">valueOf()</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>Boolean객체의 원시 값을 반환합니다. (<p class="code">Object.prototype.valueOf()</p>메서드를 재정의합니다.)</td>
+                                <td>Boolean객체의 원시 값을 반환합니다. (<p class="code">Object.prototype.valueOf()</p>메소드를 재정의합니다.)</td>
                             </tr>
                         </table>
                     </div>
@@ -1715,12 +1715,12 @@
                             <th>매개변수</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code"><i>description</i></p></td>
+                                <td><p class="code" id="i">description</p></td>
                                 <td>심볼에 대한 설명입니다. (선택적)</td>
                             </tr>
                         </table>
                     </div>
-                    <p class="dscrpt">심볼 값은 각각 고유한 값을 가지고 있습니다. 하물며 매개변수</p><p class="code"><i>description</i></p><p class="dscrpt">의 값이 같아도 '서로 다름'으로 판정됩니다. 예를 들면,</p>
+                    <p class="dscrpt">심볼 값은 각각 고유한 값을 가지고 있습니다. 하물며 매개변수</p><p class="code" id="i">description</p><p class="dscrpt">의 값이 같아도 '서로 다름'으로 판정됩니다. 예를 들면,</p>
                     <div class="code">
                         <pre><code class="javascript">if (Symbol("hello") == Symbol("hello")) {<br>    replier.reply("It is true.");<br>} else {<br>    replier.reply("It is false.");<br>}</code></pre>
                     </div>
@@ -1728,7 +1728,7 @@
                     <div class="code">
                         <pre><code class="nohighlight">&gt; It is false.</code></pre>
                     </div>
-                    <p class="dscrpt">와 같습니다. 다음은 Symbol객체의 속성 및 메서드입니다:</p>
+                    <p class="dscrpt">와 같습니다. 다음은 Symbol객체의 속성 및 메소드입니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -1771,16 +1771,16 @@
                             <th>매개변수</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code"><i>message</i></p></td>
+                                <td><p class="code" id="i">message</p></td>
                                 <td>오류에 대한 설명입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>fileName</i></p></td>
-                                <td>생성할 Error객체의 <p class="code"><i>fileName</i></p> 속성 값. 기본값은 Error객체의 생성자를 호출한 코드를 포함하고 있는 파일의 이름입니다. (선택적)</td>
+                                <td><p class="code" id="i">fileName</p></td>
+                                <td>생성할 Error객체의 <p class="code" id="i">fileName</p> 속성 값. 기본값은 Error객체의 생성자를 호출한 코드를 포함하고 있는 파일의 이름입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>lineNumber</i></p></td>
-                                <td>생성할 Error객체의 <p class="code"><i>lineNumber</i></p> 속성 값. 기본값은 Error객체의 생성자 호출을 포함한 줄 번호입니다. (선택적)</td>
+                                <td><p class="code" id="i">lineNumber</p></td>
+                                <td>생성할 Error객체의 <p class="code" id="i">lineNumber</p> 속성 값. 기본값은 Error객체의 생성자 호출을 포함한 줄 번호입니다. (선택적)</td>
                             </tr>
                         </table>
                     </div>
@@ -1839,15 +1839,15 @@
                             <th>매개변수</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code"><i>message</i></p></td>
+                                <td><p class="code" id="i">message</p></td>
                                 <td>오류에 대한 설명입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>fileName</i></p></td>
+                                <td><p class="code" id="i">fileName</p></td>
                                 <td>예외를 발생시킨 코드를 포함하는 파일의 이름입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>lineNumber</i></p></td>
+                                <td><p class="code" id="i">lineNumber</p></td>
                                 <td>예외를 발생시킨 코드의 줄 번호입니다. (선택적)</td>
                             </tr>
                         </table>
@@ -1865,15 +1865,15 @@
                             <th>매개변수</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code"><i>message</i></p></td>
+                                <td><p class="code" id="i">message</p></td>
                                 <td>오류에 대한 설명입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>fileName</i></p></td>
+                                <td><p class="code" id="i">fileName</p></td>
                                 <td>예외를 발생시킨 코드를 포함하는 파일의 이름입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>lineNumber</i></p></td>
+                                <td><p class="code" id="i">lineNumber</p></td>
                                 <td>예외를 발생시킨 코드의 줄 번호입니다. (선택적)</td>
                             </tr>
                         </table>
@@ -1891,15 +1891,15 @@
                             <th>매개변수</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code"><i>message</i></p></td>
+                                <td><p class="code" id="i">message</p></td>
                                 <td>오류에 대한 설명입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>fileName</i></p></td>
+                                <td><p class="code" id="i">fileName</p></td>
                                 <td>예외를 발생시킨 코드를 포함하는 파일의 이름입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>lineNumber</i></p></td>
+                                <td><p class="code" id="i">lineNumber</p></td>
                                 <td>예외를 발생시킨 코드의 줄 번호입니다. (선택적)</td>
                             </tr>
                         </table>
@@ -1917,15 +1917,15 @@
                             <th>매개변수</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code"><i>message</i></p></td>
+                                <td><p class="code" id="i">message</p></td>
                                 <td>오류에 대한 설명입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>fileName</i></p></td>
+                                <td><p class="code" id="i">fileName</p></td>
                                 <td>예외를 발생시킨 코드를 포함하는 파일의 이름입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>lineNumber</i></p></td>
+                                <td><p class="code" id="i">lineNumber</p></td>
                                 <td>예외를 발생시킨 코드의 줄 번호입니다. (선택적)</td>
                             </tr>
                         </table>
@@ -1943,15 +1943,15 @@
                             <th>매개변수</th>
                             <th>뜻</th>
                             <tr>
-                                <td><p class="code"><i>message</i></p></td>
+                                <td><p class="code" id="i">message</p></td>
                                 <td>오류에 대한 설명입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>fileName</i></p></td>
+                                <td><p class="code" id="i">fileName</p></td>
                                 <td>예외를 발생시킨 코드를 포함하는 파일의 이름입니다. (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>lineNumber</i></p></td>
+                                <td><p class="code" id="i">lineNumber</p></td>
                                 <td>예외를 발생시킨 코드의 줄 번호입니다. (선택적)</td>
                             </tr>
                         </table>
@@ -1974,7 +1974,7 @@
                             </tr>
                         </table>
                     </div>
-                    <p class="dscrpt">Number객체의 속성 및 메서드는 이와 같습니다:</p>
+                    <p class="dscrpt">Number객체의 속성 및 메소드는 이와 같습니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -2041,11 +2041,11 @@
                             </tr>
                             <tr>
                                 <td><p class="code">parseInt(value, <i>radix</i>)</p><img class="sttc" src="img/static.png"></td>
-                                <td><p class="code" id="p">value</p>을 분석해 특정 <p class="code" id="p"><i>radix</i></p>진수를 사용한 정수로 변환 및 반환합니다. (<p class="code" id="p"><i>radix</i></p>는 2와 36 사이의 진수이며 선택적입니다. <p class="code" id="p">value</p>을 분석할 수 없을 경우 <p class="code" id="p">NaN</p>를 반환합니다.)</td>
+                                <td><p class="code" id="p">value</p>을 분석해 특정 <p class="code" id="p"><p>radix</p>진수를 사용한 정수로 변환 및 반환합니다. (<p class="code" id="p"><p>radix</p>는 2와 36 사이의 진수이며 선택적입니다. <p class="code" id="p">value</p>을 분석할 수 없을 경우 <p class="code" id="p">NaN</p>를 반환합니다.)</td>
                             </tr>
                             <tr>
                                 <td><p class="code">toExponential(<i>fractionDigits</i>)</p></td>
-                                <td>주어진 Number값을 숫자 한자리와 소수점, 소수점 이하 <p class="code"><i>fractionDigits</i></p>자릿수만큼 반올림하여 지수 표기법으로 나타낸 문자열을 반환합니다.</td>
+                                <td>주어진 Number값을 숫자 한자리와 소수점, 소수점 이하 <p class="code" id="i">fractionDigits</p>자릿수만큼 반올림하여 지수 표기법으로 나타낸 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">toFixed(<i>digits</i>)</p></td>
@@ -2053,7 +2053,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">toLocaleString(<i>locales</i>, <i>options</i>)</p></td>
-                                <td>숫자의 표현을 <p class="code" id="p"><i>locales</i></p>언어(문자형)와 <p class="code" id="p"><i>option</i></p>추가옵션(객체형)에 맞춘 형식의 문자열로 반환합니다. (<p class="code" id="p">Object.prototype.toLocaleString()</p>를 재정의합니다.)</td>
+                                <td>숫자의 표현을 <p class="code" id="p"><p>locales</p>언어(문자형)와 <p class="code" id="p"><p>option</p>추가옵션(객체형)에 맞춘 형식의 문자열로 반환합니다. (<p class="code" id="p">Object.prototype.toLocaleString()</p>를 재정의합니다.)</td>
                             </tr>
                             <tr>
                                 <td><p class="code">toPrecision(<i>precision</i>)</p></td>
@@ -2061,7 +2061,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">toString(<i>radix</i>)</p></td>
-                                <td>주어진 Number값을 <p class="code" id="p"><i>radix</i></p>진수를 이용해 문자열로 변환 및 반환합니다. (<p class="code" id="p"><i>radix</i></p>의 기본값은 <p class="code" id="p">10</p>이며, 이 메서드는 <p class="code" id="p">Object.prototype.toString()</p>를 재정의합니다.)</td>
+                                <td>주어진 Number값을 <p class="code" id="p"><p>radix</p>진수를 이용해 문자열로 변환 및 반환합니다. (<p class="code" id="p"><p>radix</p>의 기본값은 <p class="code" id="p">10</p>이며, 이 메소드는 <p class="code" id="p">Object.prototype.toString()</p>를 재정의합니다.)</td>
                             </tr>
                             <tr>
                                 <td><p class="code">valueOf()</p></td>
@@ -2072,8 +2072,8 @@
                 </div>
                 <div id="4-9-12" class="content">
                     <p class="stitle">Math</p>
-                    <p class="dscrpt">Math객체는 수학적인 상수와 함수를 위한 속성과 메서드를 가진 내장 객체입니다. Math객체의 모든 속성 및 메서드는 정적입니다.</p><br><br>
-                    <p class="dscrpt">Math객체의 속성 및 메서드는 이와 같습니다:</p>
+                    <p class="dscrpt">Math객체는 수학적인 상수와 함수를 위한 속성과 메소드를 가진 내장 객체입니다. Math객체의 모든 속성 및 메소드는 정적입니다.</p><br><br>
+                    <p class="dscrpt">Math객체의 속성 및 메소드는 이와 같습니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -2180,7 +2180,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">hypot(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="img/static.png"></td>
-                                <td>숫자<p class="code"><i>x</i>, <i>y</i>, ...</p>의 제곱합의 제곱근을 반환합니다.</td>
+                                <td>숫자<p class="code" id="i">x</i>, <i>y</i>, ...</p>의 제곱합의 제곱근을 반환합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">imul(x, y)</p><img class="sttc" src="img/static.png"></td>
@@ -2204,11 +2204,11 @@
                             </tr>
                             <tr>
                                 <td><p class="code">max(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="img/static.png"></td>
-                                <td>숫자<p class="code"><i>x</i>, <i>y</i>, ...</p> 중 가장 큰 수를 반환합니다.</td>
+                                <td>숫자<p class="code" id="i">x</i>, <i>y</i>, ...</p> 중 가장 큰 수를 반환합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">min(<i>x</i>, <i>y</i>, ...)</p><img class="sttc" src="img/static.png"></td>
-                                <td>숫자<p class="code"><i>x</i>, <i>y</i>, ...</p> 중 가장 작은 수를 반환합니다.</td>
+                                <td>숫자<p class="code" id="i">x</i>, <i>y</i>, ...</p> 중 가장 작은 수를 반환합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">pow(x, y)</p><img class="sttc" src="img/static.png"></td>
@@ -2259,7 +2259,7 @@
                 </div>
                 <div id="4-9-13" class="content">
                     <p class="stitle">Date</p>
-                    <p class="dscrpt">Date객체는 시간과 날짜에 관한 속성 및 메서드를 제공하는 내장 객체입니다. Date객체의 생성자는 이와 같습니다:</p>
+                    <p class="dscrpt">Date객체는 시간과 날짜에 관한 속성 및 메소드를 제공하는 내장 객체입니다. Date객체의 생성자는 이와 같습니다:</p>
                     <div class="code">
                         <pre><code class="javascript">Date();<br>Date(value);<br>Date(dateString);<br>Date(year, monthIndex, <i>day</i>, <i>hour</i>, <i>minutes</i>, <i>seconds</i>, <i>milliseconds</i>);</code></pre>
                     </div>
@@ -2277,7 +2277,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">dateString</p></td>
-                                <td>날짜를 표현하는 문자열입니다. <p class="code">Date.parse()</p>메서드가 인식할 수 있는 형식(IETF 호환 RFC 2822 타임스탬프와 ISO8601의 한 버전)이어야 합니다.</td>
+                                <td>날짜를 표현하는 문자열입니다. <p class="code">Date.parse()</p>메소드가 인식할 수 있는 형식(IETF 호환 RFC 2822 타임스탬프와 ISO8601의 한 버전)이어야 합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">year</p></td>
@@ -2288,28 +2288,28 @@
                                 <td>월(月)을 나타내는 정수입니다. (<p class="code">지정하려는 월 - 1</p>의 값입니다. 예를 들면, 1월을 지정하기 위해서는 <p class="code">0</p>을 입력해야 합니다.)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>day</i></p></td>
+                                <td><p class="code" id="i">day</p></td>
                                 <td>일(日)을 나타내는 정수입니다. (기본값은 <p class="code">1</p>입니다.) (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>hour</i></p></td>
+                                <td><p class="code" id="i">hour</p></td>
                                 <td>시(時)를 나타내는 정수입니다. (기본값은 <p class="code">0</p>(자정)입니다.) (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>minutes</i></p></td>
+                                <td><p class="code" id="i">minutes</p></td>
                                 <td>분(分)을 나타내는 정수입니다. (기본값은 <p class="code">0</p>입니다.) (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>seconds</i></p></td>
+                                <td><p class="code" id="i">seconds</p></td>
                                 <td>초(秒)를 나타내는 정수입니다. (기본값은 <p class="code">0</p>입니다.) (선택적)</td>
                             </tr>
                             <tr>
-                                <td><p class="code"><i>milliseconds</i></p></td>
+                                <td><p class="code" id="i">milliseconds</p></td>
                                 <td>밀리초(milli秒)를 나타내는 정수입니다. (기본값은 <p class="code">0</p>입니다.) (선택적)</td>
                             </tr>
                         </table>
                     </div>
-                    <p class="dscrpt">Date객체의 속성 및 메서드는 이와 같습니다:</p>
+                    <p class="dscrpt">Date객체의 속성 및 메소드는 이와 같습니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -2491,7 +2491,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">toJSON()</p><img class="prttp" src="img/prototype.png"></td>
-                                <td><p class="code">toISOString()</p>메서드를 사용하여 날짜를 나타내는 문자열을 반환합니다. (<p class="code">JSON.stringify()</p>메서드에서 사용할수 있습니다.)</td>
+                                <td><p class="code">toISOString()</p>메소드를 사용하여 날짜를 나타내는 문자열을 반환합니다. (<p class="code">JSON.stringify()</p>메소드에서 사용할수 있습니다.)</td>
                             </tr>
                             <tr>
                                 <td><p class="code">toGMTString()</p><img class="prttp" src="img/prototype.png"></td>
@@ -2503,11 +2503,11 @@
                             </tr>
                             <tr>
                                 <td><p class="code">toLocaleString(<i>locales</i>, <i>options</i>)</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>날짜를 <p class="code" id="p"><i>locales</i></p>언어(문자형)와 <p class="code" id="p"><i>option</i></p>추가옵션(객체형)에 맞춘 형식의 문자열로 반환합니다. (<p class="code" id="p">Object.prototype.toLocaleString()</p>를 재정의합니다.)</td>
+                                <td>날짜를 <p class="code" id="p"><p>locales</p>언어(문자형)와 <p class="code" id="p"><p>option</p>추가옵션(객체형)에 맞춘 형식의 문자열로 반환합니다. (<p class="code" id="p">Object.prototype.toLocaleString()</p>를 재정의합니다.)</td>
                             </tr>
                             <tr>
                                 <td><p class="code">toLocaleTimeString(<i>locales</i>, <i>options</i>)</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>날짜의 시간부분을 <p class="code"><i>locales</i></p>언어(문자형)와 <p class="code"><i>option</i></p>추가옵션(객체형)에 맞춘 형식의 문자열로 반환합니다.</td>
+                                <td>날짜의 시간부분을 <p class="code" id="i">locales</p>언어(문자형)와 <p class="code" id="i">option</p>추가옵션(객체형)에 맞춘 형식의 문자열로 반환합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">toSource()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
@@ -2534,7 +2534,7 @@
                 </div>
                 <div id="4-9-14" class="content">
                     <p class="stitle">String</p>
-                    <p class="dscrpt">String객체는 문자열에 대한 속성과 메서드를 제공합니다.</p><br><br>
+                    <p class="dscrpt">String객체는 문자열에 대한 속성과 메소드를 제공합니다.</p><br><br>
                     <p class="dscrpt">String객체의 생성자는 이와 같습니다:</p>
                     <div class="code">
                         <pre><code class="javascript">String(thing)</code></pre>
@@ -2621,7 +2621,7 @@
                             </tr>
                         </table>
                     </div>
-                    <p class="dscrpt">String객체의 속성 및 메서드는 이와 같습니다:</p>
+                    <p class="dscrpt">String객체의 속성 및 메소드는 이와 같습니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -2656,19 +2656,19 @@
                             </tr>
                             <tr>
                                 <td><p class="code">includes(searchString, <i>position</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>주어진 문자열에 <p class="code" id="p">searchString</p>이 포함되어 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><i>position</i></p>은 <p class="code" id="p">searchString</p>을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
+                                <td>주어진 문자열에 <p class="code" id="p">searchString</p>이 포함되어 있으면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><p>position</p>은 <p class="code" id="p">searchString</p>을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">endsWith(searchString, <i>length</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>주어진 문자열의 끝이 <p class="code" id="p">searchString</p>으로 끝나면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><i>length</i></p>는 찾고자 하는 문자열의 길이이며, 기본값은 문자열의 전체 길이입니다.</td>
+                                <td>주어진 문자열의 끝이 <p class="code" id="p">searchString</p>으로 끝나면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><p>length</p>는 찾고자 하는 문자열의 길이이며, 기본값은 문자열의 전체 길이입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">indexOf(searchString, <i>fromIndex</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>주어진 문자열에서 <p class="code" id="p">searchString</p>이 처음 나타나는 곳의 인덱스를 반환합니다. <p class="code" id="p">searchString</p>을 찾을 수 없을 경우, <p class="code" id="p">-1</p>을 반환합니다.<br><p class="code" id="p"><i>fromIndex</i></p>는 문자열을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
+                                <td>주어진 문자열에서 <p class="code" id="p">searchString</p>이 처음 나타나는 곳의 인덱스를 반환합니다. <p class="code" id="p">searchString</p>을 찾을 수 없을 경우, <p class="code" id="p">-1</p>을 반환합니다.<br><p class="code" id="p"><p>fromIndex</p>는 문자열을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">lastIndexOf(searchValue, <i>fromIndex</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>주어진 문자열에서 <p class="code" id="p">searchValue</p>이 마지막으로 나타나는 곳의 인덱스를 반환합니다. <p class="code" id="p">searchValue</p>을 찾을 수 없을 경우, <p class="code" id="p">-1</p>을 반환합니다.<br><p class="code" id="p"><i>fromIndex</i></p>는 문자열을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">+Infinity</p>입니다.</td>
+                                <td>주어진 문자열에서 <p class="code" id="p">searchValue</p>이 마지막으로 나타나는 곳의 인덱스를 반환합니다. <p class="code" id="p">searchValue</p>을 찾을 수 없을 경우, <p class="code" id="p">-1</p>을 반환합니다.<br><p class="code" id="p"><p>fromIndex</p>는 문자열을 찾기 시작할 위치이며, 기본값은 <p class="code" id="p">+Infinity</p>입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code" id="p">localeCompare(compareString, <i>locales</i>, <i>options</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
@@ -2676,11 +2676,11 @@
                             </tr>
                             <tr>
                                 <td><p class="code">match(regexp)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>주어진 문자열에 정규식<p class="code" id="p">regexp</p>과 대응되는 문자열들을 배열로 저장해 반환합니다. 정규식에 <p class="code" id="p">g</p>플래그가 포함되지 않을 경우 이 메서드는 <p class="code" id="p">Regexp.exec()</p>와 같은 결과를 반환합니다.</td>
+                                <td>주어진 문자열에 정규식<p class="code" id="p">regexp</p>과 대응되는 문자열들을 배열로 저장해 반환합니다. 정규식에 <p class="code" id="p">g</p>플래그가 포함되지 않을 경우 이 메소드는 <p class="code" id="p">Regexp.exec()</p>와 같은 결과를 반환합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">normalize(<i>form</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>문자열<p class="code" id="p"><i>form</i></p>으로 지정된 유니코드 정규화 방식에 따라 정규화된 문자열을 반환합니다.<br><p class="code" id="p">NFC</p>: 정규형 정준 결합<br><p class="code" id="p">NFD</p>: 정규형 정준 분해<br><p class="code" id="p">NFKC</p>: 정규형 호환성 결합<br><p class="code" id="p">NFKD</p>: 정규형 호환성 분해<br><p class="code" id="p"><i>form</i></p>의 기본값은 <p class="code" id="p">NFC</p>입니다.</td>
+                                <td>문자열<p class="code" id="p"><p>form</p>으로 지정된 유니코드 정규화 방식에 따라 정규화된 문자열을 반환합니다.<br><p class="code" id="p">NFC</p>: 정규형 정준 결합<br><p class="code" id="p">NFD</p>: 정규형 정준 분해<br><p class="code" id="p">NFKC</p>: 정규형 호환성 결합<br><p class="code" id="p">NFKD</p>: 정규형 호환성 분해<br><p class="code" id="p"><p>form</p>의 기본값은 <p class="code" id="p">NFC</p>입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">repeat(count)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
@@ -2696,19 +2696,19 @@
                             </tr>
                             <tr>
                                 <td><p class="code">slice(beginIndex, <i>endIndex</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>인덱스<p class="code" id="p">beginIndex</p>부터의 문자열 또는 인덱스<p class="code" id="p">beginIndex</p>부터 인덱스<p class="code" id="p"><i>endIndex</i></p>까지의 문자열을 추출하여 반환합니다.</td>
+                                <td>인덱스<p class="code" id="p">beginIndex</p>부터의 문자열 또는 인덱스<p class="code" id="p">beginIndex</p>부터 인덱스<p class="code" id="p"><p>endIndex</p>까지의 문자열을 추출하여 반환합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">split(<i>separator</i>, <i>limit</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>주어진 문자열을 문자열<p class="code"><i>separator</i></p>를 기준으로 나누어 저장한 배열을 반환합니다. <p class="code"><i>limit</i></p>는 반환될 배열의 최대 인덱스입니다.</td>
+                                <td>주어진 문자열을 문자열<p class="code" id="i">separator</p>를 기준으로 나누어 저장한 배열을 반환합니다. <p class="code" id="i">limit</p>는 반환될 배열의 최대 인덱스입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">startsWith(searchString, <i>position</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>주어진 문자열이 <p class="code" id="p">searchString</p>으로 시작되면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><i>postion</i></p>은 <p class="code" id="p">searchString</p>을 탐색하기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
+                                <td>주어진 문자열이 <p class="code" id="p">searchString</p>으로 시작되면 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.<br><p class="code" id="p"><p>postion</p>은 <p class="code" id="p">searchString</p>을 탐색하기 시작할 위치이며, 기본값은 <p class="code" id="p">0</p>입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">substring(indexStart, <i>indexEnd</i>)</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
-                                <td>인덱스<p class="code">indexStart</p>부터의 부분 또는 <p class="code">indexStart</p>부터 <p class="code"><i>indexEnd</i></p>까지의 문자열을 반환합니다.</td>
+                                <td>인덱스<p class="code">indexStart</p>부터의 부분 또는 <p class="code">indexStart</p>부터 <p class="code" id="i">indexEnd</p>까지의 문자열을 반환합니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">toLowerCase()</p><img class="sttc" src="img/static.png"><img class="prttp" src="img/prototype.png"></td>
@@ -2757,8 +2757,8 @@
                             <th>이름</th>
                             <th>매개변수</th>
                             <tr>
-                                <td><p class="code"><i>iterable</i></p></td>
-                                <td><p class="code">["키", "값"]</p> 쌍인 배열 또는 다른 순회 가능한 객체입니다. 각 <p class="code">["키", "값"]</p> 쌍은 새로운 Map에 포함됩니다.</td>
+                                <td><p class="code" id="i">iterable</p></td>
+                                <td><p class="code">["키", "값"]</p> 쌍인 배열 또는 다른 순회 가능한 객체입니다. 각 <p class="code">["키", "값"]</p> 쌍은 새로운 Map에 포함됩니다. (선택적)</td>
                             </tr>
                         </table>
                     </div>
@@ -2795,7 +2795,7 @@
                             <tr>
                                 <td>순회</td>
                                 <td>키와 값의 쌍이 배열 형태로 저장되므로 바로 순회할 수 있습니다.</td>
-                                <td>바로 순회할 수 없습니다. 일반적으로 <p class="code">keys()</p>메서드를 사용한 다음 순회합니다.</td>
+                                <td>바로 순회할 수 없습니다. 일반적으로 <p class="code">keys()</p>메소드를 사용한 다음 순회합니다.</td>
                             </tr>
                             <tr>
                                 <td>성능</td>
@@ -2804,7 +2804,7 @@
                             </tr>
                         </table>
                     </div>
-                    <p class="dscrpt">다음은 Map객체의 속성 및 메서드입니다:</p>
+                    <p class="dscrpt">다음은 Map객체의 속성 및 메소드입니다:</p>
                     <div class="table">
                         <table>
                             <th>이름</th>
@@ -2835,11 +2835,11 @@
                             </tr>
                             <tr>
                                 <td><p class="code">entries()</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메서드를 가지고 있습니다.)</td>
+                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메소드를 가지고 있습니다.)</td>
                             </tr>
                             <tr>
                                 <td><p class="code">forEach(callback, <i>thisArg</i>)</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>해당 Map객체의 요소에 대해 함수<p class="code" id="p">callback</p>을 실행합니다. <p class="code" id="p"><i>thisArg</i></p>는 함수<p class="code" id="p">callback</p>에서 <p class="code" id="p">this</p>로 사용할 값입니다.</td>
+                                <td>해당 Map객체의 요소에 대해 함수<p class="code" id="p">callback</p>을 실행합니다. <p class="code" id="p"><p>thisArg</p>는 함수<p class="code" id="p">callback</p>에서 <p class="code" id="p">this</p>로 사용할 값입니다.</td>
                             </tr>
                             <tr>
                                 <td><p class="code">get(key)</p><img class="prttp" src="img/prototype.png"></td>
@@ -2851,7 +2851,7 @@
                             </tr>
                             <tr>
                                 <td><p class="code">keys()</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메서드를 가지고 있습니다.)</td>
+                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메소드를 가지고 있습니다.)</td>
                             </tr>
                             <tr>
                                 <td><p class="code">set(key, value)</p></td>
@@ -2859,16 +2859,267 @@
                             </tr>
                             <tr>
                                 <td><p class="code">values()</p><img class="prttp" src="img/prototype.png"></td>
-                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메서드를 가지고 있습니다.)</td>
+                                <td>해당 Map객체의 요소를 등록한 순서대로 나열한 새로운 Iterator(이터레이터)객체를 반환합니다. (Iterator객체는 요소를 순서대로 하나씩 반환하는 <p class="code">next()</p>메소드를 가지고 있습니다.)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-9-16" class="content">
+                    <p class="stitle">Set</p>
+                    <p class="dscrpt">Set객체는 자료형에 관계없이 원시 값과 객체 참조 모두 유일한 값을 저장할 수 있습니다. 즉, 어떤 값은 그 Set객체 안에서 유일합니다.</p><br><br>
+                    <p class="dscrpt">Set객체의 생성자는 이와 같습니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">Set(<i>iterable</i>);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>매개변수</th>
+                            <tr>
+                                <td><p class="code" id="i">iterable</p></td>
+                                <td>반복 가능한 객체(이터레이터)가 전달된 경우, 그 요소는 모두 새로운 Set객체에 추가됩니다. 만약 <p class="code" id="i">iterable</p>를 명시하지 않거나 <p class="code">null</p>을 전달하면 비어있는 Set객체를 추가합니다. (선택적)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="dscrpt">다음은 Set객체의 속성 및 메소드입니다:</p>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">length</p></td>
+                                <td>값이 0인 속성입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">prototype</p></td>
+                                <td>Set객체의 인스턴스에 속성을 추가할 수 있습니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">constructor</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>인스턴스 생성에 사용한 생성자를 반환합니다. 기본값은 Set입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">size</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>Set객체 값의 개수를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">add(value)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td><p class="code">value</p>값을 해당 Set객체에 추가하고 해당 Set객체를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">clear()</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Set객체의 값을 모두 제거합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">delete(value)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td><p class="code">value</p>을 해당 Set객체에서 제거합니다. 제거에 성공했을 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">entries()</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Set객체에 요소가 삽입된 순서대로 각 요소의 값을 순환할 수 있는 이터레이터 객체를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">forEach(callback, <i>thisArg</i>)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Set객체의 요소에 대해 함수<p class="code">callback</p>을 실행합니다. <p class="code">callback</p>함수는 아래와 같은 인수를 가질 수 있습니다:<br>
+                                    <p class="code">currentValue</p>, <p class="code">currentKey</p> : 처리할 현재 요소로, Set객체는 키를 가지지 않으므로 두 인수 모두에게 값을 전달합니다.<br>
+                                    <p class="code">set</p> : <p class="code">forEach()</p>메소드를 호출한 Set객체입니다.<br>
+                                    <p class="code" id="i">thisArg</p>는 함수<p class="code">callback</p>에서 <p class="code">this</p>로 사용할 값입니다. (선택적)<br>반환값은 <p class="code">undefined</p>입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">has(value)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Set객체에 <p class="code">value</p>이 존재하면 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">values()</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 Set객체에 요소가 삽입된 순서대로 각 요소의 값을 순환할 수 있는 이터레이터 객체를 반환합니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-9-17" class="content">
+                    <p class="stitle">WeakMap</p>
+                    <p class="dscrpt">WeakMap객체는 키가 원시 값이 될 수 없는 </p><p class="code">키, 값</p><p class="dscrpt">쌍의 컬렉션입니다. <strogng>즉, 키는 객체여야 합니다.</strogng></p><br><br>
+                    <p class="dscrpt">WeakMap객체의 생성자는 이와 같습니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">WeakMap(<i>iterable</i>);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>매개변수</th>
+                            <tr>
+                                <td><p class="code" id="i">iterable</p></td>
+                                <td>배열 또는 요소가 <p class="code">키, 값</p> 쌍인 이터레이블 객체입니다. <p class="code" id="i">iterable</p>의 값이 지정되지 않았거나 <p class="code">null</p>인 경우 <p class="code">undefined</p>로 취급됩니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="dscrpt">WeakMap객체에서, 키는 약하게 유지됩니다. 이것은 다른 곳에서 키 참조가 없는 경우, 모든 항목이 WeakMap객체에서 가비지 컬렉터에 의해 제거된다는 것과 WeakMap객체 안의 키는 열거 불가하다는 것을 의미합니다.</p><br><br>
+                    <p class="dscrpt">다음은 WeakMap객체의 속성 및 메소드입니다:</p>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">length</p></td>
+                                <td>값이 0인 속성입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">prototype</p></td>
+                                <td>WeakMap객체의 인스턴스에 속성을 추가할 수 있습니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">constructor</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>인스턴스 생성에 사용한 생성자를 반환합니다. 기본값은 WeakMap입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">delete(key)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td><p class="code">key</p>와 관련된 모든 값을 제거합니다. 제거에 성공했을 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">get(key)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td><p class="code">key</p>와 쌍을 이루고 있는 값을 반환합니다. 없을 경우 <p class="code">undefined</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">has(key)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 WeakMap객체의 키 중 <p class="code">key</p>가 존재하면 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">set(key, value)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 WeakMap객체에 키 <p class="code">key</p>와 그 키의 값<p class="code">value</p>을 추가하고 해당 WeakMap객체를 반환합니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-9-18" class="content">
+                    <p class="stitle">WeakSet</p>
+                    <p class="dscrpt">WeakSet객체는 약하게 유지되는 객체를 저장하는 객체입니다.</p><br><br>
+                    <p class="dscrpt">WeakSet객체의 생성자는 이와 같습니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">WeakSet(<i>iterable</i>);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>매개변수</th>
+                            <tr>
+                                <td><p class="code" id="i">iterable</p></td>
+                                <td>이터레이블 객체가 전달된 경우 새 WeakSet객체에 그 객체를 추가합니다. <p class="code" id="i">iterable</p>의 값이 지정되지 않았거나 <p class="code">null</p>인 경우 <p class="code">undefined</p>로 취급됩니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="dscrpt">WeakSet객체에서, 키는 WeakMap객체와 마찬가지로 약하게 유지됩니다. 이것은 다른 참조가 없는 경우, 모든 항목이 WeakSet객체에서 가비지 컬렉터에 의해 제거된다는 것과 WeakSet객체는 열거 불가하다는 것을 의미합니다. 또한, WeakSet객체는 Set객체와 달리 객체만의 컬렉션입니다.</p><br><br>
+                    <p class="dscrpt">다음은 WeakSet객체의 속성 및 메소드입니다:</p>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">length</p></td>
+                                <td>값이 0인 속성입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">prototype</p></td>
+                                <td>WeakSet객체의 인스턴스에 속성을 추가할 수 있습니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">constructor</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>인스턴스 생성에 사용한 생성자를 반환합니다. 기본값은 WeakSet입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">add(value)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td><p class="code">value</p>값을 갖는 새로운 객체를 해당 WeakSet객체에 추가하고 해당 WeakSet객체를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">delete(value)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td><p class="code">value</p>와 관련된 모든 값을 제거합니다. 제거에 성공했을 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">has(value)</p><img class="prttp" src="img/prototype.png"></td>
+                                <td>해당 WeakMap객체에 <p class="code">value</p>가 존재하면 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-9-19" class="content">
+                    <p class="stitle">JSON</p>
+                    <p class="dscrpt">JSON은 JavaScript Object Notation 즉, '자바스크립트 객체 표기법'을 뜻합니다.자바스크립트에 내장되어 있는 JSON객체는 JSON값을 분석하거나 다른 값을 JSON값으로 변환하는 등의 기능을 가지고 있습니다.</p><br>
+                    <p class="dscrpt">JSON이 자바스크립트 객체 표기법이지만 실제 자바스크립트 안의 객체와 다른 점이 있습니다.</p><br><br>
+                    <p class="dscrpt"><strong>객체 / 배열에서</strong></p><br><br>
+                    <p class="dscrpt">JSON에서는 속성의 이름이 반드시 큰따옴표로 표시된 문자열 입니다. 또한 후행 쉼표를 허용하지 않습니다.</p>
+                    <div class="code">
+                        <pre><code class="json">{<br>    "key1" : "value1",<br>    key2 : "value2", // 키가 큰따옴표로 감싸지지 않음<br>    "key3" : "value3",    // 맨 마지막 요소에 쉼표가 붙을 수 없음.<br>}</code></pre>
+                    </div><br>
+                    <p class="dscrpt"><strong>숫자</strong></p><br><br>
+                    <p class="dscrpt">값에 숫자 값이 들어갈 경우, 선행 0은 허용하지 않습니다. 또한, 소수점 뒤에는 적어도 한 자릿수가 뒤따라야 하며 <p class="code">NaN</p>과 <p class="code">Infinity</p>는 지원하지 않습니다.</p>
+                    <div class="code">
+                        <pre><code class="json">{<br>    "key1" : "value1",<br>    "key2" : 023, // 선행 0 불가<br>    "key3" : NaN // NaN이나 Infinity 불가<br>}</code></pre>
+                    </div><br>
+                    <p class="dscrpt">이 외에도 JSON에서 유효한 공백문자는 탭 문자(U+0009), 캐리지 리턴(U+000D), 라인 피드(U+000A), 스페이스(U+002D) 입니다.</p><br><br>
+                    <p class="dscrpt">다음은 JSON객체의 속성 및 메소드입니다:</p>
+                    <div class="table">
+                        <table>
+                            <th>이름</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">parse(text, <i>reviver</i>)</p><img class="sttc" src="img/static.png"></td>
+                                <td>문자열<p class="code">text</p>를 JSON으로 변환하여 반환합니다. <p class="code" id="i">reviver</p>인자가 함수일 때, 변환 결과를 그 함수에 전달하여 값을 변형한 뒤 반환합니다. (선택적)<br>변환할 문자열이 올바른 JSON형식이 아닐 경우 <p class="code">SyntaxError</p>를 발생시킵니다.</p></td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">stringify(value, <i>replacer</i>, <i>space</i>)</p><img class="sttc" src="img/static.png"></td>
+                                <td>JSON값<p class="code">value</p>을 문자열로 변환 및 반환합니다.<br><p class="code" id="i">replacer</p>는 문자열화 동작 방식을 변경하는 함수나 JSON문자열에 포함될 속성들을 선택하기 위한 <p class="code">String</p>과 <p class="code">Number</p>객체들의 배열입니다. (선택적)<br><p class="code" id="i">space</p>는 문자열 값일 때, 가독성을 위해 삽입될 공백을 지정합니다. 숫자 값일 때, 그 숫자만큼의 공백을 사용합니다. (최대값: 10, 선택적)</td>
                             </tr>
                         </table>
                     </div>
                 </div>
             </div>
+            <div id="4-10" class="content">
+                <p class="title">내장 함수</p>
+                <p class="dscrpt">내장 함수는 자바스크립트 내에 기본적으로 내장되어 있는, 객체에 종속되지 않은 함수입니다. 아래는 자바스크립트 내장 함수입니다:</p>
+                <div id="sA">
+                    <li id="d4-10-1" class="sA">eval()</li>
+                    <li id="d4-10-2" class="sA">uneval()</li>
+                    <li id="d4-10-3" class="sA">isFinite()</li>
+                    <li id="d4-10-4" class="sA">isNaN()</li>
+                    <li id="d4-10-5" class="sA">parseFloat()</li>
+                    <li id="d4-10-6" class="sA">parseInt()</li>
+                    <li id="d4-10-7" class="sA">encodeURI()</li>
+                    <li id="d4-10-8" class="sA">encodeURIComponent()</li>
+                    <li id="d4-10-9" class="sA">decodeURI()</li>
+                    <li id="d4-10-10" class="sA">decodeURIComponent()</li>
+                </div>
+                <div id="4-10-1" class="content">
+                    <p class="stitle">eval()</p>
+                    <p class="code">eval()</p><p class="dscrpt">은 문자열을 JavaScript코드로 실행하는 함수입니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">eval(string);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">string</p></td>
+                                <td>자바스크립트 코드로서 사용할 문자열입니다. 이미 존재하는 변수, 함수 등을 사용할 수 있습니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="code">eval()</p><p class="dscrpt">함수는 위에서도 언급되었듯이, 문자열을 자바스크립트 코드로써 실행하는 함수입니다. 그러므로 </p><p class="code">eval()</p><p class="dscrpt">함수를 아무런 안전장치 없이 명령어로 만들 경우, 타 유저의 악의적인 접근으로 인해 피해를 입을 수 있습니다.</p><br><br>
+                    <p class="dscrpt">아래는 </p><p class="code">eval()</p><p class="dscrpt">함수를 이용한 명령어 소스 예제입니다.</p><br><br>
+                    <p class="dscrpt"><strong>나쁜 예:</strong></p>
+                    <div class="code">
+                        <pre><code class="javascript">if (msg.startsWith('/eval ')) {<br>    replier.reply(eval(msg.substring(5))); // 누구나 eval()함수를 사용할 수 있어 위험함.<br>}</code></pre>
+                    </div>
+                    <p class="dscrpt"><strong>좋은 예:</strong></p>
+                    <div class="code">
+                        <pre><code class="javascript">if (msg.startsWith('/eval ') && sender === '자신의 닉네임' && new java.lang.String(imageDB.getProfileImage()).hasgCode() === '자신의 프로필 해시코드') {<br>    replier.reply(eval(msg.substring(5))); // 자신의 닉네임, 프로필 해시코드까지 조건의 일부로 넣어 위험 감소.<br>}</code></pre>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="tool">
+            <div id="view"><img id="view_img" src="img/view.png"><p id="view_txt">0</p><img id="arrow" src="img/arrow_up.png"></div>
             <div id="login"><p id="login_txt">로그인하기</p><img id="login_img" src="img/profile.png"></div>
-            <form autocomplete="off">
+            <form autocomplete="off" id="search">
                 <input id="search_txt" type="text" placeholder="검색할 내용을 입력하세요!" name="search">
                 <button id="search_btn" type="submit"><img src="img/search.png"></button>
             </form>
@@ -2945,7 +3196,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <p class="code"><i>Dante Alighieri - La Divina Commedia</i></p>
+                            <p class="code" id="i">Dante Alighieri - La Divina Commedia</p>
                         </div>
                     </div>
                 </div>

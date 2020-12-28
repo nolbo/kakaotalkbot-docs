@@ -9,7 +9,8 @@ function font(s){
         $('p.title').css('font-size', 1.3 * fs + 'rem');
         $('p.stitle').css('font-size', 1.1 * fs + 'rem');
         $('p.dscrpt').css('font-size', 0.8 * fs + 'rem');
-        $('p.code').css('font-size', 9.3 * fs + 'px');
+        $('p.code').not('#i').css('font-size', 9.3 * fs + 'px');
+        $('p#i, i').css('font-size', 9.3 * fs + 'px');
         $('li.a, li.sA').css('font-size', 0.8 * fs + 'rem');
         $('li.dscrpt').css('font-size', 0.8 * fs + 'rem');
         $('div.code code').css('font-size', 0.7 * fs + 'rem');
@@ -25,7 +26,8 @@ function font(s){
         $('span.list dd').css('font-size', 1.1 * fs + 'rem');
         $('p.title').css('font-size', 1.9 * fs + 'rem');
         $('p.stitle').css('font-size', 1.4 * fs + 'rem');
-        $('p.code').css('font-size', 0.9 * fs + 'rem');
+        $('p.code').not('#i').css('font-size', 0.9 * fs + 'rem');
+        $('p#i, i').css('font-size', 11.7 * fs + 'px');
         $('li.a, li.sA').css('font-size', 1 * fs + 'rem');
         $('div.code code').css('font-size', 0.9 * fs + 'rem');
         $('div.pls p.plsBox').css('font-size', 0.9 * fs + 'rem');
@@ -55,7 +57,7 @@ function font(s){
         'Ubuntu Mono': 'UbM',
         'Monaco': 'Mon'
     }[s['font_code']] + '\', \'D2Coding\'');
-    $("i, .hljs-comment, .hljs-keyword, .hljs-literal, .hljs-emphasis").css('font-family', '\'' + {
+    $("i, .hljs-comment, .hljs-keyword, .hljs-literal, .hljs-emphasis, p#i").css('font-family', '\'' + {
         'JetBrains Mono': 'JetBrains Mono I',
         'D2 Coding': 'D2Coding',
         'Consolas': 'Con I',

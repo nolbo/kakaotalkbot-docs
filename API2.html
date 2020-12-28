@@ -182,6 +182,11 @@
                             <td><p class="code">Array&lt;Function&gt;</p></td>
                             <td>등록된 이벤트 리스너들을 배열형태로 반환합니다.</td>
                         </tr>
+                        <tr>
+                            <td><p class="code">markAsRead(<i>room: String</i>, <i>packageName: String</i>)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>메시지를 읽음 처리합니다.<br><p class="code" id="i">room</p>은 읽음 처리를 할 방의 이름이며, (선택적)<br><p class="code" id="i">packageName</p>은 메시지를 읽음 처리할 메신저 앱의 패키지명입니다. (선택적)<br><br>알림 읽기 액션을 찾을 수 있는 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -391,7 +396,7 @@
                             <td><p class="code">String</p></td>
                             <td>수신된 메시지가 명령어 형식일 때 발생하는 이벤트입니다. (자세한 내용은 <p class="code">Bot.setCommandPrefix</p>를 참고하세요.)<br>전달되는 인자의 정보는 이와 같습니다:
                                 <div class="code">
-                                    <pre><code class="javascript">{<br>    "command" : "수신된 command 이름",<br>    "args" : [수신된 command의 인자 배열],<br>    "room" : "채팅방 이름",<br>    "content" : "수신된 메시지 내용",<br>    "isGroupChat" : boolean, // 2인 이상의 채팅방일 경우 true, 아니면 false<br>    "isDebugRoom" : boolean, // 디버깅룸에서 전송된 메시지일 경우 true, 아니면 false<br>    "author" : {<br>        "name" : "전송자 이름",<br>        "avatar" : {<br>            "getBase64" : function () { /*프로필 이미지의 Base64값 반환*/ },<br>            "getBitmap" : function () { /*프로필 이미지의 android.graphics.Bitmap객체 반횐*/ }<br>        }<br>    },<br>    "reply" : function(content) { /*content라는 내용의 메시지 전송*/ },<br>    "packageName" : "수신된 메시지의 앱 패키지명"<br>}</code></pre>
+                                    <pre><code class="javascript">{<br>    "command" : "수신된 command 이름",<br>    "args" : [수신된 command의 인자 배열],<br>    "room" : "채팅방 이름",<br>    "content" : "수신된 메시지 내용",<br>    "isGroupChat" : boolean, // 2인 이상의 채팅방일 경우 true, 아니면 false<br>    "isDebugRoom" : boolean, // 디버깅룸에서 전송된 메시지일 경우 true, 아니면 false<br>    "author" : {<br>        "name" : "전송자 이름",<br>        "avatar" : {<br>            "getBase64" : function () { /*프로필 이미지의 Base64값 반환*/ },<br>            "getBitmap" : function () { /*프로필 이미지의 android.graphics.Bitmap객체 반횐*/ }<br>        }<br>    },<br>    "reply" : function(content) { /*content라는 내용의 메시지 전송*/ },<br>    "markAsRead" : function() { /* 해당 방의 알림을 읽음으로 표시. 성공시 true, 실패시 false 반환 */ },<br>    "packageName" : "수신된 메시지의 앱 패키지명"<br>}</code></pre>
                                 </div>
                             </td>
                         </tr>
@@ -400,7 +405,7 @@
                             <td><p class="code">String</p></td>
                             <td>메시가 수신되었을 때 발생하는 이벤트입니다.<br>전달되는 인자의 정보는 이와 같습니다:
                                 <div class="code">
-                                    <pre><code class="javascript">{<br>    "room" : "채팅방 이름",<br>    "content" : "수신된 메시지 내용",<br>    "isGroupChat" : boolean, // 2인 이상의 채팅방일 경우 true, 아니면 false<br>    "isDebugRoom" : boolean, // 디버깅룸에서 전송된 메시지일 경우 true, 아니면 false<br>    "author" : {<br>        "name" : "전송자 이름",<br>        "avatar" : {<br>            "getBase64" : function () { /*프로필 이미지의 Base64값 반환*/ },<br>            "getBitmap" : function () { /*프로필 이미지의 android.graphics.Bitmap객체 반횐*/ }<br>        }<br>    },<br>    "reply" : function(content) { /*content라는 내용의 메시지 전송*/ },<br>    "packageName" : "수신된 메시지의 앱 패키지명"<br>}</code></pre>
+                                    <pre><code class="javascript">{<br>    "room" : "채팅방 이름",<br>    "content" : "수신된 메시지 내용",<br>    "isGroupChat" : boolean, // 2인 이상의 채팅방일 경우 true, 아니면 false<br>    "isDebugRoom" : boolean, // 디버깅룸에서 전송된 메시지일 경우 true, 아니면 false<br>    "author" : {<br>        "name" : "전송자 이름",<br>        "avatar" : {<br>            "getBase64" : function () { /*프로필 이미지의 Base64값 반환*/ },<br>            "getBitmap" : function () { /*프로필 이미지의 android.graphics.Bitmap객체 반횐*/ }<br>        }<br>    },<br>    "reply" : function(content) { /*content라는 내용의 메시지 전송*/ },<br>    "markAsRead" : function() { /* 해당 방의 알림을 읽음으로 표시. 성공시 true, 실패시 false 반환 */ },<br>    "packageName" : "수신된 메시지의 앱 패키지명"<br>}</code></pre>
                                 </div>
                             </td>
                         </tr>
@@ -452,7 +457,7 @@
                     <p class="stitle">Options</p>
                     <p class="dscrpt"><p class="code">options</p>의 구조는 아래와 같습니다:</p>
                     <div class="code">
-                        <pre><code class="javascript">{<br>    "url" : "https://www.google.com", //  request를 보낼 URL<br>    "timeout" : 3000, // request timeout(ms), 기본값 3000<br>    "method" : "GET", // request 메서드, 기본값 "GET"<br>    "headers" : { // request header, 기본값 null<br>        // headers<br>    }<br>}</code></pre>
+                        <pre><code class="javascript">{<br>    "url" : "https://www.google.com", //  request를 보낼 URL<br>    "timeout" : 3000, // request timeout(ms), 기본값 3000<br>    "method" : "GET", // request 메소드, 기본값 "GET"<br>    "headers" : { // request header, 기본값 null<br>        // headers<br>    }<br>}</code></pre>
                     </div>
                 </div>
             </div>
@@ -635,8 +640,9 @@
             </div>
         </section>
         <section id="tool">
+            <div id="view"><img id="view_img" src="img/view.png"><p id="view_txt">0</p><img id="arrow" src="img/arrow_up.png"></div>
             <div id="login"><p id="login_txt">로그인하기</p><img id="login_img" src="img/profile.png"></div>
-            <form autocomplete="off">
+            <form autocomplete="off" id="search">
                 <input id="search_txt" type="text" placeholder="검색할 내용을 입력하세요!" name="search">
                 <button id="search_btn" type="submit"><img src="img/search.png"></button>
             </form>
@@ -713,7 +719,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <p class="code"><i>Dante Alighieri - La Divina Commedia</i></p>
+                            <p class="code" id="i">Dante Alighieri - La Divina Commedia</p>
                         </div>
                     </div>
                 </div>

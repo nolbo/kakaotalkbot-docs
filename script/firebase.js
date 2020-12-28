@@ -1,5 +1,6 @@
 var auth, save, uSet;
 $(function() {
+    $('#arrow').fadeOut();
     $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js', function() {
         $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js', function() {
             $.getScript('https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js', function() {
@@ -30,6 +31,43 @@ $(function() {
                         appId: "1:766140475780:web:05f3af8ee9f77d403e15d1",
                         measurementId: "G-37EGKPJBSX"
                     };
+                    var db = firebase.firestore();
+                    db.collection("project").doc("views").update({
+                        total: firebase.firestore.FieldValue.increment(1)
+                    });
+                    db.collection("project").doc("views").get().then(function(doc) {
+                        $('#arrow').fadeIn()
+                        if (doc.exists) {
+                            $('p#view_txt').prop('Counter',$('p#view_txt').text()).animate({
+                                Counter: doc.data().total
+                            }, {
+                                duration: 1000,
+                                easing: 'swing',
+                                step: function (now) {
+                                    $('p#view_txt').text(Math.ceil(now));
+                                    if(Math.ceil(now)==doc.data().total){$('#arrow').fadeOut();}
+                                }
+                            });
+                        } else {
+                            // doc.data() will be undefined in this case
+                            console.log("No such document!");
+                        }
+                    }).catch(function(error) {
+                        console.log("Error getting document:", error);
+                    });
+                    db.collection("project").doc("views").onSnapshot(function(doc) {
+                        $('#arrow').fadeIn()
+                        $('p#view_txt').prop('Counter',$('p#view_txt').text()).animate({
+                            Counter: doc.data().total
+                        }, {
+                            duration: 1000,
+                            easing: 'swing',
+                            step: function (now) {
+                                $('p#view_txt').text(Math.ceil(now));
+                                if(Math.ceil(now)==doc.data().total){$('#arrow').fadeOut();}
+                            }
+                        });
+                    });
                     auth = firebase.initializeApp(authConfig, "other");
                     auth.auth().onAuthStateChanged(function(user) {
                         if (["/signup", "/signin", "/signup.html", "/signin.html", "/", "/index", "/index.html"].indexOf(location.href.substring(location.origin.length)) == -1) {
@@ -57,10 +95,6 @@ $(function() {
                                 auth.firestore().collection('users').doc(auth.auth().currentUser.uid).get().then(function(doc) {
                                     $('#login_img').attr('src', doc.data().profile);
                                     $('#login_txt').text(doc.data().id);
-                                });
-                                var db = firebase.firestore();
-                                db.collection("project").doc("views").update({
-                                    total: firebase.firestore.FieldValue.increment(1)
                                 });
                                 if (["/signup", "/signin", "/signup.html", "/signin.html", "/", "/index", "/index.html"].indexOf(location.href.substring(location.origin.length)) == -1) {
                                     auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').get().then(function(doc) {

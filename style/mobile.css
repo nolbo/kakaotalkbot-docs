@@ -216,6 +216,15 @@
         border-radius: 0.3rem;
     }
 
+    p#i {
+        font-family: 'JetBrains Mono I' !important;
+        font-size: 9.3px !important;
+    }
+
+    i {
+        font-size: 9.3px !important;
+    }
+
     li.a, li.sA {
         list-style: none;
         line-height: 1.8rem;
@@ -231,10 +240,6 @@
         line-height: 1.8rem;
         white-space: pre-line;
         font-size: 0.8rem;
-    }
-
-    i {
-        font-family: 'JetBrains Mono I';
     }
 
     div#sA {
@@ -320,6 +325,10 @@
         font-size: 0.8rem;
     }
 
+    td#no {
+        background: #ff00aa;
+    }
+
     img.sttc, img.prttp {
         width: 1rem;
         height: 1rem;
@@ -398,14 +407,43 @@
         display: none;
     }
 
+    div#view {
+        display: inline-block;
+        width: 50%;
+        margin-top: 0.4rem;
+        text-align: left;
+        float: left;
+    }
+
+    img#view_img {
+        display: inline;
+        width: 1rem;
+        height: auto;
+    }
+
+    p#view_txt {
+        display: inline;
+        margin-left: 1rem;
+        position: relative;
+        top: -0.2rem;
+    }
+
+    img#arrow {
+        filter: invert(100%);
+        width: 1rem;
+        height: auto;
+        margin-left: 1rem;
+    }
+
     div#login {
-        display: block;
-        width: 100%;
+        display: inline-block;
+        width: 50%;
         text-align: right;
         margin-bottom: 1.5rem;
     }
 
     img#login_img {
+        display: inline-block;
         width: 2rem;
         height: auto;
         border-radius: 4rem;

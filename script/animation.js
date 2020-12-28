@@ -75,8 +75,8 @@ $(function () {
         window.open($(this).attr('id'));
     });
 
-    $("img.sttc").attr("title", "정적인 속성이나 메서드입니다.");
-    $("img.prttp").attr("title", "프로토타입 속성이거나 프로토타입 메서드입니다.");
+    $("img.sttc").attr("title", "정적인 속성이나 메소드입니다.");
+    $("img.prttp").attr("title", "프로토타입 속성이거나 프로토타입 메소드입니다.");
 
     $(document).keydown(function (e) {
         if (e.which == 191 && $('input#search_txt').is(':focus') == false) {

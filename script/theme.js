@@ -20,11 +20,13 @@ $(function () {
                 $('#white').attr('data-checked', 'false');
                 $('#dark').attr('data-checked', 'true');
                 $('.t_dark').removeAttr('media');
+                getChangeDarkMode();
             }else if(s=='light'){
                 $('#system').attr('data-checked', 'false');
                 $('#white').attr('data-checked', 'true');
                 $('#dark').attr('data-checked', 'false');
                 $('.t_dark').attr('media', 'asdf');
+                getChangeWhiteMode();
             }
         }
     }
