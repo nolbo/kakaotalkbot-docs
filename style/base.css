@@ -432,7 +432,7 @@
         height: auto;
     }
 
-    p#view_txt {
+    div#view p {
         display: inline;
         margin-left: 1rem;
         position: relative;
