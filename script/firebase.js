@@ -57,6 +57,9 @@ $(function() {
                                     }
                                 }
                             });
+                            if($('p#online_txt').text()>data.online){
+                                $('#arrow').attr('src','img/arrow.png')
+                            }
                             $('p#online_txt').prop('Counter', $('p#online_txt').text()).animate({
                                 Counter: data.online
                             }, {
@@ -66,6 +69,7 @@ $(function() {
                                     $('p#online_txt').text(Math.ceil(now));
                                     if (Math.ceil(now) == data.online) {
                                         $('#arrow').fadeOut();
+                                        $('#arrow').attr('src','img/arrow_up.png')
                                     }
                                 }
                             });
