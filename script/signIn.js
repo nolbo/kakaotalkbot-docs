@@ -25,7 +25,7 @@ $(function () {
                 $('#id').attr('placeholder', '이메일');
                 auth.auth().signInWithEmailAndPassword(email, password)
                     .then((user) => {
-                        if (user.emailVerified) {
+                        if (user.user.emailVerified) {
                             location.href = location.origin;
                         } else {
                             auth.auth().signOut().then(function () {
