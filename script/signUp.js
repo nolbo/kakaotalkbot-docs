@@ -93,14 +93,14 @@ $(function () {
 
             if (!is) {
                 console.log('create account');
-                auth.auth().createUserWithEmailAndPassword(email, pswd).then(function () {
-                    auth.auth().currentUser.sendEmailVerification().then(function () {
-                        auth.firestore().collection('users').doc(auth.auth().currentUser.uid).set({
+                auth.auth().createUserWithEmailAndPassword(email, pswd).then(function (a) {
+                    a.user.sendEmailVerification().then(function () {
+                        auth.firestore().collection('users').doc(a.user.uid).set({
                             'id': id,
                             'email': email,
                             'profile': $('img#profile').attr('src')
                         }).then(function () {
-                            auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({'settings': {'theme': 'light'}}).then(function () {
+                            auth.firestore().collection('users').doc(a.user.uid).collection('docs').doc('data').update({'settings': {'theme': 'light'}}).then(function () {
                                 auth.auth().signOut().then(function () {
                                     setTimeout(()=>{
                                         location.href = 'https://kkotbot-docs.kro.kr/login';
