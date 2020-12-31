@@ -1,0 +1,34 @@
+@media(prefers-color-scheme: dark){
+    body, article {
+        background: #3a3a3a;
+    }
+
+    input[type = 'text'], input[type = 'password'], input[type = 'email'] {
+        background: black;
+        color: white;
+        box-shadow: 0rem 0rem 0.8rem 0rem #161616;
+        border: black;
+    }
+
+    input[type = 'text']:focus, input[type = 'password']:focus, input[type = 'email']:focus {
+        box-shadow: 0rem 0rem 1.5rem 0rem #00ffc8;
+    }
+
+    img#profile {
+        box-shadow: 0rem 0rem 2rem 0rem #161616;
+    }
+
+    p.dscrpt, p.sml, a {
+        color: white;
+    }
+
+    p.ttl, p.txt, p.sttl, li.txt {
+        color: white;
+    }
+
+    button:hover {
+        color: white;
+        background: #3a3a3a;
+        box-shadow: 0rem 0rem 1.2rem 0rem #161616;
+    }
+}

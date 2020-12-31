@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="style/acc.css">
+    <link rel="stylesheet" href="style/acc_mobile.css">
+    <link rel="stylesheet" href="style/acc_dark.css">
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/docs_black.png">
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/dark.js"></script>
+    <script type="text/javascript" src="script/firebase.js"></script>
+    <script type="text/javascript" src="script/upload.js"></script>
+    <script type="text/javascript" src="script/signUp.js"></script>
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+    <title>KBot Docs | 회원가입</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img id="docs" src="img/docs.png">
+            <h1>회원가입</h1>
+        </div>
+    </header>
+    <article>
+        <form autocomplete="off">
+            <input id="id" type="text" placeholder="아이디"><br>
+            <input id="password" type="password" placeholder="비밀번호"><br>
+            <input id="re-password" type="password" placeholder="비밀번호 확인"><br>
+            <input id="email" type="email" placeholder="이메일"><br>
+            <img id="profile" src="img/profile.png"><input id="profile" type="file" accept="image/*"><br>
+            <input id="privacy" type="checkbox">
+            <div class="dscrpt">
+                <label for="privacy"><a id="ck"><img src="img/img_bg.png"></a></label><p class="dscrpt"><a href="privacy.html" target="_blank">개인정보 수집 및 이용약관</a>에 동의합니다. (필수)</p>
+            </div>
+            <input id="location" type="checkbox">
+            <div class="dscrpt">
+                <label for="location"><a id="ck"><img src="img/img_bg.png"></a></label><p class="dscrpt"><a href="location.html" target="_blank">위치정보 수집 및 이용약관</a>에 동의합니다. (필수)</p>
+            </div>
+            <button id="complete" type="button" class="g-recaptcha" data-sitekey="6LccHfIZAAAAANffs67hBZHRfjDc_s-8cKtWgNNX" data-callback='onSubmit' data-action='submit'>회원가입</button>
+        </form>
+        <p class="sml" id="btm">이미 계정이 있으신가요? <a href="signin.html">그럼 얼른 로그인하러 가요!</a></p>
+    </article>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("#complete").submit();
+        }
+    </script>
+</body>
+</html>

@@ -1,109 +1,111 @@
-let isOpen = {"side" : false, "summary" : true, "api" : true, "api2" : true, "basic" : true, "rhino" : true, "deepening" : true, "appendix" : true};
+let mouse       = null;
+let isTool      = false;
+let isRunning   = false;
+const SPAN_LIST = 'span.list[data-isVisible = "true"]';
+let scroll;
 
-$(function(){
-    $("#toast_con").css("left", `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
-    $("div#blank").appendTo("div#sideBar");
-    
-    if($(window).width() > 800){
-        $("header").css("width", $(window).width());
-        $("section#summary, section#basic, section#api, section#api2, section#rhino, section#appendix").css({"width" : window.innerWidth - $("div#side").width() - 75, "right" : "0", "margin-left" : "3em"});
-        $("div#blank").css("width", $("div#sideBar").width());
-        $("section#body").css("width", $(window).width() - $("div#side").width() - 100);
-    }else{
-        $("header").css({"width" : window.innerWidth - 52, "height" : "2em"});
-        $("section#body section#summary").css("margin-top", "1em")
-        $("section#body").css({"width" : $("section#summary").width + 16, "padding-left" : "10em"});
-        $("section#body > section").css({ "float" : "right" });
-        $("div.content").css("width", window.innerWidth - 68);
-    }
+$(function () {
+    $('#toast_con').css('left', `${$(document).width() / 2 - ($("#toast_con").width() / 2)}px`);
+    $('input#font_size').val(100);
+    $('p.rangeTxt').text($('input#font_size').val() + '%');
+    $('span.list').dequeue();
 
-    $("dl span dt").click(function(event){
-        let id = $(this).parent().attr('id');
-        switch(isOpen[id]){
-            case true:
-                isOpen[id] = false;
-                $("span#"+id+" dt").text($("span#"+id+" dt").text().replace("▽", "▷"));
-                $("span#"+id+" dd").css("display", "none");
-                break;
-            case false:
-                isOpen[id] = true;
-                $("span#"+id+" dt").text($("span#"+id+" dt").text().replace("▷", "▽"));
-                $("span#"+id+" dd").css("display", "block");
-                break;
-            default:
-                return;
-        }
-        event.stopPropagation();
-    });
-
-    $("dl span dd, li.sA").click(function(event){
-        let id = $(this).parent().attr("id");
-        var offset = $("div#"+event.target.id.replace("d", "")).offset();
-        $('section#body > section').animate({opacity: "0"}, 700);
-        setTimeout(function(){
-            $("html").scrollTop(offset.top - 155);
-            $('section#body > section').animate({opacity: "1"}, 700);
-        }, 700); 
-    });
-
-    $("#kkotb_rfnc").click(function(){
-        if($(window).width() > 800){
-            location.reload();
-        }
-        else{
-            $("div#sideBar").css("height", $(window).height() - $("header").height() - 2);
-            switch(isOpen.side){
-                case true:
-                    isOpen.side = false;
-                    $("div#sideBar").css("display", "none");
-                    $("div#side").css("display", "none");
-                    break;
-                case false:
-                    isOpen.side = true;
-                    $("div#sideBar").css("display", "block").css("visibility", "visible");
-                    $("div#side").css("display", "block").css("visibility", "visible");
-                    break;
-                default: return;
-            }      
+    $('aside, aside *').hover(function (event) {
+        if (Math.floor(Number($(SPAN_LIST).css('left').replace('px', ''))) <= '30' && $(SPAN_LIST).css('opacity') == '0' && $(SPAN_LIST).css('display') == 'none') {
+            $('aside > span.list').dequeue();
+            $('body').css('overflow', 'hidden');
+            $('body').css('touch-action', 'none');
+            $(SPAN_LIST).css({ 'left': '0', 'opacity': '0', 'display': 'none' });
+            $(SPAN_LIST).css({ 'display': 'block', 'visibility': 'visible' });
+            if ($(window).width() > 800) {
+                $('aside > span.list').animate({ 'left': '10rem' }, 300);
+            } else {
+                $('aside > span.list').animate({ 'left': '5rem' }, 300);
+            }
+            setTimeout(function () {
+                $(SPAN_LIST).animate({ 'opacity': '1' }, 300);
+            }, 570);
         }
     });
 
-    
-    $(".sdb").on("click", function(){
-        if(window.innerWidth < 800){
-            isOpen.side = false;
-            $("div#sideBar").css("display", "none");
-            $("div#side").css("display", "none");
+    $('aside').mouseleave(function () {
+        $('aside > span.list, input').dequeue();
+        $('body').css('overflow', 'visible');
+        $('aside, aside *').css('overflow', '');
+        $('body').css('touch-action', 'auto');
+        if ($(window).width() > 800) {
+            $('aside > span.list').css({ 'left': '10rem' });
+        } else {
+            $('aside > span.list').css({ 'left': '5rem' });
         }
+        $('aside > span.list').animate({ 'opacity': '0' }, 300);
+        $('aside > span.list').animate({ 'left': '0' }, 300);
+        setTimeout(function () {
+            $('aside > span.list').css({ 'display': 'none' });
+        }, 600);
     });
-    
-    $("div#side").click(function(){
-        if(window.innerWidth < 800){
-            isOpen.side = false;
-            $("div#sideBar").css("display", "none");
-            $("div#side").css("display", "none");
+
+    $('#tool_btn').click(function () {
+        toolbar();
+    });
+
+    $("#docs").click(function () {
+        location.reload();
+    });
+
+    $("dd.sdb, li.sA").click(function (event) {
+        if (isTool == false) {
+            $(SPAN_LIST + ', form').dequeue();
+            var offset = $("div#" + event.target.id.replace("d", "")).offset();
+            $('article').animate({ opacity: "0" }, 700);
+            setTimeout(function () {
+                $("html").scrollTop(offset.top - '115');
+                $('article').animate({ opacity: "1" }, 700);
+            }, 700);
+        } else {
+            return false;
         }
     });
 
-    $(window).resize(function(){
-        if(window.innerWidth > 800){
-            location.reload();
-        }
+    $("#docs").click(function () {
+        location.href = 'index.html';
     });
 
-    $("li.a").click(function(){
+    $("li.a").click(function () {
         window.open($(this).attr('id'));
     });
 
-    $("p#thank_you").mouseover(function(){
-        let rdcl = ["#00f1a9", "#a500f1", "#f100b5"];
-        $("p."+$(this).attr("class")).css("color", rdcl[Math.floor(Math.random() * 3)]);
+    $("img.sttc").attr("title", "정적인 속성이나 메소드입니다.");
+    $("img.prttp").attr("title", "프로토타입 속성이거나 프로토타입 메소드입니다.");
+
+    $(document).keydown(function (e) {
+        if (e.which == 191 && $('input#search_txt').is(':focus') == false) {
+            toolbar();
+        }
     });
 
-    $("p#thank_you").mouseout(function(){
-        $("p."+$(this).attr("class")).css("color", "#4b4b4b");
-    });
-
-    $("img.sttc").attr("title", "정적인 속성이나 메서드입니다.");
-    $("img.prttp").attr("title", "프로토타입 속성이거나 프로토타입 메서드입니다.");
+    function toolbar() {
+        $('section#tool').dequeue();
+        if (isTool == false) {
+            $('span.list, input').dequeue();
+            scroll = $(document).scrollTop();
+            $(document).scrollTop(0);
+            $('section#tool').css({ 'display': 'block', 'visibilty': 'visible', 'opacity': '0' });
+            $('section#tool').animate({ 'opacity': '1' }, 300);
+            setTimeout(function () {
+                $('section.docs_con').css({ 'display': 'none' });
+            }, 300);
+            isTool = true;
+        } else {
+            $('section#tool').css({ 'visibilty': 'visible', 'opacity': '1' });
+            $('section#tool').animate({ 'opacity': '0' }, 300);
+            setTimeout(function () {
+                $('section.docs_con').css({ 'display': 'block' });
+                $(document).scrollTop(scroll);
+                $('section#tool').css({ 'display': 'none' });
+            }, 300);
+            isTool = false;
+            $('aside').removeAttr('style');
+        }
+    }
 });

@@ -1,21 +1,28 @@
-@font-face{ font-family: 'JetBrains Mono'; src:url(font/JetBrainsMono-Medium.woff) format('woff'); }
-@font-face{ font-family: 'JetBrains Mono I'; src:url(font/JetBrainsMono-Medium-Italic.woff) format('woff'); }
-@font-face{ font-family: 'D2Coding'; src:url(font/D2Coding.woff) format('woff'); }
-
-.hljs{ display:block; padding:.5em; background:transparent; }
-.hljs,.hljs-subst{ color:white; text-shadow: 0em 0em 1em white; }
-.hljs-comment{ color:#888; text-shadow: 0em 0em 1em #888; font-family: 'JetBrains Mono I', 'D2Coding'; }
+.hljs{ display: block; background: transparent; font-family: 'JetBrains Mono', 'D2Coding'; color: #414141; }
+.hljs * { font-size: 1rem; font-family: 'JetBrains Mono', 'D2Coding'; color: #414141; }
+.hljs,.hljs-subst{ color:#414141; }
+.hljs-comment{ color:#888; font-family: 'JetBrains Mono I', 'D2Coding'; }
 /* .hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta-keyword,.hljs-name,.hljs-selector-tag{ font-weight:600; } */
-.hljs-keyword{ color: #ff00aa; font-family: 'JetBrains Mono I'; text-shadow: 0em 0em 1em #ff00aa; }
-.hljs-deletion,.hljs-quote,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{ color:#ffc400; text-shadow: 0em 0em 1em #ffc400; }
-.hljs-number{ color: #c300ff; text-shadow: 0em 0em 1em #c300ff; }
-.hljs-selector-class{ color: #2d70ff; text-shadow: 0em 0em 1em #2d70ff; }
-.hljs-section,.hljs-title, .hljs-attr{ color:#00ffc8; text-shadow: 0em 0em 1em #00ffc8; }
-.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{ color:#00f7ff; text-shadow: 0em 0em 0.8em #00f7ff; }
-.hljs-literal{ color:#ffa600; text-shadow: 0em 0em 1em #ffa600; font-family: 'JetBrains Mono I'; }
-.hljs-addition,.hljs-bullet,.hljs-code{ color:#ff00aa; text-shadow: 0em 0em 1em #ff00aa; }
-.hljs-built_in{ color:#9670ff; text-shadow: 0em 0em 1em #9670ff; }
-.hljs-meta{ color:#1f7199; }
-.hljs-meta-string{ color:#4d99bf; }
-.hljs-emphasis{ font-family: 'JetBrains Mono I'; }
-/* .hljs-strong{ font-weight:700; } */
+.hljs-params{ color: #414141 !important; }
+.hljs-keyword{ color: #ff00aa; font-family: 'JetBrains Mono I'; }
+.hljs-deletion,.hljs-quote,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{ color:#ffc400; }
+.hljs-number{ color: #c300ff; }
+.hljs-selector-class{ color: #2d70ff; }
+.hljs-section,.hljs-title, .hljs-attr{ color:#00ffc8; }
+.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{ color:#00f7ff; }
+.hljs-literal{ color: #ffa600; font-family: 'JetBrains Mono I'; }
+.hljs-addition,.hljs-bullet,.hljs-code{ color: #ff00aa; } 
+.hljs-built_in{ color :#9670ff; }
+.hljs-meta{ color: #1f7199; }
+.hljs-meta-string{ color: #4d99bf; }
+.hljs-emphasis{ font-family: 'JetBrains Mono I'; font-size: 0.9rem !important; }
+
+@media screen and (max-width:800px){
+    .hljs * {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media(prefers-color-scheme: dark){
+    
+}

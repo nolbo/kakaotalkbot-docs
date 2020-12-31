@@ -1,0 +1,166 @@
+
+@media screen and (max-width:800px){
+    *::-webkit-scrollbar{
+        width: 0rem; 
+        height: 0rem; 
+    }
+
+    * {
+        margin: 0;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-family: 'Noto Sans', 'Noto Sans KR';
+    }
+
+    header {
+        background: black;
+        color: white;
+        height: 20rem;
+        display: table-cell;
+        vertical-align: middle;
+        table-layout: auto;
+    }
+
+    header div {
+        display: inline;
+        vertical-align: middle;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    img#docs {
+        filter: invert(0%);
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    article {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        padding: 0 3rem;
+    }
+
+    form * {
+        margin-bottom: 3rem;
+    }
+
+    input[type = 'text'], input[type = 'password'], input[type = 'email'] {
+        width: 18rem;
+        height: 2.3rem;
+        font-family: 'Noto Sans', 'Noto Sans KR';
+        font-size: 0.9rem;
+        outline: none;
+        border-radius: 2rem;
+        border: 0.3rem solid white;
+        box-shadow: 0rem 0rem 0.8rem 0rem #dddddd;
+        padding: 0rem 2rem;
+
+        transition-property: box-shadow;
+        transition-duration: 0.3s;
+    }
+
+    img#profile{
+        width: 7rem;
+        height: 7rem;
+        border-radius: 7rem 7rem 7rem 7rem;
+        box-shadow: 0rem 0rem 0.8rem 0rem #b1b1b1;
+        border: none;
+        cursor: pointer;
+        padding: 0rem;
+    }
+
+    input[type = file]{
+        display: none;
+    }
+
+    button {
+        background: black;
+        color: white;
+        font-family: 'Noto Sans', 'Noto Sans KR';
+        font-size: 1rem;
+        font-weight: bold;
+        outline: none;
+        width: 8rem;
+        height: 3rem;
+        border-radius: 2.5rem;
+        border: black;
+
+        transition-property: color, background, border, box-shadow;
+        transition-duration: 0.42s;
+    }
+
+    p.dscrpt, a {
+        font-size: 0.8rem;
+    }
+
+    label[for] img {
+        display: inline;
+        background: url('../img/uncheck.png') no-repeat;
+        background-size: 0.8rem 0.8rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        border: none;
+        margin: 0;
+        margin-right: 0.5rem;
+    
+        transition-property: background;
+        transition-duration: 0.3s;
+    }
+    
+    input[type = 'checkbox']:checked + div.dscrpt label[for] img {
+        display: inline;
+        background: url('../img/check.png') no-repeat;
+        background-size: 0.8rem 0.8rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        border: none;
+        margin: 0;
+        margin-right: 0.5rem;
+    }
+
+    p.ttl, p.txt, p.sttl, li.txt {
+        line-height: 2rem !important;
+    }
+    
+    p.ttl {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 1.5rem 0;
+    }
+    
+    p.sttl {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    
+    p.txt, li.txt {
+        font-size: 0.95rem;
+    }
+
+    p.sml, p.sml a {
+        font-size: 0.8rem;
+    }
+    
+    #btm {
+        padding-bottom: 3rem !important;
+    }
+
+    input[type = 'text']:focus, input[type = 'password']:focus, input[type = 'email']:focus {
+        box-shadow: 0rem 0rem 1rem 0rem #00ffc8;
+    }
+
+    button:hover {
+        cursor: pointer;
+        color: black;
+        background: white;
+        border: white;
+        box-shadow: 0rem 0rem 1.5rem 0rem #dddddd;
+    }
+}

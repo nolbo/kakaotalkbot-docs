@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="naver-site-verification" content="db79b112896337a515066363085c4f9ad5d27310" />
+    <meta name="title" content="Kakaotalk Bot Docs | 카카오톡 봇 문서">
+    <meta name="keywords" content="카카오톡봇 문서, kakaotalk bot docs, 카카오톡 봇, 카카오봇, 자동응답 봇, 메신저봇, 메신저봇R">
+    <meta name="description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
+    <meta name="author" content="nolbo">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kkotbot-docs.kro.kr">
+    <meta property="og:title" content="KBot Docs | API 2">
+    <meta property="og:image" content="img/grp/default.jpg">
+    <meta property="og:description" content="카카오톡 봇의 정보가 모인 카카오톡 봇 문서입니다.">
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/jquery-ui.js"></script>
+    <script type="text/javascript" src="script/cookie.js"></script>
+    <script type="text/javascript" src="script/animation.js"></script>
+    <script type="text/javascript" src="script/sidebar.js"></script>
+    <script type="text/javascript" src="script/dark.js"></script>
+    <script type="text/javascript" src="script/newToast.js"></script>
+    <script type="text/javascript" src="script/inko.js"></script>
+    <script type="text/javascript" src="script/search_data.js"></script>
+    <script type="text/javascript" src="script/search.js"></script>
+    <script type="text/javascript" src="script/copy.js"></script>
+    <script type="text/javascript" src="script/hljs.js"></script>
+    <script type="text/javascript" src="script/hl.js"></script>
+    <script type="text/javascript" src="script/firebase.js"></script>
+    <script type="text/javascript" src="script/font.js"></script>
+    <script type="text/javascript" src="script/theme.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/highlighting.css">
+    <link class="t_dark" rel="stylesheet" href="style/highlighting_d.css" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="https://kkotbot-docs.kro.kr">
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="img/docs_black.png">
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/mobile.css">
+    <link class="t_dark" rel="stylesheet" href="style/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="style/newToast.css">
+    <title>KBot Docs | API 2</title>
+</head>
+<body>
+    <div id="toast_con" class="default" role="alert"><p id="toast_txt"></p></div>
+    <aside>
+        <div id="docs_space"><img id="docs" src="img/docs.png"></div>
+        <dl>
+            <dt id="summary"><img class="side_icon" src="img/summary.png"></dt>
+            <dt id="legacyAPI"><img class="side_icon" src="img/api.png"></dt>
+            <dt id="API2"><img class="side_icon" id="this" src="img/api2.png"></dt>
+            <dt id="rhino"><img class="side_icon" src="img/rhino.png"></dt>
+            <dt id="deepening"><img class="side_icon" src="img/deepening.png"></dt>          
+            <dt id="appendix"><img class="side_icon" src="img/appendix.png"></dt>
+            <dt id="bookmark"><img class="side_icon" src="img/bookmark.png"></dt>
+        </dl>
+        <span class="list" id="API2" data-isVisible="true">
+            <div class="ttl"><h1 id="ttl">API 2</h1><img id="tool_btn" src="img/tool.png"></div>
+            <span class="sideList" id="API2">
+                <dd id="d3-1" class="sdb">App</dd><br>
+                <dd id="d3-2" class="sdb">Bot</dd><br>
+                <dd id="d3-3" class="sdb">BotManager</dd><br>
+                <dd id="d3-4" class="sdb">BroadCast</dd><br>
+                <dd id="d3-5" class="sdb">Database</dd><br>
+                <dd id="d3-6" class="sdb">Event</dd><br>
+                <dd id="d3-7" class="sdb">Http</dd><br>
+                <dd id="d3-8" class="sdb">SessionManager</dd><br>
+                <dd id="d3-9" class="sdb">Security</dd>
+            </span>
+        </span>
+        <span class="list" id="bookmark" data-isVisible="false">
+            <div class="ttl"><h1 id="ttl">북마크</h1><img id="tool_btn" src="img/tool.png"></div>
+            <span class="sideList" id="bookmark">
+            </span>
+        </span>
+    </aside>
+    <article>
+        <section class="docs_con" id="API2">
+            <div id="3-1" class="content">
+                <p class="title">App</p>
+                <p class="dscrpt">Api2 중 <strong>App</strong>은 카카오톡 구동 앱에 관한 기능을 제공합니다.</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">getContext()</p></td>
+                            <td><p class="code">android.content.Context</p></td>
+                            <td>어플리케이션의 Context를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">runOnUiThread(task: Function, onComplete: Function)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>함수<p class="code" id="p">task</p>를 UIThread에서 호출합니다. 함수<p class="code" id="p">task</p>의 작동이 끝나면 함수<p class="code" id="p">onComplete</p>를 호출합니다.<br><p class="code" id="p">onComplete</p>에는 <p class="code" id="p">error: Throwable</p>과 <p class="code" id="p">task</p>의 반환값이 인자로 주어집니다.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="3-2" class="content">
+                <p class="title">Bot</p>
+                <p class="dscrpt">Api2 중 <strong>Bot</strong>은 카카오톡 봇 개발 및 작동을 위한 기본적인 기능을 제공합니다.</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">setCommandPrefix(prefix: String)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>카카오톡 봇 명령어의 접두어를 설정합니다. <p class="code">prefix</p>로 시작하는 메시지를 감지하면 <p class="code">Event.COMMAND</p>이벤트가 발생합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">send(room: String, msg: String, packageName: String = null)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code" id="p">room</p>방에 <p class="code" id="p">msg</p>이란 메시지를 <p class="code" id="p">packageName</p>라는 패키지명을 가진 앱에 수신합니다. <p class="code" id="p">packageName</p>이 지정되지 않았거나 <p class="code" id="p">null</p>값을 가질 경우 패키지명을 구분하지 않습니다.<br><p class="code" id="p">room</p>방의 세션이 존재할 경우 <p class="code" id="p">true</p>를 반환하고 그렇지 않으면 <p class="code" id="p">false</p>를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">canReply(room: String, packageName: String = null)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code" id="p">packageName</p>패키지명의 앱의 <p class="code" id="p">room</p>방의 세션을 가지고 있을 경우<p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다. <p class="code" id="p">packageName</p>이 지정되지 않았거나 <p class="code" id="p">null</p>값을 가질 경우 패키지명을 구분하지 않습니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">getName()</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>카카오톡 봇의 이름을 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">setPower(power: Boolean)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>스크립트의 전원(작동여부)를 설정합니다. <p class="code">power</p>의 값이 <p class="code">true</p>일 경우 전원을 켜고, <p class="code">false</p>일 경우 전원을 끕니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">getPower()</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>스크립트의 전원이 켜져 있을 경우 <p class="code">true</p>를, 꺼져 있을 경우 <p class="code">false</p>를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">compile()</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>현재 스크립트를 컴파일합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">unload()</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>현재 스크립트를 언로드합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">on(eventName: String, listener: Function)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>이벤트 리스너를 등록합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">addListener(eventName: String, listener: Function)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td><p class="code">Bot.on()</p>과 같습니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">off(eventName: String, <i>listener: Function</i>)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>마지막에 등록된 이벤트 리스너를 해제합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">removeListener(eventName: String, <i>listener: Function</i>)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td><p class="code">Bot.off()</p>와 같습니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">removeAllListeners(eventName: String)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>모든 이벤트 리스너를 해제합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">prependListener(eventName: String, listener: Function)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>이벤트 리스너를 리스너 리스트의 앞에 추가합니다. (<p class="code">Bot.on()</p>/<p class="code">Bot.addListener()</p>는 리스너 리스트의 뒤에 추가합니다.)</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">listeners(eventName: String)</p></td>
+                            <td><p class="code">Array&lt;Function&gt;</p></td>
+                            <td>등록된 이벤트 리스너들을 배열형태로 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">markAsRead(<i>room: String</i>, <i>packageName: String</i>)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>메시지를 읽음 처리합니다.<br><p class="code" id="i">room</p>은 읽음 처리를 할 방의 이름이며, (선택적)<br><p class="code" id="i">packageName</p>은 메시지를 읽음 처리할 메신저 앱의 패키지명입니다. (선택적)<br><br>알림 읽기 액션을 찾을 수 있는 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="3-3" class="content">
+                <p class="title">BotManager</p>
+                <p class="dscrpt">Api2 중 <strong>BotManager</strong>는 Api2 중 Bot의 기능을 확장하는 역할을 합니다.</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">getCurrentBot()</p></td>
+                            <td><p class="code">Bot</p></td>
+                            <td>현재 스크립트에 할당된 <p class="code">Bot</p>을 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">getBot(botName: String)</p></td>
+                            <td><p class="code">Bot</p></td>
+                            <td><p class="code">botName</p>이란 이름을 가진 <p class="code">Bot</p>을 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">getRooms(packageName: String = null)</p></td>
+                            <td><p class="code">Array&lt;String&gt;</p></td>
+                            <td><p class="code" id="p">packageName</p>패키지명의 앱에서 받은 메시지들의 방 이름을 배열로 반환합니다.<br><p class="code" id="p">packageName</p>의 값이 지정되지 않았거나 <p class="code" id="p">null</p>값을 가질 경우, 모든 앱에서 받은 메시지들의 방 이름을 배열로 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">getBotList()</p></td>
+                            <td><p class="code">Array&lt;Bot&gt;</p></td>
+                            <td>모든 <p class="code">Bot</p>인스턴스를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">getPower(botName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code"><p class="code">botName</p>봇이 활성화 중일 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">setPower(botName: String, power: Boolean)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td><p class="code" id="p">power</p>의 값이 <p class="code" id="p">true</p>일 경우 <p class="code" id="p">botName</p>봇을 활성화하고, <p class="code" id="p">power</p>값이 <p class="code" id="p">false</p>인 경우 비활성화합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">compile(botName: String, throwOnError: Boolean = false)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code">botName</p>봇을 컴파일합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">compileAll()</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>모든 카카오톡 봇을 컴파일합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">prepare(botName: String, throwOnError: Boolean)</p></td>
+                            <td><p class="code">int</p></td>
+                            <td><p class="code">botName</p>봇을 한 번도 컴파일한 적이 없을 경우 컴파일합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">prepareAll(throwOnError: Boolean = false)</p></td>
+                            <td><p class="code">int</p></td>
+                            <td><p class="code">BotManager.prepare()</p>를 모든 봇에 대하여 실행합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">isCompiled(botName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code">botName</p>봇이 컴파일한 상태일 경우 <p class="code">true</p>, 아니면 <p class="code">false</p>를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">unload(botName: String)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td><p class="code">botName</p>봇을 언로드합니다. 이를 실행한 후 <p class="code">BotManager.isCompiled()</p>를 실행하면 <p class="code">false</p>를 반환합니다.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="3-4" class="content">
+                <p class="title">Broadcast</p>
+                <p class="dscrpt">Api2 중 <strong>Broadcast</strong>는 사용자 지정 브로드캐스트를 지원합니다. (이는 안드로이드의 Broadcast와는 관련이 없습니다.)</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">send(broadcastName: String, value: Any)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>모든 스크립트를 대상으로 <p class="code">broadcastName</p>을 방송합니다. <p class="code">value</p>는 <p class="code">task</p>의 인자로 주어집니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">register(broadcastName: String, task: Function)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td><p class="code">broadcastName</p>브로드캐스트에 리스너<p class="code">task</p>를 등록합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">unregister(broadcastName: String, task: Function)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td><p class="code">broadcastName</p>브로드캐스트에 등록된 리스너<p class="code">task</p>를 해제합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">unregisterAll()</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>브로드캐스트에 등록된 모든 리스너를 해제합니다.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="3-5" class="content">
+                <p class="title">Database</p>
+                <p class="dscrpt">Api2 중 <strong>Database</strong>는 스크립트의 로컬 폴더 내의 </p><p class="code">/Database</p><p class="dscrpt">폴더 내 데이터의 쓰기/읽기 등의 기능을 제공합니다.</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">exists(fileName: String)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td>스크립트 로컬 폴더 내 <p class="code" id="p">Database</p>폴더에 파일<p class="code" id="p">fileName</p>이 존재할 경우 <p class="code" id="p">true</p>, 아니면 <p class="code" id="p">false</p>를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">readObject(fileName: String)</p></td>
+                            <td><p class="code">Object</p></td>
+                            <td>스크립트 로컬 폴더 내 <p class="code" id="p">Database</p>폴더에 있는 파일<p class="code" id="p">fileName</p>을 읽어 객체로 반환합니다. (<p class="code" id="p">fileName</p>파일이 <p class="code" id="p">json</p>일 경우에만 가능합니다.)</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">readString(fileName: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 로컬 폴더 내 <p class="code">Database</p>폴더에 있는 파일<p class="code">fileName</p>의 내용을 문자열로 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">writeObject(fileName: String, obj: Object)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>객체<p class="code" id="p">obj</p>를 <p class="code" id="p">JSON Strirng</p>으로 변환하여 스크립트 로컬 폴더 내 <p class="code" id="p">Database</p>폴더에 있는 파일<p class="code" id="p">fileName</p>에 저장합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">writeString(fileName: String, str: String)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td>문자열<p class="code">str</p>을 스크립트 폴더 내 <p class="code">Database</p>폴더에 있는 파일 <p class="code">fileName</p>에 저장합니다.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="3-6" class="content">
+                <p class="title">Event</p>
+                <p class="dscrpt">Api2 중 <strong>Event</strong>는 Api2 중 Bot이 받을 수 있는 이벤트들의 <p class="code">eventName</p>상수값들을 제공합니다.</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">Activity.BACK_PROSSED = "activityBackProssed"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 액티비티의 이벤트 리스너<p class="code">onBackProssed</p>가 호출되면 발생합니다.<br><p class="code">activity</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">Activity.CREATE = "activityCreate"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 액티비티의 이벤트 리스너<p class="code" id="p">onCreate</p>가 호출되면 발생합니다.<br><p class="code" id="p">savedInstanceState</p>, <p class="code" id="p">activity</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">Activity.DESTROY = "activityDestroy"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 액티비티의 이벤트 리스너<p class="code">onDestroy</p>가 호출되면 발생합니다.<br><p class="code">activity</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">Activity.PAUSE = "activityPause"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 액티비티의 이벤트 리스너<p class="code">onPause</p>가 호출되면 발생합니다.<br><p class="code">activity</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">Activity.RESTART = "activityRestart"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 액티비티의 이벤트 리스너<p class="code">onRestart</p>가 호출되면 발생합니다.<br><p class="code">activity</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">Activity.RESUME = "activityResume"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 액티비티의 이벤트 리스너<p class="code">onResume</p>가 호출되면 발생합니다.<br><p class="code">activity</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">Activity.START = "activityStart"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 액티비티의 이벤트 리스너<p class="code">onStart</p>가 호출되면 발생합니다.<br><p class="code">activity</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">Activity.STOP = "activityStop"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>스크립트 액티비티의 이벤트 리스너<p class="code">onStop</p>가 호출되면 발생합니다.<br><p class="code">activity</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">NOTIFICATION_POSTED = "notificationPosted"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>기기에 새로운 알림이 왔을 때 발생하는 이벤트입니다.<br><p class="code">statusBarNotification</p>, <p class="code">sessionManager</p>가 인자로 전달됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">START_COMPILE = "startCompile"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>컴파일 요청이 왔을 때 컴파일 시작 전 발생하는 이벤트입니다.<br>전달되는 인자는 없습니다.</td>
+                        </tr>
+                        <tr>
+                            <td id="no"><p class="code">TICK = "tick"</p></td>
+                            <td id="no"><p class="code">String</p></td>
+                            <td id="no">매 틱마다 발생하는 이벤트이지만, 아직 구현되지 않았습니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">COMMAND = "command"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>수신된 메시지가 명령어 형식일 때 발생하는 이벤트입니다. (자세한 내용은 <p class="code">Bot.setCommandPrefix</p>를 참고하세요.)<br>전달되는 인자의 정보는 이와 같습니다:
+                                <div class="code">
+                                    <pre><code class="javascript">{<br>    "command" : "수신된 command 이름",<br>    "args" : [수신된 command의 인자 배열],<br>    "room" : "채팅방 이름",<br>    "content" : "수신된 메시지 내용",<br>    "isGroupChat" : boolean, // 2인 이상의 채팅방일 경우 true, 아니면 false<br>    "isDebugRoom" : boolean, // 디버깅룸에서 전송된 메시지일 경우 true, 아니면 false<br>    "author" : {<br>        "name" : "전송자 이름",<br>        "avatar" : {<br>            "getBase64" : function () { /*프로필 이미지의 Base64값 반환*/ },<br>            "getBitmap" : function () { /*프로필 이미지의 android.graphics.Bitmap객체 반횐*/ }<br>        }<br>    },<br>    "reply" : function(content) { /*content라는 내용의 메시지 전송*/ },<br>    "markAsRead" : function() { /* 해당 방의 알림을 읽음으로 표시. 성공시 true, 실패시 false 반환 */ },<br>    "packageName" : "수신된 메시지의 앱 패키지명"<br>}</code></pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">MESSAGE = "message"</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>메시가 수신되었을 때 발생하는 이벤트입니다.<br>전달되는 인자의 정보는 이와 같습니다:
+                                <div class="code">
+                                    <pre><code class="javascript">{<br>    "room" : "채팅방 이름",<br>    "content" : "수신된 메시지 내용",<br>    "isGroupChat" : boolean, // 2인 이상의 채팅방일 경우 true, 아니면 false<br>    "isDebugRoom" : boolean, // 디버깅룸에서 전송된 메시지일 경우 true, 아니면 false<br>    "author" : {<br>        "name" : "전송자 이름",<br>        "avatar" : {<br>            "getBase64" : function () { /*프로필 이미지의 Base64값 반환*/ },<br>            "getBitmap" : function () { /*프로필 이미지의 android.graphics.Bitmap객체 반횐*/ }<br>        }<br>    },<br>    "reply" : function(content) { /*content라는 내용의 메시지 전송*/ },<br>    "markAsRead" : function() { /* 해당 방의 알림을 읽음으로 표시. 성공시 true, 실패시 false 반환 */ },<br>    "packageName" : "수신된 메시지의 앱 패키지명"<br>}</code></pre>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="3-7" class="content">
+                <p class="title">Http</p>
+                <p class="dscrpt">Api2 중 <strong>Http</strong>는 웹페이지에 request를 보내기 위한 기능을 제공합니다.</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">request(url: String, callBack: Function)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td><p class="code">Jsoup</p>을 이용해 비동기적으로 <p class="code">url</p>에 request를 보냅니다.<br><p class="code">callBack</p>인자 정보는 아래를 참고하세요.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">request(options: Object, callBack: Function)</p></td>
+                            <td><p class="code">void</p></td>
+                            <td><p class="code">Jsoup</p>을 이용해 비동기적으로 request를 보냅니다.<br><p class="code">options</p>구조와 <p class="code">callBack</p>인자 정보는 아래를 참고하세요.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">requestSync(url: String)</p></td>
+                            <td><p class="code">org.jsoup.nodes.Document</p></td>
+                            <td><p class="code">동기적으로 request를 수행합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">requestSync(options: Object)</p></td>
+                            <td><p class="code">org.jsoup.nodes.Document</p></td>
+                            <td><p class="code">동기적으로 request를 수행합니다.<br><p class="code">options</p>구조와 <p class="code">callBack</p>인자 정보는 아래를 참고하세요.</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="sA">
+                    <li id="d3-7-1" class="sA">CallBack</li>
+                    <li id="d3-7-2" class="sA">Options</li>
+                </div>
+                <div id="3-7-1" class="content">
+                    <p class="stitle">CallBack</p>
+                    <p class="dscrpt"><p class="code">callBack</p>에는 아래와 같은 인자들이 전달됩니다:</p>
+                    <div class="code">
+                        <pre><code class="nohighlight">error : java.lang.Exception<br>response : org.jsoup.Connaction.Response<br>doc : org.jsoup.nodes.Document</code></pre>
+                    </div>
+                </div>
+                <div id="3-7-2" class="content">
+                    <p class="stitle">Options</p>
+                    <p class="dscrpt"><p class="code">options</p>의 구조는 아래와 같습니다:</p>
+                    <div class="code">
+                        <pre><code class="javascript">{<br>    "url" : "https://www.google.com", //  request를 보낼 URL<br>    "timeout" : 3000, // request timeout(ms), 기본값 3000<br>    "method" : "GET", // request 메소드, 기본값 "GET"<br>    "headers" : { // request header, 기본값 null<br>        // headers<br>    }<br>}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="3-8" class="content">
+                <p class="title">SessionManager</p>
+                <p class="dscrpt">Api2 중 <strong>SessionManager</strong>는 </p><p class="code" id="p">Event.NOTIFICATION_POSTED</p><p class="dscrpt">의 리스너에 전달되는 인자로, 채팅방 세션을 메신저봇 앱에 수동으로 등록할 수 있게 해줍니다. 즉, 메신저봇이 공식적으로 지원하지 않는 앱에 자동응답 봇을 탑재하고자 할 때 사용할 수 있습니다.</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">bindSession(<i>packageName: String</i>, room: String, action: Notification.Action = null)</p></td>
+                            <td><p class="code">Boolean</p></td>
+                            <td><p class="code" id="p">packageName</p>이라는 패키지명의 앱의 <p class="code" id="p">room</p>방에 대해 메시지 전송 액션인 <p class="code" id="p">action</p>을 할당합니다.<br><p class="code" id="p">action</p>이 <p class="code" id="p">null</p>값을 가질 경우, 메신저봇이 자동 분석한 답장 액션을 사용합니다.<br><p class="code" id="p">action</p>이 <p class="code" id="p">null</p>값을 가지고, 메신저봇이 자동 분석한 답장 액션이 <p class="code" id="p">null</p>일 경우, <p class="code" id="p">false</p>를 반환하고, 그 외에는 <p class="code" id="p">true</p>를 반환합니다.<br><br><p class="code" id="p">packageName</p>이 값을 가지지 않을 경우, 메신저봇이 <p class="code" id="p">packageName</p>을 자동 분석합니다.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="3-9" class="content">
+                <p class="title">Security</p>
+                <p class="dscrpt">Api2 중 <strong>Security</strong>는 각종 암호화와 복호화에 대한 기능들을 제공합니다.</p>
+                <div class="table">
+                    <table>
+                        <th>이름</th>
+                        <th>형식</th>
+                        <th>설명</th>
+                        <tr>
+                            <td><p class="code">aesDecode(key: String, initVector: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 AES 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">aesEncode(key: String, initVector: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 AES 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">ariaDecode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 ARIA 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">ariaEncode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 ARIA 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">base32Decode(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 Base32 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">base32Encode(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 Base32 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">base64Decode(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 Base64 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">base64Encode(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 Base64 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">desDecode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 DES 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">desEncode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 DES 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">desKey()</p></td>
+                            <td><p class="code">String</p></td>
+                            <td>DES 보조키를 생성하여 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">des3Decode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 des3 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">des3Encode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 des3 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">eccDecode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 ECC 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">eccEncode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 ECC 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">hashCode(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 해시코드를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">md2(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 MD2 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">md5(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 MD5 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">rc4Decode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 RC4 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">rc4Encode(key: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 RC4 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">seedDecode(seed: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SEED 복호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">seedEncode(seed: String, value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SEED 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">sha(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SHA 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">sha256(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SHA256 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">sha384(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SHA384 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">sha512(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SHA512 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">sha3_224(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SHA3-224 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">sha3_256(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SHA3-256 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">sha3_384(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SHA3-384 암호화 결과를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td><p class="code">sha3_512(value: String)</p></td>
+                            <td><p class="code">String</p></td>
+                            <td><p class="code">value</p>의 SHA3-512 암호화 결과를 반환합니다.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="tool">
+            <div id="view"><img id="view_img" src="img/view.png"><p id="online_txt">0</p><p>/</p><p id="view_txt">0</p><img id="arrow" src="img/arrow_up.png"></div>
+            <div id="login"><p id="login_txt">로그인하기</p><img id="login_img" src="img/profile.png"></div>
+            <form autocomplete="off" id="search">
+                <input id="search_txt" type="text" placeholder="검색할 내용을 입력하세요!" name="search">
+                <button id="search_btn" type="submit"><img src="img/search.png"></button>
+            </form>
+            <div class="tool_sec" id="theme">
+                <p class="stitle">테마</p>
+                <p class="dscrpt">문서의 테마를 설정합니다.</p><br>
+                <div class="tool_con">
+                    <img class="themeimg" id="white" src="img/white.png" data-checked="false">
+                    <img class="themeimg" id="dark" src="img/dark.png" data-checked="false">
+                    <img class="themeimg" id="system" src="img/system_set.png" data-checked="true">
+                </div>
+            </div>
+            <div class="tool_sec" id="font_size">
+                <p class="stitle">텍스트 크기</p>
+                <p class="dscrpt">문서 내 텍스트 크기를 설정합니다.</p>
+                <div class="tool_con">
+                    <input id="font_size" type="range" min="75" max="180" oninput="$('p.rangeTxt').text($('input#font_size').val() + '%');"><p class="rangeTxt"></p>
+                </div>
+            </div>
+            <div class="tool_sec" id="font">
+                <p class="stitle">글꼴</p>
+                <p class="dscrpt">문서 내 텍스트의 글꼴을 설정합니다.</p>
+                <div class="tool_con">
+                    <p class="dscrpt">일반 텍스트
+                        <select class="tool_sel" id="font_norm" onchange="s();">
+                            <option>Noto Sans</option>
+                            <option>나눔고딕</option>
+                            <option>나눔바른고딕</option>
+                            <option>나눔스퀘어</option>
+                            <option>나눔스퀘어라운드</option>
+                            <option>나눔바른펜</option>
+                            <option>마루부리</option>
+                        </select>
+                    </p><br>
+                    <p class="dscrpt">코드
+                        <select class="tool_sel" id="font_code" onchange="s();">
+                            <option>JetBrains Mono</option>
+                            <option>D2 Coding</option>
+                            <option>Consolas</option>
+                            <option>IBM Plex Mono</option>
+                            <option>Hack</option>
+                            <option>Ubuntu Mono</option>
+                            <option>Monaco</option>
+                        </select>
+                    </p>
+                    <div id="preview">
+                        <p class="title">신곡</p>
+                        <div id="sA">
+                            <li class="sA">지옥편</li>
+                            <li class="sA">연옥편</li>
+                            <li class="sA">천국편</li>
+                        </div>
+                        <div class="content">
+                            <p class="stitle">지옥편</p>
+                            <p class="dscrpt">신곡 중 <strong>지옥편</strong>은 단테 알리기에리의 신곡의 이야기를 시작하는 첫 번째 편입니다. 신곡 지옥편에서 지옥의 입구에 쓰여진 글귀를 </p><p class="code">JavaScript</p><p class="dscrpt">로 출력하게 해봅시다.</p>
+                            <div class="code">
+                                <pre><code class="javascript">var age = 35;<br><br>if (msg.toLowerCase() === 'inferno') {<br>    replier.reply('모든 기쁨을 버려라, 들어오는 그대들이여'.replace(/기쁨/g, '희망')); // 단테 - 신곡 지옥편 中<br>}</code></pre>
+                            </div>
+                            <div class="table">
+                                <table>
+                                    <th>신곡의 구성</th>
+                                    <th>단테의 인도자</th>
+                                    <tr>
+                                        <td>지옥편 <p class="code">inferno</p></td>
+                                        <td>베르길리우스</td>
+                                    </tr>
+                                    <tr>
+                                        <td>연옥편 <p class="code">purgatorio</p></td>
+                                        <td>베르길리우스</td>
+                                    </tr>
+                                    <tr>
+                                        <td>천국편 <p class="code">paradiso</p></td>
+                                        <td>베아트리체</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p class="code" id="i">Dante Alighieri - La Divina Commedia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+    <script type="text/javascript">if($("article").width == 0){ location.reload(); }</script>
+</body>
+</html>
