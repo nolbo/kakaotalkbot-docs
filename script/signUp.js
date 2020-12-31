@@ -100,10 +100,11 @@ $(function () {
                             'email': email,
                             'profile': $('img#profile').attr('src')
                         }).then(function () {
-                            auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').set({
-                            }).then(function () {
+                            auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({'settings': {'theme': 'light'}}).then(function () {
                                 auth.auth().signOut().then(function () {
-                                    location.href = 'https://kkotbot-docs.kro.kr/login';
+                                    setTimeout(()=>{
+                                        location.href = 'https://kkotbot-docs.kro.kr/login';
+                                    }, 1000);
                                 })
                             })
                         });
