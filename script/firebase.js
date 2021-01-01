@@ -1,12 +1,12 @@
-var auth, save, uSet;
-$(function() {
+var auth, save, uSet, newA = false;
+$(function () {
     $('#arrow').fadeOut();
     var ver = '8.2.1';
-    $.getScript('https://www.gstatic.com/firebasejs/'+ver+'/firebase-app.js', function() {
-        $.getScript('https://www.gstatic.com/firebasejs/'+ver+'/firebase-analytics.js', function() {
-            $.getScript('https://www.gstatic.com/firebasejs/'+ver+'/firebase-auth.js', function() {
-                $.getScript('https://www.gstatic.com/firebasejs/'+ver+'/firebase-database.js', function() {
-                    $.getScript('https://www.gstatic.com/firebasejs/'+ver+'/firebase-firestore.js', function() {
+    $.getScript('https://www.gstatic.com/firebasejs/' + ver + '/firebase-app.js', function () {
+        $.getScript('https://www.gstatic.com/firebasejs/' + ver + '/firebase-analytics.js', function () {
+            $.getScript('https://www.gstatic.com/firebasejs/' + ver + '/firebase-auth.js', function () {
+                $.getScript('https://www.gstatic.com/firebasejs/' + ver + '/firebase-database.js', function () {
+                    $.getScript('https://www.gstatic.com/firebasejs/' + ver + '/firebase-firestore.js', function () {
                         // Your web app's Firebase configuration
                         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
                         var firebaseConfig = {
@@ -50,31 +50,31 @@ $(function() {
                             }, {
                                 duration: 1000,
                                 easing: 'swing',
-                                step: function(now) {
+                                step: function (now) {
                                     $('p#view_txt').text(Math.ceil(now));
                                     if (Math.ceil(now) == data.views) {
                                         $('#arrow').fadeOut();
                                     }
                                 }
                             });
-                            if($('p#online_txt').text()>data.online){
-                                $('#arrow').attr('src','img/arrow.png')
+                            if ($('p#online_txt').text() > data.online) {
+                                $('#arrow').attr('src', 'img/arrow.png')
                             }
                             $('p#online_txt').prop('Counter', $('p#online_txt').text()).animate({
                                 Counter: data.online
                             }, {
                                 duration: 1000,
                                 easing: 'swing',
-                                step: function(now) {
+                                step: function (now) {
                                     $('p#online_txt').text(Math.ceil(now));
                                     if (Math.ceil(now) == data.online) {
                                         $('#arrow').fadeOut();
-                                        $('#arrow').attr('src','img/arrow_up.png')
+                                        $('#arrow').attr('src', 'img/arrow_up.png')
                                     }
                                 }
                             });
                         });
-                        $(window).on('beforeunload', function() {
+                        $(window).on('beforeunload', function () {
                             db.ref('project').once('value').then((snapshot) => {
                                 var v = snapshot.val()
                                 db.ref('project').update({
@@ -83,16 +83,16 @@ $(function() {
                             });
                         });
                         auth = firebase.initializeApp(authConfig, "other");
-                        auth.auth().onAuthStateChanged(function(user) {
+                        auth.auth().onAuthStateChanged(function (user) {
                             if (["/signup", "/signin", "/signup.html", "/signin.html", "/", "/index", "/index.html"].indexOf(location.href.substring(location.origin.length)) == -1) {
-                                uSet = function(s) {
+                                uSet = function (s) {
                                     font(s);
                                     theme(s['theme']);
                                 }
-                                $('input#font_size').on('mouseup', function() {
+                                $('input#font_size').on('mouseup', function () {
                                     s();
                                 });
-                                window.onunload = function() {
+                                window.onunload = function () {
                                     save({
                                         'font_size': $('input#font_size').val(),
                                         'font_norm': $('#font_norm').val(),
@@ -103,15 +103,15 @@ $(function() {
                             }
 
                             if (user) {
-                                if (["/signup", "/signin", "/signup.html", "/signin.html"].indexOf(location.href.substring(location.origin.length)) != -1) {
+                                if (!newA && ["/signup", "/signin", "/signup.html", "/signin.html"].indexOf(location.href.substring(location.origin.length)) != -1) {
                                     location.href = location.origin;
                                 } else {
-                                    auth.firestore().collection('users').doc(auth.auth().currentUser.uid).get().then(function(doc) {
+                                    auth.firestore().collection('users').doc(auth.auth().currentUser.uid).get().then(function (doc) {
                                         $('#login_img').attr('src', doc.data().profile);
                                         $('#login_txt').text(doc.data().id);
                                     });
                                     if (["/signup", "/signin", "/signup.html", "/signin.html", "/", "/index", "/index.html"].indexOf(location.href.substring(location.origin.length)) == -1) {
-                                        auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').get().then(function(doc) {
+                                        auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').get().then(function (doc) {
                                             if (doc.exists) {
                                                 a = doc.data();
                                                 if (!!a.settings) {
@@ -127,7 +127,7 @@ $(function() {
                                                         var c = document.createElement("dd");
                                                         c.innerText = elem.ttl;
                                                         c.className = "sdb";
-                                                        c.addEventListener("click", function(e) {
+                                                        c.addEventListener("click", function (e) {
                                                             if (e.detail === 1) {
                                                                 $([document.documentElement, document.body]).animate({
                                                                     scrollTop: elem.pos - 150
@@ -146,8 +146,8 @@ $(function() {
                                                 }
                                             }
                                         })
-                                        $('p.title, p.stitle').each(function(e, t) {
-                                            t.onclick = function() {
+                                        $('p.title, p.stitle').each(function (e, t) {
+                                            t.onclick = function () {
                                                 var k = {
                                                     'location': location.href.substring(location.origin.length),
                                                     'pos': t.offsetTop,
@@ -165,7 +165,7 @@ $(function() {
                                                 var c = document.createElement("dd");
                                                 c.innerText = elem.ttl;
                                                 c.className = "sdb";
-                                                c.addEventListener("click", function(e) {
+                                                c.addEventListener("click", function (e) {
                                                     if (e.detail === 1) {
                                                         $([document.documentElement, document.body]).animate({
                                                             scrollTop: elem.pos - 150
@@ -184,7 +184,7 @@ $(function() {
                                         });
                                         var lastSave = Date.now();
 
-                                        save = function(set, f) {
+                                        save = function (set, f) {
                                             if (Date.now() > (lastSave + 30000) || f === true) {
                                                 auth.firestore().collection('users').doc(auth.auth().currentUser.uid).collection('docs').doc('data').update({
                                                     'settings': set
@@ -193,19 +193,19 @@ $(function() {
                                             uSet(set);
                                         }
                                     } else {
-                                        save = function(e) {
+                                        save = function (e) {
                                             uSet(e);
                                             return true;
                                         }
                                     }
                                 }
                             } else {
-                                save = function(e) {
+                                save = function (e) {
                                     uSet(e);
                                     return true;
                                 }
                             }
-                            $.getScript('https://www.gstatic.com/firebasejs/'+ver+'/firebase-performance.js', function() {});
+                            $.getScript('https://www.gstatic.com/firebasejs/' + ver + '/firebase-performance.js', function () { });
                         });
                     });
                 });

@@ -93,23 +93,28 @@ $(function () {
 
             if (!is) {
                 console.log('create account');
-                auth.auth().createUserWithEmailAndPassword(email, pswd).then(function (a) {
+                var a;
+                newA = true;
+                auth.auth().createUserWithEmailAndPassword(email, pswd).then(function (s) {
+                    a = s;
+                    console.log(a.user);
                     a.user.sendEmailVerification().then(function () {
                         auth.firestore().collection('users').doc(a.user.uid).set({
                             'id': id,
                             'email': email,
                             'profile': $('img#profile').attr('src')
                         }).then(function () {
-                            auth.firestore().collection('users').doc(a.user.uid).collection('docs').doc('data').update({'settings': {'theme': 'light'}}).then(function () {
+                            auth.firestore().collection('users').doc(a.user.uid).collection('docs').doc('data').set({ 'settings': { 'theme': 'system' } }).then(function () {
                                 auth.auth().signOut().then(function () {
-                                    setTimeout(()=>{
-                                        location.href = 'https://kkotbot-docs.kro.kr/login';
+                                    setTimeout(() => {
+                                        location.href = location.origin + '/signin.html';
                                     }, 1000);
-                                })
-                            })
-                        });
+                                }).catch(function (e) { console.error(e); return false; });
+                            }).catch(function (e) { console.error(e); return false; });
+                        }).catch(function (e) { console.error(e); return false; });
                     });
                 }).catch(function (e) {
+                    newA = false;
                     if (e.code == "auth/email-already-in-use") { $('#email').css('box-shadow', '0rem 0rem 0.8rem 0rem #ff0088'); }
                 });
             }
