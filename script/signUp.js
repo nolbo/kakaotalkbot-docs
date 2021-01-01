@@ -104,7 +104,7 @@ $(function () {
                             'email': email,
                             'profile': $('img#profile').attr('src')
                         }).then(function () {
-                            auth.firestore().collection('users').doc(a.user.uid).collection('docs').doc('data').set({ 'settings': { 'theme': 'system' } }).then(function () {
+                            auth.firestore().collection('users').doc(a.user.uid).collection('docs').doc('data').set({ 'settings': { 'theme': 'system', 'font_size': '100', 'font_norm': 'Noto Sans', 'font_code': 'JetBrains Mono' }, 'bookmark': [] }).then(function () {
                                 auth.auth().signOut().then(function () {
                                     setTimeout(() => {
                                         location.href = location.origin + '/signin.html';
