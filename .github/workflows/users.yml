@@ -2,7 +2,7 @@ name: admin
 
 on:
  schedule:
-   - cron: * * * * *
+   - cron: "* * * * *"
  push:
     branches:
     - master
