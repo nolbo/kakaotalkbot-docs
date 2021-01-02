@@ -1,5 +1,4 @@
-name: og image
-
+name: admin
 on:
  schedule:
    - cron: '* * * * *'
