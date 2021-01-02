@@ -29,7 +29,7 @@ $(function () {
         auth.firestore().collection('users').get().then(function (snapshot) {
             if (snapshot.size > 0) {
                 console.log(snapshot);
-                var users = [];
+                users = [];
                 snapshot.forEach(function (doc) { users.push(doc.data()); });
             } else {
                 users = [];
@@ -66,6 +66,15 @@ $(function () {
                     is = true;
                 }
             }
+
+            Symbols.forEach((e) => {
+                if (id.indexOf(e) != -1) {
+                    $('#email').removeAttr('style');
+                    $('#id').css('box-shadow', '0rem 0rem 0.8rem 0rem #ff0088');
+                    $('#id').val('');
+                    is = true;
+                }
+            });
 
             if (pwVal) {
                 $('#password').removeAttr('style');
