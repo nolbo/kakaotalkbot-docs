@@ -8,13 +8,14 @@ admin.initializeApp({
 
 // firestore user data foreach
 // create document
-/*
+
 const db = admin.firestore();
 
-const snapshot = await db.collection('users').get();
+const users = db.collection('users');
+
+const snapshot = await users.get();
 
 snapshot.forEach((doc) => {
     data = doc.data();
     fs.writeFile(('users/' + doc.id + '.html'), data, function (err) { err || console.log('Data replaced \n', data); });
 });
-*/
