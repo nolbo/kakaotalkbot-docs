@@ -22,6 +22,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install firebase-admin --save
-    - run: node node/users
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.firebase }}
+    - run: node node/users
