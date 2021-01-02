@@ -22,10 +22,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install firebase-admin --save
-    - run: npm --version
-    - run: npm install express
-    - run: npm init -y
+    - name: node
+      run: |
+        npm install firebase-admin --save
+        npm --version
+        npm install express
+        npm init -y
     - name: admin
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.firebase }}
