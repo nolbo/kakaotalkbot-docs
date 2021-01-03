@@ -949,7 +949,7 @@ fileList.forEach((e) => {
     fs.readFile(e, function (err, data) {
         if (err) throw err;
         data = data.toString().split('\n');
-        data[13] = '    <meta property="og:image" content="' + path + '">';
+        data[13] = '    <meta property="og:image" content="' + path + '">'+'<!--작동 확인-->';
         data = data.join('\n');
         fs.writeFile(e, data, function (err) { err || console.log('Data replaced \n', data); });
     });
