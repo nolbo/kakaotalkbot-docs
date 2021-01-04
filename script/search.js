@@ -95,7 +95,8 @@ $(() => {
       }, 500);
     } else {
       $.cookie('docs_search', location.get().search, { expires: 1 });
-      location.set(location.get());
+      d = location.search;
+      window.location='full'+d;
     }
   }
   if (!!$.cookie('docs_search')) {
