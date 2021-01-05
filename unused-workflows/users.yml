@@ -1,35 +1,37 @@
-#name: admin
-#
-#on:
-# schedule:
-#   - cron: "* * * * *"
-# push:
-#    branches:
-#    - master
-#
-#jobs:
-#  build:
-#
-#    runs-on: windows-latest
-#
-#    strategy:
-#      matrix:
-#        node-version: [14.x]
-#
-#    steps:
-#    - uses: actions/checkout@v2
-#    - name: Use Node.js ${{ matrix.node-version }}
-#      uses: actions/setup-node@v1
-#      with:
-#        node-version: ${{ matrix.node-version }}
-#
-#    - name: pre
-#      run: |
-#        npm install firebase-admin --save
-#        npm --version
-#        npm install express
-#        npm init -y
-#    - name: admin
-#      env:
-#        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.firebase }}
-#      run: node node/users
+name: admin
+
+on:
+ schedule:
+   - cron: "* * * * *"
+ push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: pre
+      run: |
+        npm install firebase-admin --save
+        npm --version
+        npm install express
+        npm init -y
+        npm install @actions/core
+        npm install @actions/github
+    - name: admin
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.firebase }}
+      run: node node/users
