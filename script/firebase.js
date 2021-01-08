@@ -101,6 +101,7 @@ $(function () {
                                     }, true);
                                 }
                             }
+                            $('#login_img').click(()=>{location.href='/signin'})
 
                             if (user) {
                                 if (!newA && ["/signup", "/signin", "/signup.html", "/signin.html"].indexOf(location.href.substring(location.origin.length)) != -1) {
@@ -108,6 +109,7 @@ $(function () {
                                 } else {
                                     auth.firestore().collection('users').doc(auth.auth().currentUser.uid).get().then(function (doc) {
                                         $('#login_img').attr('src', doc.data().profile);
+                                        $('#login_img').attr('onclick','').unbind('click'); 
                                         $('#login_txt').text(doc.data().id);
                                     });
                                     if (["/signup", "/signin", "/signup.html", "/signin.html", "/", "/index", "/index.html"].indexOf(location.href.substring(location.origin.length)) == -1) {
