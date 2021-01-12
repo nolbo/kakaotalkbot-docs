@@ -1,4 +1,12 @@
 $(function () {
+    var Upper = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
+    var Lower = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+    var Nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    var Symbols = ['~', '․', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', ']', '|', '\'', ';', ':', '‘', '“', '<', '>', ',', '.', '?', '/'];
+    var id = $('#id').val().replace(/ /g, '');
+    var pswd = $('#password').val().replace(/ /g, '');
+    var repswd = $('#re-password').val().replace(/ /g, '');
+    var email = $('#email').val().replace(/ /g, '');
     function signup() {
         con = (arr, str) => {
             var a = false;
@@ -14,16 +22,16 @@ $(function () {
                 return false;
             }
         }
-        var Upper = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
-        var Lower = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
-        var Nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-        var Symbols = ['~', '․', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', ']', '|', '\'', ';', ':', '‘', '“', '<', '>', ',', '.', '?', '/'];
-        var id = $('#id').val().replace(/ /g, '');
-        var pswd = $('#password').val().replace(/ /g, '');
-        var repswd = $('#re-password').val().replace(/ /g, '');
-        var email = $('#email').val().replace(/ /g, '');
-        var is = false;
-        var pwVal = con(Upper, pswd) && con(Lower, pswd) && con(Nums, pswd) && con(Symbols, pswd);
+        Upper = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
+        Lower = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+        Nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+        Symbols = ['~', '․', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', ']', '|', '\'', ';', ':', '‘', '“', '<', '>', ',', '.', '?', '/'];
+        id = $('#id').val().replace(/ /g, '');
+        pswd = $('#password').val().replace(/ /g, '');
+        repswd = $('#re-password').val().replace(/ /g, '');
+        email = $('#email').val().replace(/ /g, '');
+        is = false;
+        pwVal = con(Upper, pswd) && con(Lower, pswd) && con(Nums, pswd) && con(Symbols, pswd);
         setTimeout(() => {
             if (id.length === 0) {
                 $('#email').removeAttr('style');
