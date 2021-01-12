@@ -24,7 +24,6 @@ $(function () {
         const email = $('#email').val().replace(/ /g, '');
         var is = false;
         const pwVal = con(Upper, pswd) && con(Lower, pswd) && con(Nums, pswd) && con(Symbols, pswd);
-        console.log(id)
         if (id.length === 0) {
             $('#email').removeAttr('style');
             $('#id').css('box-shadow', '0rem 0rem 0.8rem 0rem #ff0088');
@@ -36,16 +35,6 @@ $(function () {
             $('#email').val('');
             is = true;
         }
-
-
-        Symbols.forEach((e) => {
-            if (id.indexOf(e) != -1) {
-                $('#email').removeAttr('style');
-                $('#id').css('box-shadow', '0rem 0rem 0.8rem 0rem #ff0088');
-                $('#id').val('');
-                is = true;
-            }
-        });
 
         if (pwVal) {
             $('#password').removeAttr('style');
