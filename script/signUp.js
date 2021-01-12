@@ -102,30 +102,23 @@ $(function () {
 
             if (!is) {
                 console.log('create account');
-                var a;
                 newA = true;
-                auth.auth().createUserWithEmailAndPassword(email, pswd).then(function (s) {
-                    a = s;
-                    console.log(a.user);
-                    a.user.sendEmailVerification().then(function () {
-                        auth.firestore().collection('users').doc(a.user.uid).set({
-                            'id': id,
-                            'email': email,
-                            'profile': $('img#profile').attr('src')
-                        }).then(function () {
-                            auth.firestore().collection('users').doc(a.user.uid).collection('docs').doc('data').set({ 'settings': { 'theme': 'system', 'font_size': '100', 'font_norm': 'Noto Sans', 'font_code': 'JetBrains Mono' }, 'bookmark': [] }).then(function () {
-                                auth.auth().signOut().then(function () {
-                                    setTimeout(() => {
-                                        location.href = location.origin + '/signin.html';
-                                    }, 1000);
-                                }).catch(function (e) { console.error(e); return false; });
-                            }).catch(function (e) { console.error(e); return false; });
-                        }).catch(function (e) { console.error(e); return false; });
-                    });
-                }).catch(function (e) {
-                    newA = false;
-                    if (e.code == "auth/email-already-in-use") { $('#email').css('box-shadow', '0rem 0rem 0.8rem 0rem #ff0088'); }
-                });
+                var http = new XMLHttpRequest();
+                var url = 'https://kbot-auth.herokuapp.com/user/create';
+                var params = 'id=' + encodeURIComponent(id) + '&email=' + encodeURIComponent(email) + '&pw=' + encodeURIComponent(pswd) + '&profile=' + encodeURIComponent($('img#profile').attr('src'));
+                http.open('POST', url, true);
+                http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+                http.onreadystatechange = function () {
+                    if (http.readyState == 4) {
+                        if (http.status == 200) {
+                            location.href = location.origin + '/signin.html';
+                        } else if (http.status == 400) {
+                            newA = false;
+                        }
+                    }
+                }
+                http.send(params);
             }
         });
     }

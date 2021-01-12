@@ -26,7 +26,18 @@ $(function () {
                 auth.auth().signInWithEmailAndPassword(email, password)
                     .then((user) => {
                         if (user.user.emailVerified) {
-                            location.href = location.origin;
+                            auth.auth().currentUser.getIdTokenResult()
+                                .then((idTokenResult) => {
+                                    if (!!idTokenResult.claims.admin) {
+                                        console.log('hi admin!');
+                                        location.href = location.origin;
+                                    } else {
+                                        location.href = location.origin;
+                                    }
+                                })
+                                .catch((error) => {
+                                    console.log(error);
+                                });
                         } else {
                             auth.auth().signOut().then(function () {
                                 alert('발송된 링크로 이메일 주소를 인증해주세요.')
