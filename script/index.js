@@ -49,7 +49,7 @@ $(function () {
     var pathEl = document.getElementById('path26');
     var offset = anime.setDashoffset(pathEl);
 
-    $('article#notice *, article section *').css('opacity', '0');
+    $('#notice *, #main *').css('opacity', '0');
 
     pathEl.setAttribute('stroke-dashoffset', offset);
     anime({
