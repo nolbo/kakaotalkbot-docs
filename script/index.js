@@ -63,8 +63,14 @@ $(function () {
         autoplay: true
     });
     setTimeout(function() {
-        $('article#notice *, article section *').animate({'opacity' : '1'}, 500);
-    }, 2400);
+        $('article#notice *').animate({'opacity' : '1'}, 500);
+        $('#main > .block').each(async (index, item) => {
+          await new Promise(resolve => setTimeout(resolve, index * 100));
+          item.style.transition = '800ms';
+          item.style.opacity = '1';
+          item.querySelectorAll('*').forEach(element => element.style.opacity = '1');
+        });
+    }, 400);
     // setTimeout(function () {
     //     $('#top_txt').animate({ 'opacity': '1' }, 300);
     //     $('#arrow').animate({ 'opacity': '1' }, 300);
