@@ -50,6 +50,7 @@
 
     form * {
         margin-bottom: 3rem;
+        text-align: center;
     }
 
     input[type = 'text'], input[type = 'password'], input[type = 'email'] {

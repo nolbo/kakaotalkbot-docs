@@ -3114,6 +3114,196 @@
                         <pre><code class="javascript">if (msg.startsWith('/eval ') && sender === '자신의 닉네임' && new java.lang.String(imageDB.getProfileImage()).hasgCode() === '자신의 프로필 해시코드') {<br>    replier.reply(eval(msg.substring(5))); // 자신의 닉네임, 프로필 해시코드까지 조건의 일부로 넣어 위험 감소.<br>}</code></pre>
                     </div>
                 </div>
+                <div id="4-10-2" class="content">
+                    <p class="stitle">uneval()</p>
+                    <p class="code">uneval()</p><p class="dscrpt">은 <p class="code">eval()</p>과 반대로, 자바스크립트 코드에 대한 문자열 표현을 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">uneval(object);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">string</p></td>
+                                <td>문자열 표현으로 변환할 자바스크립트 표현식 또는 구문입니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-10-3" class="content">
+                    <p class="stitle">isFinite()</p>
+                    <p class="code">isFinite()</p><p class="dscrpt">은 인자가 유한수이면 </p><p class="code">true</p><p class="dscrpt">, 인자가 </p><p class="code">Infinity</p><p class="dscrpt">, </p><p class="code">NaN</p><p class="dscrpt"> 또는 </p><p class="code">undefined</p><p class="dscrpt">이면 </p><p class="code">false</p><p class="dscrpt">를 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">isFinite(testValue);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">testValue</p></td>
+                                <td>값이 유한한지의 여부를 반환받을 값입니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-10-4" class="content">
+                    <p class="stitle">isNaN()</p>
+                    <p class="code">isNaN()</p><p class="dscrpt">는 인자가 </p><p class="code">NaN</p><p class="dscrpt">이면 </p><p class="code">true</p><p class="dscrpt">, 아니면 </p><p class="code">false</p><p class="dscrpt">를 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">isNaN(value);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">value</p></td>
+                                <td>값이 <p class="code">NaN</p>인지의 여부를 반환받을 값입니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-10-5" class="content">
+                    <p class="stitle">parseFloat()</p>
+                    <p class="code">parseFloat()</p><p class="dscrpt">는 문자열 인자를 분석해 부동소수점 실수로 반환합니다. 분석할 수 없는 인자일 경우 </p><p class="code">NaN</p><p class="dscrpt">를 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">parseFloat(value);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">value</p></td>
+                                <td>부동소수점 실수로 변환할 문자열 값입니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-10-6" class="content">
+                    <p class="stitle">parseInt()</p>
+                    <p class="code">parseInt()</p><p class="dscrpt">는 문자열 인자를 분석해 특정 진수의 정수로 반환합니다. </p><p class="code">radix</p><p class="dscrpt">가 2 미만 36 초과이거나, 문자열 인자의 첫번째 문자(공백이 아닌 문자)가 숫자가 아닐 경우 </p><p class="code">NaN</p><p class="dscrpt">를 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">parseFloat(value);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">string</p></td>
+                                <td>특정 진수의 정수로 변환할 문자열 값입니다.</td>
+                            </tr>
+                            <tr>
+                                <td><p class="code">radix</p></td>
+                                <td><p class="code">string</p>을 변환할 진수를 나타내는 숫자 값입니다. 해당 인자가 주어지지 않을 경우, 해당 인자는 아래와 같은 값을 가집니다:<br><p class="code">string</p>이 "0x"나 "0X"로 시작할 경우, <p class="code">16</p>으로 정해집니다.<br><p class="code">string</p>이 "0"으로 시작할 경우, <p class="code">8</p>이나 <p class="code">10</p>으로 정해집니다.<br><p class="code">string</p>이 그 외 다른 값으로 시작할 경우, <p class="code">10</p>으로 정해집니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-10-7" class="content">
+                    <p class="stitle">encodeURI()</p>
+                    <p class="code">encodeURI()</p><p class="dscrpt">는 대/소문자 알파벳, 숫자, </p><p class="code">;</p><p class="dscrpt">, </p><p class="code">,</p><p class="dscrpt">, </p><p class="code">/</p><p class="dscrpt">, </p><p class="code">?</p><p class="dscrpt">, </p><p class="code">:</p><p class="dscrpt">, </p><p class="code">@</p><p class="dscrpt">, </p><p class="code">&</p><p class="dscrpt">, </p><p class="code">=</p><p class="dscrpt">, </p><p class="code">+</p><p class="dscrpt">, </p><p class="code">$</p><p class="dscrpt">, </p><p class="code">-</p><p class="dscrpt">, </p><p class="code">_</p><p class="dscrpt">, </p><p class="code">.</p><p class="dscrpt">, </p><p class="code">!</p><p class="dscrpt">, </p><p class="code">~</p><p class="dscrpt">, </p><p class="code">*</p><p class="dscrpt">, </p><p class="code">'</p><p class="dscrpt">, </p><p class="code">(</p><p class="dscrpt">, </p><p class="code">)</p><p class="dscrpt">, </p><p class="code">#</p><p class="dscrpt">을 제외한 문자들을 인코딩한 값을 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">encodeURI(URI);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">URI</p></td>
+                                <td>URI로서 인코딩할 문자열입니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-10-8" class="content">
+                    <p class="stitle">encodeURIComponent()</p>
+                    <p class="code">encodeURIComponent()</p><p class="dscrpt">는 대/소문자 알파벳, 숫자, </p><p class="code">-</p><p class="dscrpt">, </p><p class="code">_</p><p class="dscrpt">, </p><p class="code">.</p><p class="dscrpt">, </p><p class="code">!</p><p class="dscrpt">, </p><p class="code">~</p><p class="dscrpt">, </p><p class="code">*</p><p class="dscrpt">, </p><p class="code">'</p><p class="dscrpt">, </p><p class="code">(</p><p class="dscrpt">, </p><p class="code">)</p><p class="dscrpt">를 제외한 문자들을 인코딩한 값을 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">encodeURIComponent(str);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">str</p></td>
+                                <td>URI로서 인코딩할 문자열입니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-10-9" class="content">
+                    <p class="stitle">decodeURI()</p>
+                    <p class="code">decodeURI()</p><p class="dscrpt">는 </p><p class="code">encodeURI()</p><p class="dscrpt">와 같은 루틴으로 인코딩된 값을 디코딩한 값을 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">decodeURI(encodedURI);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">encodedURI</p></td>
+                                <td>완전하고 암호화된 인터넷식별자</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="4-10-10" class="content">
+                    <p class="stitle">decodeURIComponent()</p>
+                    <p class="code">decodeURIComponent()</p><p class="dscrpt">는 </p><p class="code">encodeURIComponent()</p><p class="dscrpt">와 같은 루틴으로 인코딩된 값을 디코딩한 값을 반환합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">decodeURIComponent(encodedURI);</code></pre>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <th>매개변수</th>
+                            <th>설명</th>
+                            <tr>
+                                <td><p class="code">encodedURI</p></td>
+                                <td>완전하고 암호화된 인터넷식별자</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="4-11" class="content">
+                <p class="title">예외</p>
+                <p class="dscrpt">예외는 프로그램 실행 도중 일어난 오류를 말합니다. 이와 같은 예외를 처리하는 것이 바로 <strong>예외처리</strong>입니다. 이번에는 예외를 처리하거나 이용하는 방법에 대해 설명합니다.</p>
+                <div id="sA">
+                    <li id="d4-11-1" class="sA">throw문</li>
+                    <li id="d4-11-2" class="sA">try...catch문</li>
+                </div>
+                <div id="4-11-1" class="content">
+                    <p class="stitle">throw문</p>
+                    <p class="code">throw</p><p class="dscrpt">문은 특정 예외를 고의적으로 발생시킬 때 사용합니다. </p><p class="code">throw</p><p class="dscrpt">문은 아래와 같이 사용합니다:</p>
+                    <div class="code">
+                        <pre><code class="javascript">throw expression</code></pre>
+                    </div>
+                    <p class="code">expression</p><p class="dscrpt"> 안에 예외로서 throw할 표현식을 넣습니다. 그 안에는 주로 </p><p class="code">Error</p><p class="dscrpt">객체를 넣기도 합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">throw new Error('에러 메시지', '에러발생 파일이름', 130); // Error: 에러 메시지(에러발생 파일이름#130)</code></pre>
+                    </div>
+                </div>
+                <div id="4-11-2" class="content">
+                    <p class="stitle">try...catch문</p>
+                    <p class="code">try...catch</p><p class="dscrpt">문은 예외 발생 시, 그 예외를 처리하기 위해 사용합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">try {<br>    // 일반적인 소스코드<br>} catch (e) { // e는 에러에 대한 정보를 담은 객체를 나타냅니다. (e가 아닌 다른 이름으로 지정가능)<br>    // 에러발생 시 실행할 소스코드<br>} finally { // finally는 제외해도 무방.<br>    // try블럭이나 catch블럭 둘 중 하나의 소스코드 실행 후 실행할 소스코드<br>}</code></pre>
+                    </div>
+                    <p class="code">expression</p><p class="dscrpt"> 안에 예외로서 throw할 표현식을 넣습니다. 그 안에는 주로 </p><p class="code">Error</p><p class="dscrpt">객체를 넣기도 합니다.</p>
+                    <div class="code">
+                        <pre><code class="javascript">throw new Error('에러 메시지', '에러발생 파일이름', 130); // Error: 에러 메시지(에러발생 파일이름#130)</code></pre>
+                    </div>
+                    <p class="code">try</p><p class="dscrpt">블럭은 예외발생을 감지할 코드를 넣는 블럭입니다. </p><p class="code">try</p><p class="dscrpt">블럭이 존재할 경우 반드시 </p><p class="code">catch</p><p class="dscrpt">블럭이나 </p><p class="code">finally</p><p class="dscrpt">블럭이 뒤따라야 합니다.</p><br>
+                    <p class="code">catch</p><p class="dscrpt">블럭에는 예외발생 시 처리할 코드를 넣습니다.</p><br>
+                    <p class="code">finally</p><p class="dscrpt">블럭에는 정상적인 코드실행이나 예외발생 시 처리할 코드실행이 끝났을 경우 반드시 실행할 코드를 넣습니다. (선택적)</p><br>
+                </div>
             </div>
         </section>
         <section id="tool">
