@@ -9,7 +9,7 @@
 div.table::-webkit-scrollbar-thumb, div.code::-webkit-scrollbar-thumb,  div.pls::-webkit-scrollbar-thumb,  div.crf::-webkit-scrollbar-thumb { width: 0.6em; height: 0.4rem; border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: rgb(85, 85, 85);  }
 
 body {
-    background: #3a3a3a;
+    background: #1d1d1d;
 }
 
 li.a::before, li.sA::before {
@@ -21,7 +21,7 @@ div#auto td:hover {
 }
 
 article {
-    background: #3a3a3a;
+    background: #1d1d1d;
     color: white !important;
 }
 
@@ -36,7 +36,7 @@ span.list dd {
 p.code {
     color: white;
     background: black;
-    box-shadow: 0rem 0rem 0.5rem 0rem #cfcfcf;
+    box-shadow: 0rem 0rem 0.25rem 0rem #cfcfcf;
 }
 
 p#i {
@@ -44,7 +44,7 @@ p#i {
 }
 
 div.crf, div.pls {
-    background: #3a3a3a;
+    background: #1d1d1d;
 }
 
  div.code {
@@ -71,7 +71,7 @@ img.sttc, img.prttp {
 }
 
 section#tool {
-    background: #3a3a3a;
+    background: #1d1d1d;
 }
 
 input#search_txt {
@@ -132,4 +132,19 @@ div#preview {
     padding: 3rem;
     border-radius: 3rem;
     box-shadow: 0rem 0rem 0.8rem #161616;
+}
+
+div.crf {
+    box-shadow: 0rem 0rem 1rem 0rem #ff007e;
+}
+
+div.crf p.crfBox {
+    color: #ff007e;
+}
+
+@media screen and (min-width: 801px) {
+    td#no {
+        background: rgb(0 0 0 / 0%);
+        border: 0.2em solid rgb(255 0 126) !important;
+    }
 }

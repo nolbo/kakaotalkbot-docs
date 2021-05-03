@@ -328,7 +328,8 @@
     }
 
     td#no {
-        background: #ff00aa;
+        background: rgb(0 0 0 / 0%);
+        border: 0.2em solid #ff00aa !important;
     }
 
     img.sttc, img.prttp {

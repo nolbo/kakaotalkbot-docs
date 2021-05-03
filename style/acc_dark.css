@@ -1,6 +1,6 @@
 @media(prefers-color-scheme: dark){
     body, article {
-        background: #3a3a3a;
+        background: #1d1d1d;
     }
 
     input[type = 'text'], input[type = 'password'], input[type = 'email'] {
